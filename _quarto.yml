@@ -1,0 +1,90 @@
+project: 
+  type: default
+  output-dir: docs
+
+lang: it
+title: Impaginazione (tesi) con LaTeX
+keywords: latex, thesis
+subtitle: <small> In collaborazione con FabLab UniTN </small>
+author: Emanuele Nardi
+institute: Università degli Studi di Trento, DISI
+date: today
+date-format: "[Aggiornate] dddd D MMMM YYYY"
+
+# presentation metadata
+pagetitle: Impaginazione (tesi) con LaTeX
+description-meta: ""
+author-meta: Emanuele Nardi
+
+preview-links: true
+
+title-slide-attributes:
+  data-background-image: "assets/images/title/writing-thesis.jpg"
+  data-background-size: cover
+  data-background-opacity: "0.4"
+  data-background-color: "#212922"
+
+aspectratio: 169
+# https://github.com/quarto-dev/quarto-cli/discussions/3668
+# toc: true
+slide-level: 3
+# number-sections: true
+format:
+  # html:
+  #     theme:
+  #         light: flatly
+  #         dark: darkly
+  revealjs:
+    # overral theme
+    theme: [serif, assets/template/custom.scss]
+
+    # multiplex: true
+    embed-resources: false # incompatible with chalkboard
+    
+    include-after-body: [assets/template/clean_title_page.html]
+    # logo: "assets/images/logo/logo-unitn.png"
+    # footer: |
+    #     Impaginazione (tesi) con $\rm\LaTeX$ -- Emanuele Nardi -- CC BY-NC
+    
+    # lesson helpers
+    menu: true
+    chalkboard:
+        theme: whiteboard
+        boardmarker-width: 5
+        buttons: false
+
+    # Controls
+    # controls: true
+    # controls-layout: bottom-right
+    # controls-back-arrows: faded
+
+    preview-links: auto
+
+    slide-number: c/t #< collapsed/total
+    # header: Impaginazione (tesi) con LaTeX -- Emanuele Nardi -- CC BY-NC
+    header-logo: "assets/images/logo/unitn-fablab.png"
+    sc-sb-title: true
+    footer: |
+        Impaginazione (tesi) con $\rm\LaTeX$ -- Emanuele Nardi -- CC BY-NC
+
+    # how to treat fragments
+    fragment-in-url: true
+    pdf-separate-fragments: true
+    
+    # slide transitions
+    transition: slide
+    transition-speed: fast
+    background-transition: fade
+    
+    # lists
+    incremental: false
+    
+    hash-type: title
+    
+    # how to treat code
+    highlight-style: github
+    code-overflow: wrap
+
+# To make sure that R, Python, and Julia code is only executed locally
+execute:
+  freeze: auto

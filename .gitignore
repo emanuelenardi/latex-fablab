@@ -1,0 +1,5 @@
+# quarto local index files
+/.quarto/
+
+# render output
+/docs/
