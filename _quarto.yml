@@ -1,13 +1,20 @@
 project: 
   type: default
+  title: Impaginazione (tesi) con LaTeX
   output-dir: docs
 
 lang: it
 title: Impaginazione (tesi) con LaTeX
 keywords: latex, thesis
-subtitle: <small> In collaborazione con FabLab UniTN </small>
-author: Emanuele Nardi
-institute: Università degli Studi di Trento, DISI
+subtitle: <small> In collaborazione con FabLab UniTrento </small>
+author:
+  - name: Emanuele Nardi
+    email: emanuele.nardi@studenti.unitn.it
+    url: https://github.com/emanuelenardi/
+    affiliations:
+      name: Università degli Studi di Trento, DISI
+      url: https://www.unitn.it/
+# institute: Università degli Studi di Trento, DISI
 date: today
 date-format: "[Aggiornate] dddd D MMMM YYYY"
 
@@ -35,8 +42,11 @@ format:
   #         light: flatly
   #         dark: darkly
   revealjs:
+    scrollable: true
     # overral theme
     theme: [serif, assets/template/custom.scss]
+    template-partials:
+      - assets/template/title-slide.html
 
     # multiplex: true
     embed-resources: false # incompatible with chalkboard
@@ -48,6 +58,8 @@ format:
     
     # lesson helpers
     menu: true
+    footnotes-hover: true
+    reference-location: document
     chalkboard:
         theme: whiteboard
         boardmarker-width: 5
@@ -60,15 +72,17 @@ format:
 
     preview-links: auto
 
-    slide-number: c/t #< collapsed/total
+    slide-number: h.v #< collapsed/total
     # header: Impaginazione (tesi) con LaTeX -- Emanuele Nardi -- CC BY-NC
+    navigation-mode: grid
     header-logo: "assets/images/logo/unitn-fablab.png"
     sc-sb-title: true
     footer: |
-        Impaginazione (tesi) con $\rm\LaTeX$ -- Emanuele Nardi -- CC BY-NC
+        Impaginazione (tesi) con $\rm\LaTeX$ --- Emanuele Nardi --- CC BY-NC
 
     # how to treat fragments
-    fragment-in-url: true
+    fragment-in-url: true # seems to be broken
+    mouse-wheel: false
     pdf-separate-fragments: true
     
     # slide transitions
@@ -86,5 +100,5 @@ format:
     code-overflow: wrap
 
 # To make sure that R, Python, and Julia code is only executed locally
-execute:
-  freeze: auto
+# execute:
+#   freeze: auto
