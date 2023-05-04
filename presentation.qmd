@@ -43,3 +43,503 @@ graph LR
 ::: {.nonincremental}
 - Se rimarrà tempo: introduzione ai comandi più comuni ed errori tipici
 :::
+
+# Installazione {.smaller}
+
+<p>
+    </a>
+    <a href="https://git-scm.com/">
+    <img alt="Install Git" src="https://img.shields.io/badge/Git-F05032?style=for-the-badge&logo=git&logoColor=white">
+    </a>
+    <a href="https://www.tug.org/texlive/acquire-netinstall.html">
+    <img alt="Install TeX Live" src="https://img.shields.io/badge/TeX%20Live-008080?style=for-the-badge&logo=latex&logoColor=white">
+    </a>
+    </a>
+    <a href="https://www.java.com/it/download/">
+    <img alt="Install Java" src="https://img.shields.io/badge/java-%23ED8B00.svg?style=for-the-badge&logo=java&logoColor=white">
+    </a>
+    </a>
+    <a href="https://www.python.org/downloads/">
+    <img alt="Install Python" src="https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white">
+    </a>
+    </a>
+    <a href="https://pygments.org/">
+    <img alt="Install Python Pygments" src="https://img.shields.io/badge/Python%20Pygments-3776AB?style=for-the-badge&logo=python&logoColor=white">
+    </a>
+</p>
+Per seguire questo corso è necessario avere installati sulla propria macchina:
+
+- {{< fa code >}} [Visual Studio Code](https://code.visualstudio.com/)
+- un'installazione parziale di [TeX Live](https://www.tug.org/texlive/acquire-netinstall.html)
+- {{< fa brands java >}} [Java](https://www.java.com/it/download/) (per poter usare [arara 🦜](https://github.com/islandoftex/arara))
+- {{< fa brands python >}} [Python](https://www.python.org/downloads/) + la libreria [`pygmetize`](https://pygments.org/) (per [`minted`](https://ctan.org/pkg/minted))
+- {{< fa brands git >}} [Git](https://git-scm.com/) (per il versionamento del documento)
+
+. . .
+
+::: {.nonincremental}
+- [Installazione guidata per Windows](#installazione-windows)
+- [Installazione guidata per Linux/Mac](#installazione-unix)
+:::
+
+## Installazione dei requisiti su Windows {#installazione-windows .smaller}
+
+::: {.nonincremental}
+1. installare {{< fa brands java >}} Java ([download page](https://www.java.com/en/download/))
+2. installare {{< fa brands python >}} Python ([download page](https://www.python.org/downloads/))
+   - eseguire `pip install Pygments` su un terminale
+    ```{.bash code-line-numbers="false"}
+    pip install Pygments
+    :: "A new release of pip available"
+    python.exe -m pip install --upgrade pip
+    ```
+3. installare {{< fa brands git >}} ([download page](https://git-scm.com/download/win))
+4. installare Tex-Live per Windows ([download diretto ~20MB](http://mirror.ctan.org/systems/texlive/tlnet/install-tl-windows.exe))
+:::
+
+### Procedura guidata installazione Python {#installazione-python}
+
+![1. Installer](assets/images/install-python/01-installer.png)
+
+### {.smaller}
+
+![2. Add Python to PATH](assets/images/install-python/02-path.png)
+
+::: {.nonincremental}
+- premere "**Add `python.exe` to PATH**"
+:::
+
+:::{.callout-warning}
+Se ci si dimentica di aggiungere `python.exe` al `PATH`, `pip` non sarà visibile da riga di comando.
+
+[vedi risoluzione problemi](#risoluzione-problemi-python)
+:::
+
+---
+
+#### Installare solo `pip`
+
+::: {layout-ncol=2}
+![3a. Only pip (*before* deleselection)](assets/images/install-python/03a-optional-justpip.png)
+
+![3b. Only pip (*after* deleselection)](assets/images/install-python/03b-optional-justpip.png)
+:::
+:::{.callout-note}
+Possiamo evitare di installare altri programmi che non ci servono.
+:::
+
+---
+
+::: {layout-ncol=2}
+![4. Install](assets/images/install-python/04-install.png)
+
+![5. Close](assets/images/install-python/05-close.png)
+:::
+
+### Risoluzione problemi {#risoluzione-problemi-python .smaller}
+
+Se cercando di invocare `pip` all'interno della Powershell:
+```powershell
+pip : The term 'pip' is not recognized as the name of a cmdlet, function, script file, or operable program. Check the
+spelling of the name, or if a path was included, verify that the path is correct and try again.
+At line:1 char:1
++ pip
++ ~~~
+    + CategoryInfo          : ObjectNotFound: (pip:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+```
+Oppure all'interno di un *Command Prompt*
+```cmd
+'pip' is not recognized as an internal or external command, operable program or batch file.
+```
+- cliccare il menù start e cercare "environment variables".
+- bisogna controllare che esistano ed eventualmente aggiungere questi due percorsi al `PATH` dell'utente:
+```{.bash code-line-numbers="false"}
+C:\Users\user\AppData\Local\Programs\Python\Python311\
+C:\Users\user\AppData\Local\Programs\Python\Python311\Scripts\
+```
+
+### Environment Variables
+
+::: {layout-ncol=3}
+![1. Environment Variables](assets/images/install-python/06-system-properties.png)
+
+![2. Environment Variables](assets/images/install-python/07-environment-variables.png)
+
+![3. Environment Variables](assets/images/install-python/08-edit.png)
+:::
+
+### Procedura guidata installazione di TeX-Live {#installazione-texlive-windows}
+
+::: {layout-ncol=2}
+![1. Microsoft Defender SmartScreen](assets/images/install-texlive/windows/00-smartscreen-more-info.png)
+
+![2. Microsoft Defender SmartScreen](assets/images/install-texlive/windows/00-smartscreen.png)
+:::
+::: {.nonincremental}
+1. premere "**Maggiori Informazioni**"/"**More info**"
+2. premere "**Esegui comunque**"/"**Run anyway**"
+:::
+
+### {.smaller}
+
+::: {layout-ncol=2}
+![3. Installer](assets/images/install-texlive/windows/01-installer.png)
+
+![4. Confirmation](assets/images/install-texlive/windows/02-confirmation.png)
+:::
+::: {.nonincremental}
+1. premere "**Next**"
+2. premere "**Install**"
+:::
+
+### {.smaller}
+
+::: {layout-ncol=2}
+![5. Retrieving Packages](assets/images/install-texlive/windows/03-retrieving-packages.png)
+
+![6. Simple UI](assets/images/install-texlive/windows/04-simple.png)
+:::
+::: {.nonincremental}
+5. si aprirà automaticamente una finestra che si chiuderà poco dopo
+6. premere "**Avanzate**"/"**Advanced**"
+:::
+
+### {.smaller}
+
+![7. Advanced UI (*before* selection)](assets/images/install-texlive/windows/05-advanced-before-selection.png)
+
+::: {.nonincremental}
+7. clicca su **Personalizza**/**Customize**
+:::
+
+### {.smaller}
+
+::: {layout-ncol=2}
+![8. TeXlive Collections (it)](assets/images/install-texlive/windows/06-collections-it.png)
+
+![8. TeXlive Collections (en)](assets/images/install-texlive/windows/06-collections-en.png)
+:::
+::: {.nonincremental}
+1. selezionare i pacchetti in figura
+:::
+
+### {.smaller}
+
+![9. Advanced UI (*after* selection)](assets/images/install-texlive/windows/07-advanced-after-selection.png)
+
+::: {.nonincremental}
+:::: {.columns}
+::: {.column width="25%"}
+9. deselezionare:
+:::
+::: {.column width="70%"}
+- **Install font/macro doc tree**
+- **Install font/macro source tree**
+- **Install TeXworks front end**
+:::
+dovreste notare che ora lo spazio richiesto è appena sotto i 3GB, dopodiché premere "**Install**" in basso a destra
+::::
+:::
+
+###
+
+::: {layout-ncol=3}
+![10. Installing](assets/images/install-texlive/windows/08-installing.png)
+
+![11. Installer has finished 🥳🎉](assets/images/install-texlive/windows/09-finish.png)
+
+![12. Installation completed](assets/images/install-texlive/windows/10-close.png)
+:::
+::: {.callout-warning}
+Non mettere in sospensione il computer durante l'installazione, la procedura durerà circa 20 minuti.
+:::
+
+## Installazione dei requisiti su Linux/Mac {#installazione-unix .smaller}
+
+::: {.nonincremental}
+1. installare {{< fa brands java >}} Java
+    - installa solo il *Java Runtime Environment*
+    ```{.bash code-line-numbers="false"}
+    sudo apt install -y default-jre
+    ```
+2. installare {{< fa brands python >}} Pygments
+
+    ```{.bash code-line-numbers="false"}
+    sudo apt install -y python3-pygments
+    ```
+    - controlla che sia stato installato correttamente
+    ```{.bash code-line-numbers="false"}
+    pygmentize -V
+    ```
+3. aggiornare {{< fa brands git >}} (preinstallato)
+
+    ```{.bash code-line-numbers="false"}
+    sudo apt upgrade git
+    ```
+
+4. installare Tex-Live per Linux
+:::
+
+<!-- :::{.callout-note}
+You do not need to remove an installation of a previous release, or any system-provided TeX; multiple releases of TL can coexist on the same system without conflict.
+::: -->
+
+### Procedura guidata installazione di TeX-Live {#installazione-texlive-unix .smaller}
+
+Create a place for your new TexLive distribution to live, and give your user ownership of this directory
+```bash
+sudo mkdir -p /usr/local/texlive/$(date +%Y)
+sudo chown -R "$USER" /usr/local/texlive
+```
+Download and manually install TexLive
+```bash
+mkdir /tmp/texlive
+cd /tmp/texlive
+wget http://mirror.ctan.org/systems/texlive/tlnet/install-tl.zip
+unzip ./install-tl.zip -d install-tl
+cd install-tl/install-tl-$(date +%Y%m%d)
+perl ./install-tl
+```
+
+---
+
+### Avere i permessi di scrittura {#installazione-texlive-unix-installer .smaller}
+
+::: {layout-ncol=2}
+![](assets/images/install-texlive/linux/00-texlive-user.png)
+
+![](assets/images/install-texlive/linux/01-texlive-sudo.png)
+:::
+
+### {#linux-collections .smaller}
+
+::: {layout-ncol=3}
+![](assets/images/install-texlive/linux/02-texlive-collections-full-scheme.png)
+
+![](assets/images/install-texlive/linux/03-texlive-collections-deselected.png)
+
+![](assets/images/install-texlive/linux/04-texlive-collections-selected.png)
+:::
+
+- installare le 15 collezioni in figura che corrispondono alle lettere (puoi copiare ed incollare il codice direttamente sul terminale):
+```{.txt code-line-numbers="false"}
+a c e f g p v w D E F J M O P
+```
+
+::: {layout-ncol=3}
+![](assets/images/install-texlive/linux/05-texlive-custom-scheme.png)
+
+![](assets/images/install-texlive/linux/06-texlive-option-customization.png)
+![](assets/images/install-texlive/linux/07-texlive-option-customization-after.png)
+
+![](assets/images/install-texlive/linux/08-texlive-install.png)
+:::
+
+### {#texlive-profile-file .smaller}
+
+All'interno della cartella d'installazione dovrebbe essere stato creato un file `texlive.profile` e il suo contenuto dovrebbe corrispondere a questo:
+```bash
+selected_scheme scheme-custom
+TEXDIR /usr/local/texlive/2023
+TEXMFCONFIG ~/.texlive2023/texmf-config
+TEXMFHOME ~/texmf
+TEXMFLOCAL /usr/local/texlive/texmf-local
+TEXMFSYSCONFIG /usr/local/texlive/2023/texmf-config
+TEXMFSYSVAR /usr/local/texlive/2023/texmf-var
+TEXMFVAR ~/.texlive2023/texmf-var
+binary_x86_64-linux 1
+collection-basic 1
+collection-binextra 1
+collection-fontsextra 1
+collection-fontsrecommended 1
+collection-fontutils 1
+collection-langenglish 1
+collection-langgreek 1
+collection-langitalian 1
+collection-latex 1
+collection-latexextra 1
+collection-latexrecommended 1
+collection-mathscience 1
+collection-pictures 1
+collection-publishers 1
+collection-xetex 1
+instopt_adjustpath 0
+instopt_adjustrepo 1
+instopt_letter 0
+instopt_portable 0
+instopt_write18_restricted 1 # allow exection of restricted list of programs via \write18
+tlpdbopt_autobackup 1
+tlpdbopt_backupdir tlpkg/backups
+tlpdbopt_create_formats 1
+tlpdbopt_desktop_integration 1
+tlpdbopt_file_assocs 1
+tlpdbopt_generate_updmap 0
+tlpdbopt_install_docfiles 0 # Install font/macro doc tree
+tlpdbopt_install_srcfiles 0 # Install font/macro source tree
+tlpdbopt_post_code 1
+tlpdbopt_sys_bin /usr/local/bin
+tlpdbopt_sys_info /usr/local/share/info
+tlpdbopt_sys_man /usr/local/share/man
+tlpdbopt_w32_multi_user 1
+```
+Alla prossima installazione puoi utilizzare questo file, modificandolo in modo appropriato, per effettuare l'installazione di TeX Live:
+```bash
+install-tl --profile=texlive.profile
+```
+
+### Post-installazione: impostazione PATH {#texlive-unix-set-path .smaller}
+
+Alla fine dell'installazione vengono stampati i seguenti messaggi:
+```bash
+Add /usr/local/texlive/2023/texmf-dist/doc/man to MANPATH.
+Add /usr/local/texlive/2023/texmf-dist/doc/info to INFOPATH.
+Most importantly, add /usr/local/texlive/2023/bin/x86_64-linux
+to your PATH for current and future sessions.
+```
+
+Al termine dell'installazione, devi aggiungere la directory dei binari di TeX Live al tuo *PATH*:
+```bash
+echo 'export MANPATH="$MANPATH:/usr/local/texlive/2023/texmf-dist/doc/man"' >> ~/.bashrc
+echo 'export INFOPATH="$INFOPATH:/usr/local/texlive/2023/texmf-dist/doc/info"' >> ~/.bashrc
+echo 'export PATH=/usr/local/texlive/2023/bin/x86_64-linux:$PATH' >> ~/.bashrc
+```
+:::{.callout-note}
+Puoi copiare il codice soprastante nel tuo file `~/.bashrc` per aggiornare il path, ma ricordati di cambiare l'anno.
+:::
+Controlla che il *PATH* si sia aggiornato:
+```bash
+echo -e ${PATH//:/\\n}
+```
+Nel caso in cui l'installazione non vada a buon fine, [resetta l'installazione](https://tex.stackexchange.com/questions/540429/)
+
+If everything is correct, do not forget to remove the installation directory.
+```bash
+rm -rf /tmp/texlive
+```
+
+## Controllo dell'installazione
+
+Per accertarti che l'installazione sia andata a buon fine:
+
+```bash
+tlmgr --version
+pygmentize -V
+java --version
+arara --version
+git --version
+```
+```bash
+git version 2.40.1.windows.1
+Python 3.11.3
+Pygments version 2.15.1, [...]
+  __ _ _ __ __ _ _ __ __ _
+ / _` | '__/ _` | '__/ _` |
+| (_| | | | (_| | | | (_| |
+ \__,_|_|  \__,_|_|  \__,_|
+
+arara 7.0.5
+Copyright (c) 2023, Island of TeX
+arara is released under the New BSD license.
+
+[...]
+```
+
+## Manutenzione dell'installazione
+
+Aggiornare `tlmgr` stesso:
+```bash
+tlmgr update --self
+```
+Listare i pacchetti che possono essere aggiornati:
+```bash
+tlmgr update --list
+```
+Aggiornare un pacchetto specifico:
+```bash
+tlmgr update <pkgname>
+```
+Aggiornare tutti i pacchetti:
+```bash
+tlmgr update --all
+```
+Aggiornare sia `tlmgr` che tutti i pacchetti:
+```bash
+tlmgr update --self --all
+```
+
+# Documentazione
+
+```bash
+texdoc minted
+```
+. . .
+```txt
+You don't appear to have any local documentation installed.
+
+There may be online documentation available for "minted" at
+    https://texdoc.org/serve/minted/0
+This documentation may be for a different version than you have installed.
+
+Would you like to search online? (y/N)
+```
+. . .
+
+- possiamo consultare direttamente il sito [texdoc.org](https://texdoc.org/index.html)
+- oppure andare su [ctan.org](https://www.ctan.org/)
+
+- impostazine *shortcut search engine* su Chrome
+
+## Ottimizzare il flusso di lavoro su Visual Studio Code {.smaller}
+
+Personalizzazione dell'ambiente di lavoro:
+
+- `View > Open View... > Timeline`
+- `View > Appereance > Minimap`
+- `View > Sticky Scroll`
+- "`latex-workshop.latex.recipes`"
+- "`latex-workshop.latex.autoBuild.run || ctrl+alt+B` " 
+- `Snippets: Configure User Snippets`
+- `Preferences: Open Keyboard ShortcutsOpen Keyboard Shortcuts`
+
+<!-- https://code.visualstudio.com/docs/getstarted/keybindings#:~:text=All\%20keyboard\%20shortcuts\%20in\%20VS,This\%20will\%20open\%20your\%20keybindings. -->
+
+---
+
+### My Keyboard Shortcuts
+
+```{.json code-line-numbers="|4-9|12-17|"}
+// Place your key bindings in this file to override the defaults
+[
+    {
+        "key": "ctrl+shift+B",
+        "command": "editor.action.insertSnippet",
+        "when": "editorLangId == latex && editorTextFocus",
+        "args": {
+            "snippet": "\\textbf{${TM_SELECTED_TEXT}$0}"
+        }
+    },
+    {
+        "key": "ctrl+shift+I",
+        "command": "editor.action.insertSnippet",
+        "when": "editorLangId == latex && editorTextFocus",
+        "args": {
+            "snippet": "\\emph{${TM_SELECTED_TEXT}$0}"
+        }
+    }
+]
+```
+
+---
+
+<div style="width:100%;height:0;padding-bottom:100%;position:relative;"><iframe src="https://giphy.com/embed/EZICHGrSD5QEFCxMiC" width="100%" height="60%" style="position:absolute" frameBorder="0" class="giphy-embed" allowFullScreen></iframe></div>
+
+# Perché la tipografia è importante?
+
+### Oscars 2017 Best Picture announcement
+
+{{< video https://www.youtube.com/embed/p-I6x_iPF5o width="100%" height="100%" >}}
+
+### By Design – Vox
+
+{{< video https://www.youtube.com/embed/eZSe4xVXHhI width="100%" height="100%" >}}
