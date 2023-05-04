@@ -2,7 +2,11 @@
 
 ## {#telegram-group-light data-menu-title="telegram-group-light" data-background="assets/images/telegram/join-telegram-group-light-filled.png" data-background-size=cover}
 
+[](assets/images/telegram/join-telegram-group-light-filled.png)
+
 ## {#telegram-group-dark data-menu-title="telegram-group-dark" data-background="assets/images/telegram/join-telegram-group-dark-filled.png" data-background-size=cover}
+
+[](assets/images/telegram/join-telegram-group-dark-filled.png)
 
 ## Pronuncia
 
