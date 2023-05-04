@@ -3,3 +3,6 @@
 
 # render output
 /docs/
+/drafts/
+
+/.vscode/settings.json
