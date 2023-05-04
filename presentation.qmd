@@ -3,3 +3,16 @@
 ## {#telegram-group-light data-menu-title="telegram-group-light" data-background="assets/images/telegram/join-telegram-group-light-filled.png" data-background-size=cover}
 
 ## {#telegram-group-dark data-menu-title="telegram-group-dark" data-background="assets/images/telegram/join-telegram-group-dark-filled.png" data-background-size=cover}
+
+## Pronuncia
+
+$\rm\LaTeX$ si pronuncia `/ˈlɑːtɛx/` or `/ˈleɪtɛx/`, e non `/ˈleɪtɛks/` o `/ˈleɪˌtɛks/` ([IPA symbols](https://en.wikipedia.org/wiki/Help:IPA/English)).
+
+. . .
+
+![Sam Smith ai Brit Awards (febbraio 
+2023)](assets/images/pronunciation/sam-smith-latex.jpg){fig-align="center" width="55%"}
+
+## {#fat-cat-laser-eyes data-menu-title="Fat Cat Laser Eyes GIF"}
+
+![](assets/gifs/fat-cat-laser-eyes.gif){fig-align="center" width="10%"}
