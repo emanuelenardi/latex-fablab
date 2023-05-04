@@ -20,3 +20,26 @@ $\rm\LaTeX$ si pronuncia `/ˈlɑːtɛx/` or `/ˈleɪtɛx/`, e non `/ˈleɪtɛks/
 ## {#fat-cat-laser-eyes data-menu-title="Fat Cat Laser Eyes GIF"}
 
 ![](assets/gifs/fat-cat-laser-eyes.gif){fig-align="center" width="10%"}
+
+## Obiettivo di oggi
+
+Produrre un semplice documento:
+```latex
+\documentclass{article}
+
+\begin{document}
+Hello \LaTeX!
+\end{document}
+```
+$$
+\rm Hello\ \LaTeX!
+$$
+Ciclo di build:
+```{mermaid}
+graph LR
+  A["arara 🦜"] ==> B(pdflatex)
+  B --> C[PDF document]
+```
+::: {.nonincremental}
+- Se rimarrà tempo: introduzione ai comandi più comuni ed errori tipici
+:::
