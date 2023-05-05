@@ -5,4 +5,6 @@
 /docs/
 /drafts/
 
-/.vscode/settings.json
+# personalization
+.vscode/settings.json
+.vscode/latex-fablab.code-workspace
