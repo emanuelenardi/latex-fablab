@@ -46,6 +46,16 @@ graph LR
 
 # Installazione {.smaller}
 
+Installeremo un sistema TeX locale completamente funzionante, esistono diverse scelte multipiattaforma fra le quali MiKTeX, [MacTeX](https://www.tug.org/mactex/), or [TeX Live](https://www.tug.org/texlive/)
+
+Per questo corso useremo **TeX Live**, un sistema TeX completo e cross-platform.
+
+:::{.callout-important}
+Agli utilizzatori di {{< fa brands apple >}} Mac, per favore, **utilizzare questa installazione**, in questo modo abbiamo tutti la stessa versione installata localmente, di seguito troverete istruzioni dettagliate.
+:::
+
+## Requisiti {.smaller}
+
 <p>
     </a>
     <a href="https://git-scm.com/">
@@ -69,35 +79,41 @@ graph LR
 </p>
 Per seguire questo corso è necessario avere installati sulla propria macchina:
 
-- {{< fa code >}} [Visual Studio Code](https://code.visualstudio.com/)
+- {{< fa code >}} [Visual Studio Code](https://code.visualstudio.com/) + [LaTeX Workshop plugin](https://marketplace.visualstudio.com/items?itemName=James-Yu.latex-workshop)
 - un'installazione parziale di [TeX Live](https://www.tug.org/texlive/acquire-netinstall.html)
 - {{< fa brands java >}} [Java](https://www.java.com/it/download/) (per poter usare [arara 🦜](https://github.com/islandoftex/arara))
 - {{< fa brands python >}} [Python](https://www.python.org/downloads/) + la libreria [`pygmetize`](https://pygments.org/) (per [`minted`](https://ctan.org/pkg/minted))
 - {{< fa brands git >}} [Git](https://git-scm.com/) (per il versionamento del documento)
 
-. . .
-
 ::: {.nonincremental}
-- [Installazione guidata per Windows](#installazione-windows)
-- [Installazione guidata per Linux/Mac](#installazione-unix)
+{{< fa arrow-right >}} [Installazione guidata per {{< fa brands windows >}} Windows](#installazione-windows)
+
+{{< fa arrow-right >}} [Installazione guidata per {{< fa brands linux >}} Linux/ {{< fa brands apple >}} Mac](#installazione-unix)
 :::
 
 ## Installazione dei requisiti su Windows {#installazione-windows .smaller}
 
 ::: {.nonincremental}
+0. installare Visual Studio Code ([download page](https://code.visualstudio.com/))
+   - cercare "LaTeX Workshop" nella sezione "Extensions" e installare l'estensione, oppure da terminale:
+
+        ```{.bash code-line-numbers="false"}
+        code --install-extension James-Yu.latex-workshop
+        ```
 1. installare {{< fa brands java >}} Java ([download page](https://www.java.com/en/download/))
-2. installare {{< fa brands python >}} Python ([download page](https://www.python.org/downloads/))
+2. installare {{< fa brands python >}} Python ([download page](https://www.python.org/downloads/)) ([installazione guidata](#installazione-python-windows))
    - eseguire `pip install Pygments` su un terminale
-    ```{.bash code-line-numbers="false"}
-    pip install Pygments
-    :: "A new release of pip available"
-    python.exe -m pip install --upgrade pip
-    ```
-3. installare {{< fa brands git >}} ([download page](https://git-scm.com/download/win))
-4. installare Tex-Live per Windows ([download diretto ~20MB](http://mirror.ctan.org/systems/texlive/tlnet/install-tl-windows.exe))
+
+        ```{.bash code-line-numbers="false"}
+        pip install Pygments
+        :: "A new release of pip available"
+        python.exe -m pip install --upgrade pip
+        ```
+3. installare {{< fa brands git >}} ([download page](https://git-scm.com/download/win)) ([installazione guidata](#installazione-git-windows))
+4. installare Tex-Live per Windows ([download diretto ~20MB](http://mirror.ctan.org/systems/texlive/tlnet/install-tl-windows.exe)) ([installazione guidata](#installazione-texlive-windows))
 :::
 
-### Procedura guidata installazione Python {#installazione-python}
+### Procedura installazione Python {{< fa brands windows >}} {#installazione-python-windows}
 
 ![1. Installer](assets/images/install-python/01-installer.png)
 
@@ -136,9 +152,9 @@ Possiamo evitare di installare altri programmi che non ci servono.
 ![5. Close](assets/images/install-python/05-close.png)
 :::
 
-### Risoluzione problemi {#risoluzione-problemi-python .smaller}
+### Risoluzione problemi {{< fa brands windows >}} {#risoluzione-problemi-python .smaller}
 
-Se cercando di invocare `pip` all'interno della Powershell:
+Se cercando di invocare `pip` all'interno della _Powershell_:
 ```powershell
 pip : The term 'pip' is not recognized as the name of a cmdlet, function, script file, or operable program. Check the
 spelling of the name, or if a path was included, verify that the path is correct and try again.
@@ -148,7 +164,7 @@ At line:1 char:1
     + CategoryInfo          : ObjectNotFound: (pip:String) [], CommandNotFoundException
     + FullyQualifiedErrorId : CommandNotFoundException
 ```
-Oppure all'interno di un *Command Prompt*
+Oppure all'interno di un _Command Prompt_:
 ```cmd
 'pip' is not recognized as an internal or external command, operable program or batch file.
 ```
@@ -169,7 +185,49 @@ C:\Users\user\AppData\Local\Programs\Python\Python311\Scripts\
 ![3. Environment Variables](assets/images/install-python/08-edit.png)
 :::
 
-### Procedura guidata installazione di TeX-Live {#installazione-texlive-windows}
+### Procedura installazione git {#installazione-git-windows .smaller}
+
+::: {layout-ncol=3}
+![](assets/images/install-git/00-license.png)
+
+![](assets/images/install-git/01-components.png)
+
+![](assets/images/install-git/02-default-editor.png)
+
+![](assets/images/install-git/03-initial-branch.png)
+
+![](assets/images/install-git/04-path.png)
+
+![](assets/images/install-git/05-ssh.png)
+:::
+
+###
+
+::: {layout-ncol=3}
+![](assets/images/install-git/06-https.png)
+
+![](assets/images/install-git/07-autocrlf.png)
+
+![](assets/images/install-git/08-terminal-emulator.png)
+
+![](assets/images/install-git/09-git-pull.png)
+
+![](assets/images/install-git/10-credential-helper.png)
+
+![](assets/images/install-git/11-extra-options.png)
+:::
+
+###
+
+::: {layout-ncol=3}
+![](assets/images/install-git/12-experimental-options.png)
+
+![](assets/images/install-git/13-installing.png)
+
+![](assets/images/install-git/14-finish.png)
+:::
+
+### Procedura installazione TeX-Live {{< fa brands windows >}} {#installazione-texlive-windows}
 
 ::: {layout-ncol=2}
 ![1. Microsoft Defender SmartScreen](assets/images/install-texlive/windows/00-smartscreen-more-info.png)
@@ -189,8 +247,8 @@ C:\Users\user\AppData\Local\Programs\Python\Python311\Scripts\
 ![4. Confirmation](assets/images/install-texlive/windows/02-confirmation.png)
 :::
 ::: {.nonincremental}
-1. premere "**Next**"
-2. premere "**Install**"
+3. premere "**Next**"
+4. premere "**Install**"
 :::
 
 ### {.smaller}
@@ -221,7 +279,7 @@ C:\Users\user\AppData\Local\Programs\Python\Python311\Scripts\
 ![8. TeXlive Collections (en)](assets/images/install-texlive/windows/06-collections-en.png)
 :::
 ::: {.nonincremental}
-1. selezionare i pacchetti in figura
+8. selezionare i pacchetti in figura
 :::
 
 ### {.smaller}
@@ -255,45 +313,48 @@ dovreste notare che ora lo spazio richiesto è appena sotto i 3GB, dopodiché pr
 Non mettere in sospensione il computer durante l'installazione, la procedura durerà circa 20 minuti.
 :::
 
-## Installazione dei requisiti su Linux/Mac {#installazione-unix .smaller}
+## Installazione dei requisiti su Linux/Mac {#installazione-unix .smallest}
 
 ::: {.nonincremental}
-1. installare {{< fa brands java >}} Java
-    - installa solo il *Java Runtime Environment*
-    ```{.bash code-line-numbers="false"}
-    sudo apt install -y default-jre
-    ```
+1. installare {{< fa brands java >}} Java (è necessario solo il *Java Runtime Environment*)
+
+    {{< fa brands linux >}} `sudo apt install -y default-jre`
+
+    {{< fa brands apple >}} `brew install java`
+
 2. installare {{< fa brands python >}} Pygments
 
-    ```{.bash code-line-numbers="false"}
-    sudo apt install -y python3-pygments
-    ```
+    {{< fa brands linux >}} `sudo apt install -y python3-pygments`
+
+    {{< fa brands apple >}} `brew install pygments`
+
     - controlla che sia stato installato correttamente
-    ```{.bash code-line-numbers="false"}
-    pygmentize -V
-    ```
+
+    {{< fa brands linux >}} {{< fa brands apple >}} `pygmentize -V`
+    
 3. aggiornare {{< fa brands git >}} (preinstallato)
 
-    ```{.bash code-line-numbers="false"}
-    sudo apt upgrade git
-    ```
+    {{< fa brands linux >}} `sudo apt upgrade git`
 
-4. installare Tex-Live per Linux
+    {{< fa brands apple >}} `brew install git && brew upgrade git`
+
+4. installare Tex-Live per sistemi Unix ([installazione guidata](#installazione-texlive-unix))
 :::
 
 <!-- :::{.callout-note}
 You do not need to remove an installation of a previous release, or any system-provided TeX; multiple releases of TL can coexist on the same system without conflict.
 ::: -->
 
-### Procedura guidata installazione di TeX-Live {#installazione-texlive-unix .smaller}
+### Procedura installazione TeX-Live {{< fa brands linux >}} {{< fa brands apple >}} {#installazione-texlive-unix .smaller}
 
-Create a place for your new TexLive distribution to live, and give your user ownership of this directory
-```bash
+Crea una cartella nella quale installerai la nuova distribuzione TexLive e dai al tuo utente la proprietà di lettura e scritrura di questa cartella
+
+```{.bash code-line-numbers="true"}
 sudo mkdir -p /usr/local/texlive/$(date +%Y)
 sudo chown -R "$USER" /usr/local/texlive
 ```
-Download and manually install TexLive
-```bash
+Scarica e installa manualmente TexLive
+```{.bash code-line-numbers="true"}
 mkdir /tmp/texlive
 cd /tmp/texlive
 wget http://mirror.ctan.org/systems/texlive/tlnet/install-tl.zip
@@ -301,6 +362,12 @@ unzip ./install-tl.zip -d install-tl
 cd install-tl/install-tl-$(date +%Y%m%d)
 perl ./install-tl
 ```
+
+Di seguito troverai le impostazioni da selezionare durante l'installazione.
+
+:::{.callout-tip}
+Puoi ingrandire le immagini cliccandoci sopra tenendo premuto `alt`.
+:::
 
 ---
 
@@ -312,7 +379,7 @@ perl ./install-tl
 ![](assets/images/install-texlive/linux/01-texlive-sudo.png)
 :::
 
-### {#linux-collections .smaller}
+### {#installazione-texlive-unix-collections .smaller}
 
 ::: {layout-ncol=3}
 ![](assets/images/install-texlive/linux/02-texlive-collections-full-scheme.png)
@@ -388,7 +455,7 @@ Alla prossima installazione puoi utilizzare questo file, modificandolo in modo a
 install-tl --profile=texlive.profile
 ```
 
-### Post-installazione: impostazione PATH {#texlive-unix-set-path .smaller}
+### Post-installazione: impostazione PATH {#texlive-unix-set-path .smallest}
 
 Alla fine dell'installazione vengono stampati i seguenti messaggi:
 ```bash
@@ -398,27 +465,34 @@ Most importantly, add /usr/local/texlive/2023/bin/x86_64-linux
 to your PATH for current and future sessions.
 ```
 
-Al termine dell'installazione, devi aggiungere la directory dei binari di TeX Live al tuo *PATH*:
+Ora devi aggiungere la directory dei binari di TeX Live al tuo *PATH*:
 ```bash
 echo 'export MANPATH="$MANPATH:/usr/local/texlive/2023/texmf-dist/doc/man"' >> ~/.bashrc
 echo 'export INFOPATH="$INFOPATH:/usr/local/texlive/2023/texmf-dist/doc/info"' >> ~/.bashrc
 echo 'export PATH=/usr/local/texlive/2023/bin/x86_64-linux:$PATH' >> ~/.bashrc
 ```
-:::{.callout-note}
-Puoi copiare il codice soprastante nel tuo file `~/.bashrc` per aggiornare il path, ma ricordati di cambiare l'anno.
-:::
+
+{{< fa circle-exclamation >}} Puoi eseguire il codice soprastante nel tuo file `~/.bashrc` per aggiornare il path, ma ricordati di cambiare l'anno.
+
+{{< fa circle-exclamation >}} Alcuni utenti Linux e Mac preferiscono utilizzare `zsh` come bash shell (da _macOS Catalina_, Ottobre 2019, è quella di default) in questo caso bisogna aggiornare il file `~/.zshenv`, in particolare su Mac bisogna cambiare una cartella:
+```bash
+echo 'export MANPATH="$MANPATH:/usr/local/texlive/2023/texmf-dist/doc/man"' >> ~/.zshenv
+echo 'export INFOPATH="$INFOPATH:/usr/local/texlive/2023/texmf-dist/doc/info"' >> ~/.zshenv
+echo 'export PATH=/usr/local/texlive/2023/bin/<cartallamac>:$PATH' >> ~/.zshenv
+```
+
 Controlla che il *PATH* si sia aggiornato:
 ```bash
 echo -e ${PATH//:/\\n}
 ```
-Nel caso in cui l'installazione non vada a buon fine, [resetta l'installazione](https://tex.stackexchange.com/questions/540429/)
+Nel caso in cui l'installazione non vada a buon fine, [resetta l'installazione](https://tex.stackexchange.com/questions/540429/).
 
-If everything is correct, do not forget to remove the installation directory.
+Se tutto è corretto, non dimenticare di rimuovere la cartella di installazione:
 ```bash
 rm -rf /tmp/texlive
 ```
 
-## Controllo dell'installazione
+## Controllo dell'installazione {{< fa brands windows >}} {{< fa brands linux >}} {{< fa brands apple >}}
 
 Per accertarti che l'installazione sia andata a buon fine:
 
@@ -445,28 +519,27 @@ arara is released under the New BSD license.
 [...]
 ```
 
-## Manutenzione dell'installazione
+## Manutenzione installazione {{< fa brands windows >}} {{< fa brands linux >}} {{< fa brands apple >}} {.smaller}
 
 Aggiornare `tlmgr` stesso:
-```bash
-tlmgr update --self
-```
+
+`tlmgr update --self`
+
 Listare i pacchetti che possono essere aggiornati:
-```bash
-tlmgr update --list
-```
+
+`tlmgr update --list`
+
 Aggiornare un pacchetto specifico:
-```bash
-tlmgr update <pkgname>
-```
+
+`tlmgr update <pkgname>`
+
 Aggiornare tutti i pacchetti:
-```bash
-tlmgr update --all
-```
+
+`tlmgr update --all`
+
 Aggiornare sia `tlmgr` che tutti i pacchetti:
-```bash
-tlmgr update --self --all
-```
+
+`tlmgr update --self --all`
 
 # Documentazione
 
@@ -490,24 +563,60 @@ Would you like to search online? (y/N)
 
 - impostazine *shortcut search engine* su Chrome
 
-## Ottimizzare il flusso di lavoro su Visual Studio Code {.smaller}
+## Ottimizzare il flusso di lavoro su Visual Studio Code {.smallest}
 
 Personalizzazione dell'ambiente di lavoro:
 
-- `View > Open View... > Timeline`
-- `View > Appereance > Minimap`
-- `View > Sticky Scroll`
-- "`latex-workshop.latex.recipes`"
-- "`latex-workshop.latex.autoBuild.run || ctrl+alt+B` " 
-- `Snippets: Configure User Snippets`
-- `Preferences: Open Keyboard ShortcutsOpen Keyboard Shortcuts`
+::::{.columns}
 
+:::{.column width="50%"}
+- `View > Open View... > Timeline`
+
+    ```{.bash code-line-numbers="false"}
+    Explorer: Focus on Timeline View
+    ```
+
+- `View > Appereance > Minimap`
+
+    ```{.bash code-line-numbers="false"}
+    View: Toggle Minimap
+    ```
+
+- `View > Sticky Scroll`
+
+    ```{.bash code-line-numbers="false"}
+    View: Toggle Sticky Scroll
+    ```
+
+- `Snippets: Configure User Snippets`
+- `Preferences: Open Keyboard Shortcuts`
+
+    ```{.bash code-line-numbers="false"}
+    Open Keyboard Shortcuts
+    ```
+    ([see my shortcuts](#my-keyboard-shortcuts))
+
+- `latex-workshop.latex.recipes`
+    ([see my recipes](#my-workshop-recipes))
+
+- `latex-workshop.latex.autoBuild.run`
+
+    ```{.bash code-line-numbers="false"}
+    ctrl+alt+B
+    ```
+:::
+
+:::{.column width="50%"}
+
+:::
+::::
 <!-- https://code.visualstudio.com/docs/getstarted/keybindings#:~:text=All\%20keyboard\%20shortcuts\%20in\%20VS,This\%20will\%20open\%20your\%20keybindings. -->
 
 ---
 
 ### My Keyboard Shortcuts
 
+:::{.larger}
 ```{.json code-line-numbers="|4-9|12-17|"}
 // Place your key bindings in this file to override the defaults
 [
@@ -529,6 +638,57 @@ Personalizzazione dell'ambiente di lavoro:
     }
 ]
 ```
+:::
+
+### My Workshop Recipes
+
+:::{.larger}
+```{.json code-line-numbers="|1|21|3-6|23-29|9-12|32-42|15-18|"}
+"latex-workshop.latex.recipes": [
+    {
+        "name": "arara 🦜",
+        "tools": [
+            "arara"
+        ]
+    },
+    {
+        "name": "latexmk 🔃",
+        "tools": [
+            "latexmk"
+        ]
+    },
+    {
+        "name": "pdflatex",
+        "tools": [
+            "pdflatex"
+        ]
+    }
+],
+"latex-workshop.latex.tools": [
+    {
+        "args": [
+            "--verbose",
+            "%DOC%"
+        ],
+        "command": "arara",
+        "env": {},
+        "name": "arara"
+    },
+    {
+        "args": [
+            "-synctex=1",
+            "-interaction=nonstopmode",
+            "-file-line-error",
+            "-pdf",
+            "-outdir=%OUTDIR%",
+            "%DOC%"
+        ],
+        "command": "latexmk",
+        "env": {},
+        "name": "latexmk"
+    },
+```
+:::
 
 #
 
@@ -551,7 +711,7 @@ Personalizzazione dell'ambiente di lavoro:
 
 - clean code mentality
 - [codifica dell'input e del font](https://tex.stackexchange.com/questions/44694/fontenc-vs-inputenc) (`inputenc` e `fontenc`)
-- impostazione della lingua del documento
+- impostazione della lingua del documento ( `babel`)
 - [hyphenation, typesetting, ligatures](https://tex.stackexchange.com/a/110140/127473) (`microtype`)^[[Tips on Writing a Thesis in LaTeX](http://www.khirevich.com/latex/microtype/)]
 - le virgolette (`csquotes`)
 - margini del documento (`geometry`), indentazione (`parskip`)
@@ -563,5 +723,5 @@ Personalizzazione dell'ambiente di lavoro:
 - figure (`graphicx`) e tabelle (`booktabs`), opzioni comuni
 - strutturazione del documento (`standalone`)
 - riferimenti ipertestuali (`hyperref`)
-- importazione di codice, evidenziazione della sintassi
+- importazione di codice, evidenziazione della sintassi (`minted`)
 - creazione di un glossario (`glossaries`), acronimi (`acronym`), indice (`index`)
