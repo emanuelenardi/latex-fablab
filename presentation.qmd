@@ -316,29 +316,42 @@ Non mettere in sospensione il computer durante l'installazione, la procedura dur
 ## Installazione dei requisiti su Linux/Mac {#installazione-unix .smallest}
 
 ::: {.nonincremental}
-1. installare {{< fa brands java >}} Java (è necessario solo il *Java Runtime Environment*)
+0. (solo per utenti {{< fa brands apple >}} Mac) installare il gestore di pacchetti `Brew` e `wget`
+
+    ```bash
+    /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+    brew install wget
+    ```
+
+1. installare {{< fa code >}} Visual Studio Code
+
+    {{< fa brands linux >}} `sudo snap install --classic code`
+
+    {{< fa brands apple >}} `brew install --cask visual-studio-code`
+
+2. installare {{< fa brands java >}} Java (è necessario solo il *Java Runtime Environment*)
 
     {{< fa brands linux >}} `sudo apt install -y default-jre`
 
     {{< fa brands apple >}} `brew install java`
 
-2. installare {{< fa brands python >}} Pygments
+3. installare {{< fa brands python >}} Pygments
 
     {{< fa brands linux >}} `sudo apt install -y python3-pygments`
 
-    {{< fa brands apple >}} `brew install pygments`
+    {{< fa brands apple >}} `brew install python@3.1 && brew install pygments`
 
     - controlla che sia stato installato correttamente
 
     {{< fa brands linux >}} {{< fa brands apple >}} `pygmentize -V`
     
-3. aggiornare {{< fa brands git >}} (preinstallato)
+4. aggiornare {{< fa brands git >}} (preinstallato)
 
     {{< fa brands linux >}} `sudo apt upgrade git`
 
     {{< fa brands apple >}} `brew install git && brew upgrade git`
 
-4. installare Tex-Live per sistemi Unix ([installazione guidata](#installazione-texlive-unix))
+5. installare Tex-Live per sistemi Unix ([installazione guidata](#installazione-texlive-unix))
 :::
 
 <!-- :::{.callout-note}
@@ -353,6 +366,9 @@ Crea una cartella nella quale installerai la nuova distribuzione TexLive e dai a
 sudo mkdir -p /usr/local/texlive/$(date +%Y)
 sudo chown -R "$USER" /usr/local/texlive
 ```
+
+{{< fa brands apple >}} `brew install wget`
+
 Scarica e installa manualmente TexLive
 ```{.bash code-line-numbers="true"}
 mkdir /tmp/texlive
@@ -379,7 +395,7 @@ Puoi ingrandire le immagini cliccandoci sopra tenendo premuto `alt`.
 ![](assets/images/install-texlive/linux/01-texlive-sudo.png)
 :::
 
-### {#installazione-texlive-unix-collections .smaller}
+### {#installazione-texlive-unix-collections .smallest}
 
 ::: {layout-ncol=3}
 ![](assets/images/install-texlive/linux/02-texlive-collections-full-scheme.png)
@@ -389,7 +405,7 @@ Puoi ingrandire le immagini cliccandoci sopra tenendo premuto `alt`.
 ![](assets/images/install-texlive/linux/04-texlive-collections-selected.png)
 :::
 
-- installare le 15 collezioni in figura che corrispondono alle lettere (puoi copiare ed incollare il codice direttamente sul terminale):
+- installare le 15 collezioni in figura che corrispondono alle lettere (copia e incolla il codice sul terminale):
 ```{.txt code-line-numbers="false"}
 a c e f g p v w D E F J M O P
 ```
@@ -455,7 +471,7 @@ Alla prossima installazione puoi utilizzare questo file, modificandolo in modo a
 install-tl --profile=texlive.profile
 ```
 
-### Post-installazione: impostazione PATH {#texlive-unix-set-path .smallest}
+### Post-installazione: impostazione PATH {{< fa brands linux >}} {{< fa brands apple >}} {#texlive-unix-set-path .smallest}
 
 Alla fine dell'installazione vengono stampati i seguenti messaggi:
 ```bash
@@ -470,6 +486,7 @@ Ora devi aggiungere la directory dei binari di TeX Live al tuo *PATH*:
 echo 'export MANPATH="$MANPATH:/usr/local/texlive/2023/texmf-dist/doc/man"' >> ~/.bashrc
 echo 'export INFOPATH="$INFOPATH:/usr/local/texlive/2023/texmf-dist/doc/info"' >> ~/.bashrc
 echo 'export PATH=/usr/local/texlive/2023/bin/x86_64-linux:$PATH' >> ~/.bashrc
+source ~/.bashrc # aggiorna il file di configurazione
 ```
 
 {{< fa circle-exclamation >}} Puoi eseguire il codice soprastante nel tuo file `~/.bashrc` per aggiornare il path, ma ricordati di cambiare l'anno.
@@ -478,14 +495,15 @@ echo 'export PATH=/usr/local/texlive/2023/bin/x86_64-linux:$PATH' >> ~/.bashrc
 ```bash
 echo 'export MANPATH="$MANPATH:/usr/local/texlive/2023/texmf-dist/doc/man"' >> ~/.zshenv
 echo 'export INFOPATH="$INFOPATH:/usr/local/texlive/2023/texmf-dist/doc/info"' >> ~/.zshenv
-echo 'export PATH=/usr/local/texlive/2023/bin/<cartallamac>:$PATH' >> ~/.zshenv
+echo 'export PATH=/usr/local/texlive/2023/bin/universal-darwin:$PATH' >> ~/.zshenv
+source ~/.zshrc # aggiorna il file di configurazione
 ```
 
 Controlla che il *PATH* si sia aggiornato:
 ```bash
 echo -e ${PATH//:/\\n}
 ```
-Nel caso in cui l'installazione non vada a buon fine, [resetta l'installazione](https://tex.stackexchange.com/questions/540429/).
+Nel caso in cui l'installazione non sia andata a buon fine, [resetta l'installazione](https://tex.stackexchange.com/questions/540429/).
 
 Se tutto è corretto, non dimenticare di rimuovere la cartella di installazione:
 ```bash
