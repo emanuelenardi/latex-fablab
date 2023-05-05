@@ -12,6 +12,10 @@ $presentation-title-slide-text-align: left; // deafult: center
 // $presentation-h1-font-size: 2.4em;
 // $presentation-h2-font-size: 2em;
 
+.smallest {
+    font-size: 0.5em;
+}
+
 /*-- scss:rules --*/
 
 .white h1 {
@@ -30,6 +34,10 @@ $link-color: orange;
 
 .reveal pre.sourceCode code {
     max-height: 400px !important;
+}
+
+.larger pre.sourceCode code {
+    max-height: 600px !important;
 }
 
 // altrimenti il font su #### non si rimpicciolisce
