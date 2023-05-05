@@ -7,8 +7,10 @@
 <link href="presentation_files/libs/quarto-html/tippy.css" rel="stylesheet">
 <link href="presentation_files/libs/quarto-html/light-border.css" rel="stylesheet">
 <link href="presentation_files/libs/quarto-html/quarto-html.min.css" rel="stylesheet" data-mode="light">
-<link href="presentation_files/libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
-  <meta name="generator" content="quarto-1.4.14">
+<link href="presentation_files/libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="presentation_files/libs/quarto-contrib/fontawesome6-0.1.0/all.css" rel="stylesheet">
+<link href="presentation_files/libs/quarto-contrib/fontawesome6-0.1.0/latex-fontsize.css" rel="stylesheet"><meta charset="utf-8">
+  <meta name="generator" content="quarto-1.3.340">
 
   <meta name="author" content="Emanuele Nardi">
   <meta name="keywords" content="latex, thesis">
@@ -30,6 +32,71 @@
       margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
       vertical-align: middle;
     }
+    /* CSS for syntax highlighting */
+    pre > code.sourceCode { white-space: pre; position: relative; }
+    pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+    pre > code.sourceCode > span:empty { height: 1.2em; }
+    .sourceCode { overflow: visible; }
+    code.sourceCode > span { color: inherit; text-decoration: inherit; }
+    div.sourceCode { margin: 1em 0; }
+    pre.sourceCode { margin: 0; }
+    @media screen {
+    div.sourceCode { overflow: auto; }
+    }
+    @media print {
+    pre > code.sourceCode { white-space: pre-wrap; }
+    pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+    }
+    pre.numberSource code
+      { counter-reset: source-line 0; }
+    pre.numberSource code > span
+      { position: relative; left: -4em; counter-increment: source-line; }
+    pre.numberSource code > span > a:first-child::before
+      { content: counter(source-line);
+        position: relative; left: -1em; text-align: right; vertical-align: baseline;
+        border: none; display: inline-block;
+        -webkit-touch-callout: none; -webkit-user-select: none;
+        -khtml-user-select: none; -moz-user-select: none;
+        -ms-user-select: none; user-select: none;
+        padding: 0 4px; width: 4em;
+      }
+    pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+    div.sourceCode
+      { color: #24292e;  }
+    @media screen {
+    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+    }
+    code span { color: #24292e; } /* Normal */
+    code span.al { color: #ff5555; font-weight: bold; } /* Alert */
+    code span.an { color: #6a737d; } /* Annotation */
+    code span.at { color: #d73a49; } /* Attribute */
+    code span.bn { color: #005cc5; } /* BaseN */
+    code span.bu { color: #d73a49; } /* BuiltIn */
+    code span.cf { color: #d73a49; } /* ControlFlow */
+    code span.ch { color: #032f62; } /* Char */
+    code span.cn { color: #005cc5; } /* Constant */
+    code span.co { color: #6a737d; } /* Comment */
+    code span.cv { color: #6a737d; } /* CommentVar */
+    code span.do { color: #6a737d; } /* Documentation */
+    code span.dt { color: #d73a49; } /* DataType */
+    code span.dv { color: #005cc5; } /* DecVal */
+    code span.er { color: #ff5555; text-decoration: underline; } /* Error */
+    code span.ex { color: #d73a49; font-weight: bold; } /* Extension */
+    code span.fl { color: #005cc5; } /* Float */
+    code span.fu { color: #6f42c1; } /* Function */
+    code span.im { color: #032f62; } /* Import */
+    code span.in { color: #6a737d; } /* Information */
+    code span.kw { color: #d73a49; } /* Keyword */
+    code span.op { color: #24292e; } /* Operator */
+    code span.ot { color: #6f42c1; } /* Other */
+    code span.pp { color: #d73a49; } /* Preprocessor */
+    code span.re { color: #6a737d; } /* RegionMarker */
+    code span.sc { color: #005cc5; } /* SpecialChar */
+    code span.ss { color: #032f62; } /* SpecialString */
+    code span.st { color: #032f62; } /* String */
+    code span.va { color: #e36209; } /* Variable */
+    code span.vs { color: #032f62; } /* VerbatimString */
+    code span.wa { color: #ff5555; } /* Warning */
   </style>
   <link rel="stylesheet" href="presentation_files/libs/revealjs/dist/theme/quarto.css" id="theme">
   <link href="presentation_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
@@ -246,6 +313,7 @@
     }
     .reveal .slide:not(.center) {
       height: 100%;
+      overflow-y: auto;
     }
     .reveal .slide.scrollable {
       overflow-y: auto;
@@ -322,33 +390,942 @@
       margin-right: 0; 
     }
   </style>
+  <script src="presentation_files/libs/quarto-diagram/mermaid.min.js"></script>
+  <script src="presentation_files/libs/quarto-diagram/mermaid-init.js"></script>
+  <link href="presentation_files/libs/quarto-diagram/mermaid.css" rel="stylesheet">
 </head>
 <body class="quarto-light">
   <div class="reveal">
     <div class="slides">
 
 <section id="title-slide" data-background-color="#212922" data-background-image="assets/images/title/writing-thesis.jpg" data-background-opacity="0.4" data-background-size="cover" class="quarto-title-block center">
-  <h1 class="title">Impaginazione (tesi) con LaTeX</h1>
-  <p class="subtitle"><small> In collaborazione con FabLab UniTN </small></p>
-
-<div class="quarto-title-authors">
-<div class="quarto-title-author">
-<div class="quarto-title-author-name">
-Emanuele Nardi 
-</div>
-        <p class="quarto-title-affiliation">
-            Università degli Studi di Trento, DISI
-          </p>
+    <h1 class="title">Impaginazione (tesi) con LaTeX</h1>
+    <img id="profile-photo" src="assets/images/profile/nardi.jpg">
+        <p class="subtitle"><small> In collaborazione con FabLab UniTrento </small></p>
+    
+    <div class="quarto-title-authors">
+                <div class="quarto-title-author">
+            <div class="quarto-title-author-name">
+                <a href="https://github.com/emanuelenardi/">Emanuele Nardi</a>
+            </div>
+                        <div class="quarto-title-author-email">
+                <a href="mailto:emanuele.nardi@studenti.unitn.it">emanuele.nardi@studenti.unitn.it</a>
+            </div>
+             <!-- if(by-author.email) -->
+                                    <p class="quarto-title-affiliation">
+                                <a href="https://www.unitn.it/">
+                                Università degli Studi di Trento, DISI
+                                </a>
+                            </p>
+             <!-- for(by-author.affiliations) -->
+             <!-- if(by-author.affiliations) -->
+        </div>
+         <!-- for(by-author) -->
     </div>
-</div>
 
-  <p class="date">Aggiornate domenica 30 aprile 2023</p>
+        <p class="date"><u>Aggiornate venerdì 5 maggio 2023</u></p>
+    </section>
+<section>
+<section id="introduzione" class="title-slide slide level1 center" data-background="https://images.unsplash.com/photo-1573848855919-9abecc93e456?auto=format&amp;fit=crop&amp;w=1470&amp;q=100" data-background-size="contain">
+<h1>Introduzione</h1>
+
+</section>
+<section id="telegram-group-light" class="title-slide slide level2 center" data-menu-title="telegram-group-light" data-background="assets/images/telegram/join-telegram-group-light-filled.png" data-background-size="cover">
+<h2></h2>
+<p><a href="assets/images/telegram/join-telegram-group-light-filled.png"></a></p>
+</section>
+
+<section id="telegram-group-dark" class="title-slide slide level2 center" data-menu-title="telegram-group-dark" data-background="assets/images/telegram/join-telegram-group-dark-filled.png" data-background-size="cover">
+<h2></h2>
+<p><a href="assets/images/telegram/join-telegram-group-dark-filled.png"></a></p>
+</section>
+
+<section id="pronuncia" class="title-slide slide level2 center">
+<h2>Pronuncia</h2>
+<p><span class="math inline">\(\rm\LaTeX\)</span> si pronuncia <code>/ˈlɑːtɛx/</code> or <code>/ˈleɪtɛx/</code>, e non <code>/ˈleɪtɛks/</code> o <code>/ˈleɪˌtɛks/</code> (<a href="https://en.wikipedia.org/wiki/Help:IPA/English">IPA symbols</a>).</p>
+<div class="fragment">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="assets/images/pronunciation/sam-smith-latex.jpg" style="width:55.0%"></p>
+<figcaption>Sam Smith ai Brit Awards (febbraio 2023)</figcaption>
+</figure>
+</div>
+</div>
+</section>
+
+<section id="fat-cat-laser-eyes" class="title-slide slide level2 center" data-menu-title="Fat Cat Laser Eyes GIF">
+<h2></h2>
+
+<img data-src="assets/gifs/fat-cat-laser-eyes.gif" style="width:10.0%" class="r-stretch quarto-figure-center"></section>
+
+<section id="obiettivo-di-oggi" class="title-slide slide level2 center">
+<h2>Obiettivo di oggi</h2>
+<p>Produrre un semplice documento:</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode numberSource latex number-lines code-with-copy"><code class="sourceCode latex"><span id="cb1-1"><a href="#cb1-1"></a><span class="bu">\documentclass</span>{<span class="ex">article</span>}</span>
+<span id="cb1-2"><a href="#cb1-2"></a></span>
+<span id="cb1-3"><a href="#cb1-3"></a><span class="kw">\begin</span>{<span class="ex">document</span>}</span>
+<span id="cb1-4"><a href="#cb1-4"></a>Hello <span class="fu">\LaTeX</span>!</span>
+<span id="cb1-5"><a href="#cb1-5"></a><span class="kw">\end</span>{<span class="ex">document</span>}</span></code><button title="Copia negli appunti" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><span class="math display">\[
+\rm Hello\ \LaTeX!
+\]</span> Ciclo di build:</p>
+<div class="cell" data-reveal="true">
+<div class="cell-output-display">
+<div>
+<div>
+<pre class="mermaid mermaid-js">graph LR
+  A["arara 🦜"] ==&gt; B(pdflatex)
+  B --&gt; C[PDF document]
+</pre>
+</div>
+</div>
+</div>
+</div>
+<div>
+<ul>
+<li>Se rimarrà tempo: introduzione ai comandi più comuni ed errori tipici</li>
+</ul>
+</div>
+</section>
+</section>
+<section>
+<section id="installazione" class="title-slide slide level1 smaller center">
+<h1>Installazione</h1>
+<p>Installeremo un sistema TeX locale completamente funzionante, esistono diverse scelte multipiattaforma fra le quali MiKTeX, <a href="https://www.tug.org/mactex/">MacTeX</a>, or <a href="https://www.tug.org/texlive/">TeX Live</a></p>
+<p>Per questo corso useremo <strong>TeX Live</strong>, un sistema TeX completo e cross-platform.</p>
+<div class="callout callout-important callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Importante</strong></p>
+</div>
+<div class="callout-content">
+<p>Agli utilizzatori di <i class="fa-brands fa-apple" aria-label="apple"></i> Mac, per favore, <strong>utilizzare questa installazione</strong>, in questo modo abbiamo tutti la stessa versione installata localmente, di seguito troverete istruzioni dettagliate.</p>
+</div>
+</div>
+</div>
+</section>
+<section id="requisiti" class="title-slide slide level2 smaller center">
+<h2>Requisiti</h2>
+<p>
+ <a href="https://git-scm.com/"> <img alt="Install Git" src="https://img.shields.io/badge/Git-F05032?style=for-the-badge&amp;logo=git&amp;logoColor=white"> </a> <a href="https://www.tug.org/texlive/acquire-netinstall.html"> <img alt="Install TeX Live" src="https://img.shields.io/badge/TeX%20Live-008080?style=for-the-badge&amp;logo=latex&amp;logoColor=white"> </a>  <a href="https://www.java.com/it/download/"> <img alt="Install Java" src="https://img.shields.io/badge/java-%23ED8B00.svg?style=for-the-badge&amp;logo=java&amp;logoColor=white"> </a>  <a href="https://www.python.org/downloads/"> <img alt="Install Python" src="https://img.shields.io/badge/Python-3776AB?style=for-the-badge&amp;logo=python&amp;logoColor=white"> </a>  <a href="https://pygments.org/"> <img alt="Install Python Pygments" src="https://img.shields.io/badge/Python%20Pygments-3776AB?style=for-the-badge&amp;logo=python&amp;logoColor=white"> </a>
+</p>
+<p>Per seguire questo corso è necessario avere installati sulla propria macchina:</p>
+<ul>
+<li><i class="fa-solid fa-code" aria-label="code"></i> <a href="https://code.visualstudio.com/">Visual Studio Code</a> + <a href="https://marketplace.visualstudio.com/items?itemName=James-Yu.latex-workshop">LaTeX Workshop plugin</a></li>
+<li>un’installazione parziale di <a href="https://www.tug.org/texlive/acquire-netinstall.html">TeX Live</a></li>
+<li><i class="fa-brands fa-java" aria-label="java"></i> <a href="https://www.java.com/it/download/">Java</a> (per poter usare <a href="https://github.com/islandoftex/arara">arara 🦜</a>)</li>
+<li><i class="fa-brands fa-python" aria-label="python"></i> <a href="https://www.python.org/downloads/">Python</a> + la libreria <a href="https://pygments.org/"><code>pygmetize</code></a> (per <a href="https://ctan.org/pkg/minted"><code>minted</code></a>)</li>
+<li><i class="fa-brands fa-git" aria-label="git"></i> <a href="https://git-scm.com/">Git</a> (per il versionamento del documento)</li>
+</ul>
+<div>
+<p><i class="fa-solid fa-arrow-right" aria-label="arrow-right"></i> <a href="#/installazione-windows">Installazione guidata per <i class="fa-brands fa-windows" aria-label="windows"></i> Windows</a></p>
+<p><i class="fa-solid fa-arrow-right" aria-label="arrow-right"></i> <a href="#/installazione-unix">Installazione guidata per <i class="fa-brands fa-linux" aria-label="linux"></i> Linux/ <i class="fa-brands fa-apple" aria-label="apple"></i> Mac</a></p>
+</div>
+</section>
+
+<section id="installazione-windows" class="title-slide slide level2 smaller center">
+<h2>Installazione dei requisiti su Windows</h2>
+<div>
+<ol start="0" type="1">
+<li>installare Visual Studio Code (<a href="https://code.visualstudio.com/">download page</a>)
+<ul>
+<li><p>cercare “LaTeX Workshop” nella sezione “Extensions” e installare l’estensione, oppure da terminale:</p>
+<div class="sourceCode" id="cb2" data-code-line-numbers="false"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="ex">code</span> <span class="at">--install-extension</span> James-Yu.latex-workshop</span></code><button title="Copia negli appunti" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
+</ul></li>
+<li>installare <i class="fa-brands fa-java" aria-label="java"></i> Java (<a href="https://www.java.com/en/download/">download page</a>)</li>
+<li>installare <i class="fa-brands fa-python" aria-label="python"></i> Python (<a href="https://www.python.org/downloads/">download page</a>) (<a href="#/installazione-python-windows">installazione guidata</a>)
+<ul>
+<li><p>eseguire <code>pip install Pygments</code> su un terminale</p>
+<div class="sourceCode" id="cb3" data-code-line-numbers="false"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="ex">pip</span> install Pygments</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="ex">::</span> <span class="st">"A new release of pip available"</span></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="ex">python.exe</span> <span class="at">-m</span> pip install <span class="at">--upgrade</span> pip</span></code><button title="Copia negli appunti" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
+</ul></li>
+<li>installare <i class="fa-brands fa-git" aria-label="git"></i> (<a href="https://git-scm.com/download/win">download page</a>) (<a href="#/installazione-git-windows">installazione guidata</a>)</li>
+<li>installare Tex-Live per Windows (<a href="http://mirror.ctan.org/systems/texlive/tlnet/install-tl-windows.exe">download diretto ~20MB</a>) (<a href="#/installazione-texlive-windows">installazione guidata</a>)</li>
+</ol>
+</div>
+</section>
+<section id="installazione-python-windows" class="slide level3">
+<h3>Procedura installazione Python <i class="fa-brands fa-windows" aria-label="windows"></i></h3>
+
+<img data-src="assets/images/install-python/01-installer.png" class="r-stretch quarto-figure-center"><p class="caption">1. Installer</p></section>
+<section id="section" class="slide level3 smaller">
+<h3></h3>
+
+<img data-src="assets/images/install-python/02-path.png" class="r-stretch quarto-figure-center"><p class="caption">2. Add Python to PATH</p><div>
+<ul>
+<li>premere “<strong>Add <code>python.exe</code> to PATH</strong>”</li>
+</ul>
+</div>
+<div class="callout callout-warning callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Avviso</strong></p>
+</div>
+<div class="callout-content">
+<p>Se ci si dimentica di aggiungere <code>python.exe</code> al <code>PATH</code>, <code>pip</code> non sarà visibile da riga di comando.</p>
+<p><a href="#/risoluzione-problemi-python">vedi risoluzione problemi</a></p>
+</div>
+</div>
+</div>
 </section>
 <section class="slide level3">
 
-<div class="footer footer-default">
-<p>Impaginazione (tesi) con <span class="math inline">\(\rm\LaTeX\)</span> – Emanuele Nardi – CC BY-NC</p>
+<h4 id="installare-solo-pip">Installare solo <code>pip</code></h4>
+<div class="quarto-layout-panel">
+<div class="quarto-layout-row quarto-layout-valign-top">
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="assets/images/install-python/03a-optional-justpip.png"></p>
+<figcaption>3a. Only pip (<em>before</em> deleselection)</figcaption>
+</figure>
 </div>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="assets/images/install-python/03b-optional-justpip.png"></p>
+<figcaption>3b. Only pip (<em>after</em> deleselection)</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</div>
+<div class="callout callout-note callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Nota</strong></p>
+</div>
+<div class="callout-content">
+<p>Possiamo evitare di installare altri programmi che non ci servono.</p>
+</div>
+</div>
+</div>
+</section>
+<section class="slide level3">
+
+<div class="quarto-layout-panel">
+<div class="quarto-layout-row quarto-layout-valign-top">
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="assets/images/install-python/04-install.png"></p>
+<figcaption>4. Install</figcaption>
+</figure>
+</div>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="assets/images/install-python/05-close.png"></p>
+<figcaption>5. Close</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="risoluzione-problemi-python" class="slide level3 smaller">
+<h3>Risoluzione problemi <i class="fa-brands fa-windows" aria-label="windows"></i></h3>
+<p>Se cercando di invocare <code>pip</code> all’interno della <em>Powershell</em>:</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode numberSource powershell number-lines code-with-copy"><code class="sourceCode powershell"><span id="cb4-1"><a href="#cb4-1"></a>pip <span class="op">:</span> The term <span class="st">'pip'</span> is not recognized as the name of a cmdlet<span class="op">,</span> <span class="kw">function</span><span class="op">,</span> script file<span class="op">,</span> or operable program<span class="op">.</span> Check the</span>
+<span id="cb4-2"><a href="#cb4-2"></a>spelling of the name<span class="op">,</span> or <span class="kw">if</span> a path was included<span class="op">,</span> verify that the path is correct and <span class="kw">try</span> again<span class="op">.</span></span>
+<span id="cb4-3"><a href="#cb4-3"></a>At line<span class="op">:</span>1 char<span class="op">:</span>1</span>
+<span id="cb4-4"><a href="#cb4-4"></a><span class="op">+</span> pip</span>
+<span id="cb4-5"><a href="#cb4-5"></a><span class="op">+</span> <span class="op">~~~</span></span>
+<span id="cb4-6"><a href="#cb4-6"></a>    <span class="op">+</span> CategoryInfo          <span class="op">:</span> ObjectNotFound<span class="op">:</span> <span class="op">(</span>pip<span class="op">:</span>String<span class="op">)</span> <span class="op">[],</span> CommandNotFoundException</span>
+<span id="cb4-7"><a href="#cb4-7"></a>    <span class="op">+</span> FullyQualifiedErrorId <span class="op">:</span> CommandNotFoundException</span></code><button title="Copia negli appunti" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Oppure all’interno di un <em>Command Prompt</em>:</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode numberSource cmd number-lines code-with-copy"><code class="sourceCode"><span id="cb5-1"><a href="#cb5-1"></a>'pip' is not recognized as an internal or external command, operable program or batch file.</span></code><button title="Copia negli appunti" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ul>
+<li>cliccare il menù start e cercare “environment variables”.</li>
+<li>bisogna controllare che esistano ed eventualmente aggiungere questi due percorsi al <code>PATH</code> dell’utente:</li>
+</ul>
+<div class="sourceCode" id="cb6" data-code-line-numbers="false"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="ex">C:\Users\user\AppData\Local\Programs\Python\Python311</span><span class="dt">\</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="ex">C:\Users\user\AppData\Local\Programs\Python\Python311\Scripts</span><span class="dt">\</span></span></code><button title="Copia negli appunti" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="environment-variables" class="slide level3">
+<h3>Environment Variables</h3>
+<div class="quarto-layout-panel">
+<div class="quarto-layout-row quarto-layout-valign-top">
+<div class="quarto-layout-cell" style="flex-basis: 33.3%;justify-content: center;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="assets/images/install-python/06-system-properties.png"></p>
+<figcaption>1. Environment Variables</figcaption>
+</figure>
+</div>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 33.3%;justify-content: center;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="assets/images/install-python/07-environment-variables.png"></p>
+<figcaption>2. Environment Variables</figcaption>
+</figure>
+</div>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 33.3%;justify-content: center;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="assets/images/install-python/08-edit.png"></p>
+<figcaption>3. Environment Variables</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="installazione-git-windows" class="slide level3 smaller">
+<h3>Procedura installazione git</h3>
+<div class="quarto-layout-panel">
+<div class="quarto-layout-row quarto-layout-valign-top">
+<div class="quarto-layout-cell" style="flex-basis: 33.3%;justify-content: center;">
+<p><img data-src="assets/images/install-git/00-license.png"></p>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 33.3%;justify-content: center;">
+<p><img data-src="assets/images/install-git/01-components.png"></p>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 33.3%;justify-content: center;">
+<p><img data-src="assets/images/install-git/02-default-editor.png"></p>
+</div>
+</div>
+<div class="quarto-layout-row quarto-layout-valign-top">
+<div class="quarto-layout-cell" style="flex-basis: 33.3%;justify-content: center;">
+<p><img data-src="assets/images/install-git/03-initial-branch.png"></p>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 33.3%;justify-content: center;">
+<p><img data-src="assets/images/install-git/04-path.png"></p>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 33.3%;justify-content: center;">
+<p><img data-src="assets/images/install-git/05-ssh.png"></p>
+</div>
+</div>
+</div>
+</section>
+<section id="section-1" class="slide level3">
+<h3></h3>
+<div class="quarto-layout-panel">
+<div class="quarto-layout-row quarto-layout-valign-top">
+<div class="quarto-layout-cell" style="flex-basis: 33.3%;justify-content: center;">
+<p><img data-src="assets/images/install-git/06-https.png"></p>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 33.3%;justify-content: center;">
+<p><img data-src="assets/images/install-git/07-autocrlf.png"></p>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 33.3%;justify-content: center;">
+<p><img data-src="assets/images/install-git/08-terminal-emulator.png"></p>
+</div>
+</div>
+<div class="quarto-layout-row quarto-layout-valign-top">
+<div class="quarto-layout-cell" style="flex-basis: 33.3%;justify-content: center;">
+<p><img data-src="assets/images/install-git/09-git-pull.png"></p>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 33.3%;justify-content: center;">
+<p><img data-src="assets/images/install-git/10-credential-helper.png"></p>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 33.3%;justify-content: center;">
+<p><img data-src="assets/images/install-git/11-extra-options.png"></p>
+</div>
+</div>
+</div>
+</section>
+<section id="section-2" class="slide level3">
+<h3></h3>
+<div class="quarto-layout-panel">
+<div class="quarto-layout-row quarto-layout-valign-top">
+<div class="quarto-layout-cell" style="flex-basis: 33.3%;justify-content: center;">
+<p><img data-src="assets/images/install-git/12-experimental-options.png"></p>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 33.3%;justify-content: center;">
+<p><img data-src="assets/images/install-git/13-installing.png"></p>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 33.3%;justify-content: center;">
+<p><img data-src="assets/images/install-git/14-finish.png"></p>
+</div>
+</div>
+</div>
+</section>
+<section id="installazione-texlive-windows" class="slide level3">
+<h3>Procedura installazione TeX-Live <i class="fa-brands fa-windows" aria-label="windows"></i></h3>
+<div class="quarto-layout-panel">
+<div class="quarto-layout-row quarto-layout-valign-top">
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="assets/images/install-texlive/windows/00-smartscreen-more-info.png"></p>
+<figcaption>1. Microsoft Defender SmartScreen</figcaption>
+</figure>
+</div>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="assets/images/install-texlive/windows/00-smartscreen.png"></p>
+<figcaption>2. Microsoft Defender SmartScreen</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</div>
+<div>
+<ol type="1">
+<li>premere “<strong>Maggiori Informazioni</strong>”/“<strong>More info</strong>”</li>
+<li>premere “<strong>Esegui comunque</strong>”/“<strong>Run anyway</strong>”</li>
+</ol>
+</div>
+</section>
+<section id="section-3" class="slide level3 smaller">
+<h3></h3>
+<div class="quarto-layout-panel">
+<div class="quarto-layout-row quarto-layout-valign-top">
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="assets/images/install-texlive/windows/01-installer.png"></p>
+<figcaption>3. Installer</figcaption>
+</figure>
+</div>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="assets/images/install-texlive/windows/02-confirmation.png"></p>
+<figcaption>4. Confirmation</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</div>
+<div>
+<ol start="3" type="1">
+<li>premere “<strong>Next</strong>”</li>
+<li>premere “<strong>Install</strong>”</li>
+</ol>
+</div>
+</section>
+<section id="section-4" class="slide level3 smaller">
+<h3></h3>
+<div class="quarto-layout-panel">
+<div class="quarto-layout-row quarto-layout-valign-top">
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="assets/images/install-texlive/windows/03-retrieving-packages.png"></p>
+<figcaption>5. Retrieving Packages</figcaption>
+</figure>
+</div>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="assets/images/install-texlive/windows/04-simple.png"></p>
+<figcaption>6. Simple UI</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</div>
+<div>
+<ol start="5" type="1">
+<li>si aprirà automaticamente una finestra che si chiuderà poco dopo</li>
+<li>premere “<strong>Avanzate</strong>”/“<strong>Advanced</strong>”</li>
+</ol>
+</div>
+</section>
+<section id="section-5" class="slide level3 smaller">
+<h3></h3>
+
+<img data-src="assets/images/install-texlive/windows/05-advanced-before-selection.png" class="r-stretch quarto-figure-center"><p class="caption">7. Advanced UI (<em>before</em> selection)</p><div>
+<ol start="7" type="1">
+<li>clicca su <strong>Personalizza</strong>/<strong>Customize</strong></li>
+</ol>
+</div>
+</section>
+<section id="section-6" class="slide level3 smaller">
+<h3></h3>
+<div class="quarto-layout-panel">
+<div class="quarto-layout-row quarto-layout-valign-top">
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="assets/images/install-texlive/windows/06-collections-it.png"></p>
+<figcaption>8. TeXlive Collections (it)</figcaption>
+</figure>
+</div>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="assets/images/install-texlive/windows/06-collections-en.png"></p>
+<figcaption>8. TeXlive Collections (en)</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</div>
+<div>
+<ol start="8" type="1">
+<li>selezionare i pacchetti in figura</li>
+</ol>
+</div>
+</section>
+<section id="section-7" class="slide level3 smaller">
+<h3></h3>
+
+<img data-src="assets/images/install-texlive/windows/07-advanced-after-selection.png" class="r-stretch quarto-figure-center"><p class="caption">9. Advanced UI (<em>after</em> selection)</p><div>
+<div class="columns">
+<div class="column" style="width:25%;">
+<ol start="9" type="1">
+<li>deselezionare:</li>
+</ol>
+</div><div class="column" style="width:70%;">
+<ul>
+<li><strong>Install font/macro doc tree</strong></li>
+<li><strong>Install font/macro source tree</strong></li>
+<li><strong>Install TeXworks front end</strong></li>
+</ul>
+</div><p>dovreste notare che ora lo spazio richiesto è appena sotto i 3GB, dopodiché premere “<strong>Install</strong>” in basso a destra</p>
+</div>
+</div>
+</section>
+<section id="section-8" class="slide level3">
+<h3></h3>
+<div class="quarto-layout-panel">
+<div class="quarto-layout-row quarto-layout-valign-top">
+<div class="quarto-layout-cell" style="flex-basis: 33.3%;justify-content: center;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="assets/images/install-texlive/windows/08-installing.png"></p>
+<figcaption>10. Installing</figcaption>
+</figure>
+</div>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 33.3%;justify-content: center;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="assets/images/install-texlive/windows/09-finish.png"></p>
+<figcaption>11. Installer has finished 🥳🎉</figcaption>
+</figure>
+</div>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 33.3%;justify-content: center;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="assets/images/install-texlive/windows/10-close.png"></p>
+<figcaption>12. Installation completed</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</div>
+<div class="callout callout-warning callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Avviso</strong></p>
+</div>
+<div class="callout-content">
+<p>Non mettere in sospensione il computer durante l’installazione, la procedura durerà circa 20 minuti.</p>
+</div>
+</div>
+</div>
+</section>
+
+<section id="installazione-unix" class="title-slide slide level2 smallest center">
+<h2>Installazione dei requisiti su Linux/Mac</h2>
+<div>
+<ol type="1">
+<li><p>installare <i class="fa-brands fa-java" aria-label="java"></i> Java (è necessario solo il <em>Java Runtime Environment</em>)</p>
+<p><i class="fa-brands fa-linux" aria-label="linux"></i> <code>sudo apt install -y default-jre</code></p>
+<p><i class="fa-brands fa-apple" aria-label="apple"></i> <code>brew install java</code></p></li>
+<li><p>installare <i class="fa-brands fa-python" aria-label="python"></i> Pygments</p>
+<p><i class="fa-brands fa-linux" aria-label="linux"></i> <code>sudo apt install -y python3-pygments</code></p>
+<p><i class="fa-brands fa-apple" aria-label="apple"></i> <code>brew install pygments</code></p>
+<ul>
+<li>controlla che sia stato installato correttamente</li>
+</ul>
+<p><i class="fa-brands fa-linux" aria-label="linux"></i> <i class="fa-brands fa-apple" aria-label="apple"></i> <code>pygmentize -V</code></p></li>
+<li><p>aggiornare <i class="fa-brands fa-git" aria-label="git"></i> (preinstallato)</p>
+<p><i class="fa-brands fa-linux" aria-label="linux"></i> <code>sudo apt upgrade git</code></p>
+<p><i class="fa-brands fa-apple" aria-label="apple"></i> <code>brew install git &amp;&amp; brew upgrade git</code></p></li>
+<li><p>installare Tex-Live per sistemi Unix (<a href="#/installazione-texlive-unix">installazione guidata</a>)</p></li>
+</ol>
+</div>
+<!-- :::{.callout-note}
+You do not need to remove an installation of a previous release, or any system-provided TeX; multiple releases of TL can coexist on the same system without conflict.
+::: -->
+</section>
+<section id="installazione-texlive-unix" class="slide level3 smaller">
+<h3>Procedura installazione TeX-Live <i class="fa-brands fa-linux" aria-label="linux"></i> <i class="fa-brands fa-apple" aria-label="apple"></i></h3>
+<p>Crea una cartella nella quale installerai la nuova distribuzione TexLive e dai al tuo utente la proprietà di lettura e scritrura di questa cartella</p>
+<div class="sourceCode" id="cb7" data-code-line-numbers="true"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1"></a><span class="fu">sudo</span> mkdir <span class="at">-p</span> /usr/local/texlive/<span class="va">$(</span><span class="fu">date</span> +%Y<span class="va">)</span></span>
+<span id="cb7-2"><a href="#cb7-2"></a><span class="fu">sudo</span> chown <span class="at">-R</span> <span class="st">"</span><span class="va">$USER</span><span class="st">"</span> /usr/local/texlive</span></code><button title="Copia negli appunti" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Scarica e installa manualmente TexLive</p>
+<div class="sourceCode" id="cb8" data-code-line-numbers="true"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1"></a><span class="fu">mkdir</span> /tmp/texlive</span>
+<span id="cb8-2"><a href="#cb8-2"></a><span class="bu">cd</span> /tmp/texlive</span>
+<span id="cb8-3"><a href="#cb8-3"></a><span class="fu">wget</span> http://mirror.ctan.org/systems/texlive/tlnet/install-tl.zip</span>
+<span id="cb8-4"><a href="#cb8-4"></a><span class="fu">unzip</span> ./install-tl.zip <span class="at">-d</span> install-tl</span>
+<span id="cb8-5"><a href="#cb8-5"></a><span class="bu">cd</span> install-tl/install-tl-<span class="va">$(</span><span class="fu">date</span> +%Y%m%d<span class="va">)</span></span>
+<span id="cb8-6"><a href="#cb8-6"></a><span class="fu">perl</span> ./install-tl</span></code><button title="Copia negli appunti" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Di seguito troverai le impostazioni da selezionare durante l’installazione.</p>
+<div class="callout callout-tip callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Consiglio</strong></p>
+</div>
+<div class="callout-content">
+<p>Puoi ingrandire le immagini cliccandoci sopra tenendo premuto <code>alt</code>.</p>
+</div>
+</div>
+</div>
+</section>
+<section id="installazione-texlive-unix-installer" class="slide level3 smaller">
+<h3>Avere i permessi di scrittura</h3>
+<div class="quarto-layout-panel">
+<div class="quarto-layout-row quarto-layout-valign-top">
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
+<p><img data-src="assets/images/install-texlive/linux/00-texlive-user.png"></p>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
+<p><img data-src="assets/images/install-texlive/linux/01-texlive-sudo.png"></p>
+</div>
+</div>
+</div>
+</section>
+<section id="installazione-texlive-unix-collections" class="slide level3 smaller">
+<h3></h3>
+<div class="quarto-layout-panel">
+<div class="quarto-layout-row quarto-layout-valign-top">
+<div class="quarto-layout-cell" style="flex-basis: 33.3%;justify-content: center;">
+<p><img data-src="assets/images/install-texlive/linux/02-texlive-collections-full-scheme.png"></p>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 33.3%;justify-content: center;">
+<p><img data-src="assets/images/install-texlive/linux/03-texlive-collections-deselected.png"></p>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 33.3%;justify-content: center;">
+<p><img data-src="assets/images/install-texlive/linux/04-texlive-collections-selected.png"></p>
+</div>
+</div>
+</div>
+<ul>
+<li>installare le 15 collezioni in figura che corrispondono alle lettere (puoi copiare ed incollare il codice direttamente sul terminale):</li>
+</ul>
+<div class="sourceCode" id="cb9" data-code-line-numbers="false"><pre class="sourceCode txt code-with-copy"><code class="sourceCode default"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>a c e f g p v w D E F J M O P</span></code><button title="Copia negli appunti" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="quarto-layout-panel">
+<div class="quarto-layout-row quarto-layout-valign-top">
+<div class="quarto-layout-cell" style="flex-basis: 33.3%;justify-content: center;">
+<p><img data-src="assets/images/install-texlive/linux/05-texlive-custom-scheme.png"></p>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 33.3%;justify-content: center;">
+<p><img data-src="assets/images/install-texlive/linux/06-texlive-option-customization.png"> <img data-src="assets/images/install-texlive/linux/07-texlive-option-customization-after.png"></p>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 33.3%;justify-content: center;">
+<p><img data-src="assets/images/install-texlive/linux/08-texlive-install.png"></p>
+</div>
+</div>
+</div>
+</section>
+<section id="texlive-profile-file" class="slide level3 smaller">
+<h3></h3>
+<p>All’interno della cartella d’installazione dovrebbe essere stato creato un file <code>texlive.profile</code> e il suo contenuto dovrebbe corrispondere a questo:</p>
+<div class="sourceCode" id="cb10"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb10-1"><a href="#cb10-1"></a><span class="ex">selected_scheme</span> scheme-custom</span>
+<span id="cb10-2"><a href="#cb10-2"></a><span class="ex">TEXDIR</span> /usr/local/texlive/2023</span>
+<span id="cb10-3"><a href="#cb10-3"></a><span class="ex">TEXMFCONFIG</span> ~/.texlive2023/texmf-config</span>
+<span id="cb10-4"><a href="#cb10-4"></a><span class="ex">TEXMFHOME</span> ~/texmf</span>
+<span id="cb10-5"><a href="#cb10-5"></a><span class="ex">TEXMFLOCAL</span> /usr/local/texlive/texmf-local</span>
+<span id="cb10-6"><a href="#cb10-6"></a><span class="ex">TEXMFSYSCONFIG</span> /usr/local/texlive/2023/texmf-config</span>
+<span id="cb10-7"><a href="#cb10-7"></a><span class="ex">TEXMFSYSVAR</span> /usr/local/texlive/2023/texmf-var</span>
+<span id="cb10-8"><a href="#cb10-8"></a><span class="ex">TEXMFVAR</span> ~/.texlive2023/texmf-var</span>
+<span id="cb10-9"><a href="#cb10-9"></a><span class="ex">binary_x86_64-linux</span> 1</span>
+<span id="cb10-10"><a href="#cb10-10"></a><span class="ex">collection-basic</span> 1</span>
+<span id="cb10-11"><a href="#cb10-11"></a><span class="ex">collection-binextra</span> 1</span>
+<span id="cb10-12"><a href="#cb10-12"></a><span class="ex">collection-fontsextra</span> 1</span>
+<span id="cb10-13"><a href="#cb10-13"></a><span class="ex">collection-fontsrecommended</span> 1</span>
+<span id="cb10-14"><a href="#cb10-14"></a><span class="ex">collection-fontutils</span> 1</span>
+<span id="cb10-15"><a href="#cb10-15"></a><span class="ex">collection-langenglish</span> 1</span>
+<span id="cb10-16"><a href="#cb10-16"></a><span class="ex">collection-langgreek</span> 1</span>
+<span id="cb10-17"><a href="#cb10-17"></a><span class="ex">collection-langitalian</span> 1</span>
+<span id="cb10-18"><a href="#cb10-18"></a><span class="ex">collection-latex</span> 1</span>
+<span id="cb10-19"><a href="#cb10-19"></a><span class="ex">collection-latexextra</span> 1</span>
+<span id="cb10-20"><a href="#cb10-20"></a><span class="ex">collection-latexrecommended</span> 1</span>
+<span id="cb10-21"><a href="#cb10-21"></a><span class="ex">collection-mathscience</span> 1</span>
+<span id="cb10-22"><a href="#cb10-22"></a><span class="ex">collection-pictures</span> 1</span>
+<span id="cb10-23"><a href="#cb10-23"></a><span class="ex">collection-publishers</span> 1</span>
+<span id="cb10-24"><a href="#cb10-24"></a><span class="ex">collection-xetex</span> 1</span>
+<span id="cb10-25"><a href="#cb10-25"></a><span class="ex">instopt_adjustpath</span> 0</span>
+<span id="cb10-26"><a href="#cb10-26"></a><span class="ex">instopt_adjustrepo</span> 1</span>
+<span id="cb10-27"><a href="#cb10-27"></a><span class="ex">instopt_letter</span> 0</span>
+<span id="cb10-28"><a href="#cb10-28"></a><span class="ex">instopt_portable</span> 0</span>
+<span id="cb10-29"><a href="#cb10-29"></a><span class="ex">instopt_write18_restricted</span> 1 <span class="co"># allow exection of restricted list of programs via \write18</span></span>
+<span id="cb10-30"><a href="#cb10-30"></a><span class="ex">tlpdbopt_autobackup</span> 1</span>
+<span id="cb10-31"><a href="#cb10-31"></a><span class="ex">tlpdbopt_backupdir</span> tlpkg/backups</span>
+<span id="cb10-32"><a href="#cb10-32"></a><span class="ex">tlpdbopt_create_formats</span> 1</span>
+<span id="cb10-33"><a href="#cb10-33"></a><span class="ex">tlpdbopt_desktop_integration</span> 1</span>
+<span id="cb10-34"><a href="#cb10-34"></a><span class="ex">tlpdbopt_file_assocs</span> 1</span>
+<span id="cb10-35"><a href="#cb10-35"></a><span class="ex">tlpdbopt_generate_updmap</span> 0</span>
+<span id="cb10-36"><a href="#cb10-36"></a><span class="ex">tlpdbopt_install_docfiles</span> 0 <span class="co"># Install font/macro doc tree</span></span>
+<span id="cb10-37"><a href="#cb10-37"></a><span class="ex">tlpdbopt_install_srcfiles</span> 0 <span class="co"># Install font/macro source tree</span></span>
+<span id="cb10-38"><a href="#cb10-38"></a><span class="ex">tlpdbopt_post_code</span> 1</span>
+<span id="cb10-39"><a href="#cb10-39"></a><span class="ex">tlpdbopt_sys_bin</span> /usr/local/bin</span>
+<span id="cb10-40"><a href="#cb10-40"></a><span class="ex">tlpdbopt_sys_info</span> /usr/local/share/info</span>
+<span id="cb10-41"><a href="#cb10-41"></a><span class="ex">tlpdbopt_sys_man</span> /usr/local/share/man</span>
+<span id="cb10-42"><a href="#cb10-42"></a><span class="ex">tlpdbopt_w32_multi_user</span> 1</span></code><button title="Copia negli appunti" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Alla prossima installazione puoi utilizzare questo file, modificandolo in modo appropriato, per effettuare l’installazione di TeX Live:</p>
+<div class="sourceCode" id="cb11"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb11-1"><a href="#cb11-1"></a><span class="ex">install-tl</span> <span class="at">--profile</span><span class="op">=</span>texlive.profile</span></code><button title="Copia negli appunti" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="texlive-unix-set-path" class="slide level3 smallest">
+<h3>Post-installazione: impostazione PATH</h3>
+<p>Alla fine dell’installazione vengono stampati i seguenti messaggi:</p>
+<div class="sourceCode" id="cb12"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb12-1"><a href="#cb12-1"></a><span class="ex">Add</span> /usr/local/texlive/2023/texmf-dist/doc/man to MANPATH.</span>
+<span id="cb12-2"><a href="#cb12-2"></a><span class="ex">Add</span> /usr/local/texlive/2023/texmf-dist/doc/info to INFOPATH.</span>
+<span id="cb12-3"><a href="#cb12-3"></a><span class="ex">Most</span> importantly, add /usr/local/texlive/2023/bin/x86_64-linux</span>
+<span id="cb12-4"><a href="#cb12-4"></a><span class="ex">to</span> your PATH for current and future sessions.</span></code><button title="Copia negli appunti" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Ora devi aggiungere la directory dei binari di TeX Live al tuo <em>PATH</em>:</p>
+<div class="sourceCode" id="cb13"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb13-1"><a href="#cb13-1"></a><span class="bu">echo</span> <span class="st">'export MANPATH="$MANPATH:/usr/local/texlive/2023/texmf-dist/doc/man"'</span> <span class="op">&gt;&gt;</span> ~/.bashrc</span>
+<span id="cb13-2"><a href="#cb13-2"></a><span class="bu">echo</span> <span class="st">'export INFOPATH="$INFOPATH:/usr/local/texlive/2023/texmf-dist/doc/info"'</span> <span class="op">&gt;&gt;</span> ~/.bashrc</span>
+<span id="cb13-3"><a href="#cb13-3"></a><span class="bu">echo</span> <span class="st">'export PATH=/usr/local/texlive/2023/bin/x86_64-linux:$PATH'</span> <span class="op">&gt;&gt;</span> ~/.bashrc</span></code><button title="Copia negli appunti" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><i class="fa-solid fa-circle-exclamation" aria-label="circle-exclamation"></i> Puoi eseguire il codice soprastante nel tuo file <code>~/.bashrc</code> per aggiornare il path, ma ricordati di cambiare l’anno.</p>
+<p><i class="fa-solid fa-circle-exclamation" aria-label="circle-exclamation"></i> Alcuni utenti Linux e Mac preferiscono utilizzare <code>zsh</code> come bash shell (da <em>macOS Catalina</em>, Ottobre 2019, è quella di default) in questo caso bisogna aggiornare il file <code>~/.zshenv</code>, in particolare su Mac bisogna cambiare una cartella:</p>
+<div class="sourceCode" id="cb14"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb14-1"><a href="#cb14-1"></a><span class="bu">echo</span> <span class="st">'export MANPATH="$MANPATH:/usr/local/texlive/2023/texmf-dist/doc/man"'</span> <span class="op">&gt;&gt;</span> ~/.zshenv</span>
+<span id="cb14-2"><a href="#cb14-2"></a><span class="bu">echo</span> <span class="st">'export INFOPATH="$INFOPATH:/usr/local/texlive/2023/texmf-dist/doc/info"'</span> <span class="op">&gt;&gt;</span> ~/.zshenv</span>
+<span id="cb14-3"><a href="#cb14-3"></a><span class="bu">echo</span> <span class="st">'export PATH=/usr/local/texlive/2023/bin/&lt;cartallamac&gt;:$PATH'</span> <span class="op">&gt;&gt;</span> ~/.zshenv</span></code><button title="Copia negli appunti" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Controlla che il <em>PATH</em> si sia aggiornato:</p>
+<div class="sourceCode" id="cb15"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb15-1"><a href="#cb15-1"></a><span class="bu">echo</span> <span class="at">-e</span> <span class="va">${PATH</span><span class="op">//</span><span class="ss">:</span><span class="op">/</span><span class="dt">\\</span>n<span class="va">}</span></span></code><button title="Copia negli appunti" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Nel caso in cui l’installazione non vada a buon fine, <a href="https://tex.stackexchange.com/questions/540429/">resetta l’installazione</a>.</p>
+<p>Se tutto è corretto, non dimenticare di rimuovere la cartella di installazione:</p>
+<div class="sourceCode" id="cb16"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb16-1"><a href="#cb16-1"></a><span class="fu">rm</span> <span class="at">-rf</span> /tmp/texlive</span></code><button title="Copia negli appunti" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+
+<section id="controllo-dellinstallazione-fa-brands-windows-fa-brands-linux-fa-brands-apple" class="title-slide slide level2 center">
+<h2>Controllo dell’installazione <i class="fa-brands fa-windows" aria-label="windows"></i> <i class="fa-brands fa-linux" aria-label="linux"></i> <i class="fa-brands fa-apple" aria-label="apple"></i></h2>
+<p>Per accertarti che l’installazione sia andata a buon fine:</p>
+<div class="sourceCode" id="cb17"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb17-1"><a href="#cb17-1"></a><span class="ex">tlmgr</span> <span class="at">--version</span></span>
+<span id="cb17-2"><a href="#cb17-2"></a><span class="ex">pygmentize</span> <span class="at">-V</span></span>
+<span id="cb17-3"><a href="#cb17-3"></a><span class="ex">java</span> <span class="at">--version</span></span>
+<span id="cb17-4"><a href="#cb17-4"></a><span class="ex">arara</span> <span class="at">--version</span></span>
+<span id="cb17-5"><a href="#cb17-5"></a><span class="fu">git</span> <span class="at">--version</span></span></code><button title="Copia negli appunti" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb18"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb18-1"><a href="#cb18-1"></a><span class="fu">git</span> version 2.40.1.windows.1</span>
+<span id="cb18-2"><a href="#cb18-2"></a><span class="ex">Python</span> 3.11.3</span>
+<span id="cb18-3"><a href="#cb18-3"></a><span class="ex">Pygments</span> version 2.15.1, <span class="pp">[</span><span class="ss">...</span><span class="pp">]</span></span>
+<span id="cb18-4"><a href="#cb18-4"></a>  <span class="ex">__</span> _ _ __ __ _ _ __ __ _</span>
+<span id="cb18-5"><a href="#cb18-5"></a> <span class="ex">/</span> _<span class="kw">`</span> <span class="kw">|</span> <span class="st">'__/ _` | '</span><span class="ex">__/</span> _<span class="kw">`</span> <span class="kw">|</span></span>
+<span id="cb18-6"><a href="#cb18-6"></a><span class="kw">|</span> <span class="kw">(</span><span class="ex">_</span><span class="kw">|</span> <span class="kw">|</span> <span class="kw">|</span> <span class="kw">|</span> <span class="kw">(</span><span class="ex">_</span><span class="kw">|</span> <span class="kw">|</span> <span class="kw">|</span> <span class="kw">|</span> <span class="kw">(</span><span class="ex">_</span><span class="kw">|</span> <span class="kw">|</span></span>
+<span id="cb18-7"><a href="#cb18-7"></a> <span class="ex">\__,_</span><span class="kw">|</span><span class="ex">_</span><span class="kw">|</span>  <span class="ex">\__,_</span><span class="kw">|</span><span class="ex">_</span><span class="kw">|</span>  <span class="ex">\__,_</span><span class="kw">|</span></span>
+<span id="cb18-8"><a href="#cb18-8"></a></span>
+<span id="cb18-9"><a href="#cb18-9"></a><span class="ex">arara</span> 7.0.5</span>
+<span id="cb18-10"><a href="#cb18-10"></a><span class="ex">Copyright</span> <span class="er">(</span><span class="ex">c</span><span class="kw">)</span> <span class="ex">2023,</span> Island of TeX</span>
+<span id="cb18-11"><a href="#cb18-11"></a><span class="ex">arara</span> is released under the New BSD license.</span>
+<span id="cb18-12"><a href="#cb18-12"></a></span>
+<span id="cb18-13"><a href="#cb18-13"></a><span class="ex">[...]</span></span></code><button title="Copia negli appunti" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+
+<section id="manutenzione-installazione-fa-brands-windows-fa-brands-linux-fa-brands-apple" class="title-slide slide level2 smaller center">
+<h2>Manutenzione installazione <i class="fa-brands fa-windows" aria-label="windows"></i> <i class="fa-brands fa-linux" aria-label="linux"></i> <i class="fa-brands fa-apple" aria-label="apple"></i></h2>
+<p>Aggiornare <code>tlmgr</code> stesso:</p>
+<p><code>tlmgr update --self</code></p>
+<p>Listare i pacchetti che possono essere aggiornati:</p>
+<p><code>tlmgr update --list</code></p>
+<p>Aggiornare un pacchetto specifico:</p>
+<p><code>tlmgr update &lt;pkgname&gt;</code></p>
+<p>Aggiornare tutti i pacchetti:</p>
+<p><code>tlmgr update --all</code></p>
+<p>Aggiornare sia <code>tlmgr</code> che tutti i pacchetti:</p>
+<p><code>tlmgr update --self --all</code></p>
+</section>
+</section>
+<section>
+<section id="documentazione" class="title-slide slide level1 center">
+<h1>Documentazione</h1>
+<div class="sourceCode" id="cb19"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb19-1"><a href="#cb19-1"></a><span class="ex">texdoc</span> minted</span></code><button title="Copia negli appunti" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="fragment">
+<div class="sourceCode" id="cb20"><pre class="sourceCode numberSource txt number-lines code-with-copy"><code class="sourceCode default"><span id="cb20-1"><a href="#cb20-1"></a>You don't appear to have any local documentation installed.</span>
+<span id="cb20-2"><a href="#cb20-2"></a></span>
+<span id="cb20-3"><a href="#cb20-3"></a>There may be online documentation available for "minted" at</span>
+<span id="cb20-4"><a href="#cb20-4"></a>    https://texdoc.org/serve/minted/0</span>
+<span id="cb20-5"><a href="#cb20-5"></a>This documentation may be for a different version than you have installed.</span>
+<span id="cb20-6"><a href="#cb20-6"></a></span>
+<span id="cb20-7"><a href="#cb20-7"></a>Would you like to search online? (y/N)</span></code><button title="Copia negli appunti" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="fragment">
+<ul>
+<li><p>possiamo consultare direttamente il sito <a href="https://texdoc.org/index.html">texdoc.org</a></p></li>
+<li><p>oppure andare su <a href="https://www.ctan.org/">ctan.org</a></p></li>
+<li><p>impostazine <em>shortcut search engine</em> su Chrome</p></li>
+</ul>
+</div>
+</section>
+<section id="ottimizzare-il-flusso-di-lavoro-su-visual-studio-code" class="title-slide slide level2 smallest center">
+<h2>Ottimizzare il flusso di lavoro su Visual Studio Code</h2>
+<p>Personalizzazione dell’ambiente di lavoro:</p>
+<div class="columns">
+<div class="column" style="width:50%;">
+<ul>
+<li><p><code>View &gt; Open View... &gt; Timeline</code></p>
+<div class="sourceCode" id="cb21" data-code-line-numbers="false"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="ex">Explorer:</span> Focus on Timeline View</span></code><button title="Copia negli appunti" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
+<li><p><code>View &gt; Appereance &gt; Minimap</code></p>
+<div class="sourceCode" id="cb22" data-code-line-numbers="false"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="ex">View:</span> Toggle Minimap</span></code><button title="Copia negli appunti" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
+<li><p><code>View &gt; Sticky Scroll</code></p>
+<div class="sourceCode" id="cb23" data-code-line-numbers="false"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="ex">View:</span> Toggle Sticky Scroll</span></code><button title="Copia negli appunti" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
+<li><p><code>Snippets: Configure User Snippets</code></p></li>
+<li><p><code>Preferences: Open Keyboard Shortcuts</code></p>
+<div class="sourceCode" id="cb24" data-code-line-numbers="false"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="ex">Open</span> Keyboard Shortcuts</span></code><button title="Copia negli appunti" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>(<a href="#/my-keyboard-shortcuts">see my shortcuts</a>)</p></li>
+<li><p><code>latex-workshop.latex.recipes</code> (<a href="#/my-workshop-recipes">see my recipes</a>)</p></li>
+<li><p><code>latex-workshop.latex.autoBuild.run</code></p>
+<div class="sourceCode" id="cb25" data-code-line-numbers="false"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="ex">ctrl+alt+B</span></span></code><button title="Copia negli appunti" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
+</ul>
+</div><div class="column" style="width:50%;">
+
+</div>
+</div>
+<!-- https://code.visualstudio.com/docs/getstarted/keybindings#:~:text=All\%20keyboard\%20shortcuts\%20in\%20VS,This\%20will\%20open\%20your\%20keybindings. -->
+</section>
+<section id="my-keyboard-shortcuts" class="slide level3">
+<h3>My Keyboard Shortcuts</h3>
+<div class="larger">
+<div class="sourceCode" id="cb26" data-code-line-numbers="|4-9|12-17|"><pre class="sourceCode numberSource json number-lines code-with-copy"><code class="sourceCode json"><span id="cb26-1"><a href="#cb26-1"></a><span class="er">//</span> <span class="er">Place</span> <span class="er">your</span> <span class="er">key</span> <span class="er">bindings</span> <span class="er">in</span> <span class="er">this</span> <span class="er">file</span> <span class="er">to</span> <span class="er">override</span> <span class="er">the</span> <span class="er">defaults</span></span>
+<span id="cb26-2"><a href="#cb26-2"></a><span class="ot">[</span></span>
+<span id="cb26-3"><a href="#cb26-3"></a>    <span class="fu">{</span></span>
+<span id="cb26-4"><a href="#cb26-4"></a>        <span class="dt">"key"</span><span class="fu">:</span> <span class="st">"ctrl+shift+B"</span><span class="fu">,</span></span>
+<span id="cb26-5"><a href="#cb26-5"></a>        <span class="dt">"command"</span><span class="fu">:</span> <span class="st">"editor.action.insertSnippet"</span><span class="fu">,</span></span>
+<span id="cb26-6"><a href="#cb26-6"></a>        <span class="dt">"when"</span><span class="fu">:</span> <span class="st">"editorLangId == latex &amp;&amp; editorTextFocus"</span><span class="fu">,</span></span>
+<span id="cb26-7"><a href="#cb26-7"></a>        <span class="dt">"args"</span><span class="fu">:</span> <span class="fu">{</span></span>
+<span id="cb26-8"><a href="#cb26-8"></a>            <span class="dt">"snippet"</span><span class="fu">:</span> <span class="st">"</span><span class="ch">\\</span><span class="st">textbf{${TM_SELECTED_TEXT}$0}"</span></span>
+<span id="cb26-9"><a href="#cb26-9"></a>        <span class="fu">}</span></span>
+<span id="cb26-10"><a href="#cb26-10"></a>    <span class="fu">}</span><span class="ot">,</span></span>
+<span id="cb26-11"><a href="#cb26-11"></a>    <span class="fu">{</span></span>
+<span id="cb26-12"><a href="#cb26-12"></a>        <span class="dt">"key"</span><span class="fu">:</span> <span class="st">"ctrl+shift+I"</span><span class="fu">,</span></span>
+<span id="cb26-13"><a href="#cb26-13"></a>        <span class="dt">"command"</span><span class="fu">:</span> <span class="st">"editor.action.insertSnippet"</span><span class="fu">,</span></span>
+<span id="cb26-14"><a href="#cb26-14"></a>        <span class="dt">"when"</span><span class="fu">:</span> <span class="st">"editorLangId == latex &amp;&amp; editorTextFocus"</span><span class="fu">,</span></span>
+<span id="cb26-15"><a href="#cb26-15"></a>        <span class="dt">"args"</span><span class="fu">:</span> <span class="fu">{</span></span>
+<span id="cb26-16"><a href="#cb26-16"></a>            <span class="dt">"snippet"</span><span class="fu">:</span> <span class="st">"</span><span class="ch">\\</span><span class="st">emph{${TM_SELECTED_TEXT}$0}"</span></span>
+<span id="cb26-17"><a href="#cb26-17"></a>        <span class="fu">}</span></span>
+<span id="cb26-18"><a href="#cb26-18"></a>    <span class="fu">}</span></span>
+<span id="cb26-19"><a href="#cb26-19"></a><span class="ot">]</span></span></code><button title="Copia negli appunti" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="my-workshop-recipes" class="slide level3">
+<h3>My Workshop Recipes</h3>
+<div class="larger">
+<div class="sourceCode" id="cb27" data-code-line-numbers="|1|21|3-6|23-29|9-12|32-42|15-18|"><pre class="sourceCode numberSource json number-lines code-with-copy"><code class="sourceCode json"><span id="cb27-1"><a href="#cb27-1"></a><span class="er">"latex-workshop.latex.recipes":</span> <span class="ot">[</span></span>
+<span id="cb27-2"><a href="#cb27-2"></a>    <span class="fu">{</span></span>
+<span id="cb27-3"><a href="#cb27-3"></a>        <span class="dt">"name"</span><span class="fu">:</span> <span class="st">"arara 🦜"</span><span class="fu">,</span></span>
+<span id="cb27-4"><a href="#cb27-4"></a>        <span class="dt">"tools"</span><span class="fu">:</span> <span class="ot">[</span></span>
+<span id="cb27-5"><a href="#cb27-5"></a>            <span class="st">"arara"</span></span>
+<span id="cb27-6"><a href="#cb27-6"></a>        <span class="ot">]</span></span>
+<span id="cb27-7"><a href="#cb27-7"></a>    <span class="fu">}</span><span class="ot">,</span></span>
+<span id="cb27-8"><a href="#cb27-8"></a>    <span class="fu">{</span></span>
+<span id="cb27-9"><a href="#cb27-9"></a>        <span class="dt">"name"</span><span class="fu">:</span> <span class="st">"latexmk 🔃"</span><span class="fu">,</span></span>
+<span id="cb27-10"><a href="#cb27-10"></a>        <span class="dt">"tools"</span><span class="fu">:</span> <span class="ot">[</span></span>
+<span id="cb27-11"><a href="#cb27-11"></a>            <span class="st">"latexmk"</span></span>
+<span id="cb27-12"><a href="#cb27-12"></a>        <span class="ot">]</span></span>
+<span id="cb27-13"><a href="#cb27-13"></a>    <span class="fu">}</span><span class="ot">,</span></span>
+<span id="cb27-14"><a href="#cb27-14"></a>    <span class="fu">{</span></span>
+<span id="cb27-15"><a href="#cb27-15"></a>        <span class="dt">"name"</span><span class="fu">:</span> <span class="st">"pdflatex"</span><span class="fu">,</span></span>
+<span id="cb27-16"><a href="#cb27-16"></a>        <span class="dt">"tools"</span><span class="fu">:</span> <span class="ot">[</span></span>
+<span id="cb27-17"><a href="#cb27-17"></a>            <span class="st">"pdflatex"</span></span>
+<span id="cb27-18"><a href="#cb27-18"></a>        <span class="ot">]</span></span>
+<span id="cb27-19"><a href="#cb27-19"></a>    <span class="fu">}</span></span>
+<span id="cb27-20"><a href="#cb27-20"></a><span class="ot">]</span><span class="er">,</span></span>
+<span id="cb27-21"><a href="#cb27-21"></a><span class="er">"latex-workshop.latex.tools":</span> <span class="ot">[</span></span>
+<span id="cb27-22"><a href="#cb27-22"></a>    <span class="fu">{</span></span>
+<span id="cb27-23"><a href="#cb27-23"></a>        <span class="dt">"args"</span><span class="fu">:</span> <span class="ot">[</span></span>
+<span id="cb27-24"><a href="#cb27-24"></a>            <span class="st">"--verbose"</span><span class="ot">,</span></span>
+<span id="cb27-25"><a href="#cb27-25"></a>            <span class="st">"%DOC%"</span></span>
+<span id="cb27-26"><a href="#cb27-26"></a>        <span class="ot">]</span><span class="fu">,</span></span>
+<span id="cb27-27"><a href="#cb27-27"></a>        <span class="dt">"command"</span><span class="fu">:</span> <span class="st">"arara"</span><span class="fu">,</span></span>
+<span id="cb27-28"><a href="#cb27-28"></a>        <span class="dt">"env"</span><span class="fu">:</span> <span class="fu">{},</span></span>
+<span id="cb27-29"><a href="#cb27-29"></a>        <span class="dt">"name"</span><span class="fu">:</span> <span class="st">"arara"</span></span>
+<span id="cb27-30"><a href="#cb27-30"></a>    <span class="fu">}</span><span class="ot">,</span></span>
+<span id="cb27-31"><a href="#cb27-31"></a>    <span class="fu">{</span></span>
+<span id="cb27-32"><a href="#cb27-32"></a>        <span class="dt">"args"</span><span class="fu">:</span> <span class="ot">[</span></span>
+<span id="cb27-33"><a href="#cb27-33"></a>            <span class="st">"-synctex=1"</span><span class="ot">,</span></span>
+<span id="cb27-34"><a href="#cb27-34"></a>            <span class="st">"-interaction=nonstopmode"</span><span class="ot">,</span></span>
+<span id="cb27-35"><a href="#cb27-35"></a>            <span class="st">"-file-line-error"</span><span class="ot">,</span></span>
+<span id="cb27-36"><a href="#cb27-36"></a>            <span class="st">"-pdf"</span><span class="ot">,</span></span>
+<span id="cb27-37"><a href="#cb27-37"></a>            <span class="st">"-outdir=%OUTDIR%"</span><span class="ot">,</span></span>
+<span id="cb27-38"><a href="#cb27-38"></a>            <span class="st">"%DOC%"</span></span>
+<span id="cb27-39"><a href="#cb27-39"></a>        <span class="ot">]</span><span class="fu">,</span></span>
+<span id="cb27-40"><a href="#cb27-40"></a>        <span class="dt">"command"</span><span class="fu">:</span> <span class="st">"latexmk"</span><span class="fu">,</span></span>
+<span id="cb27-41"><a href="#cb27-41"></a>        <span class="dt">"env"</span><span class="fu">:</span> <span class="fu">{},</span></span>
+<span id="cb27-42"><a href="#cb27-42"></a>        <span class="dt">"name"</span><span class="fu">:</span> <span class="st">"latexmk"</span></span>
+<span id="cb27-43"><a href="#cb27-43"></a>    <span class="fu">}</span><span class="ot">,</span></span></code><button title="Copia negli appunti" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+</section>
+<section id="section-9" class="title-slide slide level1 center">
+<h1></h1>
+<div style="width:100%;height:0;padding-bottom:100%;position:relative;">
+<iframe src="https://giphy.com/embed/EZICHGrSD5QEFCxMiC" width="100%" height="60%" style="position:absolute" frameborder="0" class="giphy-embed" allowfullscreen="">
+</iframe>
+</div>
+</section>
+
+<section>
+<section id="perché-la-tipografia-è-importante" class="title-slide slide level1 center">
+<h1>Perché la tipografia è importante?</h1>
+
+</section>
+<section id="oscars-2017-best-picture-announcement" class="slide level3">
+<h3>Oscars 2017 Best Picture announcement</h3>
+<iframe data-external="1" src="https://www.youtube.com/embed/p-I6x_iPF5o" width="100%" height="100%" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe>
+</section>
+<section id="by-design-vox" class="slide level3">
+<h3>By Design – Vox</h3>
+<iframe data-external="1" src="https://www.youtube.com/embed/eZSe4xVXHhI" width="100%" height="100%" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe>
+</section></section>
+<section>
+<section id="introduzione-ai-comandi" class="title-slide slide level1 center">
+<h1>Introduzione ai comandi</h1>
+<!-- https://quarto.org/docs/presentations/revealjs/#content-overflow -->
+</section>
+<section id="scaletta-argomenti" class="title-slide slide level2 smaller center">
+<h2>Scaletta argomenti</h2>
+<ul>
+<li>clean code mentality</li>
+<li><a href="https://tex.stackexchange.com/questions/44694/fontenc-vs-inputenc">codifica dell’input e del font</a> (<code>inputenc</code> e <code>fontenc</code>)</li>
+<li>impostazione della lingua del documento ( <code>babel</code>)</li>
+<li><a href="https://tex.stackexchange.com/a/110140/127473">hyphenation, typesetting, ligatures</a> (<code>microtype</code>)<a href="#/footnotes" class="footnote-ref" id="fnref1" role="doc-noteref" data-footnote-href="#/fn1" onclick=""><sup>1</sup></a></li>
+<li>le virgolette (<code>csquotes</code>)</li>
+<li>margini del documento (<code>geometry</code>), indentazione (<code>parskip</code>)</li>
+<li>Interruzioni di riga<a href="#/footnotes" class="footnote-ref" id="fnref2" role="doc-noteref" data-footnote-href="#/fn2" onclick=""><sup>2</sup></a>,uso di <code>%</code><a href="#/footnotes" class="footnote-ref" id="fnref3" role="doc-noteref" data-footnote-href="#/fn3" onclick=""><sup>3</sup></a>, <code>comment</code> package</li>
+<li><strong>grassetto</strong>, <em>corsivo</em>, <code>monofont</code>, combinazini</li>
+<li>elenchi puntati, numerati, descrittivi, personalizzati (<code>enumitem</code>)</li>
+<li>note a piè di pagina (<code>footnote</code>)</li>
+<li>testatina e piedino (<a href="https://www.overleaf.com/learn/latex/Headers_and_footers"><code>fancyhdr</code></a>)</li>
+<li>figure (<code>graphicx</code>) e tabelle (<code>booktabs</code>), opzioni comuni</li>
+<li>strutturazione del documento (<code>standalone</code>)</li>
+<li>riferimenti ipertestuali (<code>hyperref</code>)</li>
+<li>importazione di codice, evidenziazione della sintassi (<code>minted</code>)</li>
+<li>creazione di un glossario (<code>glossaries</code>), acronimi (<code>acronym</code>), indice (<code>index</code>)</li>
+</ul>
+<div class="footer footer-default">
+<p>Impaginazione (tesi) con <span class="math inline">\(\rm\LaTeX\)</span> — Emanuele Nardi — CC BY-NC</p>
+</div>
+<aside></aside></section>
+</section>
+<section id="footnotes" class="footnotes footnotes-end-of-document smaller scrollable" role="doc-endnotes"><h3>Note</h3>
+
+<ol>
+<li id="fn1"><p><a href="http://www.khirevich.com/latex/microtype/">Tips on Writing a Thesis in LaTeX</a></p></li>
+<li id="fn2"><p><a href="https://tex.stackexchange.com/q/82664/127473">When to use <code>\par</code> and when <code>\\</code>, <code>\newline</code></a></p></li>
+<li id="fn3"><p><a href="https://tex.stackexchange.com/a/7459/127473">What is the use of percent signs (<code>%</code>)</a></p></li>
+</ol>
 </section>
     </div>
   </div>
@@ -404,7 +1381,7 @@ Emanuele Nardi
         progress: true,
 
         // Display the page number of the current slide
-        slideNumber: 'c/t',
+        slideNumber: 'h.v',
 
         // 'all', 'print', or 'speaker'
         showSlideNumber: 'all',
@@ -445,7 +1422,7 @@ Emanuele Nardi
         rtl: false,
 
         // see https://revealjs.com/vertical-slides/#navigation-mode
-        navigationMode: 'linear',
+        navigationMode: 'grid',
 
         // Randomizes the order of slides each time the presentation loads
         shuffle: false,
