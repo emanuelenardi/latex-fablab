@@ -4,7 +4,7 @@ project:
   output-dir: docs
 
 lang: it
-title: Impaginazione (tesi) con LaTeX
+title: Impaginazione (tesi) con _LaTeX_
 keywords: latex, thesis
 subtitle: <small> In collaborazione con FabLab UniTrento </small>
 author:
@@ -26,7 +26,7 @@ author-meta: Emanuele Nardi
 preview-links: true
 
 title-slide-attributes:
-  data-background-image: "assets/images/title/writing-thesis.jpg"
+  data-background-image: "assets/images/hero/writing-thesis.jpg"
   data-background-size: cover
   data-background-opacity: "0.4"
   data-background-color: "#212922"
@@ -50,6 +50,7 @@ format:
 
     # multiplex: true
     embed-resources: false # incompatible with chalkboard
+    # fig-align: center
     
     include-after-body: [assets/template/clean_title_page.html]
     # logo: "assets/images/logo/logo-unitn.png"
@@ -75,7 +76,8 @@ format:
     slide-number: h.v #< collapsed/total
     # header: Impaginazione (tesi) con LaTeX -- Emanuele Nardi -- CC BY-NC
     navigation-mode: grid
-    header-logo: "assets/images/logo/unitn-fablab.png"
+    # header-logo: "assets/images/logo/unitn-fablab.png"
+    # hide-from-titleSlide: "logo"
     sc-sb-title: true
     footer: |
         Impaginazione (tesi) con $\rm\LaTeX$ --- Emanuele Nardi --- CC BY-NC
@@ -98,7 +100,8 @@ format:
     # how to treat code
     highlight-style: github
     code-overflow: wrap
-
+filters:
+  - reveal-header
 # To make sure that R, Python, and Julia code is only executed locally
 # execute:
 #   freeze: auto

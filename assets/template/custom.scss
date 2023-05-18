@@ -5,8 +5,8 @@
 
 // $font-family-sans-serif: 'Poppins', sans-serif;
 $font-family-monospace: 'Roboto Mono', monospace;
-$presentation-font-size-root: 40px;
-$presentation-font-smaller: 0.7; 
+// $presentation-font-size-root: 40px;
+// $presentation-font-smaller: 0.7; 
 $presentation-title-slide-text-align: left; // deafult: center
 
 // $presentation-h1-font-size: 2.4em;
@@ -50,6 +50,10 @@ u {
     text-decoration: rgb(255, 255, 255) solid underline;
 }
 
+u.wavy {
+    text-decoration: underline wavy #262D28;
+}
+
 #profile-photo {
     width: 300px;
     height: 300px;
@@ -59,4 +63,26 @@ u {
     float: right;
     position: relative;
     top: -100px; right: 100px;
+}
+
+.white {
+    color: white;
+}
+
+// .nomargin
+.reveal .nomargin p {
+    margin: 0 0 !important;
+    line-height: 1.3
+    
+}
+
+.reveal .nomargin ul {
+    margin-block-start: 0em !important;
+    margin-block-end: 0em !important;
+}
+
+.reveal .slide .nomargin ul li,
+.reveal .slide .nomargin ol li {
+    margin-top: 0em; // 0.4
+    margin-bottom: 0em; // 0.2
 }
