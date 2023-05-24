@@ -348,7 +348,7 @@ Non mettere in sospensione il computer durante l'installazione, la procedura dur
 
     {{< fa brands linux >}} `sudo apt install -y python3-pygments`
 
-    {{< fa brands apple >}} `brew install python@3.1 && brew install pygments`
+    {{< fa brands apple >}} `brew install python@3.11 && brew install pygments`
 
     - controlla che sia stato installato correttamente:
 
@@ -500,7 +500,7 @@ source ~/.bashrc # aggiorna il file di configurazione
 echo 'export MANPATH="$MANPATH:/usr/local/texlive/2023/texmf-dist/doc/man"' >> ~/.zshenv
 echo 'export INFOPATH="$INFOPATH:/usr/local/texlive/2023/texmf-dist/doc/info"' >> ~/.zshenv
 echo 'export PATH=/usr/local/texlive/2023/bin/universal-darwin:$PATH' >> ~/.zshenv
-source ~/.zshrc # aggiorna il file di configurazione
+source ~/.zshenv # aggiorna il file di configurazione
 ```
 
 Controlla che il *PATH* si sia aggiornato:
@@ -984,24 +984,18 @@ Package thmtools Info: Key `qed' (with value `\qedsymbol ')
 - due [file di configurazione](https://github.com/islandoftex/arara/issues/34) possibili: `.araraconfig.yaml`, `.arararc.yaml`
 
 ```latex
-% arara: latexmk: { clean: all }
+% arara: pdflatex: { draft: yes, shell: yes, options: [--output-directory=build] }
 
-% arara: pdflatex: {
-% arara: --> options: ['--output-directory=build'],
-% arara: --> shell: yes,
-% arara: --> draft: yes
-% arara: --> }
+% arara: biber: { options: [ '--output-directory=build' ] }
+% arara: --> if missing(toFile('build/thesis.bbl')) || changed(toFile('build/thesis.bbl')) || found(toFile('build/thesis.log'), 'Citation')
 
-% arara: biber if missing('bbl') || changed('bbl') || found('log', 'Citation')
-% arara: makeglossaries if changed ('glo') || missing ('gls')
-% arara: makeindex if changed ('idx') || missing ('ind')
+% arara: makeglossaries: { options: [ '-d', 'build' ] }
+% arara: --> if changed (toFile('build/thesis.glo')) || missing (toFile('build/thesis.gls'))
 
-% arara: pdflatex: {
-% arara: --> options: ['--output-directory=build'],
-% arara: --> shell: yes,
-% arara: --> synctex: yes,
-% arara: --> }
-% arara: --> until !found('log', '\\(?(R|r)e\\)?run (to get|LaTeX)')
+% arara: pdflatex: { shell: yes, synctex: yes, options: [--output-directory=build] }
+
+% arara: move: { files: [ 'build/thesis.pdf' ],
+% arara: --> target: 'backup/thesis.pdf' }
 ```
 
 ## Pulizia file temporanei {.smaller}
@@ -1012,7 +1006,7 @@ latexmk -c
 ```
 Se `latexmk -c` si rifiuta di rimuovere determinati file, è possibile specificare le loro estensioni nel file di configurazione `.latexmkrc` come segue:
 ```perl
-$clean_ext = "bbl nav out snm";
+$clean_ext = "acn acr alg glg glo gls ist log nav out run.xml slg snm syg syi synctex.gz";
 ```
 Questo non elimina il documento finale `.pdf`. Se vuoi eliminare anche il `.pdf`:
 ```bash
@@ -1021,13 +1015,21 @@ latexmk -C
 
 Questo è il contenuto del mio file di configurazione `.latexmkrc`:
 ```perl
+# latexmk -pdf -pvc main.tex
 $pdflatex = "pdflatex --shell-escape -synctex=1 -halt-on-error %O %S";
-
 $sleep_time = 1; # 1 second
 $pdf_mode = 1;   # tex -> pdf
 
-@default_files = ('main.tex');
-$clean_ext = "loc soc pyg";
+# If you have your work split up into several parts, you have to specify the main file like this:
+@default_files = ('thesis.tex');
+
+# And finally, if latexmk -c refuses to remove certain files, you can specify their extensions and next time they’ll be gone:
+$clean_ext = "acn acr alg glg glo gls ist log nav out run.xml slg snm syg syi synctex.gz";
+
+# https://tex.stackexchange.com/questions/83341/clean-bbl-files-with-latexmk-c
+$bibtex_use = 2;
+
+$out_dir = 'build';
 ```
 
 # Package utili {.smaller}
@@ -1220,23 +1222,67 @@ Letture consigliate:
 - [Lengths in LaTeX](https://www.overleaf.com/learn/latex/Lengths_in_LaTeX)
 - [Font sizes, families, and styles](https://www.overleaf.com/learn/latex/Font_sizes%2C_families%2C_and_styles#Font_families)
 
+## Struttura generale di una tesi {.smallest}
+
+Le voci in corsivo sono obbligatorie, quelle in tondo sono facoltative, quelle asteriscate non devono
+comparire nell’indice generale.
+
+| Supersezionamento | Sezione |
+|---------|:-----|
+| Materiale iniziale | _Frontespizio_<br>Colophon\*<br>Dedica\*<br>Sommario*<br>_Indice generale_*<br>Elenco delle figure\*<br>Elenco delle tabelle\*<br>Altri elenchi\*<br>Prefazione<br>Ringraziamenti\*<br>Introduzione non numerata |
+| Materiale principale | Introduzione numerata<br>_Capitoli_<br>Una o più appendici numerate |
+| Materiale finale | Una o più appendici non numerate<br>Glossario<br>_Bibliografia_<br>Indice analitico |
+: {tbl-colwidths="[10,40]"}
+
 ## Special LaTeX characters {.smaller}
 
-some characters are reserved for LaTeX commands. They cannot be used directly in the source. Usually they can be printed if preceded by a backslash:
+Alcuni caratteri sono riservati per comandi $\rm\LaTeX$.
+Non possono essere usati direttamente nel codice sorgente.
 
-| Abbreviation | Value |
-|---------|:-----|
-| Number sign  | `#` |
-| Dollar sign  | `$` |
-| Percent sign | `%` |
-| Underscore   | `_` |
-| Ampersand    | `&` |
-| Braces       | `{ }` |
-| Circumflex   | `^`  |
-: Special characters
+| Abbreviation | Carattere | Funzione | Codice |
+|---------|:-----|:-----|:-----|
+| Backslash  | `\` | Comincia un comando | `\textbackslash` |
+| Braces       | `{ }` | Delimitano un gruppo | `\{ \}` |
+| Dollar sign  | `$` | Delimita la matematica in linea | `\$` |
+| Circumflex   | `^`  | Esponente matematico | `\^{}` |
+| Underscore   | `_` | Pedice matematico | `\_` |
+| Ampersand    | `&` | Separa le celle in una tabella | `\&` |
+| Hash         | `#` | Numero dell’argomento | `\#` |
+| Tilde        | `~` | Spazio indivisibile | `\~{}` |
+| Percent      | `%` | Commento | `\%` |
+: Caratteri speciali {#tbl-latex-special-characters}
 
+## Modificare lo stile del font {.smaller}
 
-### {.smallest}
+| Comando | Dichiarazione | Stile |
+|---------|:-----|:-----|
+| `\emph` | `\em` | Emphasized |
+| `\textit` | `\itshape` | Italic |
+| `\textsc` | `\scshape` | Small caps |
+| `\textbf` | `\bfseries` | Bold |
+| `\textsl` | `\slshape` | Slanted |
+| `\textrm` | `\rmfamily` | Roman |
+| `\textsf` | `\sffamily` | Sans serif |
+| `\texttt` | `\ttfamily` | Typewriter |
+: Stili del font {#tbl-latex-font-styles}
+
+## Modificare la dimensione del font {.smaller}
+
+| Dichiarazione | Dimensione |
+|:-----|:-----|
+| `\tiny` | 5pt |
+| `\scriptsize` | 7pt |
+| `\footnotesize` | 8pt |
+| `\small` | 9pt |
+| `\normalsize` | 10pt |
+| `\large` | 12pt |
+| `\Large` | 14.4pt |
+| `\LARGE` | 17.28pt |
+| `\huge` | 20.74pt |
+| `\Huge` | 24.88pt |
+: Dimensioni del font {#tbl-latex-font-sizes}
+
+### Unità di misura in LaTeX {.smallest}
 
 | Abbreviation | Value |
 |---------|:-----|
@@ -1244,8 +1290,8 @@ some characters are reserved for LaTeX commands. They cannot be used directly in
 | `mm` | a millimeter |
 | `cm` | a centimeter |
 | `in` | inch |
-| `ex` | roughly the height of an 'x' (lowercase) in the current font (it depends on the font used) |
-| `em` | roughly the width of an 'M' (uppercase) in the current font (it depends on the font used) |
+| `ex` | roughly the height of an 'x' (lowercase) in the current font |
+| `em` | roughly the width of an 'M' (uppercase) in the current font |
 | `mu` | math unit equal to `1/18 em`, where `em` is taken from the math symbols family |
 | `sp` | so-called "special points", a low-level unit of measure where `65536sp=1pt` |
 : Unità in LaTeX {#tbl-latex-units tbl-colwidths="[10,65]"}
@@ -1269,5 +1315,3 @@ some characters are reserved for LaTeX commands. They cannot be used directly in
 | `\textwidth` | Width of the text area in the page |
 | `\topmargin` | Length of the top margin |
 : most common lengths {#tbl-latex-lengths tbl-colwidths="[10,65]"}
-
-<!-- ghostscript -->
