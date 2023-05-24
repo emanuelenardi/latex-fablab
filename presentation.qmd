@@ -976,7 +976,7 @@ Package thmtools Info: Key `qed' (with value `\qedsymbol ')
 (thmtools)             that uses `style=myProofStyle' on input line 84.
 ``` -->
 
-### {.smaller}
+### {#arara-config .smaller}
 
 - dobbiamo evitare esecuzioni successive inutili.
 - abbiamo a disposizione tre funzioni fondamentali: `missing`, `changed` e `found`.
