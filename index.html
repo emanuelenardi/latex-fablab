@@ -427,7 +427,7 @@
          <!-- for(by-author) -->
     </div>
 
-        <p class="date"><u>Aggiornate giovedì 18 maggio 2023</u></p>
+        <p class="date"><u>Aggiornate mercoledì 24 maggio 2023</u></p>
     </section>
 <section>
 <section id="introduzione" class="title-slide slide level1 smaller center" data-background="https://images.unsplash.com/photo-1573848855919-9abecc93e456?auto=format&amp;fit=crop&amp;w=1470&amp;q=100" data-background-size="cover">
@@ -973,7 +973,7 @@
 <p><i class="fa-brands fa-apple" aria-label="apple"></i> <code>brew install java</code></p></li>
 <li><p>installare <i class="fa-brands fa-python" aria-label="python"></i> Pygments:</p>
 <p><i class="fa-brands fa-linux" aria-label="linux"></i> <code>sudo apt install -y python3-pygments</code></p>
-<p><i class="fa-brands fa-apple" aria-label="apple"></i> <code>brew install python@3.1 &amp;&amp; brew install pygments</code></p>
+<p><i class="fa-brands fa-apple" aria-label="apple"></i> <code>brew install python@3.11 &amp;&amp; brew install pygments</code></p>
 <ul>
 <li>controlla che sia stato installato correttamente:</li>
 </ul>
@@ -1126,7 +1126,7 @@ You do not need to remove an installation of a previous release, or any system-p
 <div class="sourceCode" id="cb15"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb15-1"><a href="#cb15-1"></a><span class="bu">echo</span> <span class="st">'export MANPATH="$MANPATH:/usr/local/texlive/2023/texmf-dist/doc/man"'</span> <span class="op">&gt;&gt;</span> ~/.zshenv</span>
 <span id="cb15-2"><a href="#cb15-2"></a><span class="bu">echo</span> <span class="st">'export INFOPATH="$INFOPATH:/usr/local/texlive/2023/texmf-dist/doc/info"'</span> <span class="op">&gt;&gt;</span> ~/.zshenv</span>
 <span id="cb15-3"><a href="#cb15-3"></a><span class="bu">echo</span> <span class="st">'export PATH=/usr/local/texlive/2023/bin/universal-darwin:$PATH'</span> <span class="op">&gt;&gt;</span> ~/.zshenv</span>
-<span id="cb15-4"><a href="#cb15-4"></a><span class="bu">source</span> ~/.zshrc <span class="co"># aggiorna il file di configurazione</span></span></code><button title="Copia negli appunti" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb15-4"><a href="#cb15-4"></a><span class="bu">source</span> ~/.zshenv <span class="co"># aggiorna il file di configurazione</span></span></code><button title="Copia negli appunti" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>Controlla che il <em>PATH</em> si sia aggiornato:</p>
 <div class="sourceCode" id="cb16"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb16-1"><a href="#cb16-1"></a><span class="bu">echo</span> <span class="at">-e</span> <span class="va">${PATH</span><span class="op">//</span><span class="ss">:</span><span class="op">/</span><span class="dt">\\</span>n<span class="va">}</span></span></code><button title="Copia negli appunti" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>Nel caso in cui l’installazione non sia andata a buon fine, <a href="https://tex.stackexchange.com/questions/540429/">resetta l’installazione</a>.</p>
@@ -1583,24 +1583,18 @@ Package thmtools Info: Key `qed' (with value `\qedsymbol ')
 <li>tramite le quali possiamo controllare la presenza di un file, la sua modifica, o la presenza di una parola chiave all’interno del file.</li>
 <li>due <a href="https://github.com/islandoftex/arara/issues/34">file di configurazione</a> possibili: <code>.araraconfig.yaml</code>, <code>.arararc.yaml</code></li>
 </ul>
-<div class="sourceCode" id="cb28"><pre class="sourceCode numberSource latex number-lines code-with-copy"><code class="sourceCode latex"><span id="cb28-1"><a href="#cb28-1"></a><span class="co">% arara: latexmk: { clean: all }</span></span>
+<div class="sourceCode" id="cb28"><pre class="sourceCode numberSource latex number-lines code-with-copy"><code class="sourceCode latex"><span id="cb28-1"><a href="#cb28-1"></a><span class="co">% arara: pdflatex: { draft: yes, shell: yes, options: [--output-directory=build] }</span></span>
 <span id="cb28-2"><a href="#cb28-2"></a></span>
-<span id="cb28-3"><a href="#cb28-3"></a><span class="co">% arara: pdflatex: {</span></span>
-<span id="cb28-4"><a href="#cb28-4"></a><span class="co">% arara: --&gt; options: ['--output-directory=build'],</span></span>
-<span id="cb28-5"><a href="#cb28-5"></a><span class="co">% arara: --&gt; shell: yes,</span></span>
-<span id="cb28-6"><a href="#cb28-6"></a><span class="co">% arara: --&gt; draft: yes</span></span>
-<span id="cb28-7"><a href="#cb28-7"></a><span class="co">% arara: --&gt; }</span></span>
+<span id="cb28-3"><a href="#cb28-3"></a><span class="co">% arara: biber: { options: [ '--output-directory=build' ] }</span></span>
+<span id="cb28-4"><a href="#cb28-4"></a><span class="co">% arara: --&gt; if missing(toFile('build/thesis.bbl')) || changed(toFile('build/thesis.bbl')) || found(toFile('build/thesis.log'), 'Citation')</span></span>
+<span id="cb28-5"><a href="#cb28-5"></a></span>
+<span id="cb28-6"><a href="#cb28-6"></a><span class="co">% arara: makeglossaries: { options: [ '-d', 'build' ] }</span></span>
+<span id="cb28-7"><a href="#cb28-7"></a><span class="co">% arara: --&gt; if changed (toFile('build/thesis.glo')) || missing (toFile('build/thesis.gls'))</span></span>
 <span id="cb28-8"><a href="#cb28-8"></a></span>
-<span id="cb28-9"><a href="#cb28-9"></a><span class="co">% arara: biber if missing('bbl') || changed('bbl') || found('log', 'Citation')</span></span>
-<span id="cb28-10"><a href="#cb28-10"></a><span class="co">% arara: makeglossaries if changed ('glo') || missing ('gls')</span></span>
-<span id="cb28-11"><a href="#cb28-11"></a><span class="co">% arara: makeindex if changed ('idx') || missing ('ind')</span></span>
-<span id="cb28-12"><a href="#cb28-12"></a></span>
-<span id="cb28-13"><a href="#cb28-13"></a><span class="co">% arara: pdflatex: {</span></span>
-<span id="cb28-14"><a href="#cb28-14"></a><span class="co">% arara: --&gt; options: ['--output-directory=build'],</span></span>
-<span id="cb28-15"><a href="#cb28-15"></a><span class="co">% arara: --&gt; shell: yes,</span></span>
-<span id="cb28-16"><a href="#cb28-16"></a><span class="co">% arara: --&gt; synctex: yes,</span></span>
-<span id="cb28-17"><a href="#cb28-17"></a><span class="co">% arara: --&gt; }</span></span>
-<span id="cb28-18"><a href="#cb28-18"></a><span class="co">% arara: --&gt; until !found('log', '\\(?(R|r)e\\)?run (to get|LaTeX)')</span></span></code><button title="Copia negli appunti" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb28-9"><a href="#cb28-9"></a><span class="co">% arara: pdflatex: { shell: yes, synctex: yes, options: [--output-directory=build] }</span></span>
+<span id="cb28-10"><a href="#cb28-10"></a></span>
+<span id="cb28-11"><a href="#cb28-11"></a><span class="co">% arara: move: { files: [ 'build/thesis.pdf' ],</span></span>
+<span id="cb28-12"><a href="#cb28-12"></a><span class="co">% arara: --&gt; target: 'backup/thesis.pdf' }</span></span></code><button title="Copia negli appunti" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 
 <section id="pulizia-file-temporanei" class="title-slide slide level2 smaller center">
@@ -1608,17 +1602,25 @@ Package thmtools Info: Key `qed' (with value `\qedsymbol ')
 <p>Pulire i file temporanei:</p>
 <div class="sourceCode" id="cb29"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb29-1"><a href="#cb29-1"></a><span class="ex">latexmk</span> <span class="at">-c</span></span></code><button title="Copia negli appunti" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>Se <code>latexmk -c</code> si rifiuta di rimuovere determinati file, è possibile specificare le loro estensioni nel file di configurazione <code>.latexmkrc</code> come segue:</p>
-<div class="sourceCode" id="cb30"><pre class="sourceCode numberSource perl number-lines code-with-copy"><code class="sourceCode perl"><span id="cb30-1"><a href="#cb30-1"></a><span class="dt">$clean_ext</span> = <span class="ot">"</span><span class="st">bbl nav out snm</span><span class="ot">"</span>;</span></code><button title="Copia negli appunti" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb30"><pre class="sourceCode numberSource perl number-lines code-with-copy"><code class="sourceCode perl"><span id="cb30-1"><a href="#cb30-1"></a><span class="dt">$clean_ext</span> = <span class="ot">"</span><span class="st">acn acr alg glg glo gls ist log nav out run.xml slg snm syg syi synctex.gz</span><span class="ot">"</span>;</span></code><button title="Copia negli appunti" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>Questo non elimina il documento finale <code>.pdf</code>. Se vuoi eliminare anche il <code>.pdf</code>:</p>
 <div class="sourceCode" id="cb31"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb31-1"><a href="#cb31-1"></a><span class="ex">latexmk</span> <span class="at">-C</span></span></code><button title="Copia negli appunti" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>Questo è il contenuto del mio file di configurazione <code>.latexmkrc</code>:</p>
-<div class="sourceCode" id="cb32"><pre class="sourceCode numberSource perl number-lines code-with-copy"><code class="sourceCode perl"><span id="cb32-1"><a href="#cb32-1"></a><span class="dt">$pdflatex</span> = <span class="ot">"</span><span class="st">pdflatex --shell-escape -synctex=1 -halt-on-error </span><span class="dt">%O</span><span class="st"> </span><span class="dt">%S</span><span class="ot">"</span>;</span>
-<span id="cb32-2"><a href="#cb32-2"></a></span>
+<div class="sourceCode" id="cb32"><pre class="sourceCode numberSource perl number-lines code-with-copy"><code class="sourceCode perl"><span id="cb32-1"><a href="#cb32-1"></a><span class="co"># latexmk -pdf -pvc main.tex</span></span>
+<span id="cb32-2"><a href="#cb32-2"></a><span class="dt">$pdflatex</span> = <span class="ot">"</span><span class="st">pdflatex --shell-escape -synctex=1 -halt-on-error </span><span class="dt">%O</span><span class="st"> </span><span class="dt">%S</span><span class="ot">"</span>;</span>
 <span id="cb32-3"><a href="#cb32-3"></a><span class="dt">$sleep_time</span> = <span class="dv">1</span>; <span class="co"># 1 second</span></span>
 <span id="cb32-4"><a href="#cb32-4"></a><span class="dt">$pdf_mode</span> = <span class="dv">1</span>;   <span class="co"># tex -&gt; pdf</span></span>
 <span id="cb32-5"><a href="#cb32-5"></a></span>
-<span id="cb32-6"><a href="#cb32-6"></a><span class="dt">@default_files</span> = (<span class="ot">'</span><span class="ss">main.tex</span><span class="ot">'</span>);</span>
-<span id="cb32-7"><a href="#cb32-7"></a><span class="dt">$clean_ext</span> = <span class="ot">"</span><span class="st">loc soc pyg</span><span class="ot">"</span>;</span></code><button title="Copia negli appunti" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb32-6"><a href="#cb32-6"></a><span class="co"># If you have your work split up into several parts, you have to specify the main file like this:</span></span>
+<span id="cb32-7"><a href="#cb32-7"></a><span class="dt">@default_files</span> = (<span class="ot">'</span><span class="ss">thesis.tex</span><span class="ot">'</span>);</span>
+<span id="cb32-8"><a href="#cb32-8"></a></span>
+<span id="cb32-9"><a href="#cb32-9"></a><span class="co"># And finally, if latexmk -c refuses to remove certain files, you can specify their extensions and next time they’ll be gone:</span></span>
+<span id="cb32-10"><a href="#cb32-10"></a><span class="dt">$clean_ext</span> = <span class="ot">"</span><span class="st">acn acr alg glg glo gls ist log nav out run.xml slg snm syg syi synctex.gz</span><span class="ot">"</span>;</span>
+<span id="cb32-11"><a href="#cb32-11"></a></span>
+<span id="cb32-12"><a href="#cb32-12"></a><span class="co"># https://tex.stackexchange.com/questions/83341/clean-bbl-files-with-latexmk-c</span></span>
+<span id="cb32-13"><a href="#cb32-13"></a><span class="dt">$bibtex_use</span> = <span class="dv">2</span>;</span>
+<span id="cb32-14"><a href="#cb32-14"></a></span>
+<span id="cb32-15"><a href="#cb32-15"></a><span class="dt">$out_dir</span> = <span class="ot">'</span><span class="ss">build</span><span class="ot">'</span>;</span></code><button title="Copia negli appunti" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 </section>
 <section>
@@ -1818,54 +1820,230 @@ Letture consigliate:
 </ul>
 </section>
 
-<section id="special-latex-characters" class="title-slide slide level2 smaller center">
-<h2>Special LaTeX characters</h2>
-<p>some characters are reserved for LaTeX commands. They cannot be used directly in the source. Usually they can be printed if preceded by a backslash:</p>
-<table>
-<caption>Special characters</caption>
+<section id="struttura-generale-di-una-tesi" class="title-slide slide level2 smallest center">
+<h2>Struttura generale di una tesi</h2>
+<p>Le voci in corsivo sono obbligatorie, quelle in tondo sono facoltative, quelle asteriscate non devono comparire nell’indice generale.</p>
+<table style="width:50%;">
+<colgroup>
+<col style="width: 10%">
+<col style="width: 40%">
+</colgroup>
 <thead>
 <tr class="header">
-<th>Abbreviation</th>
-<th style="text-align: left;">Value</th>
+<th>Supersezionamento</th>
+<th style="text-align: left;">Sezione</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td>Number sign</td>
-<td style="text-align: left;"><code>#</code></td>
+<td>Materiale iniziale</td>
+<td style="text-align: left;"><em>Frontespizio</em><br>Colophon*<br>Dedica*<br>Sommario<em><br><em>Indice generale</em></em><br>Elenco delle figure*<br>Elenco delle tabelle*<br>Altri elenchi*<br>Prefazione<br>Ringraziamenti*<br>Introduzione non numerata</td>
 </tr>
 <tr class="even">
-<td>Dollar sign</td>
-<td style="text-align: left;"><code>$</code></td>
+<td>Materiale principale</td>
+<td style="text-align: left;">Introduzione numerata<br><em>Capitoli</em><br>Una o più appendici numerate</td>
 </tr>
 <tr class="odd">
-<td>Percent sign</td>
-<td style="text-align: left;"><code>%</code></td>
-</tr>
-<tr class="even">
-<td>Underscore</td>
-<td style="text-align: left;"><code>_</code></td>
-</tr>
-<tr class="odd">
-<td>Ampersand</td>
-<td style="text-align: left;"><code>&amp;</code></td>
-</tr>
-<tr class="even">
-<td>Braces</td>
-<td style="text-align: left;"><code>{ }</code></td>
-</tr>
-<tr class="odd">
-<td>Circumflex</td>
-<td style="text-align: left;"><code>^</code></td>
+<td>Materiale finale</td>
+<td style="text-align: left;">Una o più appendici non numerate<br>Glossario<br><em>Bibliografia</em><br>Indice analitico</td>
 </tr>
 </tbody>
 </table>
 </section>
-<section id="section-12" class="slide level3 smallest">
-<h3></h3>
+
+<section id="special-latex-characters" class="title-slide slide level2 smaller center">
+<h2>Special LaTeX characters</h2>
+<p>Alcuni caratteri sono riservati per comandi <span class="math inline">\(\rm\LaTeX\)</span>. Non possono essere usati direttamente nel codice sorgente.</p>
+<div id="tbl-latex-special-characters">
+<table>
+<caption>Tabella&nbsp;1: Caratteri speciali</caption>
+<thead>
+<tr class="header">
+<th>Abbreviation</th>
+<th style="text-align: left;">Carattere</th>
+<th style="text-align: left;">Funzione</th>
+<th style="text-align: left;">Codice</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Backslash</td>
+<td style="text-align: left;"><code>\</code></td>
+<td style="text-align: left;">Comincia un comando</td>
+<td style="text-align: left;"><code>\textbackslash</code></td>
+</tr>
+<tr class="even">
+<td>Braces</td>
+<td style="text-align: left;"><code>{ }</code></td>
+<td style="text-align: left;">Delimitano un gruppo</td>
+<td style="text-align: left;"><code>\{ \}</code></td>
+</tr>
+<tr class="odd">
+<td>Dollar sign</td>
+<td style="text-align: left;"><code>$</code></td>
+<td style="text-align: left;">Delimita la matematica in linea</td>
+<td style="text-align: left;"><code>\$</code></td>
+</tr>
+<tr class="even">
+<td>Circumflex</td>
+<td style="text-align: left;"><code>^</code></td>
+<td style="text-align: left;">Esponente matematico</td>
+<td style="text-align: left;"><code>\^{}</code></td>
+</tr>
+<tr class="odd">
+<td>Underscore</td>
+<td style="text-align: left;"><code>_</code></td>
+<td style="text-align: left;">Pedice matematico</td>
+<td style="text-align: left;"><code>\_</code></td>
+</tr>
+<tr class="even">
+<td>Ampersand</td>
+<td style="text-align: left;"><code>&amp;</code></td>
+<td style="text-align: left;">Separa le celle in una tabella</td>
+<td style="text-align: left;"><code>\&amp;</code></td>
+</tr>
+<tr class="odd">
+<td>Hash</td>
+<td style="text-align: left;"><code>#</code></td>
+<td style="text-align: left;">Numero dell’argomento</td>
+<td style="text-align: left;"><code>\#</code></td>
+</tr>
+<tr class="even">
+<td>Tilde</td>
+<td style="text-align: left;"><code>~</code></td>
+<td style="text-align: left;">Spazio indivisibile</td>
+<td style="text-align: left;"><code>\~{}</code></td>
+</tr>
+<tr class="odd">
+<td>Percent</td>
+<td style="text-align: left;"><code>%</code></td>
+<td style="text-align: left;">Commento</td>
+<td style="text-align: left;"><code>\%</code></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+
+<section id="modificare-lo-stile-del-font" class="title-slide slide level2 smaller center">
+<h2>Modificare lo stile del font</h2>
+<div id="tbl-latex-font-styles">
+<table>
+<caption>Tabella&nbsp;2: Stili del font</caption>
+<thead>
+<tr class="header">
+<th>Comando</th>
+<th style="text-align: left;">Dichiarazione</th>
+<th style="text-align: left;">Stile</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>\emph</code></td>
+<td style="text-align: left;"><code>\em</code></td>
+<td style="text-align: left;">Emphasized</td>
+</tr>
+<tr class="even">
+<td><code>\textit</code></td>
+<td style="text-align: left;"><code>\itshape</code></td>
+<td style="text-align: left;">Italic</td>
+</tr>
+<tr class="odd">
+<td><code>\textsc</code></td>
+<td style="text-align: left;"><code>\scshape</code></td>
+<td style="text-align: left;">Small caps</td>
+</tr>
+<tr class="even">
+<td><code>\textbf</code></td>
+<td style="text-align: left;"><code>\bfseries</code></td>
+<td style="text-align: left;">Bold</td>
+</tr>
+<tr class="odd">
+<td><code>\textsl</code></td>
+<td style="text-align: left;"><code>\slshape</code></td>
+<td style="text-align: left;">Slanted</td>
+</tr>
+<tr class="even">
+<td><code>\textrm</code></td>
+<td style="text-align: left;"><code>\rmfamily</code></td>
+<td style="text-align: left;">Roman</td>
+</tr>
+<tr class="odd">
+<td><code>\textsf</code></td>
+<td style="text-align: left;"><code>\sffamily</code></td>
+<td style="text-align: left;">Sans serif</td>
+</tr>
+<tr class="even">
+<td><code>\texttt</code></td>
+<td style="text-align: left;"><code>\ttfamily</code></td>
+<td style="text-align: left;">Typewriter</td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+
+<section id="modificare-la-dimensione-del-font" class="title-slide slide level2 smaller center">
+<h2>Modificare la dimensione del font</h2>
+<div id="tbl-latex-font-sizes">
+<table>
+<caption>Tabella&nbsp;3: Dimensioni del font</caption>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Dichiarazione</th>
+<th style="text-align: left;">Dimensione</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><code>\tiny</code></td>
+<td style="text-align: left;">5pt</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><code>\scriptsize</code></td>
+<td style="text-align: left;">7pt</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><code>\footnotesize</code></td>
+<td style="text-align: left;">8pt</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><code>\small</code></td>
+<td style="text-align: left;">9pt</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><code>\normalsize</code></td>
+<td style="text-align: left;">10pt</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><code>\large</code></td>
+<td style="text-align: left;">12pt</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><code>\Large</code></td>
+<td style="text-align: left;">14.4pt</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><code>\LARGE</code></td>
+<td style="text-align: left;">17.28pt</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><code>\huge</code></td>
+<td style="text-align: left;">20.74pt</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><code>\Huge</code></td>
+<td style="text-align: left;">24.88pt</td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="unità-di-misura-in-latex" class="slide level3 smallest">
+<h3>Unità di misura in LaTeX</h3>
 <div id="tbl-latex-units">
 <table style="width:75%;">
-<caption>Tabella&nbsp;1: Unità in LaTeX</caption>
+<caption>Tabella&nbsp;4: Unità in LaTeX</caption>
 <colgroup>
 <col style="width: 10%">
 <col style="width: 65%">
@@ -1895,11 +2073,11 @@ Letture consigliate:
 </tr>
 <tr class="odd">
 <td><code>ex</code></td>
-<td style="text-align: left;">roughly the height of an ‘x’ (lowercase) in the current font (it depends on the font used)</td>
+<td style="text-align: left;">roughly the height of an ‘x’ (lowercase) in the current font</td>
 </tr>
 <tr class="even">
 <td><code>em</code></td>
-<td style="text-align: left;">roughly the width of an ‘M’ (uppercase) in the current font (it depends on the font used)</td>
+<td style="text-align: left;">roughly the width of an ‘M’ (uppercase) in the current font</td>
 </tr>
 <tr class="odd">
 <td><code>mu</code></td>
@@ -1913,11 +2091,11 @@ Letture consigliate:
 </table>
 </div>
 </section>
-<section id="section-13" class="slide level3 smallest">
+<section id="section-12" class="slide level3 smallest">
 <h3></h3>
 <div id="tbl-latex-lengths">
 <table style="width:75%;">
-<caption>Tabella&nbsp;2: most common lengths</caption>
+<caption>Tabella&nbsp;5: most common lengths</caption>
 <colgroup>
 <col style="width: 10%">
 <col style="width: 65%">
@@ -1988,7 +2166,6 @@ Letture consigliate:
 </tbody>
 </table>
 </div>
-<!-- ghostscript -->
 <div class="footer footer-default">
 <p>Impaginazione (tesi) con <span class="math inline">\(\rm\LaTeX\)</span> — Emanuele Nardi — CC BY-NC</p>
 </div>
