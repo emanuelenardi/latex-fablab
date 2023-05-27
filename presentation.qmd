@@ -1297,7 +1297,7 @@ Il main di Java passa come paramentro \mintinline{java}{String[] args}.
 ```
 :::
 
-### Come aggiungere un didascalia {.smaller}
+### Come aggiungere una didascalia {.smaller}
 
 1. modifichiamo il preambolo:
 
