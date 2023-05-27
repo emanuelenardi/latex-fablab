@@ -1795,6 +1795,42 @@ Package thmtools Info: Key `qed' (with value `\qedsymbol ')
 </ul>
 </section>
 </section>
+<section id="struttura-del-progetto" class="title-slide slide level1 center">
+<h1>Struttura del progetto</h1>
+<div class="code larger">
+<div class="sourceCode" id="cb33" data-code-line-numbers="false"><pre class="sourceCode txt code-with-copy"><code class="sourceCode default"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a>.</span>
+<span id="cb33-2"><a href="#cb33-2" aria-hidden="true" tabindex="-1"></a>├── assets/</span>
+<span id="cb33-3"><a href="#cb33-3" aria-hidden="true" tabindex="-1"></a>│   ├── assets/</span>
+<span id="cb33-4"><a href="#cb33-4" aria-hidden="true" tabindex="-1"></a>│   │   ├── resources/</span>
+<span id="cb33-5"><a href="#cb33-5" aria-hidden="true" tabindex="-1"></a>│   │   │   └── bibliography.bib</span>
+<span id="cb33-6"><a href="#cb33-6" aria-hidden="true" tabindex="-1"></a>│   │   ├── figures/</span>
+<span id="cb33-7"><a href="#cb33-7" aria-hidden="true" tabindex="-1"></a>│   │   ├── plots/</span>
+<span id="cb33-8"><a href="#cb33-8" aria-hidden="true" tabindex="-1"></a>│   │   └── tables/</span>
+<span id="cb33-9"><a href="#cb33-9" aria-hidden="true" tabindex="-1"></a>│   ├── backup/</span>
+<span id="cb33-10"><a href="#cb33-10" aria-hidden="true" tabindex="-1"></a>│   ├── build/</span>
+<span id="cb33-11"><a href="#cb33-11" aria-hidden="true" tabindex="-1"></a>│   ├── chapter/</span>
+<span id="cb33-12"><a href="#cb33-12" aria-hidden="true" tabindex="-1"></a>│   │   ├── intro/</span>
+<span id="cb33-13"><a href="#cb33-13" aria-hidden="true" tabindex="-1"></a>│   │   │   ├── frontespizio.tex</span>
+<span id="cb33-14"><a href="#cb33-14" aria-hidden="true" tabindex="-1"></a>│   │   │   ├── dedica.tex</span>
+<span id="cb33-15"><a href="#cb33-15" aria-hidden="true" tabindex="-1"></a>│   │   └── *-chapter.tex</span>
+<span id="cb33-16"><a href="#cb33-16" aria-hidden="true" tabindex="-1"></a>│   └── libraries/</span>
+<span id="cb33-17"><a href="#cb33-17" aria-hidden="true" tabindex="-1"></a>|       ├── set-bibliography.sty</span>
+<span id="cb33-18"><a href="#cb33-18" aria-hidden="true" tabindex="-1"></a>|       ├── set-code.sty</span>
+<span id="cb33-19"><a href="#cb33-19" aria-hidden="true" tabindex="-1"></a>|       ├── set-geometry.sty</span>
+<span id="cb33-20"><a href="#cb33-20" aria-hidden="true" tabindex="-1"></a>|       ├── set-glossaries.sty</span>
+<span id="cb33-21"><a href="#cb33-21" aria-hidden="true" tabindex="-1"></a>|       ├── set-links.sty</span>
+<span id="cb33-22"><a href="#cb33-22" aria-hidden="true" tabindex="-1"></a>|       ├── set-lists.sty</span>
+<span id="cb33-23"><a href="#cb33-23" aria-hidden="true" tabindex="-1"></a>|       ├── set-props.sty</span>
+<span id="cb33-24"><a href="#cb33-24" aria-hidden="true" tabindex="-1"></a>|       ├── set-spacing.sty</span>
+<span id="cb33-25"><a href="#cb33-25" aria-hidden="true" tabindex="-1"></a>|       └── set-tables.sty</span>
+<span id="cb33-26"><a href="#cb33-26" aria-hidden="true" tabindex="-1"></a>├── .latexmkrc</span>
+<span id="cb33-27"><a href="#cb33-27" aria-hidden="true" tabindex="-1"></a>├── presentation.preamble.sty</span>
+<span id="cb33-28"><a href="#cb33-28" aria-hidden="true" tabindex="-1"></a>├── presentation.tex</span>
+<span id="cb33-29"><a href="#cb33-29" aria-hidden="true" tabindex="-1"></a>├── thesis.preamble.sty</span>
+<span id="cb33-30"><a href="#cb33-30" aria-hidden="true" tabindex="-1"></a>└── thesis.tex</span></code><button title="Copia negli appunti" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+
 <section>
 <section id="writing-code" class="title-slide slide level1 white smaller center" data-background-image="assets/images/hero/writing-code.jpg" data-background-size="cover">
 <h1>Scrivere codice</h1>
@@ -1803,60 +1839,60 @@ Package thmtools Info: Key `qed' (with value `\qedsymbol ')
 <section id="importare-il-pacchetto-minted" class="title-slide slide level2 smaller center">
 <h2>Importare il pacchetto <code>minted</code></h2>
 <p>Il pacchetto <code>minted</code> contenuto nella collezione <code>collection-mathscience</code> ci permette di importare codice da file esterni e, grazie a <code>python</code> e a <code>pygmentize</code>, di evidenziarne la sintassi. Importiamo il pacchetto in <code>libraries/set-code.sty</code>:</p>
-<div class="sourceCode" id="cb33"><pre class="sourceCode numberSource latex number-lines code-with-copy"><code class="sourceCode latex"><span id="cb33-1"><a href="#cb33-1"></a><span class="bu">\usepackage</span>[outputdir=build]{<span class="ex">minted</span>}</span></code><button title="Copia negli appunti" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb34"><pre class="sourceCode numberSource latex number-lines code-with-copy"><code class="sourceCode latex"><span id="cb34-1"><a href="#cb34-1"></a><span class="bu">\usepackage</span>[outputdir=build]{<span class="ex">minted</span>}</span></code><button title="Copia negli appunti" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>Nel testo possiamo scrivere codice direttamente tramite il nuovo ambiente <code>minted</code>:</p>
-<div class="sourceCode" id="cb34"><pre class="sourceCode numberSource latex number-lines code-with-copy"><code class="sourceCode latex"><span id="cb34-1"><a href="#cb34-1"></a><span class="kw">\begin</span>{<span class="ex">minted</span>}{java}</span>
-<span id="cb34-2"><a href="#cb34-2"></a><span class="kw">public</span> <span class="kw">class</span> HelloWorld <span class="op">{</span></span>
-<span id="cb34-3"><a href="#cb34-3"></a>    <span class="kw">public</span> <span class="dt">static</span> <span class="dt">void</span> <span class="fu">main</span><span class="op">(</span><span class="bu">String</span><span class="op">[]</span> args<span class="op">)</span> <span class="op">{</span></span>
-<span id="cb34-4"><a href="#cb34-4"></a>        <span class="bu">System</span><span class="op">.</span><span class="fu">out</span><span class="op">.</span><span class="fu">println</span><span class="op">(</span><span class="st">"Hello, World!"</span><span class="op">);</span></span>
-<span id="cb34-5"><a href="#cb34-5"></a>    <span class="op">}</span></span>
-<span id="cb34-6"><a href="#cb34-6"></a><span class="op">}</span></span>
-<span id="cb34-7"><a href="#cb34-7"></a><span class="kw">\end</span>{<span class="ex">minted</span>}</span></code><button title="Copia negli appunti" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb35"><pre class="sourceCode numberSource latex number-lines code-with-copy"><code class="sourceCode latex"><span id="cb35-1"><a href="#cb35-1"></a><span class="kw">\begin</span>{<span class="ex">minted</span>}{java}</span>
+<span id="cb35-2"><a href="#cb35-2"></a><span class="kw">public</span> <span class="kw">class</span> HelloWorld <span class="op">{</span></span>
+<span id="cb35-3"><a href="#cb35-3"></a>    <span class="kw">public</span> <span class="dt">static</span> <span class="dt">void</span> <span class="fu">main</span><span class="op">(</span><span class="bu">String</span><span class="op">[]</span> args<span class="op">)</span> <span class="op">{</span></span>
+<span id="cb35-4"><a href="#cb35-4"></a>        <span class="bu">System</span><span class="op">.</span><span class="fu">out</span><span class="op">.</span><span class="fu">println</span><span class="op">(</span><span class="st">"Hello, World!"</span><span class="op">);</span></span>
+<span id="cb35-5"><a href="#cb35-5"></a>    <span class="op">}</span></span>
+<span id="cb35-6"><a href="#cb35-6"></a><span class="op">}</span></span>
+<span id="cb35-7"><a href="#cb35-7"></a><span class="kw">\end</span>{<span class="ex">minted</span>}</span></code><button title="Copia negli appunti" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>Ipotizziamo di aver estrapolato il contenuto in un file esterno <code>assets/codes/main.java</code>, ora è sufficiente importare il file:</p>
-<div class="sourceCode" id="cb35"><pre class="sourceCode numberSource latex number-lines code-with-copy"><code class="sourceCode latex"><span id="cb35-1"><a href="#cb35-1"></a><span class="fu">\inputminted</span>{java}{assets/codes/main.java}</span></code><button title="Copia negli appunti" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb36"><pre class="sourceCode numberSource latex number-lines code-with-copy"><code class="sourceCode latex"><span id="cb36-1"><a href="#cb36-1"></a><span class="fu">\inputminted</span>{java}{assets/codes/main.java}</span></code><button title="Copia negli appunti" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>All’interno del testo possiamo scrivere codice “<em>in linea</em>”:</p>
-<div class="sourceCode" id="cb36"><pre class="sourceCode numberSource latex number-lines code-with-copy"><code class="sourceCode latex"><span id="cb36-1"><a href="#cb36-1"></a>Il main di Java passa come paramentro <span class="fu">\mintinline</span>{java}{String[] args}.</span></code><button title="Copia negli appunti" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb37"><pre class="sourceCode numberSource latex number-lines code-with-copy"><code class="sourceCode latex"><span id="cb37-1"><a href="#cb37-1"></a>Il main di Java passa come paramentro <span class="fu">\mintinline</span>{java}{String[] args}.</span></code><button title="Copia negli appunti" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 <section id="opzioni-utili-per-il-pacchetto-minted" class="slide level3 smaller">
 <h3>Opzioni utili per il pacchetto <code>minted</code></h3>
 <div class="code larger">
-<div class="sourceCode" id="cb37"><pre class="sourceCode numberSource latex number-lines code-with-copy"><code class="sourceCode latex"><span id="cb37-1"><a href="#cb37-1"></a><span class="fu">\usemintedstyle</span>{manni}</span>
-<span id="cb37-2"><a href="#cb37-2"></a><span class="fu">\setminted</span>{</span>
-<span id="cb37-3"><a href="#cb37-3"></a>    breaklines = true, breakanywhere,</span>
-<span id="cb37-4"><a href="#cb37-4"></a>    breakaftersymbolpre = <span class="fu">\raisebox</span>{0ex}[0ex][0ex]{<span class="ss">\ensuremath{</span><span class="sc">\rhookswarrow</span><span class="ss">}</span>},</span>
-<span id="cb37-5"><a href="#cb37-5"></a>    breakaftersymbolpost = <span class="fu">\raisebox</span>{0ex}[0ex][0ex]{<span class="ss">\ensuremath{</span><span class="sc">\rcurvearrowse</span><span class="ss">}</span><span class="fu">\space</span>},</span>
-<span id="cb37-6"><a href="#cb37-6"></a>    frame = lines,</span>
-<span id="cb37-7"><a href="#cb37-7"></a>    fontsize = <span class="fu">\small</span>, fontseries = bold,</span>
-<span id="cb37-8"><a href="#cb37-8"></a>    linenos = true, numberblanklines = false,</span>
-<span id="cb37-9"><a href="#cb37-9"></a>    texcomments, mathescape,</span>
-<span id="cb37-10"><a href="#cb37-10"></a>    obeytabs, tabsize = 4,</span>
-<span id="cb37-11"><a href="#cb37-11"></a>    autogobble <span class="co">% remove all common leading whitespace from code</span></span>
-<span id="cb37-12"><a href="#cb37-12"></a>}</span>
-<span id="cb37-13"><a href="#cb37-13"></a></span>
-<span id="cb37-14"><a href="#cb37-14"></a><span class="fu">\newmintinline</span>[cppinline]{cpp}{}</span>
-<span id="cb37-15"><a href="#cb37-15"></a><span class="fu">\newmint</span>[cppcode]{cpp}{}</span>
-<span id="cb37-16"><a href="#cb37-16"></a><span class="fu">\newmintedfile</span>[cppfile]{cpp}{}</span>
-<span id="cb37-17"><a href="#cb37-17"></a></span>
-<span id="cb37-18"><a href="#cb37-18"></a><span class="fu">\newmintinline</span>[javainline]{cpp}{}</span>
-<span id="cb37-19"><a href="#cb37-19"></a><span class="fu">\newmint</span>[javacode]{cpp}{}</span>
-<span id="cb37-20"><a href="#cb37-20"></a><span class="fu">\newmintedfile</span>[javafile]{cpp}{}</span></code><button title="Copia negli appunti" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb38"><pre class="sourceCode numberSource latex number-lines code-with-copy"><code class="sourceCode latex"><span id="cb38-1"><a href="#cb38-1"></a><span class="fu">\usemintedstyle</span>{manni}</span>
+<span id="cb38-2"><a href="#cb38-2"></a><span class="fu">\setminted</span>{</span>
+<span id="cb38-3"><a href="#cb38-3"></a>    breaklines = true, breakanywhere,</span>
+<span id="cb38-4"><a href="#cb38-4"></a>    breakaftersymbolpre = <span class="fu">\raisebox</span>{0ex}[0ex][0ex]{<span class="ss">\ensuremath{</span><span class="sc">\rhookswarrow</span><span class="ss">}</span>},</span>
+<span id="cb38-5"><a href="#cb38-5"></a>    breakaftersymbolpost = <span class="fu">\raisebox</span>{0ex}[0ex][0ex]{<span class="ss">\ensuremath{</span><span class="sc">\rcurvearrowse</span><span class="ss">}</span><span class="fu">\space</span>},</span>
+<span id="cb38-6"><a href="#cb38-6"></a>    frame = lines,</span>
+<span id="cb38-7"><a href="#cb38-7"></a>    fontsize = <span class="fu">\small</span>, fontseries = bold,</span>
+<span id="cb38-8"><a href="#cb38-8"></a>    linenos = true, numberblanklines = false,</span>
+<span id="cb38-9"><a href="#cb38-9"></a>    texcomments, mathescape,</span>
+<span id="cb38-10"><a href="#cb38-10"></a>    obeytabs, tabsize = 4,</span>
+<span id="cb38-11"><a href="#cb38-11"></a>    autogobble <span class="co">% remove all common leading whitespace from code</span></span>
+<span id="cb38-12"><a href="#cb38-12"></a>}</span>
+<span id="cb38-13"><a href="#cb38-13"></a></span>
+<span id="cb38-14"><a href="#cb38-14"></a><span class="fu">\newmintinline</span>[cppinline]{cpp}{}</span>
+<span id="cb38-15"><a href="#cb38-15"></a><span class="fu">\newmint</span>[cppcode]{cpp}{}</span>
+<span id="cb38-16"><a href="#cb38-16"></a><span class="fu">\newmintedfile</span>[cppfile]{cpp}{}</span>
+<span id="cb38-17"><a href="#cb38-17"></a></span>
+<span id="cb38-18"><a href="#cb38-18"></a><span class="fu">\newmintinline</span>[javainline]{cpp}{}</span>
+<span id="cb38-19"><a href="#cb38-19"></a><span class="fu">\newmint</span>[javacode]{cpp}{}</span>
+<span id="cb38-20"><a href="#cb38-20"></a><span class="fu">\newmintedfile</span>[javafile]{cpp}{}</span></code><button title="Copia negli appunti" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="come-agggiungere-un-didascalia" class="slide level3 smaller">
 <h3>Come agggiungere un didascalia</h3>
 <ol type="1">
 <li><p>modifichiamo il preambolo:</p>
-<div class="sourceCode" id="cb38" data-code-line-numbers="false"><pre class="sourceCode latex code-with-copy"><code class="sourceCode latex"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a><span class="bu">\usepackage</span>[newfloat, outputdir=build]{<span class="ex">minted</span>}</span></code><button title="Copia negli appunti" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
+<div class="sourceCode" id="cb39" data-code-line-numbers="false"><pre class="sourceCode latex code-with-copy"><code class="sourceCode latex"><span id="cb39-1"><a href="#cb39-1" aria-hidden="true" tabindex="-1"></a><span class="bu">\usepackage</span>[newfloat, outputdir=build]{<span class="ex">minted</span>}</span></code><button title="Copia negli appunti" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
 <li><p>aggiungiamo delle opzioni:</p>
-<div class="sourceCode" id="cb39" data-code-line-numbers="false"><pre class="sourceCode latex code-with-copy"><code class="sourceCode latex"><span id="cb39-1"><a href="#cb39-1" aria-hidden="true" tabindex="-1"></a><span class="co">% </span><span class="al">NOTE</span><span class="co"> permette di trattare il codice come se fosse un float</span></span>
-<span id="cb39-2"><a href="#cb39-2" aria-hidden="true" tabindex="-1"></a><span class="co">% https://tex.stackexchange.com/questions/254044/</span></span>
-<span id="cb39-3"><a href="#cb39-3" aria-hidden="true" tabindex="-1"></a><span class="fu">\newenvironment</span>{code}{<span class="fu">\captionsetup</span>{type=listing}}{}</span>
-<span id="cb39-4"><a href="#cb39-4" aria-hidden="true" tabindex="-1"></a><span class="fu">\SetupFloatingEnvironment</span>{listing}{name=Codice, placement=htp, listname={Elenco dei codici}}</span></code><button title="Copia negli appunti" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
+<div class="sourceCode" id="cb40" data-code-line-numbers="false"><pre class="sourceCode latex code-with-copy"><code class="sourceCode latex"><span id="cb40-1"><a href="#cb40-1" aria-hidden="true" tabindex="-1"></a><span class="co">% </span><span class="al">NOTE</span><span class="co"> permette di trattare il codice come se fosse un float</span></span>
+<span id="cb40-2"><a href="#cb40-2" aria-hidden="true" tabindex="-1"></a><span class="co">% https://tex.stackexchange.com/questions/254044/</span></span>
+<span id="cb40-3"><a href="#cb40-3" aria-hidden="true" tabindex="-1"></a><span class="fu">\newenvironment</span>{code}{<span class="fu">\captionsetup</span>{type=listing}}{}</span>
+<span id="cb40-4"><a href="#cb40-4" aria-hidden="true" tabindex="-1"></a><span class="fu">\SetupFloatingEnvironment</span>{listing}{name=Codice, placement=htp, listname={Elenco dei codici}}</span></code><button title="Copia negli appunti" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
 <li><p>ora nel testo possiamo creare un ambiente fluttuante:</p>
-<div class="sourceCode" id="cb40" data-code-line-numbers="false"><pre class="sourceCode latex code-with-copy"><code class="sourceCode latex"><span id="cb40-1"><a href="#cb40-1" aria-hidden="true" tabindex="-1"></a><span class="kw">\begin</span>{<span class="ex">code</span>}</span>
-<span id="cb40-2"><a href="#cb40-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">\captionof</span>{listing}{My Java main}<span class="kw">\label</span>{<span class="ex">code:java-main</span>}</span>
-<span id="cb40-3"><a href="#cb40-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">\inputminted</span>{java}{assets/codes/main.java}</span>
-<span id="cb40-4"><a href="#cb40-4" aria-hidden="true" tabindex="-1"></a><span class="kw">\end</span>{<span class="ex">code</span>}</span></code><button title="Copia negli appunti" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
+<div class="sourceCode" id="cb41" data-code-line-numbers="false"><pre class="sourceCode latex code-with-copy"><code class="sourceCode latex"><span id="cb41-1"><a href="#cb41-1" aria-hidden="true" tabindex="-1"></a><span class="kw">\begin</span>{<span class="ex">code</span>}</span>
+<span id="cb41-2"><a href="#cb41-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">\captionof</span>{listing}{My Java main}<span class="kw">\label</span>{<span class="ex">code:java-main</span>}</span>
+<span id="cb41-3"><a href="#cb41-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">\inputminted</span>{java}{assets/codes/main.java}</span>
+<span id="cb41-4"><a href="#cb41-4" aria-hidden="true" tabindex="-1"></a><span class="kw">\end</span>{<span class="ex">code</span>}</span></code><button title="Copia negli appunti" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
 </ol>
 <ul>
 <li>possiamo aggiungere <code>\listoflistings</code> nel punto in cui vogliamo che venga generato l’elenco dei codici, generalmente dopo <code>\listoffigures</code> e <code>\listoftables</code>.</li>
