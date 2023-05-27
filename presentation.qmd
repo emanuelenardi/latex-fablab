@@ -1,12 +1,12 @@
 # Introduzione {data-background="https://images.unsplash.com/photo-1573848855919-9abecc93e456?auto=format&fit=crop&w=1470&q=100" data-background-size=cover .smaller}
 
-## {#telegram-group-light data-menu-title="telegram-group-light" data-background="assets/images/telegram/join-telegram-group-light-filled.png" data-background-size=cover}
+<!-- ## {#telegram-group-light data-menu-title="telegram-group-light" data-background="assets/images/telegram/join-telegram-group-light-filled.png" data-background-size=cover}
 
 [](assets/images/telegram/join-telegram-group-light-filled.png)
 
 ## {#telegram-group-dark data-menu-title="telegram-group-dark" data-background="assets/images/telegram/join-telegram-group-dark-filled.png" data-background-size=cover}
 
-[](assets/images/telegram/join-telegram-group-dark-filled.png)
+[](assets/images/telegram/join-telegram-group-dark-filled.png) -->
 
 ## Pronuncia
 
@@ -16,33 +16,6 @@ $\rm\LaTeX$ si pronuncia `/ˈlɑːtɛx/` or `/ˈleɪtɛx/`, e non `/ˈleɪtɛks/
 
 ![Sam Smith ai Brit Awards (febbraio 
 2023)](assets/images/pronunciation/sam-smith-latex.jpg){fig-align="center" width="55%"}
-
-## {#fat-cat-laser-eyes data-menu-title="Fat Cat Laser Eyes GIF"}
-
-![](assets/gifs/fat-cat-laser-eyes.gif){fig-align="center" width="10%"}
-
-## Obiettivo di oggi
-
-Produrre un semplice documento:
-```latex
-\documentclass{article}
-
-\begin{document}
-Hello \LaTeX!
-\end{document}
-```
-$$
-\rm Hello\ \LaTeX!
-$$
-Ciclo di build:
-```{mermaid}
-graph LR
-  A["arara 🦜"] ==> B(pdflatex)
-  B --> C[PDF document]
-```
-::: {.nonincremental}
-- Se rimarrà tempo: introduzione ai comandi più comuni ed errori tipici
-:::
 
 # Installazione {.smaller}
 
@@ -541,6 +514,26 @@ arara is released under the New BSD license.
 [...]
 ```
 
+## Controllo dell'installazione {{< fa brands windows >}} {{< fa brands linux >}} {{< fa brands apple >}}
+
+Produrre un semplice documento:
+```latex
+\documentclass{article}
+
+\begin{document}
+Hello \LaTeX!
+\end{document}
+```
+$$
+\rm Hello\ \LaTeX!
+$$
+Ciclo di build:
+```{mermaid}
+graph LR
+  A["arara 🦜"] ==> B(pdflatex)
+  B --> C[PDF document]
+```
+
 ## Manutenzione installazione {{< fa brands windows >}} {{< fa brands linux >}} {{< fa brands apple >}} {.smaller}
 
 Aggiornare `tlmgr` stesso:
@@ -714,10 +707,6 @@ Personalizzazione dell'ambiente di lavoro:
 ```
 ::: -->
 
-#
-
-<div style="width:100%;height:0;padding-bottom:100%;position:relative;"><iframe src="https://giphy.com/embed/EZICHGrSD5QEFCxMiC" width="100%" height="60%" style="position:absolute" frameBorder="0" class="giphy-embed" allowFullScreen></iframe></div>
-
 # Perché la tipografia è _importante_? {.white .smaller #tipografia-importanza data-background-image="assets/images/hero/typography.jpg" data-background-size="cover"}
 
 ### Oscars 2017 Best Picture announcement
@@ -731,7 +720,7 @@ Personalizzazione dell'ambiente di lavoro:
 # Introduzione ai comandi {.smaller}
 
 <!-- https://quarto.org/docs/presentations/revealjs/#content-overflow -->
-## Scaletta argomenti {.smaller}
+## Scaletta argomenti [1/2] {.smaller}
 
 - clean code mentality
 - [codifica dell'input e del font](https://tex.stackexchange.com/questions/44694/fontenc-vs-inputenc) (`inputenc` e `fontenc`)
@@ -743,11 +732,15 @@ Personalizzazione dell'ambiente di lavoro:
 - **grassetto**, *corsivo*, `monofont`, combinazini
 - elenchi puntati, numerati, descrittivi, personalizzati (`enumitem`)
 - note a piè di pagina (`footnote`)
+
+## Scaletta argomenti [2/2] {.smaller}
+
 - testatina e piedino ([`fancyhdr`](https://www.overleaf.com/learn/latex/Headers_and_footers))
 - figure (`graphicx`) e tabelle (`booktabs`), opzioni comuni
 - strutturazione del documento (`standalone`)
 - riferimenti ipertestuali (`hyperref`)
 - importazione di codice, evidenziazione della sintassi (`minted`)
+- scrittura di pseudocodice (`algorithms2e`)
 - creazione di un glossario (`glossaries`), acronimi (`acronym`), indice (`index`)
 
 # {#arara-tex-automation-tool .smaller}
@@ -1107,7 +1100,7 @@ $out_dir = 'build';
 :::
 ::::
 
-## Package utili {.smallest auto-animate=true}
+<!-- ## Package utili {.smallest auto-animate=true}
 
 :::::{.nomargin}
 ::::{.columns}
@@ -1196,7 +1189,7 @@ $out_dir = 'build';
 
 :::
 ::::
-:::::
+::::: -->
 
 ## Package da <u class="wavy">non caricare</u>
 
@@ -1217,10 +1210,10 @@ Letture consigliate:
 
 <!-- https://tex.stackexchange.com/questions/664/why-should-i-use-usepackaget1fontenc -->
 
-## Text formatting {.smaller}
+<!-- ## Text formatting {.smaller}
 
 - [Lengths in LaTeX](https://www.overleaf.com/learn/latex/Lengths_in_LaTeX)
-- [Font sizes, families, and styles](https://www.overleaf.com/learn/latex/Font_sizes%2C_families%2C_and_styles#Font_families)
+- [Font sizes, families, and styles](https://www.overleaf.com/learn/latex/Font_sizes%2C_families%2C_and_styles#Font_families) -->
 
 ## Struttura generale di una tesi {.smallest}
 
@@ -1234,7 +1227,7 @@ comparire nell’indice generale.
 | Materiale finale | Una o più appendici non numerate<br>Glossario<br>_Bibliografia_<br>Indice analitico |
 : {tbl-colwidths="[10,40]"}
 
-## Special LaTeX characters {.smaller}
+## Special LaTeX characters {.smallest}
 
 Alcuni caratteri sono riservati per comandi $\rm\LaTeX$.
 Non possono essere usati direttamente nel codice sorgente.
@@ -1252,7 +1245,7 @@ Non possono essere usati direttamente nel codice sorgente.
 | Percent      | `%` | Commento | `\%` |
 : Caratteri speciali {#tbl-latex-special-characters}
 
-## Modificare lo stile del font {.smaller}
+## Modificare lo stile del font {.smallest}
 
 | Comando | Dichiarazione | Stile |
 |---------|:-----|:-----|
@@ -1266,7 +1259,7 @@ Non possono essere usati direttamente nel codice sorgente.
 | `\texttt` | `\ttfamily` | Typewriter |
 : Stili del font {#tbl-latex-font-styles}
 
-## Modificare la dimensione del font {.smaller}
+## Modificare la dimensione del font {.smallest}
 
 | Dichiarazione | Dimensione |
 |:-----|:-----|
@@ -1296,7 +1289,7 @@ Non possono essere usati direttamente nel codice sorgente.
 | `sp` | so-called "special points", a low-level unit of measure where `65536sp=1pt` |
 : Unità in LaTeX {#tbl-latex-units tbl-colwidths="[10,65]"}
 
-### {.smallest}
+### Lunghezze comuni {.smallest}
 
 | Length | Description |
 |---|---|
