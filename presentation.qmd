@@ -1220,15 +1220,20 @@ $out_dir = 'build';
 │   │   │   ├── dedica.tex
 │   │   └── *-chapter.tex
 │   └── libraries/
-|       ├── set-bibliography.sty
-|       ├── set-code.sty
-|       ├── set-geometry.sty
-|       ├── set-glossaries.sty
-|       ├── set-links.sty
-|       ├── set-lists.sty
-|       ├── set-props.sty
-|       ├── set-spacing.sty
-|       └── set-tables.sty
+|       ├── algorithm2e.sty
+|       ├── bibliography.sty
+|       ├── code.sty
+|       ├── color.sty
+|       ├── geometry.sty
+|       ├── glossaries.sty
+|       ├── graphics.sty
+|       ├── links.sty
+|       ├── lists.sty
+|       ├── macros.sty
+|       ├── math.sty
+|       ├── propertiesaggiun.sty
+|       ├── spacing.sty
+|       └── tikz.sty
 ├── .latexmkrc
 ├── presentation.preamble.sty
 ├── presentation.tex
