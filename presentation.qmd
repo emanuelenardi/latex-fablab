@@ -1257,18 +1257,29 @@ Il main di Java passa come paramentro \mintinline{java}{String[] args}.
 
 ### Come agggiungere un didascalia {.smaller}
 
-Modifichiamo il preambolo:
-```latex
-\usepackage[newfloat, outputdir=build]{minted}
-```
-Aggiungiamo delle opzioni:
-```latex
-% NOTE permette di trattare il codice come se fosse un float
-% https://tex.stackexchange.com/questions/254044/
-\newenvironment{code}{\captionsetup{type=listing}}{}
-\SetupFloatingEnvironment{listing}{name=Codice, placement=htp, listname={Elenco dei codici}}
-```
-Ora possiamo aggiungere `\listoflistings` nel punto in cui vogliamo che venga generato l'elenco dei codici, generalmente dopo `\listoffigures` e `\listoftables`.
+1. modifichiamo il preambolo:
+
+    ```latex {code-line-numbers="false"}
+    \usepackage[newfloat, outputdir=build]{minted}
+    ```
+2. aggiungiamo delle opzioni:
+
+    ```latex {code-line-numbers="false"}
+    % NOTE permette di trattare il codice come se fosse un float
+    % https://tex.stackexchange.com/questions/254044/
+    \newenvironment{code}{\captionsetup{type=listing}}{}
+    \SetupFloatingEnvironment{listing}{name=Codice, placement=htp, listname={Elenco dei codici}}
+    ```
+3. ora nel testo possiamo creare un ambiente fluttuante:
+
+    ```latex {code-line-numbers="false"}
+    \begin{code}
+        \captionof{listing}{My Java main}\label{code:java-main}
+        \inputminted{java}{assets/codes/main.java}
+    \end{code}
+    ```
+
+- possiamo aggiungere `\listoflistings` nel punto in cui vogliamo che venga generato l'elenco dei codici, generalmente dopo `\listoffigures` e `\listoftables`.
 
 Per ulteriori personalizzazioni, consultare la [documentazione](https://ctan.mirror.garr.it/mirrors/ctan/macros/latex/contrib/minted/minted.pdf).
 
