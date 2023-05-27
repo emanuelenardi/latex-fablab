@@ -1200,6 +1200,43 @@ $out_dir = 'build';
 - scrittura di pseudocodice (`algorithms2e`)
 - creazione di un glossario (`glossaries`), acronimi (`acronym`), indice (`index`)
 
+# Struttura del progetto
+
+:::{.code .larger}
+```{.txt code-line-numbers="false"}
+.
+├── assets/
+│   ├── assets/
+│   │   ├── resources/
+│   │   │   └── bibliography.bib
+│   │   ├── figures/
+│   │   ├── plots/
+│   │   └── tables/
+│   ├── backup/
+│   ├── build/
+│   ├── chapter/
+│   │   ├── intro/
+│   │   │   ├── frontespizio.tex
+│   │   │   ├── dedica.tex
+│   │   └── *-chapter.tex
+│   └── libraries/
+|       ├── set-bibliography.sty
+|       ├── set-code.sty
+|       ├── set-geometry.sty
+|       ├── set-glossaries.sty
+|       ├── set-links.sty
+|       ├── set-lists.sty
+|       ├── set-props.sty
+|       ├── set-spacing.sty
+|       └── set-tables.sty
+├── .latexmkrc
+├── presentation.preamble.sty
+├── presentation.tex
+├── thesis.preamble.sty
+└── thesis.tex
+```
+:::
+
 # Scrivere codice {.white .smaller #writing-code data-background-image="assets/images/hero/writing-code.jpg" data-background-size="cover"}
 
 ## Importare il pacchetto `minted` {.smaller}
