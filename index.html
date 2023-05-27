@@ -1844,14 +1844,23 @@ Package thmtools Info: Key `qed' (with value `\qedsymbol ')
 </section>
 <section id="come-agggiungere-un-didascalia" class="slide level3 smaller">
 <h3>Come agggiungere un didascalia</h3>
-<p>Modifichiamo il preambolo:</p>
-<div class="sourceCode" id="cb38"><pre class="sourceCode numberSource latex number-lines code-with-copy"><code class="sourceCode latex"><span id="cb38-1"><a href="#cb38-1"></a><span class="bu">\usepackage</span>[newfloat, outputdir=build]{<span class="ex">minted</span>}</span></code><button title="Copia negli appunti" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>Aggiungiamo delle opzioni:</p>
-<div class="sourceCode" id="cb39"><pre class="sourceCode numberSource latex number-lines code-with-copy"><code class="sourceCode latex"><span id="cb39-1"><a href="#cb39-1"></a><span class="co">% </span><span class="al">NOTE</span><span class="co"> permette di trattare il codice come se fosse un float</span></span>
-<span id="cb39-2"><a href="#cb39-2"></a><span class="co">% https://tex.stackexchange.com/questions/254044/</span></span>
-<span id="cb39-3"><a href="#cb39-3"></a><span class="fu">\newenvironment</span>{code}{<span class="fu">\captionsetup</span>{type=listing}}{}</span>
-<span id="cb39-4"><a href="#cb39-4"></a><span class="fu">\SetupFloatingEnvironment</span>{listing}{name=Codice, placement=htp, listname={Elenco dei codici}}</span></code><button title="Copia negli appunti" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>Ora possiamo aggiungere <code>\listoflistings</code> nel punto in cui vogliamo che venga generato l’elenco dei codici, generalmente dopo <code>\listoffigures</code> e <code>\listoftables</code>.</p>
+<ol type="1">
+<li><p>modifichiamo il preambolo:</p>
+<div class="sourceCode" id="cb38" data-code-line-numbers="false"><pre class="sourceCode latex code-with-copy"><code class="sourceCode latex"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a><span class="bu">\usepackage</span>[newfloat, outputdir=build]{<span class="ex">minted</span>}</span></code><button title="Copia negli appunti" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
+<li><p>aggiungiamo delle opzioni:</p>
+<div class="sourceCode" id="cb39" data-code-line-numbers="false"><pre class="sourceCode latex code-with-copy"><code class="sourceCode latex"><span id="cb39-1"><a href="#cb39-1" aria-hidden="true" tabindex="-1"></a><span class="co">% </span><span class="al">NOTE</span><span class="co"> permette di trattare il codice come se fosse un float</span></span>
+<span id="cb39-2"><a href="#cb39-2" aria-hidden="true" tabindex="-1"></a><span class="co">% https://tex.stackexchange.com/questions/254044/</span></span>
+<span id="cb39-3"><a href="#cb39-3" aria-hidden="true" tabindex="-1"></a><span class="fu">\newenvironment</span>{code}{<span class="fu">\captionsetup</span>{type=listing}}{}</span>
+<span id="cb39-4"><a href="#cb39-4" aria-hidden="true" tabindex="-1"></a><span class="fu">\SetupFloatingEnvironment</span>{listing}{name=Codice, placement=htp, listname={Elenco dei codici}}</span></code><button title="Copia negli appunti" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
+<li><p>ora nel testo possiamo creare un ambiente fluttuante:</p>
+<div class="sourceCode" id="cb40" data-code-line-numbers="false"><pre class="sourceCode latex code-with-copy"><code class="sourceCode latex"><span id="cb40-1"><a href="#cb40-1" aria-hidden="true" tabindex="-1"></a><span class="kw">\begin</span>{<span class="ex">code</span>}</span>
+<span id="cb40-2"><a href="#cb40-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">\captionof</span>{listing}{My Java main}<span class="kw">\label</span>{<span class="ex">code:java-main</span>}</span>
+<span id="cb40-3"><a href="#cb40-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">\inputminted</span>{java}{assets/codes/main.java}</span>
+<span id="cb40-4"><a href="#cb40-4" aria-hidden="true" tabindex="-1"></a><span class="kw">\end</span>{<span class="ex">code</span>}</span></code><button title="Copia negli appunti" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
+</ol>
+<ul>
+<li>possiamo aggiungere <code>\listoflistings</code> nel punto in cui vogliamo che venga generato l’elenco dei codici, generalmente dopo <code>\listoffigures</code> e <code>\listoftables</code>.</li>
+</ul>
 <p>Per ulteriori personalizzazioni, consultare la <a href="https://ctan.mirror.garr.it/mirrors/ctan/macros/latex/contrib/minted/minted.pdf">documentazione</a>.</p>
 <!-- # Definizione di nuovi comandi {.smaller}
 
