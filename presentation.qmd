@@ -717,32 +717,6 @@ Personalizzazione dell'ambiente di lavoro:
 
 {{< video https://www.youtube.com/embed/eZSe4xVXHhI width="100%" height="100%" >}}
 
-# Introduzione ai comandi {.smaller}
-
-<!-- https://quarto.org/docs/presentations/revealjs/#content-overflow -->
-## Scaletta argomenti [1/2] {.smaller}
-
-- clean code mentality
-- [codifica dell'input e del font](https://tex.stackexchange.com/questions/44694/fontenc-vs-inputenc) (`inputenc` e `fontenc`)
-- impostazione della lingua del documento ( `babel`)
-- [hyphenation, typesetting, ligatures](https://tex.stackexchange.com/a/110140/127473) (`microtype`)^[[Tips on Writing a Thesis in LaTeX](http://www.khirevich.com/latex/microtype/)]
-- le virgolette (`csquotes`)
-- margini del documento (`geometry`), indentazione (`parskip`)
-- Interruzioni di riga^[[When to use `\par` and when `\\`, `\newline`](https://tex.stackexchange.com/q/82664/127473)],uso di `%`^[[What is the use of percent signs (`%`)](https://tex.stackexchange.com/a/7459/127473)], `comment` package
-- **grassetto**, *corsivo*, `monofont`, combinazini
-- elenchi puntati, numerati, descrittivi, personalizzati (`enumitem`)
-- note a piè di pagina (`footnote`)
-
-## Scaletta argomenti [2/2] {.smaller}
-
-- testatina e piedino ([`fancyhdr`](https://www.overleaf.com/learn/latex/Headers_and_footers))
-- figure (`graphicx`) e tabelle (`booktabs`), opzioni comuni
-- strutturazione del documento (`standalone`)
-- riferimenti ipertestuali (`hyperref`)
-- importazione di codice, evidenziazione della sintassi (`minted`)
-- scrittura di pseudocodice (`algorithms2e`)
-- creazione di un glossario (`glossaries`), acronimi (`acronym`), indice (`index`)
-
 # {#arara-tex-automation-tool .smaller}
 
 ![](assets/branding/arara-logo-with-text-bottom.svg){fig-align="center" width=450}
@@ -1199,6 +1173,104 @@ $out_dir = 'build';
 - `glossary` → `glossaries`
 - [`epsf`, `epsfig`, `psfig`] → `graphicx`
 - `enumerate` → `enumitem`
+
+# Scaletta argomenti {.smaller}
+
+<!-- https://quarto.org/docs/presentations/revealjs/#content-overflow -->
+## Scaletta argomenti [1/2] {.smaller}
+
+- clean code mentality
+- [codifica dell'input e del font](https://tex.stackexchange.com/questions/44694/fontenc-vs-inputenc) (`inputenc` e `fontenc`)
+- impostazione della lingua del documento ( `babel`)
+- [hyphenation, typesetting, ligatures](https://tex.stackexchange.com/a/110140/127473) (`microtype`)^[[Tips on Writing a Thesis in LaTeX](http://www.khirevich.com/latex/microtype/)]
+- le virgolette (`csquotes`)
+- margini del documento (`geometry`), indentazione (`parskip`)
+- Interruzioni di riga^[[When to use `\par` and when `\\`, `\newline`](https://tex.stackexchange.com/q/82664/127473)],uso di `%`^[[What is the use of percent signs (`%`)](https://tex.stackexchange.com/a/7459/127473)], `comment` package
+- **grassetto**, *corsivo*, `monofont`, combinazini
+- elenchi puntati, numerati, descrittivi, personalizzati (`enumitem`)
+- note a piè di pagina (`footnote`)
+
+## Scaletta argomenti [2/2] {.smaller}
+
+- testatina e piedino ([`fancyhdr`](https://www.overleaf.com/learn/latex/Headers_and_footers))
+- figure (`graphicx`) e tabelle (`booktabs`), opzioni comuni
+- strutturazione del documento (`standalone`)
+- riferimenti ipertestuali (`hyperref`)
+- importazione di codice, evidenziazione della sintassi (`minted`)
+- scrittura di pseudocodice (`algorithms2e`)
+- creazione di un glossario (`glossaries`), acronimi (`acronym`), indice (`index`)
+
+# Scrivere codice {.white .smaller #writing-code data-background-image="assets/images/hero/writing-code.jpg" data-background-size="cover"}
+
+## Importare il pacchetto `minted` {.smaller}
+
+Il pacchetto `minted` contenuto nella collezione `collection-mathscience` ci permette di importare codice da file esterni e, grazie a `python` e a `pygmentize`, di evidenziarne la sintassi.
+Importiamo il pacchetto in `libraries/set-code.sty`:
+```latex
+\usepackage[outputdir=build]{minted}
+```
+Nel testo possiamo scrivere codice direttamente tramite il nuovo ambiente `minted`:
+```latex
+\begin{minted}{java}
+public class HelloWorld {
+    public static void main(String[] args) {
+        System.out.println("Hello, World!");
+    }
+}
+\end{minted}
+```
+Ipotizziamo di aver estrapolato il contenuto in un file esterno `assets/codes/main.java`, ora è sufficiente importare il file:
+```latex
+\inputminted{java}{assets/codes/main.java}
+```
+All'interno del testo possiamo scrivere codice "_in linea_":
+```latex
+Il main di Java passa come paramentro \mintinline{java}{String[] args}.
+```
+
+### Opzioni utili per il pacchetto `minted` {.smaller}
+
+:::{.code .larger}
+```latex
+\usemintedstyle{manni}
+\setminted{
+	breaklines = true, breakanywhere,
+	breakaftersymbolpre = \raisebox{0ex}[0ex][0ex]{\ensuremath{\rhookswarrow}},
+	breakaftersymbolpost = \raisebox{0ex}[0ex][0ex]{\ensuremath{\rcurvearrowse}\space},
+	frame = lines,
+	fontsize = \small, fontseries = bold,
+    linenos = true, numberblanklines = false,
+	texcomments, mathescape,
+    obeytabs, tabsize = 4,
+    autogobble % remove all common leading whitespace from code
+}
+
+\newmintinline[cppinline]{cpp}{}
+\newmint[cppcode]{cpp}{}
+\newmintedfile[cppfile]{cpp}{}
+
+\newmintinline[javainline]{cpp}{}
+\newmint[javacode]{cpp}{}
+\newmintedfile[javafile]{cpp}{}
+```
+:::
+
+### Come agggiungere un didascalia {.smaller}
+
+Modifichiamo il preambolo:
+```latex
+\usepackage[newfloat, outputdir=build]{minted}
+```
+Aggiungiamo delle opzioni:
+```latex
+% NOTE permette di trattare il codice come se fosse un float
+% https://tex.stackexchange.com/questions/254044/
+\newenvironment{code}{\captionsetup{type=listing}}{}
+\SetupFloatingEnvironment{listing}{name=Codice, placement=htp, listname={Elenco dei codici}}
+```
+Ora possiamo aggiungere `\listoflistings` nel punto in cui vogliamo che venga generato l'elenco dei codici, generalmente dopo `\listoffigures` e `\listoftables`.
+
+Per ulteriori personalizzazioni, consultare la [documentazione](https://ctan.mirror.garr.it/mirrors/ctan/macros/latex/contrib/minted/minted.pdf).
 
 <!-- # Definizione di nuovi comandi {.smaller}
 
