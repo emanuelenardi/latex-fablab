@@ -1,15 +1,15 @@
 project: 
   type: default
-  title: Impaginazione (tesi) con LaTeX
+  title: Come impaginare la tesi con LaTeX
   output-dir: docs
 
 lang: it
-title: Impaginazione (tesi) con _LaTeX_
+title: Come impaginare la tesi con _LaTeX_
 keywords: latex, thesis
-subtitle: <small> In collaborazione con FabLab UniTrento </small>
+subtitle: <small> In collaborazione con [FabLab UniTrento](https://fablab.unitn.it/) </small>
 author:
   - name: Emanuele Nardi
-    email: emanuele.nardi@studenti.unitn.it
+    email: emanuelenardi.dev@gmail.com
     url: https://github.com/emanuelenardi/
     affiliations:
       name: Università degli Studi di Trento, DISI
@@ -19,7 +19,7 @@ date: today
 date-format: "[Aggiornate] dddd D MMMM YYYY"
 
 # presentation metadata
-pagetitle: Impaginazione (tesi) con LaTeX
+pagetitle: Come impaginare la tesi con LaTeX
 description-meta: ""
 author-meta: Emanuele Nardi
 
