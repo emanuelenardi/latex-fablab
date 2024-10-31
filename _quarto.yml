@@ -6,7 +6,7 @@ project:
 lang: it
 title: Impaginazione (tesi) con _LaTeX_
 keywords: latex, thesis
-subtitle: <small> In collaborazione con FabLab UniTrento </small>
+subtitle: <small> In collaborazione con [FabLab UniTrento](https://fablab.unitn.it/) </small>
 author:
   - name: Emanuele Nardi
     email: emanuelenardi.dev@gmail.com
