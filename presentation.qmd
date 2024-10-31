@@ -1,0 +1,1431 @@
+# Introduzione {data-background="https://images.unsplash.com/photo-1573848855919-9abecc93e456?auto=format&fit=crop&w=1470&q=100" data-background-size=cover .smaller}
+
+<!-- ## {#telegram-group-light data-menu-title="telegram-group-light" data-background="assets/images/telegram/join-telegram-group-light-filled.png" data-background-size=cover}
+
+[](assets/images/telegram/join-telegram-group-light-filled.png)
+
+## {#telegram-group-dark data-menu-title="telegram-group-dark" data-background="assets/images/telegram/join-telegram-group-dark-filled.png" data-background-size=cover}
+
+[](assets/images/telegram/join-telegram-group-dark-filled.png) -->
+
+## Pronuncia
+
+$\rm\LaTeX$ si pronuncia `/ˈlɑːtɛx/` or `/ˈleɪtɛx/`, e non `/ˈleɪtɛks/` o `/ˈleɪˌtɛks/` ([IPA symbols](https://en.wikipedia.org/wiki/Help:IPA/English)).
+
+. . .
+
+![Sam Smith ai Brit Awards (febbraio 2023)](assets/images/pronunciation/sam-smith-latex.jpg){fig-align="center" width="55%"}
+
+# Installazione {.smaller}
+
+---
+
+Installeremo un sistema TeX locale completamente funzionante, esistono diverse scelte multipiattaforma fra le quali [MiKTeX](https://miktex.org/), [MacTeX](https://www.tug.org/mactex/), or [TeX Live](https://www.tug.org/texlive/)
+
+Per questo corso useremo **TeX Live**, un sistema TeX completo e cross-platform.
+
+:::{.callout-important}
+Agli utilizzatori di {{< fa brands apple >}} Mac, per favore, **utilizzate questa installazione**, in questo modo abbiamo tutti la stessa versione installata localmente, di seguito troverete istruzioni dettagliate.
+:::
+
+## Requisiti {.smaller}
+
+<p>
+    <a href="https://git-scm.com/">
+    <img alt="Install Git" src="https://img.shields.io/badge/Git-F05032?style=for-the-badge&logo=git&logoColor=white">
+    </a>
+    <a href="https://www.tug.org/texlive/acquire-netinstall.html">
+    <img alt="Install TeX Live" src="https://img.shields.io/badge/TeX%20Live-008080?style=for-the-badge&logo=latex&logoColor=white">
+    </a>
+    <a href="https://www.java.com/it/download/">
+    <img alt="Install Java" src="https://img.shields.io/badge/java-%23ED8B00.svg?style=for-the-badge&logo=java&logoColor=white">
+    </a>
+    <a href="https://www.python.org/downloads/">
+    <img alt="Install Python" src="https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white">
+    </a>
+    <a href="https://pygments.org/">
+    <img alt="Install Python Pygments" src="https://img.shields.io/badge/Python%20Pygments-3776AB?style=for-the-badge&logo=python&logoColor=white">
+    </a>
+</p>
+
+Per seguire questo corso è necessario avere installati sulla propria macchina:
+
+- {{< fa code >}} [Visual Studio Code](https://code.visualstudio.com/) + [LaTeX Workshop plugin](https://marketplace.visualstudio.com/items?itemName=James-Yu.latex-workshop):
+- un'installazione parziale di [TeX Live](https://www.tug.org/texlive/acquire-netinstall.html);
+- {{< fa brands java >}} [Java](https://www.java.com/it/download/) (per poter usare [arara 🦜](https://github.com/islandoftex/arara));
+- {{< fa brands python >}} [Python](https://www.python.org/downloads/) + la libreria [`pygmetize`](https://pygments.org/) (per [`minted`](https://ctan.org/pkg/minted));
+- {{< fa brands git-alt >}} [Git](https://git-scm.com/) (per il versionamento del documento).
+
+::: {.nonincremental}
+{{< fa arrow-right >}} [Installazione guidata per {{< fa brands windows >}} Windows](#installazione-windows)
+
+{{< fa arrow-right >}} [Installazione guidata per {{< fa brands linux >}} Linux/ {{< fa brands apple >}} Mac](#installazione-unix)
+:::
+
+## Installazione dei requisiti su Windows {#installazione-windows .smaller}
+
+::: {.nonincremental}
+0. installare Visual Studio Code ([download page](https://code.visualstudio.com/));
+   - cercare "LaTeX Workshop" nella sezione "Extensions" e installare l'estensione, oppure da terminale:
+
+        ```{.bash code-line-numbers="false"}
+        code --install-extension James-Yu.latex-workshop
+        ```
+1. installare {{< fa brands java >}} Java ([download page](https://www.java.com/en/download/));
+2. installare {{< fa brands python >}} Python ([download page](https://www.python.org/downloads/)) ([installazione guidata](#installazione-python-windows)):
+   - eseguire `pip install Pygments` su un terminale:
+
+        ```{.bash code-line-numbers="false"}
+        pip install Pygments
+        :: "A new release of pip available"
+        python.exe -m pip install --upgrade pip
+        ```
+3. installare {{< fa brands git-alt >}} ([download page](https://git-scm.com/download/win)) ([installazione guidata](#installazione-git-windows));
+4. installare Tex-Live per Windows ([download diretto ~20MB](http://mirror.ctan.org/systems/texlive/tlnet/install-tl-windows.exe)) ([installazione guidata](#installazione-texlive-windows)).
+:::
+
+### Procedura installazione Python {{< fa brands windows >}} {#installazione-python-windows .smaller}
+
+::: {.nonincremental}
+- apri il file eseguibile `python-<versione>-<cpu>.exe`
+:::
+
+<!-- 1. Installer -->
+![](assets/images/install-python/01-installer.png){fig-align="center"}
+
+### {.smaller}
+
+::: {.nonincremental}
+- premere "**Add `python.exe` to PATH**"
+:::
+
+<!-- 2. Add Python to PATH -->
+![](assets/images/install-python/02-path.png){fig-align="center"}
+
+:::{.callout-warning}
+Se ci si dimentica di aggiungere `python.exe` al `PATH`, `pip` non sarà visibile da riga di comando.
+
+{{< fa arrow-right >}} [vedi risoluzione problemi](#risoluzione-problemi-python)
+:::
+
+---
+
+#### Installare solo `pip` {.smaller}
+
+::: {layout-ncol=2}
+![3a. Solo `pip` (*before* deselezione)](assets/images/install-python/03a-optional-justpip.png)
+
+![3b. Solo `pip` (*after* deselezione)](assets/images/install-python/03b-optional-justpip.png)
+:::
+
+:::{.callout-warning}
+Possiamo evitare di installare altri programmi che non ci servono.
+:::
+
+---
+
+::: {layout-ncol=2}
+![4. "Install Now"](assets/images/install-python/04-install.png)
+
+![5. "Close"](assets/images/install-python/05-close.png)
+:::
+
+### Risoluzione problemi {{< fa brands windows >}} {#risoluzione-problemi-python .smaller}
+
+Se cercando di invocare `pip` all'interno della _Powershell_:
+```powershell
+pip : The term 'pip' is not recognized as the name of a cmdlet, function, script file, or operable program. Check the
+spelling of the name, or if a path was included, verify that the path is correct and try again.
+At line:1 char:1
++ pip
++ ~~~
+    + CategoryInfo          : ObjectNotFound: (pip:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+```
+Oppure all'interno di un _Command Prompt_:
+```cmd
+'pip' is not recognized as an internal or external command, operable program or batch file.
+```
+- cliccare il menù start e cercare "environment variables".
+- bisogna controllare che esistano ed eventualmente aggiungere questi due percorsi al `PATH` dell'utente:
+```{.bash code-line-numbers="false"}
+C:\Users\user\AppData\Local\Programs\Python\Python311\
+C:\Users\user\AppData\Local\Programs\Python\Python311\Scripts\
+```
+
+### Environment Variables
+
+::: {layout-ncol=3}
+![1. Environment Variables](assets/images/install-python/06-system-properties.png)
+
+![2. Environment Variables](assets/images/install-python/07-environment-variables.png)
+
+![3. Environment Variables](assets/images/install-python/08-edit.png)
+:::
+
+### Procedura installazione git {#installazione-git-windows .smaller}
+
+::: {layout-ncol=3}
+![](assets/images/install-git/00-license.png)
+
+![](assets/images/install-git/01-components.png)
+
+![](assets/images/install-git/02-default-editor.png)
+
+![](assets/images/install-git/03-initial-branch.png)
+
+![](assets/images/install-git/04-path.png)
+
+![](assets/images/install-git/05-ssh.png)
+:::
+
+###
+
+::: {layout-ncol=3}
+![](assets/images/install-git/06-https.png)
+
+![](assets/images/install-git/07-autocrlf.png)
+
+![](assets/images/install-git/08-terminal-emulator.png)
+
+![](assets/images/install-git/09-git-pull.png)
+
+![](assets/images/install-git/10-credential-helper.png)
+
+![](assets/images/install-git/11-extra-options.png)
+:::
+
+###
+
+::: {layout-ncol=3}
+![](assets/images/install-git/12-experimental-options.png)
+
+![](assets/images/install-git/13-installing.png)
+
+![](assets/images/install-git/14-finish.png)
+:::
+
+### Procedura installazione TeX-Live {{< fa brands windows >}} {#installazione-texlive-windows .smaller}
+
+::: {layout-ncol=2}
+![1. Microsoft Defender SmartScreen](assets/images/install-texlive/windows/00-smartscreen-more-info.png){width=400px}
+
+![2. Microsoft Defender SmartScreen](assets/images/install-texlive/windows/00-smartscreen.png){width=400px}
+:::
+::: {.nonincremental}
+1. premere "**Maggiori Informazioni**"/"**More info**";
+2. premere "**Esegui comunque**"/"**Run anyway**";
+:::
+
+### {.smaller}
+
+::: {layout-ncol=2}
+![3. Installer](assets/images/install-texlive/windows/01-installer.png)
+
+![4. Confirmation](assets/images/install-texlive/windows/02-confirmation.png)
+:::
+::: {.nonincremental}
+3. premere "**Next**";
+4. premere "**Install**";
+:::
+
+### {.smaller}
+
+::: {layout-ncol=2}
+![5. Retrieving Packages](assets/images/install-texlive/windows/03-retrieving-packages.png)
+
+![6. Simple UI](assets/images/install-texlive/windows/04-simple.png)
+:::
+::: {.nonincremental}
+5. si aprirà automaticamente una finestra che si chiuderà poco dopo;
+6. premere "**Avanzate**"/"**Advanced**";
+:::
+
+### {.smaller}
+
+![7. Advanced UI (*before* selection)](assets/images/install-texlive/windows/05-advanced-before-selection.png)
+
+::: {.nonincremental}
+7. clicca su **Personalizza**/**Customize**
+:::
+
+### {.smaller}
+
+::: {layout-ncol=2}
+![8. TeXlive Collections (it)](assets/images/install-texlive/windows/06-collections-it.png)
+
+![8. TeXlive Collections (en)](assets/images/install-texlive/windows/06-collections-en.png)
+:::
+::: {.nonincremental}
+8. selezionare i pacchetti in figura;
+:::
+
+### {.smaller}
+
+![9. Advanced UI (*after* selection)](assets/images/install-texlive/windows/07-advanced-after-selection.png)
+
+::: {.nonincremental}
+:::: {.columns}
+::: {.column width="25%"}
+9. deselezionare:
+:::
+::: {.column width="70%"}
+- **Install font/macro doc tree**
+- **Install font/macro source tree**
+- **Install TeXworks front end**
+:::
+Ora dovreste notare che lo spazio richiesto è appena sotto i 3GB, dopodiché premere "**Install**" in basso a destra;
+::::
+:::
+
+###
+
+::: {layout-ncol=3}
+![10. Installing](assets/images/install-texlive/windows/08-installing.png)
+
+![11. Installer has finished 🥳🎉](assets/images/install-texlive/windows/09-finish.png)
+
+![12. Installation completed](assets/images/install-texlive/windows/10-close.png)
+:::
+::: {.callout-warning}
+Non mettere in sospensione il computer durante l'installazione, la procedura durerà circa 20 minuti.
+:::
+
+## Installazione dei requisiti su Linux/Mac {#installazione-unix .smallest}
+
+::: {.nonincremental}
+0. (solo per utenti {{< fa brands apple >}} Mac) installare il gestore di pacchetti `Brew` e `wget`;
+
+    ```bash
+    /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+    brew install wget
+    ```
+
+1. installare {{< fa code >}} Visual Studio Code:
+
+    {{< fa brands linux >}} `sudo snap install --classic code`
+
+    {{< fa brands apple >}} `brew install --cask visual-studio-code`
+
+2. installare {{< fa brands java >}} Java (è necessario solo il *Java Runtime Environment*):
+
+    {{< fa brands linux >}} `sudo apt install -y default-jre`
+
+    {{< fa brands apple >}} `brew install java`
+
+3. installare {{< fa brands python >}} Pygments:
+
+    {{< fa brands linux >}} `sudo apt install -y python3-pygments`
+
+    {{< fa brands apple >}} `brew install python@3.11 && brew install pygments`
+
+    - controlla che sia stato installato correttamente:
+
+    {{< fa brands linux >}} {{< fa brands apple >}} `pygmentize -V`
+    
+4. aggiornare {{< fa brands git >}} (preinstallato):
+
+    {{< fa brands linux >}} `sudo apt upgrade git`
+
+    {{< fa brands apple >}} `brew install git && brew upgrade git`
+
+5. installare Tex-Live per sistemi Unix ([installazione guidata](#installazione-texlive-unix)).
+:::
+
+<!-- :::{.callout-note}
+You do not need to remove an installation of a previous release, or any system-provided TeX; multiple releases of TL can coexist on the same system without conflict.
+::: -->
+
+### Procedura installazione TeX-Live {{< fa brands linux >}} {{< fa brands apple >}} {#installazione-texlive-unix .smaller}
+
+Crea una cartella nella quale installerai la nuova distribuzione TexLive e dai al tuo utente la proprietà di lettura e scritrura di questa cartella:
+```{.bash code-line-numbers="true"}
+sudo mkdir -p /usr/local/texlive/$(date +%Y)
+sudo chown -R "$USER" /usr/local/texlive
+```
+Scarica e installa manualmente TexLive:
+```{.bash code-line-numbers="true"}
+mkdir /tmp/texlive
+cd /tmp/texlive
+wget http://mirror.ctan.org/systems/texlive/tlnet/install-tl.zip
+unzip ./install-tl.zip -d install-tl
+cd install-tl/install-tl-$(date +%Y%m%d)
+perl ./install-tl
+```
+Di seguito troverai le impostazioni da selezionare durante l'installazione.
+
+::: {.callout-tip}
+Puoi ingrandire le immagini cliccandoci sopra tenendo premuto `alt`.
+:::
+
+---
+
+### Avere i permessi di scrittura {#installazione-texlive-unix-installer .smaller}
+
+::: {layout-ncol=2}
+![](assets/images/install-texlive/linux/00-texlive-user.png)
+
+![](assets/images/install-texlive/linux/01-texlive-sudo.png)
+:::
+
+### {#installazione-texlive-unix-collections .smallest}
+
+::: {layout-ncol=3}
+![](assets/images/install-texlive/linux/02-texlive-collections-full-scheme.png)
+
+![](assets/images/install-texlive/linux/03-texlive-collections-deselected.png)
+
+![](assets/images/install-texlive/linux/04-texlive-collections-selected.png)
+:::
+
+- installare le 15 collezioni in figura che corrispondono alle lettere (copia e incolla il codice sul terminale):
+```{.txt code-line-numbers="false"}
+a c e f g p v w D E F J M O P
+```
+
+::: {layout-ncol=3}
+![](assets/images/install-texlive/linux/05-texlive-custom-scheme.png)
+
+![](assets/images/install-texlive/linux/06-texlive-option-customization.png)
+![](assets/images/install-texlive/linux/07-texlive-option-customization-after.png)
+
+![](assets/images/install-texlive/linux/08-texlive-install.png)
+:::
+
+### {#texlive-profile-file .smaller}
+
+All'interno della cartella d'installazione dovrebbe essere stato creato un file `texlive.profile` e il suo contenuto dovrebbe corrispondere a questo:
+```bash
+selected_scheme scheme-custom
+TEXDIR /usr/local/texlive/2023
+TEXMFCONFIG ~/.texlive2023/texmf-config
+TEXMFHOME ~/texmf
+TEXMFLOCAL /usr/local/texlive/texmf-local
+TEXMFSYSCONFIG /usr/local/texlive/2023/texmf-config
+TEXMFSYSVAR /usr/local/texlive/2023/texmf-var
+TEXMFVAR ~/.texlive2023/texmf-var
+binary_x86_64-linux 1
+collection-basic 1
+collection-binextra 1
+collection-fontsextra 1
+collection-fontsrecommended 1
+collection-fontutils 1
+collection-langenglish 1
+collection-langgreek 1
+collection-langitalian 1
+collection-latex 1
+collection-latexextra 1
+collection-latexrecommended 1
+collection-mathscience 1
+collection-pictures 1
+collection-publishers 1
+collection-xetex 1
+instopt_adjustpath 0
+instopt_adjustrepo 1
+instopt_letter 0
+instopt_portable 0
+instopt_write18_restricted 1 # allow exection of restricted list of programs via \write18
+tlpdbopt_autobackup 1
+tlpdbopt_backupdir tlpkg/backups
+tlpdbopt_create_formats 1
+tlpdbopt_desktop_integration 1
+tlpdbopt_file_assocs 1
+tlpdbopt_generate_updmap 0
+tlpdbopt_install_docfiles 0 # Install font/macro doc tree
+tlpdbopt_install_srcfiles 0 # Install font/macro source tree
+tlpdbopt_post_code 1
+tlpdbopt_sys_bin /usr/local/bin
+tlpdbopt_sys_info /usr/local/share/info
+tlpdbopt_sys_man /usr/local/share/man
+tlpdbopt_w32_multi_user 1
+```
+Alla prossima installazione puoi utilizzare questo file, modificandolo in modo appropriato, per effettuare l'installazione di TeX Live:
+```bash
+install-tl --profile=texlive.profile
+```
+
+### Post-installazione: impostazione PATH {{< fa brands linux >}} {{< fa brands apple >}} {#texlive-unix-set-path .smallest}
+
+Alla fine dell'installazione vengono stampati i seguenti messaggi:
+```bash
+Add /usr/local/texlive/2023/texmf-dist/doc/man to MANPATH.
+Add /usr/local/texlive/2023/texmf-dist/doc/info to INFOPATH.
+Most importantly, add /usr/local/texlive/2023/bin/x86_64-linux
+to your PATH for current and future sessions.
+```
+
+Ora devi aggiungere la directory dei binari di TeX Live al tuo *PATH*:
+```bash
+echo 'export MANPATH="$MANPATH:/usr/local/texlive/2023/texmf-dist/doc/man"' >> ~/.bashrc
+echo 'export INFOPATH="$INFOPATH:/usr/local/texlive/2023/texmf-dist/doc/info"' >> ~/.bashrc
+echo 'export PATH=/usr/local/texlive/2023/bin/x86_64-linux:$PATH' >> ~/.bashrc
+source ~/.bashrc # aggiorna il file di configurazione
+```
+
+{{< fa circle-exclamation >}} Puoi eseguire il codice soprastante nel tuo file `~/.bashrc` per aggiornare il path, ma ricordati di cambiare l'anno.
+
+{{< fa circle-exclamation >}} Alcuni utenti Linux e Mac preferiscono utilizzare `zsh` come bash shell (da _macOS Catalina_, Ottobre 2019, è quella di default), in questo caso bisogna aggiornare il file `~/.zshenv`, in particolare su Mac bisogna cambiare una cartella:
+```bash
+echo 'export MANPATH="$MANPATH:/usr/local/texlive/2023/texmf-dist/doc/man"' >> ~/.zshenv
+echo 'export INFOPATH="$INFOPATH:/usr/local/texlive/2023/texmf-dist/doc/info"' >> ~/.zshenv
+echo 'export PATH=/usr/local/texlive/2023/bin/universal-darwin:$PATH' >> ~/.zshenv
+source ~/.zshenv # aggiorna il file di configurazione
+```
+
+Controlla che il *PATH* si sia aggiornato:
+```bash
+echo -e ${PATH//:/\\n}
+```
+Nel caso in cui l'installazione non sia andata a buon fine, [resetta l'installazione](https://tex.stackexchange.com/questions/540429/).
+
+Se tutto è corretto, non dimenticare di rimuovere la cartella di installazione:
+```bash
+rm -rf /tmp/texlive
+```
+
+## Controllo dell'installazione {{< fa brands windows >}} {{< fa brands linux >}} {{< fa brands apple >}}
+
+Per accertarti che l'installazione sia andata a buon fine:
+
+```bash
+tlmgr --version
+pygmentize -V
+java --version
+arara --version
+git --version
+```
+```bash
+git version 2.40.1.windows.1
+Python 3.11.3
+Pygments version 2.15.1, [...]
+  __ _ _ __ __ _ _ __ __ _
+ / _` | '__/ _` | '__/ _` |
+| (_| | | | (_| | | | (_| |
+ \__,_|_|  \__,_|_|  \__,_|
+
+arara 7.0.5
+Copyright (c) 2023, Island of TeX
+arara is released under the New BSD license.
+
+[...]
+```
+
+## Controllo dell'installazione {{< fa brands windows >}} {{< fa brands linux >}} {{< fa brands apple >}}
+
+Produrre un semplice documento:
+```latex
+\documentclass{article}
+
+\begin{document}
+Hello \LaTeX!
+\end{document}
+```
+$$
+\rm Hello\ \LaTeX!
+$$
+Ciclo di build:
+```{mermaid}
+graph LR
+  A["arara 🦜"] ==> B(pdflatex)
+  B --> C[PDF document]
+```
+
+## Manutenzione installazione {{< fa brands windows >}} {{< fa brands linux >}} {{< fa brands apple >}} {.smaller}
+
+Aggiornare `tlmgr` stesso:
+
+`tlmgr update --self`
+
+Listare i pacchetti che possono essere aggiornati:
+
+`tlmgr update --list`
+
+Aggiornare un pacchetto specifico:
+
+`tlmgr update <pkgname>`
+
+Aggiornare tutti i pacchetti:
+
+`tlmgr update --all`
+
+Aggiornare sia `tlmgr` che tutti i pacchetti:
+
+`tlmgr update --self --all`
+
+# Documentazione {.smaller}
+
+---
+
+```bash
+texdoc minted
+```
+. . .
+```txt
+You don't appear to have any local documentation installed.
+
+There may be online documentation available for "minted" at
+    https://texdoc.org/serve/minted/0
+This documentation may be for a different version than you have installed.
+
+Would you like to search online? (y/N)
+```
+. . .
+
+- possiamo consultare direttamente il sito [texdoc.org](https://texdoc.org/index.html)
+- oppure andare su [ctan.org](https://www.ctan.org/)
+
+- impostazine *shortcut search engine* su Chrome
+
+## Ottimizzare il flusso di lavoro su Visual Studio Code {.smallest}
+
+Personalizzazione dell'ambiente di lavoro:
+
+::::{.columns}
+
+:::{.column width="50%"}
+- `View > Open View... > Timeline`
+
+    ```{.bash code-line-numbers="false"}
+    Explorer: Focus on Timeline View
+    ```
+
+- `View > Appereance > Minimap`
+
+    ```{.bash code-line-numbers="false"}
+    View: Toggle Minimap
+    ```
+
+- `View > Sticky Scroll`
+
+    ```{.bash code-line-numbers="false"}
+    View: Toggle Sticky Scroll
+    ```
+
+- `Snippets: Configure User Snippets`
+- `Preferences: Open Keyboard Shortcuts`
+
+    ```{.bash code-line-numbers="false"}
+    Open Keyboard Shortcuts
+    ```
+    ([see my shortcuts](#my-keyboard-shortcuts))
+
+- `latex-workshop.latex.recipes`
+    ([see my recipes](#my-workshop-recipes))
+
+- `latex-workshop.latex.autoBuild.run`
+
+    ```{.bash code-line-numbers="false"}
+    ctrl+alt+B
+    ```
+:::
+
+:::{.column width="50%"}
+
+:::
+::::
+<!-- https://code.visualstudio.com/docs/getstarted/keybindings#:~:text=All\%20keyboard\%20shortcuts\%20in\%20VS,This\%20will\%20open\%20your\%20keybindings. -->
+
+---
+
+### My Keyboard Shortcuts
+
+:::{.larger}
+```{.json code-line-numbers="|4-9|12-17|"}
+// Place your key bindings in this file to override the defaults
+[
+    {
+        "key": "ctrl+shift+B",
+        "command": "editor.action.insertSnippet",
+        "when": "editorLangId == latex && editorTextFocus",
+        "args": {
+            "snippet": "\\textbf{${TM_SELECTED_TEXT}$0}"
+        }
+    },
+    {
+        "key": "ctrl+shift+I",
+        "command": "editor.action.insertSnippet",
+        "when": "editorLangId == latex && editorTextFocus",
+        "args": {
+            "snippet": "\\emph{${TM_SELECTED_TEXT}$0}"
+        }
+    }
+]
+```
+:::
+
+<!-- ### My Workshop Recipes
+
+:::{.larger}
+```{.json code-line-numbers="|1|21|3-6|23-29|9-12|32-42|15-18|"}
+"latex-workshop.latex.recipes": [
+    {
+        "name": "arara 🦜",
+        "tools": [
+            "arara"
+        ]
+    },
+    {
+        "name": "latexmk 🔃",
+        "tools": [
+            "latexmk"
+        ]
+    },
+    {
+        "name": "pdflatex",
+        "tools": [
+            "pdflatex"
+        ]
+    }
+],
+"latex-workshop.latex.tools": [
+    {
+        "name": "arara",
+        "command": "arara",
+        "args": [
+            "--verbose",
+            "%DOC%"
+        ],
+        "env": {}
+    },
+    {
+        "name": "latexmk",
+        "command": "latexmk",
+        "args": [
+            "-synctex=1",
+            "-interaction=nonstopmode",
+            "-file-line-error",
+            "-pdf",
+            "-outdir=%OUTDIR%",
+            "%DOC%"
+        ],
+        "env": {}
+    },
+```
+::: -->
+
+# Perché la tipografia è _importante_? {.white .smaller #tipografia-importanza data-background-image="assets/images/hero/typography.jpg" data-background-size="cover"}
+
+### Oscars 2017 Best Picture announcement
+
+{{< video https://www.youtube.com/embed/p-I6x_iPF5o width="100%" height="100%" >}}
+
+### By Design – Vox
+
+{{< video https://www.youtube.com/embed/eZSe4xVXHhI width="100%" height="100%" >}}
+
+# {#arara-tex-automation-tool .smaller}
+
+![](assets/branding/arara-logo-with-text-bottom.svg){fig-align="center" width=450}
+
+## File prodotti da LaTeX
+
+Prima di tutto, è importante capire quali sono i file prodotti da $\rm\LaTeX$ quando compiliamo un documento.
+
+<!-- https://tex.stackexchange.com/questions/7770/file-extensions-related-to-latex-etc -->
+<!-- https://tex.stackexchange.com/questions/597675/understanding-all-output-files-when-compiling-a-latex-document -->
+
+### {.smallest auto-animate=true}
+
+::::{.columns}
+:::{.column width="25%"}
+- `acn`
+- `acr`
+- `aux`
+- `bat`
+- `bbl`
+- `bbx`
+- `bcf`
+- `bib`
+- `blg`
+- `brf`
+- `bst`
+- `cfg`
+- `cls`
+- `chktexrc`
+- `dtx`
+- `dvi`
+:::
+:::{.column width="25%"}
+- `enc`
+- `eps`
+- `fd`
+- `fdb_latexmk`
+- `fls`
+- `fmt`
+- `gitattributes`
+- `gitignore`
+- `glg`
+- `glo`
+- `gls`
+- `idx`
+- `ilg`
+- `ind`
+- `ins`
+- `jpg`
+:::
+:::{.column width="25%"}
+- `latexmkrc`
+- `loc`
+- `loe`
+- `lof`
+- `log`
+- `lol`
+- `lot`
+- `ltx`
+- `mf`
+- `md`
+- `otf`
+- `nav`
+- `nlg`
+- `nlo`
+- `nls`
+- `out`
+:::
+:::{.column width="25%"}
+- `pdf`
+- `png`
+- `ps`
+- `pyg`
+- `pygtex`
+- `run.xml`
+- `sh`
+- `snm`
+- `sty`
+- `synctex`
+- `tex`
+- `toc`
+- `ttf`
+- `vrb`
+- `yml`
+:::
+::::
+
+### {#extensions-classes .smallest auto-animate=true}
+
+:::::{.nomargin}
+::::{.columns}
+:::{.column width="25%"}
+**_file sorgente_**:
+
+- `tex`
+- `dtx`
+- `cls`
+- `ltx`
+- `cfg`
+- `ins`
+- `sty`
+
+**_immagini_**:
+
+- `eps`
+- `jpg`
+- `png`
+
+**_font_**:
+
+- `enc`
+- `fd`
+- `mf`
+- `otf`
+- `ttf`
+
+**_beamer_**:
+
+- `nav`
+- `snm`
+- `vrb`
+:::
+:::{.column width="25%"}
+**_bibliografia_**:
+
+- `bbl`
+- `bbx`
+- `bcf`
+- `bib`
+- `blg`
+- `brf`
+- `bst`
+
+**_glossario_**:
+
+- `gls`
+- `glo`
+- `glg`
+
+**_indice_**:
+
+- `ind`
+- `idx`
+
+**_acronimi_**:
+
+- `acn`
+- `acr`
+- `ilg`
+
+**_nomenclatura_**:
+
+- `nlg`
+- `nlo`
+- `nls`
+:::
+:::{.column width="25%"}
+**_contenuti_**:
+
+- `loc`
+- `loe`
+- `lof`
+- `lol`
+- `lot`
+- `toc`
+
+**_configurazione_**:
+
+- `chktexrc`
+- `latexmkrc`
+- `gitattributes`
+- `gitignore`
+- `yml`
+
+**_documentazione_**:
+
+- `md`
+
+**_scripting_**:
+
+- `bat`
+- `sh`
+:::
+:::{.column width="25%"}
+**_precompilazione_**:
+
+- `fmt`
+
+**_caching_**:
+
+- `_minted*/`
+- `fdb_latexmk`
+- `pyg`
+- `pygtex`
+- `run.xml`
+
+**_sincronizzazione_**:
+
+- `synctex`
+- `fls`
+
+**_prodotti_**:
+
+- `aux`
+- `out`
+- `log`
+- `dvi`
+- `ps`
+- `pdf`
+:::
+::::
+:::::
+
+<!-- Informazioni interessanti scritte nel file `log`:
+```bash
+Package siunitx Info: Option "group-digits = true" has been deprecated in this
+(siunitx)             release.
+(siunitx)             
+(siunitx)             Use "group-digits = all" as a replacement.
+
+Package thmtools Info: Key `qed' (with value `\qedsymbol ')
+(thmtools)             is not a known style key.
+(thmtools)             Will pass this to every \declaretheorem
+(thmtools)             that uses `style=myProofStyle' on input line 84.
+``` -->
+
+### {#arara-config .smaller}
+
+- dobbiamo evitare esecuzioni successive inutili.
+- abbiamo a disposizione tre funzioni fondamentali: `missing`, `changed` e `found`.
+- tramite le quali possiamo controllare la presenza di un file, la sua modifica, o la presenza di una parola chiave all'interno del file.
+- due [file di configurazione](https://github.com/islandoftex/arara/issues/34) possibili: `.araraconfig.yaml`, `.arararc.yaml`
+
+```latex
+% arara: pdflatex: { draft: yes, shell: yes, options: [--output-directory=build] }
+
+% arara: biber: { options: [ '--output-directory=build' ] }
+% arara: --> if missing(toFile('build/thesis.bbl')) || changed(toFile('build/thesis.bbl')) || found(toFile('build/thesis.log'), 'Citation')
+
+% arara: makeglossaries: { options: [ '-d', 'build' ] }
+% arara: --> if changed (toFile('build/thesis.glo')) || missing (toFile('build/thesis.gls'))
+
+% arara: pdflatex: { shell: yes, synctex: yes, options: [--output-directory=build] }
+
+% arara: move: { files: [ 'build/thesis.pdf' ],
+% arara: --> target: 'backup/thesis.pdf' }
+```
+
+## Pulizia file temporanei {.smaller}
+
+Pulire i file temporanei:
+```bash
+latexmk -c
+```
+Se `latexmk -c` si rifiuta di rimuovere determinati file, è possibile specificare le loro estensioni nel file di configurazione `.latexmkrc` come segue:
+```perl
+$clean_ext = "acn acr alg glg glo gls ist log nav out run.xml slg snm syg syi synctex.gz";
+```
+Questo non elimina il documento finale `.pdf`. Se vuoi eliminare anche il `.pdf`:
+```bash
+latexmk -C
+```
+
+Questo è il contenuto del mio file di configurazione `.latexmkrc`:
+```perl
+# latexmk -pdf -pvc main.tex
+$pdflatex = "pdflatex --shell-escape -synctex=1 -halt-on-error %O %S";
+$sleep_time = 1; # 1 second
+$pdf_mode = 1;   # tex -> pdf
+
+# If you have your work split up into several parts, you have to specify the main file like this:
+@default_files = ('thesis.tex');
+
+# And finally, if latexmk -c refuses to remove certain files, you can specify their extensions and next time they’ll be gone:
+$clean_ext = "acn acr alg glg glo gls ist log nav out run.xml slg snm syg syi synctex.gz";
+
+# https://tex.stackexchange.com/questions/83341/clean-bbl-files-with-latexmk-c
+$bibtex_use = 2;
+
+$out_dir = 'build';
+```
+
+# Package utili {.smaller}
+
+## Package utili {.smallest auto-animate=true}
+
+::::{.columns}
+:::{.column width="20%"}
+- `adjustbox`
+- `algorithms2e`
+- `amsfonts`
+- `amsmath`
+- `amssymb`
+- `annotate-equations`
+- `anyfontsize`
+- `appendix`
+- `array`
+- `babel`
+- `biblatex`
+:::
+:::{.column width="20%"}
+- `bookmark`
+- `booktabs`
+- `caption`
+- `cleveref`
+- `csquotes`
+- `datetime2`
+- `diagbox`
+- `doclicense`
+- `draftwatermark`
+- `empheq`
+- `emptypage`
+- `enumitem`
+- `epigraph`
+:::
+:::{.column width="20%"}
+- `fancyhdr`
+- `float`
+- `fontspec`
+- `forest`
+- `geometry`
+- `graphicx`
+- `hyperref`
+- `index`
+- `listings`
+- `makecell`
+- `mathtools`
+- `microtype`
+:::
+:::{.column width="20%"}
+- `minted`
+- `multirow`
+- `nameref`
+- `nicefrac`
+- `pageslts`
+- `parskip`
+- `polyglossia`
+- `ragged2e`
+- `setspace`
+- `silence`
+- `siunitx`
+:::
+:::{.column width="20%"}
+- `standalone`
+- `subcaption`
+- `tabularx`
+- `tcolorbox`
+- `thmtools`
+- `tikz`
+- `titlesec`
+- `titletoc`
+- `verbatim`
+- `xcolor`
+- `xparse`
+:::
+::::
+
+<!-- ## Package utili {.smallest auto-animate=true}
+
+:::::{.nomargin}
+::::{.columns}
+:::{.column width="20%"}
+
+**_pagina_**:
+
+**_font_**:
+
+- `anyfontsize`
+
+**_bibliography_**:
+
+- `biblatex`
+
+**_tabelle_**:
+
+- `array`
+- `booktabs`
+- `diagbox`
+- `siunitx`
+- `tabu`
+- `tabularx`
+- `tabularray`
+
+**_immagini_**:
+
+- `caption`
+- `subcaption`
+- `adjustbox`
+
+**_codice_**:
+
+- `algorithms2e`
+- `verbatim`
+- `minted`
+
+**_matematica_**:
+
+- `annotate-equations`
+- `amsfonts`
+- `amsmath`
+- `amssymb`
+- `empheq`
+- `nicefrac`
+- `thmtools`
+
+:::
+:::{.column width="20%"}
+
+**_errori_**:
+
+**_riferimenti_**:
+
+**_licenza_**:
+
+- `doclicense`
+
+**_parti_**:
+
+- `tcolorbox`
+- `appendix`
+
+**_liste_**:
+
+- `enumitem`
+
+**_citazioni_**:
+
+- `cleverref`
+
+**_lingua_**:
+
+**_commands_**:
+
+- `xparse`
+
+:::
+:::{.column width="20%"}
+
+:::
+:::{.column width="20%"}
+
+:::
+:::{.column width="20%"}
+
+:::
+::::
+::::: -->
+
+## Package da <u class="wavy">non caricare</u>
+
+- `tabu` → [...`tabularray`]
+- `cite` → `biblatex`
+- [`subfigure`, `subfig`] → `subcaption`
+- `glossary` → `glossaries`
+- [`epsf`, `epsfig`, `psfig`] → `graphicx`
+- `enumerate` → `enumitem`
+
+# Scaletta argomenti {.smaller}
+
+<!-- https://quarto.org/docs/presentations/revealjs/#content-overflow -->
+## Scaletta argomenti [1/2] {.smaller}
+
+- clean code mentality
+- [codifica dell'input e del font](https://tex.stackexchange.com/questions/44694/fontenc-vs-inputenc) (`inputenc` e `fontenc`)
+- impostazione della lingua del documento ( `babel`)
+- [hyphenation, typesetting, ligatures](https://tex.stackexchange.com/a/110140/127473) (`microtype`)^[[Tips on Writing a Thesis in LaTeX](http://www.khirevich.com/latex/microtype/)]
+- le virgolette (`csquotes`)
+- margini del documento (`geometry`), indentazione (`parskip`)
+- Interruzioni di riga^[[When to use `\par` and when `\\`, `\newline`](https://tex.stackexchange.com/q/82664/127473)],uso di `%`^[[What is the use of percent signs (`%`)](https://tex.stackexchange.com/a/7459/127473)], `comment` package
+- **grassetto**, *corsivo*, `monofont`, combinazini
+- elenchi puntati, numerati, descrittivi, personalizzati (`enumitem`)
+- note a piè di pagina (`footnote`)
+
+## Scaletta argomenti [2/2] {.smaller}
+
+- testatina e piedino ([`fancyhdr`](https://www.overleaf.com/learn/latex/Headers_and_footers))
+- figure (`graphicx`) e tabelle (`booktabs`), opzioni comuni
+- strutturazione del documento (`standalone`)
+- riferimenti ipertestuali (`hyperref`)
+- importazione di codice, evidenziazione della sintassi (`minted`)
+- scrittura di pseudocodice (`algorithms2e`)
+- creazione di un glossario (`glossaries`), acronimi (`acronym`), indice (`index`)
+
+# Struttura del progetto
+
+:::{.code .larger}
+```{.txt code-line-numbers="false"}
+.
+├── assets/
+│   ├── assets/
+│   │   ├── resources/
+│   │   │   └── bibliography.bib
+│   │   ├── figures/
+│   │   ├── plots/
+│   │   └── tables/
+│   ├── backup/
+│   ├── build/
+│   ├── chapter/
+│   │   ├── intro/
+│   │   │   ├── frontespizio.tex
+│   │   │   ├── dedica.tex
+│   │   └── *-chapter.tex
+│   └── libraries/
+|       ├── algorithm2e.sty
+|       ├── bibliography.sty
+|       ├── code.sty
+|       ├── color.sty
+|       ├── geometry.sty
+|       ├── glossaries.sty
+|       ├── graphics.sty
+|       ├── links.sty
+|       ├── lists.sty
+|       ├── macros.sty
+|       ├── math.sty
+|       ├── propertiesaggiun.sty
+|       ├── spacing.sty
+|       └── tikz.sty
+├── .latexmkrc
+├── presentation.preamble.sty
+├── presentation.tex
+├── thesis.preamble.sty
+└── thesis.tex
+```
+:::
+
+# Scrivere codice {.white .smaller #writing-code data-background-image="assets/images/hero/writing-code.jpg" data-background-size="cover"}
+
+## Importare il pacchetto `minted` {.smaller}
+
+Il pacchetto `minted` contenuto nella collezione `collection-mathscience` ci permette di importare codice da file esterni e, grazie a `python` e a `pygmentize`, di evidenziarne la sintassi.
+Importiamo il pacchetto in `libraries/set-code.sty`:
+```latex
+\usepackage[outputdir=build]{minted}
+```
+Nel testo possiamo scrivere codice direttamente tramite il nuovo ambiente `minted`:
+```latex
+\begin{minted}{java}
+public class HelloWorld {
+    public static void main(String[] args) {
+        System.out.println("Hello, World!");
+    }
+}
+\end{minted}
+```
+Ipotizziamo di aver estrapolato il contenuto in un file esterno `assets/codes/main.java`, ora è sufficiente importare il file:
+```latex
+\inputminted{java}{assets/codes/main.java}
+```
+All'interno del testo possiamo scrivere codice "_in linea_":
+```latex
+Il main di Java passa come paramentro \mintinline{java}{String[] args}.
+```
+
+### Opzioni utili per il pacchetto `minted` {.smaller}
+
+:::{.code .larger}
+```latex
+\usemintedstyle{manni}
+\setminted{
+	breaklines = true, breakanywhere,
+	breakaftersymbolpre = \raisebox{0ex}[0ex][0ex]{\ensuremath{\rhookswarrow}},
+	breakaftersymbolpost = \raisebox{0ex}[0ex][0ex]{\ensuremath{\rcurvearrowse}\space},
+	frame = lines,
+	fontsize = \small, fontseries = bold,
+    linenos = true, numberblanklines = false,
+	texcomments, mathescape,
+    obeytabs, tabsize = 4,
+    autogobble % remove all common leading whitespace from code
+}
+
+\newmintinline[cppinline]{cpp}{}
+\newmint[cppcode]{cpp}{}
+\newmintedfile[cppfile]{cpp}{}
+
+\newmintinline[javainline]{cpp}{}
+\newmint[javacode]{cpp}{}
+\newmintedfile[javafile]{cpp}{}
+```
+:::
+
+### Come aggiungere una didascalia {.smaller}
+
+1. modifichiamo il preambolo:
+
+    ```latex {code-line-numbers="false"}
+    \usepackage[newfloat, outputdir=build]{minted}
+    ```
+2. aggiungiamo delle opzioni:
+
+    ```latex {code-line-numbers="false"}
+    % NOTE permette di trattare il codice come se fosse un float
+    % https://tex.stackexchange.com/questions/254044/
+    \newenvironment{code}{\captionsetup{type=listing}}{}
+    \SetupFloatingEnvironment{listing}{name=Codice, placement=htp, listname={Elenco dei codici}}
+    ```
+3. ora nel testo possiamo creare un ambiente fluttuante:
+
+    ```latex {code-line-numbers="false"}
+    \begin{code}
+        \captionof{listing}{My Java main}\label{code:java-main}
+        \inputminted{java}{assets/codes/main.java}
+    \end{code}
+    ```
+
+- possiamo aggiungere `\listoflistings` nel punto in cui vogliamo che venga generato l'elenco dei codici, generalmente dopo `\listoffigures` e `\listoftables`.
+
+Per ulteriori personalizzazioni, consultare la [documentazione](https://ctan.mirror.garr.it/mirrors/ctan/macros/latex/contrib/minted/minted.pdf).
+
+<!-- # Definizione di nuovi comandi {.smaller}
+
+Letture consigliate:
+
+- [From `\newcommand` to `\NewDocumentCommand`](https://www.texdev.net/2010/05/23/from-newcommand-to-newdocumentcommand/) -->
+
+# Appendice {.smaller}
+
+<!-- https://tex.stackexchange.com/questions/664/why-should-i-use-usepackaget1fontenc -->
+
+<!-- ## Text formatting {.smaller}
+
+- [Lengths in LaTeX](https://www.overleaf.com/learn/latex/Lengths_in_LaTeX)
+- [Font sizes, families, and styles](https://www.overleaf.com/learn/latex/Font_sizes%2C_families%2C_and_styles#Font_families) -->
+
+## Struttura generale di una tesi {.smallest}
+
+Le voci in corsivo sono obbligatorie, quelle in tondo sono facoltative, quelle asteriscate non devono
+comparire nell’indice generale.
+
+| Supersezionamento | Sezione |
+|---------|:-----|
+| Materiale iniziale | _Frontespizio_<br>Colophon\*<br>Dedica\*<br>Sommario*<br>_Indice generale_*<br>Elenco delle figure\*<br>Elenco delle tabelle\*<br>Altri elenchi\*<br>Prefazione<br>Ringraziamenti\*<br>Introduzione non numerata |
+| Materiale principale | Introduzione numerata<br>_Capitoli_<br>Una o più appendici numerate |
+| Materiale finale | Una o più appendici non numerate<br>Glossario<br>_Bibliografia_<br>Indice analitico |
+: {tbl-colwidths="[10,45]"}
+
+## Special LaTeX characters {.smallest}
+
+Alcuni caratteri sono riservati per comandi $\rm\LaTeX$.
+Non possono essere usati direttamente nel codice sorgente.
+
+| Abbreviation | Carattere | Funzione | Codice |
+|---------|:-----|:-----|:-----|
+| Backslash  | `\` | Comincia un comando | `\textbackslash` |
+| Braces       | `{ }` | Delimitano un gruppo | `\{ \}` |
+| Dollar sign  | `$` | Delimita la matematica in linea | `\$` |
+| Circumflex   | `^`  | Esponente matematico | `\^{}` |
+| Underscore   | `_` | Pedice matematico | `\_` |
+| Ampersand    | `&` | Separa le celle in una tabella | `\&` |
+| Hash         | `#` | Numero dell’argomento | `\#` |
+| Tilde        | `~` | Spazio indivisibile | `\~{}` |
+| Percent      | `%` | Commento | `\%` |
+: Caratteri speciali {#tbl-latex-special-characters}
+
+## Modificare lo stile del font {.smallest}
+
+| Comando | Dichiarazione | Stile |
+|---------|:-----|:-----|
+| `\emph` | `\em` | Emphasized |
+| `\textit` | `\itshape` | Italic |
+| `\textsc` | `\scshape` | Small caps |
+| `\textbf` | `\bfseries` | Bold |
+| `\textsl` | `\slshape` | Slanted |
+| `\textrm` | `\rmfamily` | Roman |
+| `\textsf` | `\sffamily` | Sans serif |
+| `\texttt` | `\ttfamily` | Typewriter |
+: Stili del font {#tbl-latex-font-styles}
+
+## Modificare la dimensione del font {.smallest}
+
+| Dichiarazione | Dimensione |
+|:-----|:-----|
+| `\tiny` | 5pt |
+| `\scriptsize` | 7pt |
+| `\footnotesize` | 8pt |
+| `\small` | 9pt |
+| `\normalsize` | 10pt |
+| `\large` | 12pt |
+| `\Large` | 14.4pt |
+| `\LARGE` | 17.28pt |
+| `\huge` | 20.74pt |
+| `\Huge` | 24.88pt |
+: Dimensioni del font {#tbl-latex-font-sizes}
+
+### Unità di misura in LaTeX {.smallest}
+
+| Abbreviation | Value |
+|---------|:-----|
+| `pt` | a point is approximately `1/72.27 inch`, that means about `0.0138 inch` or `0.3515 mm` (exactly point is defined as `1/864` of American printer’s foot that is `249/250` of English foot) |
+| `mm` | a millimeter |
+| `cm` | a centimeter |
+| `in` | inch |
+| `ex` | roughly the height of an 'x' (lowercase) in the current font |
+| `em` | roughly the width of an 'M' (uppercase) in the current font |
+| `mu` | math unit equal to `1/18 em`, where `em` is taken from the math symbols family |
+| `sp` | so-called "special points", a low-level unit of measure where `65536sp=1pt` |
+: Unità in LaTeX {#tbl-latex-units tbl-colwidths="[10,65]"}
+
+### Lunghezze comuni {.smallest}
+
+| Length | Description |
+|---|---|
+| `\baselineskip` | Vertical distance between lines in a paragraph |
+| `\columnsep` | Distance between columns |
+| `\columnwidth` | The width of a column |
+| `\evensidemargin` | Margin of even pages, commonly used in two-sided documents such as books |
+| `\linewidth` | Width of the line in the current environment. |
+| `\oddsidemargin` | Margin of odd pages, commonly used in two-sided documents such as books |
+| `\paperwidth` | Width of the page |
+| `\paperheight` | Height of the page |
+| `\parindent` | Paragraph indentation |
+| `\parskip` | Vertical space between paragraphs |
+| `\tabcolsep` | Separation between columns in a table (tabular environment) |
+| `\textheight` | Height of the text area in the page |
+| `\textwidth` | Width of the text area in the page |
+| `\topmargin` | Length of the top margin |
+: most common lengths {#tbl-latex-lengths tbl-colwidths="[10,65]"}

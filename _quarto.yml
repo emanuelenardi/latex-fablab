@@ -1,0 +1,107 @@
+project: 
+  type: default
+  title: Impaginazione (tesi) con LaTeX
+  output-dir: docs
+
+lang: it
+title: Impaginazione (tesi) con _LaTeX_
+keywords: latex, thesis
+subtitle: <small> In collaborazione con FabLab UniTrento </small>
+author:
+  - name: Emanuele Nardi
+    email: emanuele.nardi@studenti.unitn.it
+    url: https://github.com/emanuelenardi/
+    affiliations:
+      name: Università degli Studi di Trento, DISI
+      url: https://www.unitn.it/
+# institute: Università degli Studi di Trento, DISI
+date: today
+date-format: "[Aggiornate] dddd D MMMM YYYY"
+
+# presentation metadata
+pagetitle: Impaginazione (tesi) con LaTeX
+description-meta: ""
+author-meta: Emanuele Nardi
+
+preview-links: true
+
+title-slide-attributes:
+  data-background-image: "assets/images/hero/writing-thesis.jpg"
+  data-background-size: cover
+  data-background-opacity: "0.4"
+  data-background-color: "#212922"
+
+aspectratio: 169
+# https://github.com/quarto-dev/quarto-cli/discussions/3668
+# toc: true
+slide-level: 3
+# number-sections: true
+format:
+  # html:
+  #     theme:
+  #         light: flatly
+  #         dark: darkly
+  revealjs:
+    scrollable: true
+    # overral theme
+    theme: [serif, assets/template/custom.scss]
+    template-partials:
+      - assets/template/title-slide.html
+
+    # multiplex: true
+    embed-resources: false # incompatible with chalkboard
+    # fig-align: center
+    
+    include-after-body: [assets/template/clean_title_page.html]
+    # logo: "assets/images/logo/logo-unitn.png"
+    # footer: |
+    #     Impaginazione (tesi) con $\rm\LaTeX$ -- Emanuele Nardi -- CC BY-NC
+    
+    # lesson helpers
+    menu: true
+    footnotes-hover: true
+    reference-location: document
+    chalkboard:
+        theme: whiteboard
+        boardmarker-width: 5
+        buttons: false
+
+    # Controls
+    # controls: true
+    # controls-layout: bottom-right
+    # controls-back-arrows: faded
+
+    preview-links: auto
+
+    slide-number: h.v #< collapsed/total
+    # header: Impaginazione (tesi) con LaTeX -- Emanuele Nardi -- CC BY-NC
+    navigation-mode: grid
+    # header-logo: "assets/images/logo/unitn-fablab.png"
+    # hide-from-titleSlide: "logo"
+    sc-sb-title: true
+    footer: |
+        Impaginazione (tesi) con $\rm\LaTeX$ --- Emanuele Nardi --- CC BY-NC
+
+    # how to treat fragments
+    fragment-in-url: true # seems to be broken
+    mouse-wheel: false
+    pdf-separate-fragments: true
+    
+    # slide transitions
+    transition: slide
+    transition-speed: fast
+    background-transition: fade
+    
+    # lists
+    incremental: false
+    
+    hash-type: title
+    
+    # how to treat code
+    highlight-style: github
+    code-overflow: wrap
+filters:
+  - reveal-header
+# To make sure that R, Python, and Julia code is only executed locally
+# execute:
+#   freeze: auto

@@ -1,0 +1,88 @@
+// imported from https: //github.com/andrewheiss/2022-seacen/blob/main/presentation/custom.scss
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&family=Roboto+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
+/*-- scss:defaults --*/
+
+// $font-family-sans-serif: 'Poppins', sans-serif;
+$font-family-monospace: 'Roboto Mono', monospace;
+// $presentation-font-size-root: 40px;
+// $presentation-font-smaller: 0.7; 
+$presentation-title-slide-text-align: left; // deafult: center
+
+// $presentation-h1-font-size: 2.4em;
+// $presentation-h2-font-size: 2em;
+
+.smallest {
+    font-size: 0.5em;
+}
+
+/*-- scss:rules --*/
+
+.white h1 {
+    color: #ffffff !important;
+}
+
+.middle h2 {
+    text-align: center !important;
+}
+
+/*-- scss:defaults --*/
+
+$link-color: orange;
+
+/*-- scss:defaults --*/
+
+.reveal pre.sourceCode code {
+    max-height: 400px !important;
+}
+
+.larger pre.sourceCode code {
+    max-height: 600px !important;
+}
+
+// altrimenti il font su #### non si rimpicciolisce
+.reveal.smaller .slides h4,
+.reveal .slides section.smaller h4 {
+    font-size: calc(1.3em / 0.7) !important
+}
+
+u {
+    text-decoration: rgb(255, 255, 255) solid underline;
+}
+
+u.wavy {
+    text-decoration: underline wavy #262D28;
+}
+
+#profile-photo {
+    width: 300px;
+    height: 300px;
+    object-fit: cover;
+    object-position: 52% 50%;
+    border-radius: 50%;
+    float: right;
+    position: relative;
+    top: -100px; right: 100px;
+}
+
+.white {
+    color: white;
+}
+
+// .nomargin
+.reveal .nomargin p {
+    margin: 0 0 !important;
+    line-height: 1.3
+    
+}
+
+.reveal .nomargin ul {
+    margin-block-start: 0em !important;
+    margin-block-end: 0em !important;
+}
+
+.reveal .slide .nomargin ul li,
+.reveal .slide .nomargin ol li {
+    margin-top: 0em; // 0.4
+    margin-bottom: 0em; // 0.2
+}
