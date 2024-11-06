@@ -576,6 +576,8 @@ Would you like to search online? (y/N)
 
 - impostazine *shortcut search engine* su Chrome
 
+# Visual Studio Code {.smaller}
+
 ## Ottimizzare il flusso di lavoro su Visual Studio Code {.smallest}
 
 Personalizzazione dell'ambiente di lavoro:
@@ -706,10 +708,6 @@ Personalizzazione dell'ambiente di lavoro:
 # Perché la tipografia è _importante_? {.white .smaller #tipografia-importanza data-background-image="assets/images/hero/typography.jpg" data-background-size="cover"}
 
 ### Oscars 2017 Best Picture announcement
-
-{{< video https://www.youtube.com/embed/p-I6x_iPF5o width="100%" height="100%" >}}
-
-### By Design – Vox
 
 {{< video https://www.youtube.com/embed/eZSe4xVXHhI width="100%" height="100%" >}}
 
