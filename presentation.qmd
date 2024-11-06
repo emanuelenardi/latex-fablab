@@ -252,9 +252,9 @@ C:\Users\user\AppData\Local\Programs\Python\Python311\Scripts\
 ### {.smaller}
 
 ::: {layout-ncol=2}
-![8. TeXlive Collections (it)](assets/images/install-texlive/windows/06-collections-it.png)
+![8. TeXlive Collections (it)](assets/images/install-texlive/windows/06-collections-it-edited.png)
 
-![8. TeXlive Collections (en)](assets/images/install-texlive/windows/06-collections-en.png)
+![8. TeXlive Collections (en)](assets/images/install-texlive/windows/06-collections-en-edited.png)
 :::
 ::: {.nonincremental}
 8. selezionare i pacchetti in figura;
