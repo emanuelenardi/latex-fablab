@@ -18,14 +18,14 @@ $\rm\LaTeX$ si pronuncia `/ˈlɑːtɛk/` or `/ˈleɪtɛk/`, e non `/ˈleɪtɛks/
 
 # Installazione {.smaller}
 
----
+## Distribuzione di TeX {.smaller}
 
-Installeremo un sistema TeX locale completamente funzionante, esistono diverse scelte multipiattaforma fra le quali [MiKTeX](https://miktex.org/), [MacTeX](https://www.tug.org/mactex/), or [TeX Live](https://www.tug.org/texlive/)
+Installeremo un sistema TeX locale completamente funzionante; sono disponibili diverse opzioni multipiattaforma tra cui scegliere: [MiKTeX](https://miktex.org/), [MacTeX](https://www.tug.org/mactex/), or [TeX Live](https://www.tug.org/texlive/)
 
-Per questo corso useremo **TeX Live**, un sistema TeX completo e cross-platform.
+Per questo corso <ins>**useremo TeX Live**</ins>, un sistema TeX completo e cross-platform.
 
 :::{.callout-important}
-Agli utilizzatori di {{< fa brands apple >}} Mac, per favore, **utilizzate questa installazione**, in questo modo abbiamo tutti la stessa versione installata localmente, di seguito troverete istruzioni dettagliate.
+Per favore, agli utenti di {{< fa brands apple >}} Mac, **utilizzate questa installazione**. In questo modo, tutti avremo la stessa versione installata localmente. Di seguito troverete le istruzioni dettagliate da seguire passo passo.
 :::
 
 ## Requisiti {.smaller}
