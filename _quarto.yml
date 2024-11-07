@@ -63,8 +63,8 @@ format:
     reference-location: document
     chalkboard:
         theme: whiteboard
-        boardmarker-width: 5
-        buttons: false
+        boardmarker-width: 10
+        buttons: true
 
     # Controls
     # controls: true
@@ -98,7 +98,7 @@ format:
     hash-type: title
     
     # how to treat code
-    highlight-style: github
+    highlight-style: oblivion
     code-overflow: wrap
 filters:
   - reveal-header

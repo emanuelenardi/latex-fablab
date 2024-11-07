@@ -523,12 +523,6 @@ Hello \LaTeX!
 $$
 \rm Hello\ \LaTeX!
 $$
-Ciclo di build:
-```{mermaid}
-graph LR
-  A["arara 🦜"] ==> B(pdflatex)
-  B --> C[PDF document]
-```
 
 ## Manutenzione installazione {{< fa brands windows >}} {{< fa brands linux >}} {{< fa brands apple >}} {.smaller}
 
@@ -576,7 +570,7 @@ Would you like to search online? (y/N)
 
 - impostazine *shortcut search engine* su Chrome
 
-# Visual Studio Code {.smaller}
+# Visual Studio Code {.white .smaller #vscode data-background-image="assets\images\hero\vscode.jpg" data-background-size="cover"}
 
 ## Ottimizzare il flusso di lavoro su Visual Studio Code {.smallest}
 
@@ -607,7 +601,7 @@ Personalizzazione dell'ambiente di lavoro:
 - `Preferences: Open Keyboard Shortcuts`
 
     ```{.bash code-line-numbers="false"}
-    Open Keyboard Shortcuts
+    Preferences: Open Keyboard Shortcuts
     ```
     ([see my shortcuts](#my-keyboard-shortcuts))
 
@@ -629,10 +623,14 @@ Personalizzazione dell'ambiente di lavoro:
 
 ---
 
-### Scorciatoie da tastiera personalizzate
+![[`keybindings - advanced customization`](https://code.visualstudio.com/docs/getstarted/keybindings#_advanced-customization)](assets\images\vscode\keybindings.png){width=200}
+
+---
+
+### My keyboard shortcuts
 
 :::{.larger}
-```{.json code-line-numbers="|4-9|12-17|"}
+```{.json code-line-numbers="|4-9|12-17|20-25|28-33" filename="keybindings.json"}
 // Place your key bindings in this file to override the defaults
 [
     {
@@ -649,6 +647,14 @@ Personalizzazione dell'ambiente di lavoro:
         "when": "editorLangId == latex && editorTextFocus",
         "args": {
             "snippet": "\\emph{${TM_SELECTED_TEXT}$0}"
+        }
+    },
+    {
+        "key": "ctrl+shift+T",
+        "command": "editor.action.insertSnippet",
+        "when": "editorLangId == latex && editorTextFocus",
+        "args": {
+            "snippet": "\\texttt{${TM_SELECTED_TEXT}}$0"
         }
     },
     {
@@ -939,15 +945,26 @@ Package thmtools Info: Key `qed' (with value `\qedsymbol ')
 (thmtools)             that uses `style=myProofStyle' on input line 84.
 ``` -->
 
-### {#arara-config .smaller}
+### Configurazione di arara {#arara-config .smaller}
 
-- dobbiamo evitare esecuzioni successive inutili.
-- abbiamo a disposizione tre funzioni fondamentali: `missing`, `changed` e `found`.
-- tramite le quali possiamo controllare la presenza di un file, la sua modifica, o la presenza di una parola chiave all'interno del file.
-- due [file di configurazione](https://github.com/islandoftex/arara/issues/34) possibili: `.araraconfig.yaml`, `.arararc.yaml`
+- **duplice obiettivo**:
+    1. evitare esecuzioni successive inutili;
+    2. semplificarci il lavoro di compilazione.
+- due possibili nomi per i file di configurazione: `.araraconfig.yaml`, `.arararc.yaml`
+<!-- - abbiamo a disposizione tre funzioni fondamentali: `missing`, `changed` e `found`. -->
+<!-- - tramite le quali possiamo controllare la presenza di un file, la sua modifica, o la presenza di una parola chiave all'interno del file. -->
 
-```latex
-% arara: pdflatex: { draft: yes, shell: yes, options: [--output-directory=build] }
+---
+
+#### Esempio di routine
+
+:::{.code .larger}
+```{.latex filename=".araraconfig.yaml"}
+% arara: pdflatex: {
+% arara: --> draft: yes,
+% arara: --> shell: yes,
+% arara: --> options: [--output-directory=build]
+% arara: --> }
 
 % arara: biber: { options: [ '--output-directory=build' ] }
 % arara: --> if missing(toFile('build/thesis.bbl')) || changed(toFile('build/thesis.bbl')) || found(toFile('build/thesis.log'), 'Citation')
@@ -955,11 +972,18 @@ Package thmtools Info: Key `qed' (with value `\qedsymbol ')
 % arara: makeglossaries: { options: [ '-d', 'build' ] }
 % arara: --> if changed (toFile('build/thesis.glo')) || missing (toFile('build/thesis.gls'))
 
-% arara: pdflatex: { shell: yes, synctex: yes, options: [--output-directory=build] }
+% arara: pdflatex: {
+% arara: --> shell: yes,
+% arara: --> synctex: yes,
+% arara: --> options: [--output-directory=build]
+% arara: --> }
 
 % arara: move: { files: [ 'build/thesis.pdf' ],
 % arara: --> target: 'backup/thesis.pdf' }
 ```
+:::
+
+### Colleghiamo VS Code ad `arara`
 
 ## Pulizia file temporanei {.smaller}
 
@@ -1196,46 +1220,65 @@ $out_dir = 'build';
 - scrittura di pseudocodice (`algorithms2e`)
 - creazione di un glossario (`glossaries`), acronimi (`acronym`), indice (`index`)
 
-# Perché la tipografia è _importante_? {.white .smaller #tipografia-importanza data-background-image="assets/images/hero/typography.jpg" data-background-size="cover"}
+<!-- # Perché la tipografia è _importante_? {.smaller #tipografia data-background-image="assets/images/hero/typography.jpg" data-background-size="cover"} -->
 
-### Oscars 2017 Best Picture announcement
+<!-- ### Oscars 2017 Best Picture announcement -->
 
-{{< video https://www.youtube.com/embed/eZSe4xVXHhI width="100%" height="100%" >}}oo
+<!-- {{< video https://www.youtube.com/embed/eZSe4xVXHhI width="100%" height="100%" >}} -->
 
-# Struttura del progetto
+# Struttura del progetto {.smaller #project-structure data-background-image="assets/images/hero/project-structure.jpg" data-background-size="cover"}
+
+---
 
 :::{.code .larger}
-```{.txt code-line-numbers="false"}
+```{.txt code-line-numbers="|52-53|50-51|48-49|53|52|24|23|22|2|3-4|5-13|6-9|10-12|13|14|15|16-18|19-20|21|53|"}
 .
 ├── assets/
-│   ├── assets/
-│   │   ├── resources/
-│   │   │   └── bibliography.bib
-│   │   ├── figures/
-│   │   ├── plots/
-│   │   └── tables/
-│   ├── backup/
-│   ├── build/
-│   ├── chapter/
+│   ├── appendixes/
+│   │   └── A*-appendix-name.tex
+│   ├── chapters/
 │   │   ├── intro/
-│   │   │   ├── frontespizio.tex
-│   │   │   ├── dedica.tex
-│   │   └── *-chapter.tex
-│   └── libraries/
-|       ├── algorithm2e.sty
-|       ├── bibliography.sty
-|       ├── code.sty
-|       ├── color.sty
-|       ├── geometry.sty
-|       ├── glossaries.sty
-|       ├── graphics.sty
-|       ├── links.sty
-|       ├── lists.sty
-|       ├── macros.sty
-|       ├── math.sty
-|       ├── properties.sty
-|       ├── spacing.sty
-|       └── tikz.sty
+│   │   │   ├── dedication.tex
+│   │   │   ├── frontispiece.tex
+│   │   │   └── lists.tex
+│   │   ├── outro/
+│   │   │   ├── bibliography.tex
+│   │   │   └── index.tex
+│   │   └── **-chapter-name.tex
+│   ├── code/
+│   ├── diagrams/
+│   ├── images/
+│   │   ├── **/
+│   |   └── logo/
+│   ├── resources/
+│   |   └── references.bib
+│   └── tables/
+├── backup/
+├── build/
+├── settings/
+│   ├── pdf-props.sty
+│   ├── set-algorithm2e.sty
+│   ├── set-bibliography.sty
+│   ├── set-color.sty
+│   ├── set-color.sty
+│   ├── set-debug.sty
+│   ├── set-geometry.sty
+│   ├── set-geometry.sty
+│   ├── set-glossary.sty
+│   ├── set-graphics.sty
+│   ├── set-hyperref.sty
+│   ├── set-index.sty
+│   ├── set-lists.sty
+│   ├── set-macros.sty
+│   ├── set-math.sty
+│   ├── set-minted.sty
+│   ├── set-pagestyle.sty
+│   ├── set-pdf-props.sty
+│   ├── set-redefinitions.sty
+│   ├── set-spacing.sty
+│   ├── set-tables.sty
+│   ├── set-typography.sty
+│   └── set-warnings.sty
 ├── .araraconfig.yaml
 ├── .latexmkrc
 ├── presentation.preamble.sty

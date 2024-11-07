@@ -66,41 +66,41 @@
       }
     pre.numberSource { margin-left: 3em;  padding-left: 4px; }
     div.sourceCode
-      { color: #24292e;  }
+      { color: #d3d7c1; background-color: #201f1f; }
     @media screen {
     pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
     }
-    code span { color: #24292e; } /* Normal */
-    code span.al { color: #ff5555; font-weight: bold; } /* Alert */
-    code span.an { color: #6a737d; } /* Annotation */
-    code span.at { color: #d73a49; } /* Attribute */
-    code span.bn { color: #005cc5; } /* BaseN */
-    code span.bu { color: #d73a49; } /* BuiltIn */
-    code span.cf { color: #d73a49; } /* ControlFlow */
-    code span.ch { color: #032f62; } /* Char */
-    code span.cn { color: #005cc5; } /* Constant */
-    code span.co { color: #6a737d; } /* Comment */
-    code span.cv { color: #6a737d; } /* CommentVar */
-    code span.do { color: #6a737d; } /* Documentation */
-    code span.dt { color: #d73a49; } /* DataType */
-    code span.dv { color: #005cc5; } /* DecVal */
-    code span.er { color: #ff5555; text-decoration: underline; } /* Error */
-    code span.ex { color: #d73a49; font-weight: bold; } /* Extension */
-    code span.fl { color: #005cc5; } /* Float */
-    code span.fu { color: #6f42c1; } /* Function */
-    code span.im { color: #032f62; } /* Import */
-    code span.in { color: #6a737d; } /* Information */
-    code span.kw { color: #d73a49; } /* Keyword */
-    code span.op { color: #24292e; } /* Operator */
-    code span.ot { color: #6f42c1; } /* Other */
-    code span.pp { color: #d73a49; } /* Preprocessor */
-    code span.re { color: #6a737d; } /* RegionMarker */
-    code span.sc { color: #005cc5; } /* SpecialChar */
-    code span.ss { color: #032f62; } /* SpecialString */
-    code span.st { color: #032f62; } /* String */
-    code span.va { color: #e36209; } /* Variable */
-    code span.vs { color: #032f62; } /* VerbatimString */
-    code span.wa { color: #ff5555; } /* Warning */
+    code span { color: #d3d7c1; } /* Normal */
+    code span.al { color: #e85848; background-color: #451e1a; font-weight: bold; } /* Alert */
+    code span.an { color: #ad7fa8; } /* Annotation */
+    code span.at { color: #ad7fa8; } /* Attribute */
+    code span.bn { color: #edd400; } /* BaseN */
+    code span.bu { color: #729fcf; } /* BuiltIn */
+    code span.cf { color: #ffffff; font-weight: bold; } /* ControlFlow */
+    code span.ch { color: #ce5c00; } /* Char */
+    code span.cn { color: #edd400; font-weight: bold; } /* Constant */
+    code span.co { color: #30a100; } /* Comment */
+    code span.cv { color: #ad7fa8; } /* CommentVar */
+    code span.do { color: #4e9a06; } /* Documentation */
+    code span.dt { color: #508ed8; } /* DataType */
+    code span.dv { color: #edd400; } /* DecVal */
+    code span.er { color: #e85848; text-decoration: underline; } /* Error */
+    code span.ex { color: #508ed8; font-weight: bold; } /* Extension */
+    code span.fl { color: #ce5c00; } /* Float */
+    code span.fu { color: #729fcf; font-weight: bold; } /* Function */
+    code span.im { color: #ad7fa8; } /* Import */
+    code span.in { color: #c0a25f; } /* Information */
+    code span.kw { color: #ffffff; font-weight: bold; } /* Keyword */
+    code span.op { color: #eeeeec; } /* Operator */
+    code span.ot { color: #edd400; } /* Other */
+    code span.pp { color: #ad7fa8; } /* Preprocessor */
+    code span.re { color: #508ed8; background-color: #1c2c3f; } /* RegionMarker */
+    code span.sc { color: #ce5c00; } /* SpecialChar */
+    code span.ss { color: #fce94f; } /* SpecialString */
+    code span.st { color: #edd400; } /* String */
+    code span.va { color: #ce5c00; } /* Variable */
+    code span.vs { color: #c4a000; } /* VerbatimString */
+    code span.wa { color: #e85848; } /* Warning */
   </style>
   <link rel="stylesheet" href="presentation_files/libs/revealjs/dist/theme/quarto.css">
   <link href="presentation_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
@@ -395,9 +395,6 @@
       margin-right: 0; 
     }
   </style>
-  <script src="presentation_files/libs/quarto-diagram/mermaid.min.js"></script>
-  <script src="presentation_files/libs/quarto-diagram/mermaid-init.js"></script>
-  <link href="presentation_files/libs/quarto-diagram/mermaid.css" rel="stylesheet">
 </head>
 <body class="quarto-light">
   <div class="reveal">
@@ -1172,21 +1169,7 @@ You do not need to remove an installation of a previous release, or any system-p
 <span id="cb19-5"><a href=""></a><span class="kw">\end</span>{<span class="ex">document</span>}</span></code><button title="Copia negli appunti" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p><span class="math display">\[
 \rm Hello\ \LaTeX!
-\]</span> Ciclo di build:</p>
-<div class="cell" data-reveal="true" data-layout-align="default">
-<div class="cell-output-display">
-<div>
-<p></p><figure class=""><p></p>
-<div>
-<pre class="mermaid mermaid-js">graph LR
-  A["arara 🦜"] ==&gt; B(pdflatex)
-  B --&gt; C[PDF document]
-</pre>
-</div>
-<p></p></figure><p></p>
-</div>
-</div>
-</div>
+\]</span></p>
 </section>
 
 <section id="manutenzione-installazione" class="title-slide slide level2 smaller center">
@@ -1229,7 +1212,7 @@ You do not need to remove an installation of a previous release, or any system-p
 </div>
 </section></section>
 <section>
-<section id="visual-studio-code" class="title-slide slide level1 smaller center">
+<section id="vscode" class="title-slide slide level1 white smaller center" data-background-image="assets\images\hero\vscode.jpg" data-background-size="cover">
 <h1>Visual Studio Code</h1>
 
 </section>
@@ -1247,7 +1230,7 @@ You do not need to remove an installation of a previous release, or any system-p
 <div class="sourceCode" id="cb24"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb24-1"><a href="" aria-hidden="true" tabindex="-1"></a><span class="ex">View:</span> Toggle Sticky Scroll</span></code><button title="Copia negli appunti" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
 <li><p><code>Snippets: Configure User Snippets</code></p></li>
 <li><p><code>Preferences: Open Keyboard Shortcuts</code></p>
-<div class="sourceCode" id="cb25"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb25-1"><a href="" aria-hidden="true" tabindex="-1"></a><span class="ex">Open</span> Keyboard Shortcuts</span></code><button title="Copia negli appunti" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb25"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb25-1"><a href="" aria-hidden="true" tabindex="-1"></a><span class="ex">Preferences:</span> Open Keyboard Shortcuts</span></code><button title="Copia negli appunti" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>(<a href="#/my-keyboard-shortcuts">see my shortcuts</a>)</p></li>
 <li><p><code>latex-workshop.latex.recipes</code> (<a href="#/my-workshop-recipes">see my recipes</a>)</p></li>
 <li><p><code>latex-workshop.latex.autoBuild.run</code></p>
@@ -1258,10 +1241,18 @@ You do not need to remove an installation of a previous release, or any system-p
 </div></div>
 <!-- https://code.visualstudio.com/docs/getstarted/keybindings#:~:text=All\%20keyboard\%20shortcuts\%20in\%20VS,This\%20will\%20open\%20your\%20keybindings. -->
 </section>
-<section id="scorciatoie-da-tastiera-personalizzate" class="slide level3">
-<h3>Scorciatoie da tastiera personalizzate</h3>
+<section class="slide level3">
+
+
+<img data-src="assets\images\vscode\keybindings.png" width="200" class="r-stretch quarto-figure-center"><p class="caption"><a href="https://code.visualstudio.com/docs/getstarted/keybindings#_advanced-customization"><code>keybindings - advanced customization</code></a></p></section>
+<section id="my-keyboard-shortcuts" class="slide level3">
+<h3>My keyboard shortcuts</h3>
 <div class="larger">
-<div class="sourceCode" id="cb27" data-code-line-numbers="|4-9|12-17|"><pre class="sourceCode numberSource json number-lines code-with-copy"><code class="sourceCode json"><span id="cb27-1"><a href=""></a><span class="er">//</span> <span class="er">Place</span> <span class="er">your</span> <span class="er">key</span> <span class="er">bindings</span> <span class="er">in</span> <span class="er">this</span> <span class="er">file</span> <span class="er">to</span> <span class="er">override</span> <span class="er">the</span> <span class="er">defaults</span></span>
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>keybindings.json</strong></pre>
+</div>
+<div class="sourceCode" id="cb27" data-filename="keybindings.json" data-code-line-numbers="|4-9|12-17|20-25|28-33"><pre class="sourceCode numberSource json number-lines code-with-copy"><code class="sourceCode json"><span id="cb27-1"><a href=""></a><span class="er">//</span> <span class="er">Place</span> <span class="er">your</span> <span class="er">key</span> <span class="er">bindings</span> <span class="er">in</span> <span class="er">this</span> <span class="er">file</span> <span class="er">to</span> <span class="er">override</span> <span class="er">the</span> <span class="er">defaults</span></span>
 <span id="cb27-2"><a href=""></a><span class="ot">[</span></span>
 <span id="cb27-3"><a href=""></a>    <span class="fu">{</span></span>
 <span id="cb27-4"><a href=""></a>        <span class="dt">"key"</span><span class="fu">:</span> <span class="st">"ctrl+shift+B"</span><span class="fu">,</span></span>
@@ -1280,14 +1271,23 @@ You do not need to remove an installation of a previous release, or any system-p
 <span id="cb27-17"><a href=""></a>        <span class="fu">}</span></span>
 <span id="cb27-18"><a href=""></a>    <span class="fu">}</span><span class="ot">,</span></span>
 <span id="cb27-19"><a href=""></a>    <span class="fu">{</span></span>
-<span id="cb27-20"><a href=""></a>        <span class="dt">"key"</span><span class="fu">:</span> <span class="st">"ctrl+shift+Q"</span><span class="fu">,</span></span>
+<span id="cb27-20"><a href=""></a>        <span class="dt">"key"</span><span class="fu">:</span> <span class="st">"ctrl+shift+T"</span><span class="fu">,</span></span>
 <span id="cb27-21"><a href=""></a>        <span class="dt">"command"</span><span class="fu">:</span> <span class="st">"editor.action.insertSnippet"</span><span class="fu">,</span></span>
 <span id="cb27-22"><a href=""></a>        <span class="dt">"when"</span><span class="fu">:</span> <span class="st">"editorLangId == latex &amp;&amp; editorTextFocus"</span><span class="fu">,</span></span>
 <span id="cb27-23"><a href=""></a>        <span class="dt">"args"</span><span class="fu">:</span> <span class="fu">{</span></span>
-<span id="cb27-24"><a href=""></a>            <span class="dt">"snippet"</span><span class="fu">:</span> <span class="st">"</span><span class="ch">\\</span><span class="st">enquote{${TM_SELECTED_TEXT/[+</span><span class="ch">\"</span><span class="st">“”]+//g}}$0"</span></span>
+<span id="cb27-24"><a href=""></a>            <span class="dt">"snippet"</span><span class="fu">:</span> <span class="st">"</span><span class="ch">\\</span><span class="st">texttt{${TM_SELECTED_TEXT}}$0"</span></span>
 <span id="cb27-25"><a href=""></a>        <span class="fu">}</span></span>
-<span id="cb27-26"><a href=""></a>    <span class="fu">}</span></span>
-<span id="cb27-27"><a href=""></a><span class="ot">]</span></span></code><button title="Copia negli appunti" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb27-26"><a href=""></a>    <span class="fu">}</span><span class="ot">,</span></span>
+<span id="cb27-27"><a href=""></a>    <span class="fu">{</span></span>
+<span id="cb27-28"><a href=""></a>        <span class="dt">"key"</span><span class="fu">:</span> <span class="st">"ctrl+shift+Q"</span><span class="fu">,</span></span>
+<span id="cb27-29"><a href=""></a>        <span class="dt">"command"</span><span class="fu">:</span> <span class="st">"editor.action.insertSnippet"</span><span class="fu">,</span></span>
+<span id="cb27-30"><a href=""></a>        <span class="dt">"when"</span><span class="fu">:</span> <span class="st">"editorLangId == latex &amp;&amp; editorTextFocus"</span><span class="fu">,</span></span>
+<span id="cb27-31"><a href=""></a>        <span class="dt">"args"</span><span class="fu">:</span> <span class="fu">{</span></span>
+<span id="cb27-32"><a href=""></a>            <span class="dt">"snippet"</span><span class="fu">:</span> <span class="st">"</span><span class="ch">\\</span><span class="st">enquote{${TM_SELECTED_TEXT/[+</span><span class="ch">\"</span><span class="st">“”]+//g}}$0"</span></span>
+<span id="cb27-33"><a href=""></a>        <span class="fu">}</span></span>
+<span id="cb27-34"><a href=""></a>    <span class="fu">}</span></span>
+<span id="cb27-35"><a href=""></a><span class="ot">]</span></span></code><button title="Copia negli appunti" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 </div>
 <!-- ### My Workshop Recipes
 
@@ -1566,26 +1566,50 @@ Package thmtools Info: Key `qed' (with value `\qedsymbol ')
 (thmtools)             that uses `style=myProofStyle' on input line 84.
 ``` -->
 </section>
-<section id="arara-config" class="slide level3 smaller">
-<h3></h3>
+<section id="arara-config" class="slide level3 smaller scrollable">
+<h3>Configurazione di arara</h3>
 <ul>
-<li>dobbiamo evitare esecuzioni successive inutili.</li>
-<li>abbiamo a disposizione tre funzioni fondamentali: <code>missing</code>, <code>changed</code> e <code>found</code>.</li>
-<li>tramite le quali possiamo controllare la presenza di un file, la sua modifica, o la presenza di una parola chiave all’interno del file.</li>
-<li>due <a href="https://github.com/islandoftex/arara/issues/34">file di configurazione</a> possibili: <code>.araraconfig.yaml</code>, <code>.arararc.yaml</code></li>
+<li><strong>duplice obiettivo</strong>:
+<ol type="1">
+<li>evitare esecuzioni successive inutili;</li>
+<li>semplificarci il lavoro di compilazione.</li>
+</ol></li>
+<li>due possibili nomi per i file di configurazione: <code>.araraconfig.yaml</code>, <code>.arararc.yaml</code> <!-- - abbiamo a disposizione tre funzioni fondamentali: `missing`, `changed` e `found`. --> <!-- - tramite le quali possiamo controllare la presenza di un file, la sua modifica, o la presenza di una parola chiave all'interno del file. --></li>
 </ul>
-<div class="sourceCode" id="cb28"><pre class="sourceCode numberSource latex number-lines code-with-copy"><code class="sourceCode latex"><span id="cb28-1"><a href=""></a><span class="co">% arara: pdflatex: { draft: yes, shell: yes, options: [--output-directory=build] }</span></span>
-<span id="cb28-2"><a href=""></a></span>
-<span id="cb28-3"><a href=""></a><span class="co">% arara: biber: { options: [ '--output-directory=build' ] }</span></span>
-<span id="cb28-4"><a href=""></a><span class="co">% arara: --&gt; if missing(toFile('build/thesis.bbl')) || changed(toFile('build/thesis.bbl')) || found(toFile('build/thesis.log'), 'Citation')</span></span>
-<span id="cb28-5"><a href=""></a></span>
-<span id="cb28-6"><a href=""></a><span class="co">% arara: makeglossaries: { options: [ '-d', 'build' ] }</span></span>
-<span id="cb28-7"><a href=""></a><span class="co">% arara: --&gt; if changed (toFile('build/thesis.glo')) || missing (toFile('build/thesis.gls'))</span></span>
-<span id="cb28-8"><a href=""></a></span>
-<span id="cb28-9"><a href=""></a><span class="co">% arara: pdflatex: { shell: yes, synctex: yes, options: [--output-directory=build] }</span></span>
-<span id="cb28-10"><a href=""></a></span>
-<span id="cb28-11"><a href=""></a><span class="co">% arara: move: { files: [ 'build/thesis.pdf' ],</span></span>
-<span id="cb28-12"><a href=""></a><span class="co">% arara: --&gt; target: 'backup/thesis.pdf' }</span></span></code><button title="Copia negli appunti" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section class="slide level3">
+
+<h4 id="esempio-di-routine">Esempio di routine</h4>
+<div class="code larger">
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>.araraconfig.yaml</strong></pre>
+</div>
+<div class="sourceCode" id="cb28" data-filename=".araraconfig.yaml"><pre class="sourceCode numberSource latex number-lines code-with-copy"><code class="sourceCode latex"><span id="cb28-1"><a href=""></a><span class="co">% arara: pdflatex: {</span></span>
+<span id="cb28-2"><a href=""></a><span class="co">% arara: --&gt; draft: yes,</span></span>
+<span id="cb28-3"><a href=""></a><span class="co">% arara: --&gt; shell: yes,</span></span>
+<span id="cb28-4"><a href=""></a><span class="co">% arara: --&gt; options: [--output-directory=build]</span></span>
+<span id="cb28-5"><a href=""></a><span class="co">% arara: --&gt; }</span></span>
+<span id="cb28-6"><a href=""></a></span>
+<span id="cb28-7"><a href=""></a><span class="co">% arara: biber: { options: [ '--output-directory=build' ] }</span></span>
+<span id="cb28-8"><a href=""></a><span class="co">% arara: --&gt; if missing(toFile('build/thesis.bbl')) || changed(toFile('build/thesis.bbl')) || found(toFile('build/thesis.log'), 'Citation')</span></span>
+<span id="cb28-9"><a href=""></a></span>
+<span id="cb28-10"><a href=""></a><span class="co">% arara: makeglossaries: { options: [ '-d', 'build' ] }</span></span>
+<span id="cb28-11"><a href=""></a><span class="co">% arara: --&gt; if changed (toFile('build/thesis.glo')) || missing (toFile('build/thesis.gls'))</span></span>
+<span id="cb28-12"><a href=""></a></span>
+<span id="cb28-13"><a href=""></a><span class="co">% arara: pdflatex: {</span></span>
+<span id="cb28-14"><a href=""></a><span class="co">% arara: --&gt; shell: yes,</span></span>
+<span id="cb28-15"><a href=""></a><span class="co">% arara: --&gt; synctex: yes,</span></span>
+<span id="cb28-16"><a href=""></a><span class="co">% arara: --&gt; options: [--output-directory=build]</span></span>
+<span id="cb28-17"><a href=""></a><span class="co">% arara: --&gt; }</span></span>
+<span id="cb28-18"><a href=""></a></span>
+<span id="cb28-19"><a href=""></a><span class="co">% arara: move: { files: [ 'build/thesis.pdf' ],</span></span>
+<span id="cb28-20"><a href=""></a><span class="co">% arara: --&gt; target: 'backup/thesis.pdf' }</span></span></code><button title="Copia negli appunti" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+</section>
+<section id="colleghiamo-vs-code-ad-arara" class="slide level3">
+<h3>Colleghiamo VS Code ad <code>arara</code></h3>
 </section>
 
 <section id="pulizia-file-temporanei" class="title-slide slide level2 smaller center">
@@ -1832,59 +1856,74 @@ Package thmtools Info: Key `qed' (with value `\qedsymbol ')
 <li>scrittura di pseudocodice (<code>algorithms2e</code>)</li>
 <li>creazione di un glossario (<code>glossaries</code>), acronimi (<code>acronym</code>), indice (<code>index</code>)</li>
 </ul>
+<!-- # Perché la tipografia è _importante_? {.smaller #tipografia data-background-image="assets/images/hero/typography.jpg" data-background-size="cover"} -->
+<!-- ### Oscars 2017 Best Picture announcement -->
+<!--  -->
 </section>
 </section>
 <section>
-<section id="tipografia-importanza" class="title-slide slide level1 white smaller center" data-background-image="assets/images/hero/typography.jpg" data-background-size="cover">
-<h1>Perché la tipografia è <em>importante</em>?</h1>
-
-</section>
-<section id="oscars-2017-best-picture-announcement" class="slide level3">
-<h3>Oscars 2017 Best Picture announcement</h3>
-<p><iframe data-external="1" src="https://www.youtube.com/embed/eZSe4xVXHhI" width="100%" height="100%" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe>oo</p>
-</section></section>
-<section id="struttura-del-progetto" class="title-slide slide level1 center">
+<section id="project-structure" class="title-slide slide level1 smaller center" data-background-image="assets/images/hero/project-structure.jpg" data-background-size="cover">
 <h1>Struttura del progetto</h1>
-<div class="code larger">
-<div class="sourceCode" id="cb33"><pre class="sourceCode txt code-with-copy"><code class="sourceCode default"><span id="cb33-1"><a href="" aria-hidden="true" tabindex="-1"></a>.</span>
-<span id="cb33-2"><a href="" aria-hidden="true" tabindex="-1"></a>├── assets/</span>
-<span id="cb33-3"><a href="" aria-hidden="true" tabindex="-1"></a>│   ├── assets/</span>
-<span id="cb33-4"><a href="" aria-hidden="true" tabindex="-1"></a>│   │   ├── resources/</span>
-<span id="cb33-5"><a href="" aria-hidden="true" tabindex="-1"></a>│   │   │   └── bibliography.bib</span>
-<span id="cb33-6"><a href="" aria-hidden="true" tabindex="-1"></a>│   │   ├── figures/</span>
-<span id="cb33-7"><a href="" aria-hidden="true" tabindex="-1"></a>│   │   ├── plots/</span>
-<span id="cb33-8"><a href="" aria-hidden="true" tabindex="-1"></a>│   │   └── tables/</span>
-<span id="cb33-9"><a href="" aria-hidden="true" tabindex="-1"></a>│   ├── backup/</span>
-<span id="cb33-10"><a href="" aria-hidden="true" tabindex="-1"></a>│   ├── build/</span>
-<span id="cb33-11"><a href="" aria-hidden="true" tabindex="-1"></a>│   ├── chapter/</span>
-<span id="cb33-12"><a href="" aria-hidden="true" tabindex="-1"></a>│   │   ├── intro/</span>
-<span id="cb33-13"><a href="" aria-hidden="true" tabindex="-1"></a>│   │   │   ├── frontespizio.tex</span>
-<span id="cb33-14"><a href="" aria-hidden="true" tabindex="-1"></a>│   │   │   ├── dedica.tex</span>
-<span id="cb33-15"><a href="" aria-hidden="true" tabindex="-1"></a>│   │   └── *-chapter.tex</span>
-<span id="cb33-16"><a href="" aria-hidden="true" tabindex="-1"></a>│   └── libraries/</span>
-<span id="cb33-17"><a href="" aria-hidden="true" tabindex="-1"></a>|       ├── algorithm2e.sty</span>
-<span id="cb33-18"><a href="" aria-hidden="true" tabindex="-1"></a>|       ├── bibliography.sty</span>
-<span id="cb33-19"><a href="" aria-hidden="true" tabindex="-1"></a>|       ├── code.sty</span>
-<span id="cb33-20"><a href="" aria-hidden="true" tabindex="-1"></a>|       ├── color.sty</span>
-<span id="cb33-21"><a href="" aria-hidden="true" tabindex="-1"></a>|       ├── geometry.sty</span>
-<span id="cb33-22"><a href="" aria-hidden="true" tabindex="-1"></a>|       ├── glossaries.sty</span>
-<span id="cb33-23"><a href="" aria-hidden="true" tabindex="-1"></a>|       ├── graphics.sty</span>
-<span id="cb33-24"><a href="" aria-hidden="true" tabindex="-1"></a>|       ├── links.sty</span>
-<span id="cb33-25"><a href="" aria-hidden="true" tabindex="-1"></a>|       ├── lists.sty</span>
-<span id="cb33-26"><a href="" aria-hidden="true" tabindex="-1"></a>|       ├── macros.sty</span>
-<span id="cb33-27"><a href="" aria-hidden="true" tabindex="-1"></a>|       ├── math.sty</span>
-<span id="cb33-28"><a href="" aria-hidden="true" tabindex="-1"></a>|       ├── properties.sty</span>
-<span id="cb33-29"><a href="" aria-hidden="true" tabindex="-1"></a>|       ├── spacing.sty</span>
-<span id="cb33-30"><a href="" aria-hidden="true" tabindex="-1"></a>|       └── tikz.sty</span>
-<span id="cb33-31"><a href="" aria-hidden="true" tabindex="-1"></a>├── .araraconfig.yaml</span>
-<span id="cb33-32"><a href="" aria-hidden="true" tabindex="-1"></a>├── .latexmkrc</span>
-<span id="cb33-33"><a href="" aria-hidden="true" tabindex="-1"></a>├── presentation.preamble.sty</span>
-<span id="cb33-34"><a href="" aria-hidden="true" tabindex="-1"></a>├── presentation.tex</span>
-<span id="cb33-35"><a href="" aria-hidden="true" tabindex="-1"></a>├── thesis.preamble.sty</span>
-<span id="cb33-36"><a href="" aria-hidden="true" tabindex="-1"></a>└── thesis.tex</span></code><button title="Copia negli appunti" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-</section>
 
+</section>
+<section class="slide level3">
+
+<div class="code larger">
+<div class="sourceCode" id="cb33" data-code-line-numbers="|52-53|50-51|48-49|53|52|24|23|22|2|3-4|5-13|6-9|10-12|13|14|15|16-18|19-20|21|53|"><pre class="sourceCode numberSource txt number-lines code-with-copy"><code class="sourceCode default"><span id="cb33-1"><a href=""></a>.</span>
+<span id="cb33-2"><a href=""></a>├── assets/</span>
+<span id="cb33-3"><a href=""></a>│   ├── appendixes/</span>
+<span id="cb33-4"><a href=""></a>│   │   └── A*-appendix-name.tex</span>
+<span id="cb33-5"><a href=""></a>│   ├── chapters/</span>
+<span id="cb33-6"><a href=""></a>│   │   ├── intro/</span>
+<span id="cb33-7"><a href=""></a>│   │   │   ├── dedication.tex</span>
+<span id="cb33-8"><a href=""></a>│   │   │   ├── frontispiece.tex</span>
+<span id="cb33-9"><a href=""></a>│   │   │   └── lists.tex</span>
+<span id="cb33-10"><a href=""></a>│   │   ├── outro/</span>
+<span id="cb33-11"><a href=""></a>│   │   │   ├── bibliography.tex</span>
+<span id="cb33-12"><a href=""></a>│   │   │   └── index.tex</span>
+<span id="cb33-13"><a href=""></a>│   │   └── **-chapter-name.tex</span>
+<span id="cb33-14"><a href=""></a>│   ├── code/</span>
+<span id="cb33-15"><a href=""></a>│   ├── diagrams/</span>
+<span id="cb33-16"><a href=""></a>│   ├── images/</span>
+<span id="cb33-17"><a href=""></a>│   │   ├── **/</span>
+<span id="cb33-18"><a href=""></a>│   |   └── logo/</span>
+<span id="cb33-19"><a href=""></a>│   ├── resources/</span>
+<span id="cb33-20"><a href=""></a>│   |   └── references.bib</span>
+<span id="cb33-21"><a href=""></a>│   └── tables/</span>
+<span id="cb33-22"><a href=""></a>├── backup/</span>
+<span id="cb33-23"><a href=""></a>├── build/</span>
+<span id="cb33-24"><a href=""></a>├── settings/</span>
+<span id="cb33-25"><a href=""></a>│   ├── pdf-props.sty</span>
+<span id="cb33-26"><a href=""></a>│   ├── set-algorithm2e.sty</span>
+<span id="cb33-27"><a href=""></a>│   ├── set-bibliography.sty</span>
+<span id="cb33-28"><a href=""></a>│   ├── set-color.sty</span>
+<span id="cb33-29"><a href=""></a>│   ├── set-color.sty</span>
+<span id="cb33-30"><a href=""></a>│   ├── set-debug.sty</span>
+<span id="cb33-31"><a href=""></a>│   ├── set-geometry.sty</span>
+<span id="cb33-32"><a href=""></a>│   ├── set-geometry.sty</span>
+<span id="cb33-33"><a href=""></a>│   ├── set-glossary.sty</span>
+<span id="cb33-34"><a href=""></a>│   ├── set-graphics.sty</span>
+<span id="cb33-35"><a href=""></a>│   ├── set-hyperref.sty</span>
+<span id="cb33-36"><a href=""></a>│   ├── set-index.sty</span>
+<span id="cb33-37"><a href=""></a>│   ├── set-lists.sty</span>
+<span id="cb33-38"><a href=""></a>│   ├── set-macros.sty</span>
+<span id="cb33-39"><a href=""></a>│   ├── set-math.sty</span>
+<span id="cb33-40"><a href=""></a>│   ├── set-minted.sty</span>
+<span id="cb33-41"><a href=""></a>│   ├── set-pagestyle.sty</span>
+<span id="cb33-42"><a href=""></a>│   ├── set-pdf-props.sty</span>
+<span id="cb33-43"><a href=""></a>│   ├── set-redefinitions.sty</span>
+<span id="cb33-44"><a href=""></a>│   ├── set-spacing.sty</span>
+<span id="cb33-45"><a href=""></a>│   ├── set-tables.sty</span>
+<span id="cb33-46"><a href=""></a>│   ├── set-typography.sty</span>
+<span id="cb33-47"><a href=""></a>│   └── set-warnings.sty</span>
+<span id="cb33-48"><a href=""></a>├── .araraconfig.yaml</span>
+<span id="cb33-49"><a href=""></a>├── .latexmkrc</span>
+<span id="cb33-50"><a href=""></a>├── presentation.preamble.sty</span>
+<span id="cb33-51"><a href=""></a>├── presentation.tex</span>
+<span id="cb33-52"><a href=""></a>├── thesis.preamble.sty</span>
+<span id="cb33-53"><a href=""></a>└── thesis.tex</span></code><button title="Copia negli appunti" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section></section>
 <section>
 <section id="writing-code" class="title-slide slide level1 white smaller center" data-background-image="assets/images/hero/writing-code.jpg" data-background-size="cover">
 <h1>Scrivere codice</h1>
@@ -2407,7 +2446,7 @@ Tabella&nbsp;5: most common lengths
 'autoAnimateDuration': 1,
 'autoAnimateUnmatched': true,
 'menu': {"side":"left","useTextContentForMissingTitles":true,"markers":false,"loadIcons":false,"custom":[{"title":"Tools","icon":"<i class=\"fas fa-gear\"></i>","content":"<ul class=\"slide-menu-items\">\n<li class=\"slide-tool-item active\" data-item=\"0\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.fullscreen(event)\"><kbd>f</kbd> Fullscreen</a></li>\n<li class=\"slide-tool-item\" data-item=\"1\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.speakerMode(event)\"><kbd>s</kbd> Speaker View</a></li>\n<li class=\"slide-tool-item\" data-item=\"2\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.overview(event)\"><kbd>o</kbd> Slide Overview</a></li>\n<li class=\"slide-tool-item\" data-item=\"3\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.togglePdfExport(event)\"><kbd>e</kbd> PDF Export Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"4\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleChalkboard(event)\"><kbd>b</kbd> Toggle Chalkboard</a></li>\n<li class=\"slide-tool-item\" data-item=\"5\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleNotesCanvas(event)\"><kbd>c</kbd> Toggle Notes Canvas</a></li>\n<li class=\"slide-tool-item\" data-item=\"6\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.downloadDrawings(event)\"><kbd>d</kbd> Download Drawings</a></li>\n<li class=\"slide-tool-item\" data-item=\"7\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.keyboardHelp(event)\"><kbd>?</kbd> Keyboard Help</a></li>\n</ul>"}],"openButton":true},
-'chalkboard': {"buttons":false,"theme":"whiteboard","boardmarkerWidth":5},
+'chalkboard': {"buttons":true,"theme":"whiteboard","boardmarkerWidth":10},
 'smaller': false,
  
         // Display controls in the bottom right corner
