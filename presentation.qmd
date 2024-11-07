@@ -1220,46 +1220,65 @@ $out_dir = 'build';
 - scrittura di pseudocodice (`algorithms2e`)
 - creazione di un glossario (`glossaries`), acronimi (`acronym`), indice (`index`)
 
-# Perché la tipografia è _importante_? {.white .smaller #tipografia data-background-image="assets/images/hero/typography.jpg" data-background-size="cover"}
+<!-- # Perché la tipografia è _importante_? {.smaller #tipografia data-background-image="assets/images/hero/typography.jpg" data-background-size="cover"} -->
 
-### Oscars 2017 Best Picture announcement
+<!-- ### Oscars 2017 Best Picture announcement -->
 
-{{< video https://www.youtube.com/embed/eZSe4xVXHhI width="100%" height="100%" >}}
+<!-- {{< video https://www.youtube.com/embed/eZSe4xVXHhI width="100%" height="100%" >}} -->
 
-# Struttura del progetto
+# Struttura del progetto {.smaller #project-structure data-background-image="assets/images/hero/project-structure.jpg" data-background-size="cover"}
+
+---
 
 :::{.code .larger}
-```{.txt code-line-numbers="false"}
+```{.txt code-line-numbers="|52-53|50-51|48-49|53|52|24|23|22|2|3-4|5-13|6-9|10-12|13|14|15|16-18|19-20|21|53|"}
 .
 ├── assets/
-│   ├── assets/
-│   │   ├── resources/
-│   │   │   └── bibliography.bib
-│   │   ├── figures/
-│   │   ├── plots/
-│   │   └── tables/
-│   ├── backup/
-│   ├── build/
-│   ├── chapter/
+│   ├── appendixes/
+│   │   └── A*-appendix-name.tex
+│   ├── chapters/
 │   │   ├── intro/
-│   │   │   ├── frontespizio.tex
-│   │   │   ├── dedica.tex
-│   │   └── *-chapter.tex
-│   └── libraries/
-|       ├── algorithm2e.sty
-|       ├── bibliography.sty
-|       ├── code.sty
-|       ├── color.sty
-|       ├── geometry.sty
-|       ├── glossaries.sty
-|       ├── graphics.sty
-|       ├── links.sty
-|       ├── lists.sty
-|       ├── macros.sty
-|       ├── math.sty
-|       ├── properties.sty
-|       ├── spacing.sty
-|       └── tikz.sty
+│   │   │   ├── dedication.tex
+│   │   │   ├── frontispiece.tex
+│   │   │   └── lists.tex
+│   │   ├── outro/
+│   │   │   ├── bibliography.tex
+│   │   │   └── index.tex
+│   │   └── **-chapter-name.tex
+│   ├── code/
+│   ├── diagrams/
+│   ├── images/
+│   │   ├── **/
+│   |   └── logo/
+│   ├── resources/
+│   |   └── references.bib
+│   └── tables/
+├── backup/
+├── build/
+├── settings/
+│   ├── pdf-props.sty
+│   ├── set-algorithm2e.sty
+│   ├── set-bibliography.sty
+│   ├── set-color.sty
+│   ├── set-color.sty
+│   ├── set-debug.sty
+│   ├── set-geometry.sty
+│   ├── set-geometry.sty
+│   ├── set-glossary.sty
+│   ├── set-graphics.sty
+│   ├── set-hyperref.sty
+│   ├── set-index.sty
+│   ├── set-lists.sty
+│   ├── set-macros.sty
+│   ├── set-math.sty
+│   ├── set-minted.sty
+│   ├── set-pagestyle.sty
+│   ├── set-pdf-props.sty
+│   ├── set-redefinitions.sty
+│   ├── set-spacing.sty
+│   ├── set-tables.sty
+│   ├── set-typography.sty
+│   └── set-warnings.sty
 ├── .araraconfig.yaml
 ├── .latexmkrc
 ├── presentation.preamble.sty
