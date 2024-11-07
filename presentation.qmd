@@ -397,13 +397,13 @@ a c e f g p v w D E F J M O P
 All'interno della cartella d'installazione dovrebbe essere stato creato un file `texlive.profile` e il suo contenuto dovrebbe corrispondere a questo:
 ```bash
 selected_scheme scheme-custom
-TEXDIR /usr/local/texlive/2023
-TEXMFCONFIG ~/.texlive2023/texmf-config
+TEXDIR /usr/local/texlive/2024
+TEXMFCONFIG ~/.texlive2024/texmf-config
 TEXMFHOME ~/texmf
 TEXMFLOCAL /usr/local/texlive/texmf-local
-TEXMFSYSCONFIG /usr/local/texlive/2023/texmf-config
-TEXMFSYSVAR /usr/local/texlive/2023/texmf-var
-TEXMFVAR ~/.texlive2023/texmf-var
+TEXMFSYSCONFIG /usr/local/texlive/2024/texmf-config
+TEXMFSYSVAR /usr/local/texlive/2024/texmf-var
+TEXMFVAR ~/.texlive2024/texmf-var
 binary_x86_64-linux 1
 collection-basic 1
 collection-binextra 1
@@ -448,17 +448,17 @@ install-tl --profile=texlive.profile
 
 Alla fine dell'installazione vengono stampati i seguenti messaggi:
 ```bash
-Add /usr/local/texlive/2023/texmf-dist/doc/man to MANPATH.
-Add /usr/local/texlive/2023/texmf-dist/doc/info to INFOPATH.
-Most importantly, add /usr/local/texlive/2023/bin/x86_64-linux
+Add /usr/local/texlive/2024/texmf-dist/doc/man to MANPATH.
+Add /usr/local/texlive/2024/texmf-dist/doc/info to INFOPATH.
+Most importantly, add /usr/local/texlive/2024/bin/x86_64-linux
 to your PATH for current and future sessions.
 ```
 
 Ora devi aggiungere la directory dei binari di TeX Live al tuo *PATH*:
 ```bash
-echo 'export MANPATH="$MANPATH:/usr/local/texlive/2023/texmf-dist/doc/man"' >> ~/.bashrc
-echo 'export INFOPATH="$INFOPATH:/usr/local/texlive/2023/texmf-dist/doc/info"' >> ~/.bashrc
-echo 'export PATH=/usr/local/texlive/2023/bin/x86_64-linux:$PATH' >> ~/.bashrc
+echo 'export MANPATH="$MANPATH:/usr/local/texlive/2024/texmf-dist/doc/man"' >> ~/.bashrc
+echo 'export INFOPATH="$INFOPATH:/usr/local/texlive/2024/texmf-dist/doc/info"' >> ~/.bashrc
+echo 'export PATH=/usr/local/texlive/2024/bin/x86_64-linux:$PATH' >> ~/.bashrc
 source ~/.bashrc # aggiorna il file di configurazione
 ```
 
@@ -466,9 +466,9 @@ source ~/.bashrc # aggiorna il file di configurazione
 
 {{< fa circle-exclamation >}} Alcuni utenti Linux e Mac preferiscono utilizzare `zsh` come bash shell (da _macOS Catalina_, Ottobre 2019, è quella di default), in questo caso bisogna aggiornare il file `~/.zshenv`, in particolare su Mac bisogna cambiare una cartella:
 ```bash
-echo 'export MANPATH="$MANPATH:/usr/local/texlive/2023/texmf-dist/doc/man"' >> ~/.zshenv
-echo 'export INFOPATH="$INFOPATH:/usr/local/texlive/2023/texmf-dist/doc/info"' >> ~/.zshenv
-echo 'export PATH=/usr/local/texlive/2023/bin/universal-darwin:$PATH' >> ~/.zshenv
+echo 'export MANPATH="$MANPATH:/usr/local/texlive/2024/texmf-dist/doc/man"' >> ~/.zshenv
+echo 'export INFOPATH="$INFOPATH:/usr/local/texlive/2024/texmf-dist/doc/info"' >> ~/.zshenv
+echo 'export PATH=/usr/local/texlive/2024/bin/universal-darwin:$PATH' >> ~/.zshenv
 source ~/.zshenv # aggiorna il file di configurazione
 ```
 
@@ -504,7 +504,7 @@ Pygments version 2.15.1, [...]
  \__,_|_|  \__,_|_|  \__,_|
 
 arara 7.0.5
-Copyright (c) 2023, Island of TeX
+Copyright (c) 2024, Island of TeX
 arara is released under the New BSD license.
 
 [...]

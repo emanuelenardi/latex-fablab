@@ -1067,13 +1067,13 @@ You do not need to remove an installation of a previous release, or any system-p
 <h3></h3>
 <p>All’interno della cartella d’installazione dovrebbe essere stato creato un file <code>texlive.profile</code> e il suo contenuto dovrebbe corrispondere a questo:</p>
 <div class="sourceCode" id="cb10"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb10-1"><a href=""></a><span class="ex">selected_scheme</span> scheme-custom</span>
-<span id="cb10-2"><a href=""></a><span class="ex">TEXDIR</span> /usr/local/texlive/2023</span>
-<span id="cb10-3"><a href=""></a><span class="ex">TEXMFCONFIG</span> ~/.texlive2023/texmf-config</span>
+<span id="cb10-2"><a href=""></a><span class="ex">TEXDIR</span> /usr/local/texlive/2024</span>
+<span id="cb10-3"><a href=""></a><span class="ex">TEXMFCONFIG</span> ~/.texlive2024/texmf-config</span>
 <span id="cb10-4"><a href=""></a><span class="ex">TEXMFHOME</span> ~/texmf</span>
 <span id="cb10-5"><a href=""></a><span class="ex">TEXMFLOCAL</span> /usr/local/texlive/texmf-local</span>
-<span id="cb10-6"><a href=""></a><span class="ex">TEXMFSYSCONFIG</span> /usr/local/texlive/2023/texmf-config</span>
-<span id="cb10-7"><a href=""></a><span class="ex">TEXMFSYSVAR</span> /usr/local/texlive/2023/texmf-var</span>
-<span id="cb10-8"><a href=""></a><span class="ex">TEXMFVAR</span> ~/.texlive2023/texmf-var</span>
+<span id="cb10-6"><a href=""></a><span class="ex">TEXMFSYSCONFIG</span> /usr/local/texlive/2024/texmf-config</span>
+<span id="cb10-7"><a href=""></a><span class="ex">TEXMFSYSVAR</span> /usr/local/texlive/2024/texmf-var</span>
+<span id="cb10-8"><a href=""></a><span class="ex">TEXMFVAR</span> ~/.texlive2024/texmf-var</span>
 <span id="cb10-9"><a href=""></a><span class="ex">binary_x86_64-linux</span> 1</span>
 <span id="cb10-10"><a href=""></a><span class="ex">collection-basic</span> 1</span>
 <span id="cb10-11"><a href=""></a><span class="ex">collection-binextra</span> 1</span>
@@ -1114,20 +1114,20 @@ You do not need to remove an installation of a previous release, or any system-p
 <section id="texlive-unix-set-path" class="slide level3 smallest">
 <h3>Post-installazione: impostazione PATH <i class="fa-brands fa-linux" aria-label="linux"></i> <i class="fa-brands fa-apple" aria-label="apple"></i></h3>
 <p>Alla fine dell’installazione vengono stampati i seguenti messaggi:</p>
-<div class="sourceCode" id="cb12"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb12-1"><a href=""></a><span class="ex">Add</span> /usr/local/texlive/2023/texmf-dist/doc/man to MANPATH.</span>
-<span id="cb12-2"><a href=""></a><span class="ex">Add</span> /usr/local/texlive/2023/texmf-dist/doc/info to INFOPATH.</span>
-<span id="cb12-3"><a href=""></a><span class="ex">Most</span> importantly, add /usr/local/texlive/2023/bin/x86_64-linux</span>
+<div class="sourceCode" id="cb12"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb12-1"><a href=""></a><span class="ex">Add</span> /usr/local/texlive/2024/texmf-dist/doc/man to MANPATH.</span>
+<span id="cb12-2"><a href=""></a><span class="ex">Add</span> /usr/local/texlive/2024/texmf-dist/doc/info to INFOPATH.</span>
+<span id="cb12-3"><a href=""></a><span class="ex">Most</span> importantly, add /usr/local/texlive/2024/bin/x86_64-linux</span>
 <span id="cb12-4"><a href=""></a><span class="ex">to</span> your PATH for current and future sessions.</span></code><button title="Copia negli appunti" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>Ora devi aggiungere la directory dei binari di TeX Live al tuo <em>PATH</em>:</p>
-<div class="sourceCode" id="cb13"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb13-1"><a href=""></a><span class="bu">echo</span> <span class="st">'export MANPATH="$MANPATH:/usr/local/texlive/2023/texmf-dist/doc/man"'</span> <span class="op">&gt;&gt;</span> ~/.bashrc</span>
-<span id="cb13-2"><a href=""></a><span class="bu">echo</span> <span class="st">'export INFOPATH="$INFOPATH:/usr/local/texlive/2023/texmf-dist/doc/info"'</span> <span class="op">&gt;&gt;</span> ~/.bashrc</span>
-<span id="cb13-3"><a href=""></a><span class="bu">echo</span> <span class="st">'export PATH=/usr/local/texlive/2023/bin/x86_64-linux:$PATH'</span> <span class="op">&gt;&gt;</span> ~/.bashrc</span>
+<div class="sourceCode" id="cb13"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb13-1"><a href=""></a><span class="bu">echo</span> <span class="st">'export MANPATH="$MANPATH:/usr/local/texlive/2024/texmf-dist/doc/man"'</span> <span class="op">&gt;&gt;</span> ~/.bashrc</span>
+<span id="cb13-2"><a href=""></a><span class="bu">echo</span> <span class="st">'export INFOPATH="$INFOPATH:/usr/local/texlive/2024/texmf-dist/doc/info"'</span> <span class="op">&gt;&gt;</span> ~/.bashrc</span>
+<span id="cb13-3"><a href=""></a><span class="bu">echo</span> <span class="st">'export PATH=/usr/local/texlive/2024/bin/x86_64-linux:$PATH'</span> <span class="op">&gt;&gt;</span> ~/.bashrc</span>
 <span id="cb13-4"><a href=""></a><span class="bu">source</span> ~/.bashrc <span class="co"># aggiorna il file di configurazione</span></span></code><button title="Copia negli appunti" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p><i class="fa-solid fa-circle-exclamation" aria-label="circle-exclamation"></i> Puoi eseguire il codice soprastante nel tuo file <code>~/.bashrc</code> per aggiornare il path, ma ricordati di cambiare l’anno.</p>
 <p><i class="fa-solid fa-circle-exclamation" aria-label="circle-exclamation"></i> Alcuni utenti Linux e Mac preferiscono utilizzare <code>zsh</code> come bash shell (da <em>macOS Catalina</em>, Ottobre 2019, è quella di default), in questo caso bisogna aggiornare il file <code>~/.zshenv</code>, in particolare su Mac bisogna cambiare una cartella:</p>
-<div class="sourceCode" id="cb14"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb14-1"><a href=""></a><span class="bu">echo</span> <span class="st">'export MANPATH="$MANPATH:/usr/local/texlive/2023/texmf-dist/doc/man"'</span> <span class="op">&gt;&gt;</span> ~/.zshenv</span>
-<span id="cb14-2"><a href=""></a><span class="bu">echo</span> <span class="st">'export INFOPATH="$INFOPATH:/usr/local/texlive/2023/texmf-dist/doc/info"'</span> <span class="op">&gt;&gt;</span> ~/.zshenv</span>
-<span id="cb14-3"><a href=""></a><span class="bu">echo</span> <span class="st">'export PATH=/usr/local/texlive/2023/bin/universal-darwin:$PATH'</span> <span class="op">&gt;&gt;</span> ~/.zshenv</span>
+<div class="sourceCode" id="cb14"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb14-1"><a href=""></a><span class="bu">echo</span> <span class="st">'export MANPATH="$MANPATH:/usr/local/texlive/2024/texmf-dist/doc/man"'</span> <span class="op">&gt;&gt;</span> ~/.zshenv</span>
+<span id="cb14-2"><a href=""></a><span class="bu">echo</span> <span class="st">'export INFOPATH="$INFOPATH:/usr/local/texlive/2024/texmf-dist/doc/info"'</span> <span class="op">&gt;&gt;</span> ~/.zshenv</span>
+<span id="cb14-3"><a href=""></a><span class="bu">echo</span> <span class="st">'export PATH=/usr/local/texlive/2024/bin/universal-darwin:$PATH'</span> <span class="op">&gt;&gt;</span> ~/.zshenv</span>
 <span id="cb14-4"><a href=""></a><span class="bu">source</span> ~/.zshenv <span class="co"># aggiorna il file di configurazione</span></span></code><button title="Copia negli appunti" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>Controlla che il <em>PATH</em> si sia aggiornato:</p>
 <div class="sourceCode" id="cb15"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb15-1"><a href=""></a><span class="bu">echo</span> <span class="at">-e</span> <span class="va">${PATH</span><span class="op">//</span><span class="ss">:</span><span class="op">/</span><span class="dt">\\</span>n<span class="va">}</span></span></code><button title="Copia negli appunti" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -1153,7 +1153,7 @@ You do not need to remove an installation of a previous release, or any system-p
 <span id="cb18-7"><a href=""></a> <span class="ex">\__,_</span><span class="kw">|</span><span class="ex">_</span><span class="kw">|</span>  <span class="ex">\__,_</span><span class="kw">|</span><span class="ex">_</span><span class="kw">|</span>  <span class="ex">\__,_</span><span class="kw">|</span></span>
 <span id="cb18-8"><a href=""></a></span>
 <span id="cb18-9"><a href=""></a><span class="ex">arara</span> 7.0.5</span>
-<span id="cb18-10"><a href=""></a><span class="ex">Copyright</span> <span class="er">(</span><span class="ex">c</span><span class="kw">)</span> <span class="ex">2023,</span> Island of TeX</span>
+<span id="cb18-10"><a href=""></a><span class="ex">Copyright</span> <span class="er">(</span><span class="ex">c</span><span class="kw">)</span> <span class="ex">2024,</span> Island of TeX</span>
 <span id="cb18-11"><a href=""></a><span class="ex">arara</span> is released under the New BSD license.</span>
 <span id="cb18-12"><a href=""></a></span>
 <span id="cb18-13"><a href=""></a><span class="ex">[...]</span></span></code><button title="Copia negli appunti" class="code-copy-button"><i class="bi"></i></button></pre></div>
