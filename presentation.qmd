@@ -629,7 +629,7 @@ Personalizzazione dell'ambiente di lavoro:
 
 ---
 
-### My Keyboard Shortcuts
+### Scorciatoie da tastiera personalizzate
 
 :::{.larger}
 ```{.json code-line-numbers="|4-9|12-17|"}
@@ -649,6 +649,14 @@ Personalizzazione dell'ambiente di lavoro:
         "when": "editorLangId == latex && editorTextFocus",
         "args": {
             "snippet": "\\emph{${TM_SELECTED_TEXT}$0}"
+        }
+    },
+    {
+        "key": "ctrl+shift+Q",
+        "command": "editor.action.insertSnippet",
+        "when": "editorLangId == latex && editorTextFocus",
+        "args": {
+            "snippet": "\\enquote{${TM_SELECTED_TEXT/[+\"“”]+//g}}$0"
         }
     }
 ]
@@ -705,22 +713,16 @@ Personalizzazione dell'ambiente di lavoro:
 ```
 ::: -->
 
-# Perché la tipografia è _importante_? {.white .smaller #tipografia-importanza data-background-image="assets/images/hero/typography.jpg" data-background-size="cover"}
+## {#arara-tex-automation-tool .smaller}
 
-### Oscars 2017 Best Picture announcement
+![](assets/branding/arara-logo-with-text-bottom.svg){fig-align="center" width=350}
 
-{{< video https://www.youtube.com/embed/eZSe4xVXHhI width="100%" height="100%" >}}
+### File prodotti da LaTeX
 
-# {#arara-tex-automation-tool .smaller}
+Prima di tutto, è importante capire quali sono i file prodotti da $\rm\LaTeX$ quando compiliamo un documento[^1][^2].
 
-![](assets/branding/arara-logo-with-text-bottom.svg){fig-align="center" width=450}
-
-## File prodotti da LaTeX
-
-Prima di tutto, è importante capire quali sono i file prodotti da $\rm\LaTeX$ quando compiliamo un documento.
-
-<!-- https://tex.stackexchange.com/questions/7770/file-extensions-related-to-latex-etc -->
-<!-- https://tex.stackexchange.com/questions/597675/understanding-all-output-files-when-compiling-a-latex-document -->
+[^1]: [File extensions related to LaTeX, etc](https://tex.stackexchange.com/questions/7770/file-extensions-related-to-latex-etc)
+[^2]: [“Comprehensive” list of LaTeX auxiliary files](https://github.com/wspr/latex-auxfiles)
 
 ### {.smallest auto-animate=true}
 
@@ -1194,6 +1196,12 @@ $out_dir = 'build';
 - scrittura di pseudocodice (`algorithms2e`)
 - creazione di un glossario (`glossaries`), acronimi (`acronym`), indice (`index`)
 
+# Perché la tipografia è _importante_? {.white .smaller #tipografia-importanza data-background-image="assets/images/hero/typography.jpg" data-background-size="cover"}
+
+### Oscars 2017 Best Picture announcement
+
+{{< video https://www.youtube.com/embed/eZSe4xVXHhI width="100%" height="100%" >}}oo
+
 # Struttura del progetto
 
 :::{.code .larger}
@@ -1225,9 +1233,10 @@ $out_dir = 'build';
 |       ├── lists.sty
 |       ├── macros.sty
 |       ├── math.sty
-|       ├── propertiesaggiun.sty
+|       ├── properties.sty
 |       ├── spacing.sty
 |       └── tikz.sty
+├── .araraconfig.yaml
 ├── .latexmkrc
 ├── presentation.preamble.sty
 ├── presentation.tex
