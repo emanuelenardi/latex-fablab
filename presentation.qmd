@@ -1390,12 +1390,13 @@ Creazione, gestione e personalizzazione della bibliografia.
 ```{.txt code-line-numbers="false"}
 .
 ├── assets/
-│   ├── resources/
-│   │   └── ✏️bibliography.bib
 │   ├── ...
-│   └── settings/
-│       └── ✏️set-bibliography.sty
-├── ...
+│   └── resources/
+│       └── ✏️bibliography.bib
+├── settings/
+│   ├── ...
+│   ├── ✏️set-bibliography.sty
+│   └── ...
 ├── ✏️thesis.preamble.sty
 └── ✏️thesis.tex
 ```
@@ -1405,13 +1406,13 @@ Creazione, gestione e personalizzazione della bibliografia.
    a. aggiungi le voci bibliografiche nel formato [formato richiesto da BibTeX](#bibtex-entries);
 2. all'interno di: `set-bibliography.sty`:
    a. importa il package `biblatex`;
-   b. collega il database `.bib` da utilizzare tramite il comando `\addbibresource{<nome>.<ext>}`.
+   b. collega il database `.bib` da utilizzare: `\addbibresource{<nome>.<ext>}`.
 3. includi `set-bibliography.sty` in `thesis.preamble.sty`;
 4. stampa la bibliografia con `\printbibliography`;
 5. aggiungi il passaggio di compilazione ad `arara`:
    a. `% arara: biber`
 6. personalizza lo stile della bibliografia con `\bibliographystyle{<style>}`;
-7. personalizza la bibliografia con `\DeclareFieldFormat{<field>}{<format>}`.
+<!-- 7. personalizza la bibliografia con `\DeclareFieldFormat{<field>}{<format>}`. -->
 :::
 ::::
 
