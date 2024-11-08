@@ -1,12 +1,12 @@
 # Introduzione {data-background="https://images.unsplash.com/photo-1573848855919-9abecc93e456?auto=format&fit=crop&w=1470&q=100" data-background-size=cover .smaller}
 
-<!-- ## {#telegram-group-light data-menu-title="telegram-group-light" data-background="assets/images/telegram/join-telegram-group-light-filled.png" data-background-size=cover}
+## {#telegram-group-light data-menu-title="telegram-group-light" data-background="assets/images/telegram/join-telegram-group-light-filled.png" data-background-size=cover}
 
 [](assets/images/telegram/join-telegram-group-light-filled.png)
 
 ## {#telegram-group-dark data-menu-title="telegram-group-dark" data-background="assets/images/telegram/join-telegram-group-dark-filled.png" data-background-size=cover}
 
-[](assets/images/telegram/join-telegram-group-dark-filled.png) -->
+[](assets/images/telegram/join-telegram-group-dark-filled.png)
 
 ## Pronuncia
 
@@ -570,7 +570,7 @@ Would you like to search online? (y/N)
 
 - impostazine *shortcut search engine* su Chrome
 
-# Visual Studio Code {.white .smaller #vscode data-background-image="assets\images\hero\vscode.jpg" data-background-size="cover"}
+# Visual Studio Code {.white .smaller #vscode data-background-image="assets/images/hero/vscode.jpg" data-background-size="cover"}
 
 ## Ottimizzare il flusso di lavoro su Visual Studio Code {.smallest}
 
