@@ -988,15 +988,15 @@ Package thmtools Info: Key `qed' (with value `\qedsymbol ')
 ## Pulizia file temporanei {.smaller}
 
 Pulire i file temporanei:
-```bash
+```{.bash code-line-numbers="false"}
 latexmk -c
 ```
 Se `latexmk -c` si rifiuta di rimuovere determinati file, è possibile specificare le loro estensioni nel file di configurazione `.latexmkrc` come segue:
-```perl
+```{.perl code-line-numbers="false"}
 $clean_ext = "acn acr alg glg glo gls ist log nav out run.xml slg snm syg syi synctex.gz";
 ```
 Questo non elimina il documento finale `.pdf`. Se vuoi eliminare anche il `.pdf`:
-```bash
+```{.bash code-line-numbers="false"}
 latexmk -C
 ```
 
