@@ -425,7 +425,7 @@
          <!-- for(by-author) -->
     </div>
 
-        <p class="date"><u>Aggiornate giovedì 7 novembre 2024</u></p>
+        <p class="date"><u>Aggiornate venerdì 8 novembre 2024</u></p>
     </section>
 <section>
 <section id="introduzione" class="title-slide slide level1 smaller center" data-background="https://images.unsplash.com/photo-1573848855919-9abecc93e456?auto=format&amp;fit=crop&amp;w=1470&amp;q=100" data-background-size="cover">
@@ -1615,11 +1615,11 @@ Package thmtools Info: Key `qed' (with value `\qedsymbol ')
 <section id="pulizia-file-temporanei" class="title-slide slide level2 smaller center">
 <h2>Pulizia file temporanei</h2>
 <p>Pulire i file temporanei:</p>
-<div class="sourceCode" id="cb29"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb29-1"><a href=""></a><span class="ex">latexmk</span> <span class="at">-c</span></span></code><button title="Copia negli appunti" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb29"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb29-1"><a href="" aria-hidden="true" tabindex="-1"></a><span class="ex">latexmk</span> <span class="at">-c</span></span></code><button title="Copia negli appunti" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>Se <code>latexmk -c</code> si rifiuta di rimuovere determinati file, è possibile specificare le loro estensioni nel file di configurazione <code>.latexmkrc</code> come segue:</p>
-<div class="sourceCode" id="cb30"><pre class="sourceCode numberSource perl number-lines code-with-copy"><code class="sourceCode perl"><span id="cb30-1"><a href=""></a><span class="dt">$clean_ext</span> = <span class="ot">"</span><span class="st">acn acr alg glg glo gls ist log nav out run.xml slg snm syg syi synctex.gz</span><span class="ot">"</span>;</span></code><button title="Copia negli appunti" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb30"><pre class="sourceCode perl code-with-copy"><code class="sourceCode perl"><span id="cb30-1"><a href="" aria-hidden="true" tabindex="-1"></a><span class="dt">$clean_ext</span> = <span class="ot">"</span><span class="st">acn acr alg glg glo gls ist log nav out run.xml slg snm syg syi synctex.gz</span><span class="ot">"</span>;</span></code><button title="Copia negli appunti" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>Questo non elimina il documento finale <code>.pdf</code>. Se vuoi eliminare anche il <code>.pdf</code>:</p>
-<div class="sourceCode" id="cb31"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb31-1"><a href=""></a><span class="ex">latexmk</span> <span class="at">-C</span></span></code><button title="Copia negli appunti" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb31"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb31-1"><a href="" aria-hidden="true" tabindex="-1"></a><span class="ex">latexmk</span> <span class="at">-C</span></span></code><button title="Copia negli appunti" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>Questo è il contenuto del mio file di configurazione <code>.latexmkrc</code>:</p>
 <div class="sourceCode" id="cb32"><pre class="sourceCode numberSource perl number-lines code-with-copy"><code class="sourceCode perl"><span id="cb32-1"><a href=""></a><span class="co"># latexmk -pdf -pvc main.tex</span></span>
 <span id="cb32-2"><a href=""></a><span class="dt">$pdflatex</span> = <span class="ot">"</span><span class="st">pdflatex --shell-escape -synctex=1 -halt-on-error </span><span class="dt">%O</span><span class="st"> </span><span class="dt">%S</span><span class="ot">"</span>;</span>
