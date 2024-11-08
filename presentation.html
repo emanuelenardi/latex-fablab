@@ -2071,7 +2071,7 @@ Package thmtools Info: Key `qed' (with value `\qedsymbol ')
 </div></div>
 </section>
 
-<section id="come-fare-una-citazione" class="title-slide slide level2 center">
+<section id="come-fare-una-citazione" class="title-slide slide level2 smaller center">
 <h2>Come fare una citazione</h2>
 <ul>
 <li><code>\cite(s)</code></li>
@@ -2093,12 +2093,11 @@ Package thmtools Info: Key `qed' (with value `\qedsymbol ')
 <li><code>backend</code>: <code>biber</code></li>
 <li><code>style</code>: <code>numeric</code></li>
 <li><code>sorting</code>: ordinati per <code>name</code>, <code>year</code>, <code>e</code> e/o <code>title</code></li>
-<li><code>citestyle</code>: 3.3.1 Citation Styles</li>
-<li><code>maxbibnames</code>:</li>
-<li><code>minbibnames</code>:</li>
+<li><code>citestyle</code>: <a href="https://ctan.mirror.garr.it/mirrors/ctan/macros/latex/contrib/biblatex/doc/biblatex.pdf">Documentazione di biblatex</a> 3.3.1 Citation Styles</li>
+<li><code>maxbibnames</code> / <code>minbibnames</code></li>
 <li><code>sorting</code>:</li>
-<li><code>uniquename</code>:</li>
-<li><code>uniquelist</code>:</li>
+<li><code>uniquename</code>: disambiguate using initials or full names, as required;</li>
+<li><code>uniquelist</code>: disambiguate the labelname list.</li>
 </ul>
 </section>
 
@@ -2124,17 +2123,14 @@ Package thmtools Info: Key `qed' (with value `\qedsymbol ')
 <p>Processing LATEX reference lists or other forms of cross-referencing, such as indexes, requires multiple runs of software—including the TEX engine (e.g., pdflatex) and associated programs such as BibTEX, makeindex, etc. As mentioned above, Overleaf handles all of these mulitple runs automatically, so you don’t have to worry about them.</p>
 </section>
 
-<section id="estensioni-bibliografia" class="title-slide slide level2 smaller center">
-<h2>Estensioni: bibliografia</h2>
+<section id="bib-ext" class="title-slide slide level2 smaller center">
+<h2>Tipi di file</h2>
 <ul>
 <li><code>bib</code>: used to describe bibliographical references. When used together with LaTeX and BibTeX, it generates a file with the <code>.bbl</code> extension;</li>
-<li><code>bbl</code>: a <code>tex</code> file with a different extension containing your references <strong>formatted according to the bibliography style chosen in your <code>.tex</code> file</strong> through the <code>\bibligraphystyle{}</code> command. LaTeX then automatically inserts the contents of the <code>bbl</code> file in the exact place you call the <code>\bibliography{}</code> command in your document.</li>
-<li><code>bcf</code>: <strong>biber control file</strong>, contains the information biber needs to process your bibliography</li>
+<li><code>bbl</code>: a <code>tex</code> file with a different extension containing your references <strong>formatted according to the bibliography style chosen in your <code>.tex</code> file</strong> through the <code>\bibligraphystyle{}</code> command. LaTeX then automatically inserts the contents of the <code>bbl</code> file in the exact place you call the <code>\bibliography{}</code> command in your document. <!-- - `bcf`: **biber control file**, contains the information biber needs to process your bibliography --></li>
 <li><code>blg</code>: <strong>BibTeX log file</strong>, contains information about any errors, warnings, or other messages generated during the processing of the bibliography</li>
 <li><code>bst</code>: <strong>BibTeX style file</strong>, specify the formatting and style of the bibliography</li>
-<li><code>cfg</code>: <strong>configuration file</strong>, contains information about the formatting of the bibliography</li>
-<li><code>cbx</code>: <strong>biblatex citation style file</strong>, specify the formatting and style of the citations;</li>
-<li><code>bbx</code>: <strong>biblatex bibliography style file</strong>, specify the formatting and style of the bibliography</li>
+<li><code>cfg</code>: <strong>configuration file</strong>, contains information about the formatting of the bibliography <!-- - `cbx`: **biblatex citation style file**, specify the formatting and style of the citations; --> <!-- - `bbx`: **biblatex bibliography style file**, specify the formatting and style of the bibliography --></li>
 </ul>
 </section>
 <section id="bibliography-examples" class="slide level3 smaller">

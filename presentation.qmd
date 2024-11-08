@@ -1416,7 +1416,7 @@ Creazione, gestione e personalizzazione della bibliografia.
 :::
 ::::
 
-## Come fare una citazione
+## Come fare una citazione {.smaller}
 
 - `\cite(s)`
 - `\parencite(s)`
@@ -1437,12 +1437,11 @@ Creazione, gestione e personalizzazione della bibliografia.
 - `backend`: `biber`
 - `style`: `numeric`
 - `sorting`: ordinati per `name`, `year`, `e` e/o `title`
-- `citestyle`: 3.3.1 Citation Styles
-- `maxbibnames`:
-- `minbibnames`:
+- `citestyle`: [Documentazione di biblatex](https://ctan.mirror.garr.it/mirrors/ctan/macros/latex/contrib/biblatex/doc/biblatex.pdf) 3.3.1 Citation Styles
+- `maxbibnames` / `minbibnames`
 - `sorting`:
-- `uniquename`:
-- `uniquelist`:
+- `uniquename`: disambiguate using initials or full names, as required;
+- `uniquelist`: disambiguate the labelname list.
 
 ## BibTEX bibliography entries {#bibtex-entries-1 .smallest}
 
@@ -1464,16 +1463,16 @@ Esempi di tipo di documenti:
 
 Processing LATEX reference lists or other forms of cross-referencing, such as indexes, requires multiple runs of software—including the TEX engine (e.g., pdflatex) and associated programs such as BibTEX, makeindex, etc. As mentioned above, Overleaf handles all of these mulitple runs automatically, so you don't have to worry about them.
 
-## Estensioni: bibliografia {.smaller}
+## Tipi di file {.smaller #bib-ext}
 
 - `bib`: used to describe bibliographical references. When used together with LaTeX and BibTeX, it generates a file with the `.bbl` extension;
 - `bbl`: a `tex` file with a different extension containing your references **formatted according to the bibliography style chosen in your `.tex` file** through the `\bibligraphystyle{}` command. LaTeX then automatically inserts the contents of the `bbl` file in the exact place you call the `\bibliography{}` command in your document.
-- `bcf`: **biber control file**, contains the information biber needs to process your bibliography
+<!-- - `bcf`: **biber control file**, contains the information biber needs to process your bibliography -->
 - `blg`: **BibTeX log file**, contains information about any errors, warnings, or other messages generated during the processing of the bibliography
 - `bst`: **BibTeX style file**, specify the formatting and style of the bibliography
 - `cfg`: **configuration file**, contains information about the formatting of the bibliography
-- `cbx`: **biblatex citation style file**, specify the formatting and style of the citations;
-- `bbx`: **biblatex bibliography style file**, specify the formatting and style of the bibliography
+<!-- - `cbx`: **biblatex citation style file**, specify the formatting and style of the citations; -->
+<!-- - `bbx`: **biblatex bibliography style file**, specify the formatting and style of the bibliography -->
 
 ### Esempi di modifiche alla bibliografia {#bibliography-examples .smaller}
 
