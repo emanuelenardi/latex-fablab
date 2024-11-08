@@ -1031,15 +1031,13 @@ $out_dir = 'build';
 - `amsmath`
 - `amssymb`
 - `annotate-equations`
-- `anyfontsize`
 - `appendix`
-- `array`
 - `babel`
 - `biblatex`
-:::
-:::{.column width="20%"}
 - `bookmark`
 - `booktabs`
+:::
+:::{.column width="20%"}
 - `caption`
 - `cleveref`
 - `csquotes`
@@ -1055,14 +1053,13 @@ $out_dir = 'build';
 :::{.column width="20%"}
 - `fancyhdr`
 - `float`
-- `fontspec`
+- `fontspec` (XeLaTeX)
 - `forest`
 - `geometry`
 - `graphicx`
 - `hyperref`
 - `index`
 - `listings`
-- `makecell`
 - `mathtools`
 - `microtype`
 :::
@@ -1082,15 +1079,13 @@ $out_dir = 'build';
 :::{.column width="20%"}
 - `standalone`
 - `subcaption`
-- `tabularx`
+- `tabularray`
 - `tcolorbox`
 - `thmtools`
 - `tikz`
 - `titlesec`
 - `titletoc`
-- `verbatim`
 - `xcolor`
-- `xparse`
 :::
 ::::
 
