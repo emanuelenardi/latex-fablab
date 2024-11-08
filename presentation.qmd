@@ -572,13 +572,13 @@ Would you like to search online? (y/N)
 
 # Visual Studio Code {.white .smaller #vscode data-background-image="assets/images/hero/vscode.jpg" data-background-size="cover"}
 
-## Ottimizzare il flusso di lavoro su Visual Studio Code {.smallest}
+## Ottimizzare il flusso di lavoro su Visual Studio Code {.smallest #ottimizzazione-flusso}
 
 Personalizzazione dell'ambiente di lavoro:
 
 ::::{.columns}
 
-:::{.column width="50%"}
+:::{.column width="60%"}
 - `View > Open View... > Timeline`
 
     ```{.bash code-line-numbers="false"}
@@ -598,12 +598,11 @@ Personalizzazione dell'ambiente di lavoro:
     ```
 
 - `Snippets: Configure User Snippets`
-- `Preferences: Open Keyboard Shortcuts`
+- `Preferences: Open Keyboard Shortcuts` ([see my shortcuts](#my-keyboard-shortcuts))
 
     ```{.bash code-line-numbers="false"}
     Preferences: Open Keyboard Shortcuts
     ```
-    ([see my shortcuts](#my-keyboard-shortcuts))
 
 - `latex-workshop.latex.recipes`
     ([see my recipes](#my-workshop-recipes))
