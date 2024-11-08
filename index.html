@@ -1869,7 +1869,7 @@ Package thmtools Info: Key `qed' (with value `\qedsymbol ')
 <section class="slide level3">
 
 <div class="code larger">
-<div class="sourceCode" id="cb33" data-code-line-numbers="|52-53|50-51|48-49|53|52|24|23|22|2|3-4|5-13|6-9|10-12|13|14|15|16-18|19-20|21|53|"><pre class="sourceCode numberSource txt number-lines code-with-copy"><code class="sourceCode default"><span id="cb33-1"><a href=""></a>.</span>
+<div class="sourceCode" id="cb33" data-code-line-numbers="|53-54|51-52|48-50|54|53|24|23|22|2|3-4|5-13|6-9|10-12|13|14|15|16-18|19-20|21|54|"><pre class="sourceCode numberSource txt number-lines code-with-copy"><code class="sourceCode default"><span id="cb33-1"><a href=""></a>.</span>
 <span id="cb33-2"><a href=""></a>├── assets/</span>
 <span id="cb33-3"><a href=""></a>│   ├── appendixes/</span>
 <span id="cb33-4"><a href=""></a>│   │   └── A*-appendix-name.tex</span>
@@ -1917,11 +1917,12 @@ Package thmtools Info: Key `qed' (with value `\qedsymbol ')
 <span id="cb33-46"><a href=""></a>│   ├── set-typography.sty</span>
 <span id="cb33-47"><a href=""></a>│   └── set-warnings.sty</span>
 <span id="cb33-48"><a href=""></a>├── .araraconfig.yaml</span>
-<span id="cb33-49"><a href=""></a>├── .latexmkrc</span>
-<span id="cb33-50"><a href=""></a>├── presentation.preamble.sty</span>
-<span id="cb33-51"><a href=""></a>├── presentation.tex</span>
-<span id="cb33-52"><a href=""></a>├── thesis.preamble.sty</span>
-<span id="cb33-53"><a href=""></a>└── thesis.tex</span></code><button title="Copia negli appunti" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb33-49"><a href=""></a>├── .chktexrc</span>
+<span id="cb33-50"><a href=""></a>├── .latexmkrc</span>
+<span id="cb33-51"><a href=""></a>├── presentation.preamble.sty</span>
+<span id="cb33-52"><a href=""></a>├── presentation.tex</span>
+<span id="cb33-53"><a href=""></a>├── thesis.preamble.sty</span>
+<span id="cb33-54"><a href=""></a>└── thesis.tex</span></code><button title="Copia negli appunti" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section></section>
 <section>
@@ -2439,7 +2440,7 @@ Tabella&nbsp;5: most common lengths
       // Full list of configuration options available at:
       // https://revealjs.com/config/
       Reveal.initialize({
-'controlsAuto': true,
+'controlsAuto': false,
 'previewLinksAuto': true,
 'pdfSeparateFragments': true,
 'autoAnimateEasing': "ease",
@@ -2450,14 +2451,14 @@ Tabella&nbsp;5: most common lengths
 'smaller': false,
  
         // Display controls in the bottom right corner
-        controls: false,
+        controls: true,
 
         // Help the user learn the controls by providing hints, for example by
         // bouncing the down arrow when they first encounter a vertical slide
         controlsTutorial: false,
 
         // Determines where controls appear, "edges" or "bottom-right"
-        controlsLayout: 'edges',
+        controlsLayout: 'bottom-right',
 
         // Visibility rule for backwards navigation arrows; "faded", "hidden"
         // or "visible"

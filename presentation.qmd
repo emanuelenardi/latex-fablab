@@ -1231,7 +1231,7 @@ $out_dir = 'build';
 ---
 
 :::{.code .larger}
-```{.txt code-line-numbers="|52-53|50-51|48-49|53|52|24|23|22|2|3-4|5-13|6-9|10-12|13|14|15|16-18|19-20|21|53|"}
+```{.txt code-line-numbers="|53-54|51-52|48-50|54|53|24|23|22|2|3-4|5-13|6-9|10-12|13|14|15|16-18|19-20|21|54|"}
 .
 ├── assets/
 │   ├── appendixes/
@@ -1280,6 +1280,7 @@ $out_dir = 'build';
 │   ├── set-typography.sty
 │   └── set-warnings.sty
 ├── .araraconfig.yaml
+├── .chktexrc
 ├── .latexmkrc
 ├── presentation.preamble.sty
 ├── presentation.tex
