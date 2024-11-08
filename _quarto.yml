@@ -33,9 +33,9 @@ title-slide-attributes:
 
 aspectratio: 169
 # https://github.com/quarto-dev/quarto-cli/discussions/3668
-# toc: true
+toc: false
 slide-level: 3
-# number-sections: true
+number-sections: false
 format:
   # html:
   #     theme:
@@ -54,8 +54,6 @@ format:
     
     include-after-body: [assets/template/clean_title_page.html]
     # logo: "assets/images/logo/logo-unitn.png"
-    # footer: |
-    #     Impaginazione (tesi) con $\rm\LaTeX$ -- Emanuele Nardi -- CC BY-NC
     
     # lesson helpers
     menu: true
@@ -67,9 +65,9 @@ format:
         buttons: true
 
     # Controls
-    # controls: true
-    # controls-layout: bottom-right
-    # controls-back-arrows: faded
+    controls: true
+    controls-layout: bottom-right
+    controls-back-arrows: faded
 
     preview-links: auto
 
