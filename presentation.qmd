@@ -1034,9 +1034,9 @@ $out_dir = 'build';
 - `babel`
 - `biblatex`
 - `bookmark`
-- `booktabs`
 :::
 :::{.column width="20%"}
+- `booktabs`
 - `caption`
 - `cleveref`
 - `csquotes`
@@ -1047,22 +1047,22 @@ $out_dir = 'build';
 - `empheq`
 - `emptypage`
 - `enumitem`
-- `epigraph`
 :::
 :::{.column width="20%"}
+- `epigraph`
 - `fancyhdr`
 - `float`
-- `fontspec` (XeLaTeX)
+- `fontspec`
 - `forest`
 - `geometry`
 - `graphicx`
 - `hyperref`
 - `index`
 - `listings`
-- `mathtools`
-- `microtype`
 :::
 :::{.column width="20%"}
+- `mathtools`
+- `microtype`
 - `minted`
 - `multirow`
 - `nameref`
@@ -1072,10 +1072,10 @@ $out_dir = 'build';
 - `polyglossia`
 - `ragged2e`
 - `setspace`
-- `silence`
-- `siunitx`
 :::
 :::{.column width="20%"}
+- `silence`
+- `siunitx`
 - `standalone`
 - `subcaption`
 - `tabularray`
@@ -1366,11 +1366,13 @@ Il main di Java passa come paramentro \mintinline{java}{String[] args}.
 
 Per ulteriori personalizzazioni, consultare la [documentazione](https://ctan.mirror.garr.it/mirrors/ctan/macros/latex/contrib/minted/minted.pdf).
 
-<!-- # Definizione di nuovi comandi {.smaller}
+# La bibliografia
+
+# Definizione di nuovi comandi {.smaller}
 
 Letture consigliate:
 
-- [From `\newcommand` to `\NewDocumentCommand`](https://www.texdev.net/2010/05/23/from-newcommand-to-newdocumentcommand/) -->
+- [From `\newcommand` to `\NewDocumentCommand`](https://www.texdev.net/2010/05/23/from-newcommand-to-newdocumentcommand/)
 
 # Appendice {.smaller}
 
