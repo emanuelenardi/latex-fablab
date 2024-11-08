@@ -1865,7 +1865,7 @@ Package thmtools Info: Key `qed' (with value `\qedsymbol ')
 <h1>Struttura del progetto</h1>
 
 </section>
-<section id="struttura-generale-di-una-tesi" class="title-slide slide level2 smallest center">
+<section id="struttura-tesi" class="title-slide slide level2 smallest center">
 <h2>Struttura generale di una tesi</h2>
 <p>Le voci in corsivo sono obbligatorie, quelle in tondo sono facoltative, quelle asteriscate non devono comparire nell’indice generale.</p>
 <table class="caption-top" style="width:55%;">
@@ -1894,6 +1894,10 @@ Package thmtools Info: Key `qed' (with value `\qedsymbol ')
 </tr>
 </tbody>
 </table>
+</section>
+
+<section id="struttura-progetto" class="title-slide slide level2 center">
+<h2>Struttura del nostro progetto</h2>
 <div class="code larger">
 <div class="sourceCode" id="cb33" data-code-line-numbers="|52-53|50-51|47-49|53|52|24|23|22|2|3-4|5-13|6-9|10-12|13|14|15|16-18|19-20|21|54|"><pre class="sourceCode numberSource txt number-lines code-with-copy"><code class="sourceCode default"><span id="cb33-1"><a href=""></a>.</span>
 <span id="cb33-2"><a href=""></a>├── assets/</span>
@@ -1976,6 +1980,10 @@ Package thmtools Info: Key `qed' (with value `\qedsymbol ')
 <section id="opzioni-utili-per-il-pacchetto-minted" class="slide level3 smaller">
 <h3>Opzioni utili per il pacchetto <code>minted</code></h3>
 <div class="code larger">
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>settings/set-code.sty</strong></pre>
+</div>
 <div class="sourceCode" id="cb38"><pre class="sourceCode numberSource latex number-lines code-with-copy"><code class="sourceCode latex"><span id="cb38-1"><a href=""></a><span class="fu">\usemintedstyle</span>{manni}</span>
 <span id="cb38-2"><a href=""></a><span class="fu">\setminted</span>{</span>
 <span id="cb38-3"><a href=""></a>    breaklines = true, breakanywhere,</span>
@@ -1996,6 +2004,7 @@ Package thmtools Info: Key `qed' (with value `\qedsymbol ')
 <span id="cb38-18"><a href=""></a><span class="fu">\newmintinline</span>[javainline]{cpp}{}</span>
 <span id="cb38-19"><a href=""></a><span class="fu">\newmint</span>[javacode]{cpp}{}</span>
 <span id="cb38-20"><a href=""></a><span class="fu">\newmintedfile</span>[javafile]{cpp}{}</span></code><button title="Copia negli appunti" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 </div>
 </section>
 <section id="come-aggiungere-una-didascalia" class="slide level3 smaller scrollable">
