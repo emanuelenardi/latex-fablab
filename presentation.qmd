@@ -1416,6 +1416,20 @@ Creazione, gestione e personalizzazione della bibliografia.
 :::
 ::::
 
+## Come fare una citazione
+
+- `\cite(s)`
+- `\parencite(s)`
+- `\footcite(s)`
+- `\textcite(s)`
+- `\smartcite(s)`
+- `\supercite(s)`
+- `\autocite`
+- `\citeauthor/title/year/date/url`
+
+[Documentazione di biblatex](https://ctan.mirror.garr.it/mirrors/ctan/macros/latex/contrib/biblatex/doc/biblatex.pdf) 3.9 Citation Commands
+[Biblatex Cheat Sheet](https://tug.ctan.org/info/biblatex-cheatsheet/biblatex-cheatsheet.pdf)
+
 ## Opzioni di stile della bibliografia {#biblatex-options .smaller}
 
 `\usepackage[<options>]{biblatex}`, dove `options` posso essere:
