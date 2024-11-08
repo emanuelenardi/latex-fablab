@@ -1222,7 +1222,7 @@ $out_dir = 'build';
 
 # Struttura del progetto {.smaller #project-structure data-background-image="assets/images/hero/project-structure.jpg" data-background-size="cover"}
 
-## Struttura generale di una tesi {.smallest}
+## Struttura generale di una tesi {.smallest #struttura-tesi}
 
 Le voci in corsivo sono obbligatorie, quelle in tondo sono facoltative, quelle asteriscate non devono
 comparire nell'indice generale.
@@ -1233,6 +1233,8 @@ comparire nell'indice generale.
 | Materiale principale | Introduzione numerata<br>_Capitoli_<br>Una o più appendici numerate |
 | Materiale finale | Una o più appendici non numerate<br>Glossario<br>_Bibliografia_<br>Indice analitico |
 : {tbl-colwidths="[10,45]"}
+
+## Struttura del nostro progetto {#struttura-progetto}
 
 :::{.code .larger}
 ```{.txt code-line-numbers="|52-53|50-51|47-49|53|52|24|23|22|2|3-4|5-13|6-9|10-12|13|14|15|16-18|19-20|21|54|"}
@@ -1324,7 +1326,7 @@ Il main di Java passa come paramentro \mintinline{java}{String[] args}.
 
 ### Opzioni utili per il pacchetto `minted` {.smaller}
 
-:::{.code .larger}
+:::{.code .larger filename="settings/set-code.sty"}
 ```latex
 \usemintedstyle{manni}
 \setminted{
