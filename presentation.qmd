@@ -1386,6 +1386,19 @@ Creazione, gestione e personalizzazione della bibliografia.
 ## Come creare un bibliografia {#crezione-bibliografia .smaller}
 
 ::::{.columns}
+:::{.column width="65%"}
+1. crea un file `bibliography.bib`:
+   a. aggiungi le voci bibliografiche nel formato [formato richiesto da BibTeX](#bibtex-entries);
+2. all'interno di: `set-bibliography.sty`:
+   a. importa il package `biblatex`;
+   b. collega il database `.bib` da utilizzare: `\addbibresource{<nome>.<ext>}`.
+3. includi `set-bibliography.sty` in `thesis.preamble.sty`;
+4. stampa la bibliografia con `\printbibliography`;
+5. aggiungi il passaggio di compilazione ad `arara`:
+   a. `% arara: biber`
+6. personalizza lo stile della bibliografia con `\bibliographystyle{<style>}`;
+<!-- 7. personalizza la bibliografia con `\DeclareFieldFormat{<field>}{<format>}`. -->
+:::
 :::{.column width="35%"}
 ```{.txt code-line-numbers="false"}
 .
@@ -1401,26 +1414,69 @@ Creazione, gestione e personalizzazione della bibliografia.
 └── ✏️thesis.tex
 ```
 :::
-:::{.column width="65%"}
-1. crea un file `bibliography.bib`:
-   a. aggiungi le voci bibliografiche nel formato [formato richiesto da BibTeX](#bibtex-entries);
-2. all'interno di: `set-bibliography.sty`:
-   a. importa il package `biblatex`;
-   b. collega il database `.bib` da utilizzare: `\addbibresource{<nome>.<ext>}`.
-3. includi `set-bibliography.sty` in `thesis.preamble.sty`;
-4. stampa la bibliografia con `\printbibliography`;
-5. aggiungi il passaggio di compilazione ad `arara`:
-   a. `% arara: biber`
-6. personalizza lo stile della bibliografia con `\bibliographystyle{<style>}`;
-<!-- 7. personalizza la bibliografia con `\DeclareFieldFormat{<field>}{<format>}`. -->
-:::
 ::::
 
-# Definizione di nuovi comandi {.smaller}
+## Opzioni di stile della bibliografia {#biblatex-options .smaller}
 
-Letture consigliate:
+`\usepackage[<options>]{biblatex}`, dove `options` posso essere:
 
-- [From `\newcommand` to `\NewDocumentCommand`](https://www.texdev.net/2010/05/23/from-newcommand-to-newdocumentcommand/)
+- `backend`: `biber`
+- `style`: `numeric`
+- `sorting`: ordinati per `name`, `year`, `e` e/o `title`
+- `citestyle`: 3.3.1 Citation Styles
+- `maxbibnames`:
+- `minbibnames`:
+- `sorting`:
+- `uniquename`:
+- `uniquelist`:
+
+## BibTEX bibliography entries {#bibtex-entries-1 .smallest}
+
+Esempi di tipo di documenti:
+
+- `@article` an article from a journal, magazine, newspaper, or periodical;
+- `@book` a book where the publisher is clearly identifiable.
+- `@booklet` a printed work that is bound, but does not have a clearly identifiable publisher or supporting institution;
+<!-- - `@conference` an article that has been included in conference proceedings; -->
+- `@inbook` a section, such as a chapter, or a page range within a book.: the chapter of interest is identified by a chapter number;
+- `@incollection` is for a contributed section in a book, so would have its own `author` and `title`. The actual title of the entire book is given in the `booktitle` field;
+- `@inproceedings` a paper that has been published in conference proceedings;
+- `@manual` a technical manual for a machine software such as would come with a purchase to explain operation to the new owner;
+- `@phdthesis`, `@masterthesis` for dissertations and theses;
+- `@misc` used if none of the other entry types quite match the source. Frequently used to cite web pages, but can be anything from lecture slides to personal notes;
+- `@unpublished` a document that has not been officially published such as a paper draft or manuscript in preparation.
+
+## Differenze fra Overleaf e VSCode {.smaller}
+
+Processing LATEX reference lists or other forms of cross-referencing, such as indexes, requires multiple runs of software—including the TEX engine (e.g., pdflatex) and associated programs such as BibTEX, makeindex, etc. As mentioned above, Overleaf handles all of these mulitple runs automatically, so you don't have to worry about them.
+
+## Estensioni: bibliografia {.smaller}
+
+- `bib`: used to describe bibliographical references. When used together with LaTeX and BibTeX, it generates a file with the `.bbl` extension;
+- `bbl`: a `tex` file with a different extension containing your references **formatted according to the bibliography style chosen in your `.tex` file** through the `\bibligraphystyle{}` command. LaTeX then automatically inserts the contents of the `bbl` file in the exact place you call the `\bibliography{}` command in your document.
+- `bcf`: **biber control file**, contains the information biber needs to process your bibliography
+- `blg`: **BibTeX log file**, contains information about any errors, warnings, or other messages generated during the processing of the bibliography
+- `bst`: **BibTeX style file**, specify the formatting and style of the bibliography
+- `cfg`: **configuration file**, contains information about the formatting of the bibliography
+- `cbx`: **biblatex citation style file**, specify the formatting and style of the citations;
+- `bbx`: **biblatex bibliography style file**, specify the formatting and style of the bibliography
+
+### Esempi di modifiche alla bibliografia {#bibliography-examples .smaller}
+
+```latex
+% https://tex.stackexchange.com/questions/10682/suppress-in-biblatex
+\renewbibmacro{in:}{}
+
+% https://tex.stackexchange.com/questions/620082/in-biblatex-how-to-change-pp-to-p-when-referring-to-pages-of-references
+\DefineBibliographyStrings{english}{%
+    page={p\adddot},%
+    pages={p\adddot},%
+}
+```
+
+<!-- # Definizione di nuovi comandi {.smaller} -->
+
+<!-- [From `\newcommand` to `\NewDocumentCommand`](https://www.texdev.net/2010/05/23/from-newcommand-to-newdocumentcommand/) -->
 
 # Appendice {.smaller}
 

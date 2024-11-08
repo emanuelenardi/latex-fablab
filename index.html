@@ -2037,19 +2037,7 @@ Package thmtools Info: Key `qed' (with value `\qedsymbol ')
 <section id="crezione-bibliografia" class="title-slide slide level2 smaller center scrollable">
 <h2>Come creare un bibliografia</h2>
 <div class="columns">
-<div class="column" style="width:35%;">
-<div class="sourceCode" id="cb42"><pre class="sourceCode txt code-with-copy"><code class="sourceCode default"><span id="cb42-1"><a href="" aria-hidden="true" tabindex="-1"></a>.</span>
-<span id="cb42-2"><a href="" aria-hidden="true" tabindex="-1"></a>├── assets/</span>
-<span id="cb42-3"><a href="" aria-hidden="true" tabindex="-1"></a>│   ├── ...</span>
-<span id="cb42-4"><a href="" aria-hidden="true" tabindex="-1"></a>│   └── resources/</span>
-<span id="cb42-5"><a href="" aria-hidden="true" tabindex="-1"></a>│       └── ✏️bibliography.bib</span>
-<span id="cb42-6"><a href="" aria-hidden="true" tabindex="-1"></a>├── settings/</span>
-<span id="cb42-7"><a href="" aria-hidden="true" tabindex="-1"></a>│   ├── ...</span>
-<span id="cb42-8"><a href="" aria-hidden="true" tabindex="-1"></a>│   ├── ✏️set-bibliography.sty</span>
-<span id="cb42-9"><a href="" aria-hidden="true" tabindex="-1"></a>│   └── ...</span>
-<span id="cb42-10"><a href="" aria-hidden="true" tabindex="-1"></a>├── ✏️thesis.preamble.sty</span>
-<span id="cb42-11"><a href="" aria-hidden="true" tabindex="-1"></a>└── ✏️thesis.tex</span></code><button title="Copia negli appunti" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div><div class="column" style="width:65%;">
+<div class="column" style="width:65%;">
 <ol type="1">
 <li>crea un file <code>bibliography.bib</code>:
 <ol type="a">
@@ -2068,17 +2056,86 @@ Package thmtools Info: Key `qed' (with value `\qedsymbol ')
 </ol></li>
 <li>personalizza lo stile della bibliografia con <code>\bibliographystyle{&lt;style&gt;}</code>; <!-- 7. personalizza la bibliografia con `\DeclareFieldFormat{<field>}{<format>}`. --></li>
 </ol>
+</div><div class="column" style="width:35%;">
+<div class="sourceCode" id="cb42"><pre class="sourceCode txt code-with-copy"><code class="sourceCode default"><span id="cb42-1"><a href="" aria-hidden="true" tabindex="-1"></a>.</span>
+<span id="cb42-2"><a href="" aria-hidden="true" tabindex="-1"></a>├── assets/</span>
+<span id="cb42-3"><a href="" aria-hidden="true" tabindex="-1"></a>│   ├── ...</span>
+<span id="cb42-4"><a href="" aria-hidden="true" tabindex="-1"></a>│   └── resources/</span>
+<span id="cb42-5"><a href="" aria-hidden="true" tabindex="-1"></a>│       └── ✏️bibliography.bib</span>
+<span id="cb42-6"><a href="" aria-hidden="true" tabindex="-1"></a>├── settings/</span>
+<span id="cb42-7"><a href="" aria-hidden="true" tabindex="-1"></a>│   ├── ...</span>
+<span id="cb42-8"><a href="" aria-hidden="true" tabindex="-1"></a>│   ├── ✏️set-bibliography.sty</span>
+<span id="cb42-9"><a href="" aria-hidden="true" tabindex="-1"></a>│   └── ...</span>
+<span id="cb42-10"><a href="" aria-hidden="true" tabindex="-1"></a>├── ✏️thesis.preamble.sty</span>
+<span id="cb42-11"><a href="" aria-hidden="true" tabindex="-1"></a>└── ✏️thesis.tex</span></code><button title="Copia negli appunti" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div></div>
 </section>
-</section>
-<section id="definizione-di-nuovi-comandi" class="title-slide slide level1 smaller center">
-<h1>Definizione di nuovi comandi</h1>
-<p>Letture consigliate:</p>
+
+<section id="biblatex-options" class="title-slide slide level2 smaller center">
+<h2>Opzioni di stile della bibliografia</h2>
+<p><code>\usepackage[&lt;options&gt;]{biblatex}</code>, dove <code>options</code> posso essere:</p>
 <ul>
-<li><a href="https://www.texdev.net/2010/05/23/from-newcommand-to-newdocumentcommand/">From <code>\newcommand</code> to <code>\NewDocumentCommand</code></a></li>
+<li><code>backend</code>: <code>biber</code></li>
+<li><code>style</code>: <code>numeric</code></li>
+<li><code>sorting</code>: ordinati per <code>name</code>, <code>year</code>, <code>e</code> e/o <code>title</code></li>
+<li><code>citestyle</code>: 3.3.1 Citation Styles</li>
+<li><code>maxbibnames</code>:</li>
+<li><code>minbibnames</code>:</li>
+<li><code>sorting</code>:</li>
+<li><code>uniquename</code>:</li>
+<li><code>uniquelist</code>:</li>
 </ul>
 </section>
 
+<section id="bibtex-entries-1" class="title-slide slide level2 smallest center">
+<h2>BibTEX bibliography entries</h2>
+<p>Esempi di tipo di documenti:</p>
+<ul>
+<li><code>@article</code> an article from a journal, magazine, newspaper, or periodical;</li>
+<li><code>@book</code> a book where the publisher is clearly identifiable.</li>
+<li><code>@booklet</code> a printed work that is bound, but does not have a clearly identifiable publisher or supporting institution; <!-- - `@conference` an article that has been included in conference proceedings; --></li>
+<li><code>@inbook</code> a section, such as a chapter, or a page range within a book.: the chapter of interest is identified by a chapter number;</li>
+<li><code>@incollection</code> is for a contributed section in a book, so would have its own <code>author</code> and <code>title</code>. The actual title of the entire book is given in the <code>booktitle</code> field;</li>
+<li><code>@inproceedings</code> a paper that has been published in conference proceedings;</li>
+<li><code>@manual</code> a technical manual for a machine software such as would come with a purchase to explain operation to the new owner;</li>
+<li><code>@phdthesis</code>, <code>@masterthesis</code> for dissertations and theses;</li>
+<li><code>@misc</code> used if none of the other entry types quite match the source. Frequently used to cite web pages, but can be anything from lecture slides to personal notes;</li>
+<li><code>@unpublished</code> a document that has not been officially published such as a paper draft or manuscript in preparation.</li>
+</ul>
+</section>
+
+<section id="differenze-fra-overleaf-e-vscode" class="title-slide slide level2 smaller center">
+<h2>Differenze fra Overleaf e VSCode</h2>
+<p>Processing LATEX reference lists or other forms of cross-referencing, such as indexes, requires multiple runs of software—including the TEX engine (e.g., pdflatex) and associated programs such as BibTEX, makeindex, etc. As mentioned above, Overleaf handles all of these mulitple runs automatically, so you don’t have to worry about them.</p>
+</section>
+
+<section id="estensioni-bibliografia" class="title-slide slide level2 smaller center">
+<h2>Estensioni: bibliografia</h2>
+<ul>
+<li><code>bib</code>: used to describe bibliographical references. When used together with LaTeX and BibTeX, it generates a file with the <code>.bbl</code> extension;</li>
+<li><code>bbl</code>: a <code>tex</code> file with a different extension containing your references <strong>formatted according to the bibliography style chosen in your <code>.tex</code> file</strong> through the <code>\bibligraphystyle{}</code> command. LaTeX then automatically inserts the contents of the <code>bbl</code> file in the exact place you call the <code>\bibliography{}</code> command in your document.</li>
+<li><code>bcf</code>: <strong>biber control file</strong>, contains the information biber needs to process your bibliography</li>
+<li><code>blg</code>: <strong>BibTeX log file</strong>, contains information about any errors, warnings, or other messages generated during the processing of the bibliography</li>
+<li><code>bst</code>: <strong>BibTeX style file</strong>, specify the formatting and style of the bibliography</li>
+<li><code>cfg</code>: <strong>configuration file</strong>, contains information about the formatting of the bibliography</li>
+<li><code>cbx</code>: <strong>biblatex citation style file</strong>, specify the formatting and style of the citations;</li>
+<li><code>bbx</code>: <strong>biblatex bibliography style file</strong>, specify the formatting and style of the bibliography</li>
+</ul>
+</section>
+<section id="bibliography-examples" class="slide level3 smaller">
+<h3>Esempi di modifiche alla bibliografia</h3>
+<div class="sourceCode" id="cb43"><pre class="sourceCode numberSource latex number-lines code-with-copy"><code class="sourceCode latex"><span id="cb43-1"><a href=""></a><span class="co">% https://tex.stackexchange.com/questions/10682/suppress-in-biblatex</span></span>
+<span id="cb43-2"><a href=""></a><span class="fu">\renewbibmacro</span>{in:}{}</span>
+<span id="cb43-3"><a href=""></a></span>
+<span id="cb43-4"><a href=""></a><span class="co">% https://tex.stackexchange.com/questions/620082/in-biblatex-how-to-change-pp-to-p-when-referring-to-pages-of-references</span></span>
+<span id="cb43-5"><a href=""></a><span class="fu">\DefineBibliographyStrings</span>{english}{<span class="co">%</span></span>
+<span id="cb43-6"><a href=""></a>    page={p<span class="fu">\adddot</span>},<span class="co">%</span></span>
+<span id="cb43-7"><a href=""></a>    pages={p<span class="fu">\adddot</span>},<span class="co">%</span></span>
+<span id="cb43-8"><a href=""></a>}</span></code><button title="Copia negli appunti" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<!-- # Definizione di nuovi comandi {.smaller} -->
+<!-- [From `\newcommand` to `\NewDocumentCommand`](https://www.texdev.net/2010/05/23/from-newcommand-to-newdocumentcommand/) -->
+</section>
+</section>
 <section>
 <section id="appendice" class="title-slide slide level1 smaller center">
 <h1>Appendice</h1>
