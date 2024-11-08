@@ -460,7 +460,7 @@
 <h1>Installazione</h1>
 
 </section>
-<section id="distribuzione-di-tex" class="title-slide slide level2 smaller center">
+<section id="tex-distro" class="title-slide slide level2 smaller center">
 <h2>Distribuzione di TeX</h2>
 <p>Installeremo un sistema TeX locale completamente funzionante; sono disponibili diverse opzioni multipiattaforma tra cui scegliere: <a href="https://miktex.org/">MiKTeX</a>, <a href="https://www.tug.org/mactex/">MacTeX</a>, or <a href="https://www.tug.org/texlive/">TeX Live</a></p>
 <p>Per questo corso <ins><strong>useremo TeX Live</strong></ins>, un sistema TeX completo e cross-platform.</p>
@@ -1195,8 +1195,8 @@ You do not need to remove an installation of a previous release, or any system-p
 <h1>Documentazione</h1>
 
 </section>
-<section class="slide level3">
-
+<section id="texdoc" class="title-slide slide level2 center">
+<h2>texdoc</h2>
 <div class="sourceCode" id="cb20"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb20-1"><a href=""></a><span class="ex">texdoc</span> minted</span></code><button title="Copia negli appunti" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="fragment">
 <div class="sourceCode" id="cb21"><pre class="sourceCode numberSource txt number-lines code-with-copy"><code class="sourceCode default"><span id="cb21-1"><a href=""></a>You don't appear to have any local documentation installed.</span>
@@ -1214,7 +1214,8 @@ You do not need to remove an installation of a previous release, or any system-p
 <li><p>impostazine <em>shortcut search engine</em> su Chrome</p></li>
 </ul>
 </div>
-</section></section>
+</section>
+</section>
 <section>
 <section id="vscode" class="title-slide slide level1 white smaller center" data-background-image="assets/images/hero/vscode.jpg" data-background-size="cover">
 <h1>Visual Studio Code</h1>
@@ -1953,7 +1954,7 @@ Package thmtools Info: Key `qed' (with value `\qedsymbol ')
 <section>
 <section id="writing-code" class="title-slide slide level1 smaller center">
 <h1>Scrivere codice</h1>
-
+<p>Scrivere codice nel testo, importare file esterni e personalizzarne l’apparenza.</p>
 </section>
 <section id="importare-il-pacchetto-minted" class="title-slide slide level2 smaller center">
 <h2>Importare il pacchetto <code>minted</code></h2>
@@ -2019,11 +2020,48 @@ Package thmtools Info: Key `qed' (with value `\qedsymbol ')
 <p>Per ulteriori personalizzazioni, consultare la <a href="https://ctan.mirror.garr.it/mirrors/ctan/macros/latex/contrib/minted/minted.pdf">documentazione</a>.</p>
 </section>
 </section>
-<section id="la-bibliografia" class="title-slide slide level1 center">
+<section>
+<section id="bibliography" class="title-slide slide level1 smaller center">
 <h1>La bibliografia</h1>
-
+<p>Creazione, gestione e personalizzazione della bibliografia.</p>
 </section>
-
+<section id="crezione-bibliografia" class="title-slide slide level2 smaller center scrollable">
+<h2>Come creare un bibliografia</h2>
+<div class="columns">
+<div class="column" style="width:35%;">
+<div class="sourceCode" id="cb42"><pre class="sourceCode txt code-with-copy"><code class="sourceCode default"><span id="cb42-1"><a href="" aria-hidden="true" tabindex="-1"></a>.</span>
+<span id="cb42-2"><a href="" aria-hidden="true" tabindex="-1"></a>├── assets/</span>
+<span id="cb42-3"><a href="" aria-hidden="true" tabindex="-1"></a>│   ├── resources/</span>
+<span id="cb42-4"><a href="" aria-hidden="true" tabindex="-1"></a>│   │   └── ✏️bibliography.bib</span>
+<span id="cb42-5"><a href="" aria-hidden="true" tabindex="-1"></a>│   ├── ...</span>
+<span id="cb42-6"><a href="" aria-hidden="true" tabindex="-1"></a>│   └── settings/</span>
+<span id="cb42-7"><a href="" aria-hidden="true" tabindex="-1"></a>│       └── ✏️set-bibliography.sty</span>
+<span id="cb42-8"><a href="" aria-hidden="true" tabindex="-1"></a>├── ...</span>
+<span id="cb42-9"><a href="" aria-hidden="true" tabindex="-1"></a>├── ✏️thesis.preamble.sty</span>
+<span id="cb42-10"><a href="" aria-hidden="true" tabindex="-1"></a>└── ✏️thesis.tex</span></code><button title="Copia negli appunti" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div><div class="column" style="width:65%;">
+<ol type="1">
+<li>crea un file <code>bibliography.bib</code>:
+<ol type="a">
+<li>aggiungi le voci bibliografiche nel formato <a href="#/bibtex-entries">formato richiesto da BibTeX</a>;</li>
+</ol></li>
+<li>all’interno di: <code>set-bibliography.sty</code>:
+<ol type="a">
+<li>importa il package <code>biblatex</code>;</li>
+<li>collega il database <code>.bib</code> da utilizzare tramite il comando <code>\addbibresource{&lt;nome&gt;.&lt;ext&gt;}</code>.</li>
+</ol></li>
+<li>includi <code>set-bibliography.sty</code> in <code>thesis.preamble.sty</code>;</li>
+<li>stampa la bibliografia con <code>\printbibliography</code>;</li>
+<li>aggiungi il passaggio di compilazione ad <code>arara</code>:
+<ol type="a">
+<li><code>% arara: biber</code></li>
+</ol></li>
+<li>personalizza lo stile della bibliografia con <code>\bibliographystyle{&lt;style&gt;}</code>;</li>
+<li>personalizza la bibliografia con <code>\DeclareFieldFormat{&lt;field&gt;}{&lt;format&gt;}</code>.</li>
+</ol>
+</div></div>
+</section>
+</section>
 <section id="definizione-di-nuovi-comandi" class="title-slide slide level1 smaller center">
 <h1>Definizione di nuovi comandi</h1>
 <p>Letture consigliate:</p>

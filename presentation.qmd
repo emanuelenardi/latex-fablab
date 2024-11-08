@@ -18,7 +18,7 @@ $\rm\LaTeX$ si pronuncia `/ˈlɑːtɛk/` or `/ˈleɪtɛk/`, e non `/ˈleɪtɛks/
 
 # Installazione {.smaller}
 
-## Distribuzione di TeX {.smaller}
+## Distribuzione di TeX {.smaller #tex-distro}
 
 Installeremo un sistema TeX locale completamente funzionante; sono disponibili diverse opzioni multipiattaforma tra cui scegliere: [MiKTeX](https://miktex.org/), [MacTeX](https://www.tug.org/mactex/), or [TeX Live](https://www.tug.org/texlive/)
 
@@ -548,7 +548,7 @@ Aggiornare sia `tlmgr` che tutti i pacchetti:
 
 # Documentazione {.smaller}
 
----
+## texdoc {#texdoc}
 
 ```bash
 texdoc minted
@@ -1294,6 +1294,8 @@ comparire nell'indice generale.
 
 # Scrivere codice {.smaller #writing-code}
 
+Scrivere codice nel testo, importare file esterni e personalizzarne l'apparenza.
+
 ## Importare il pacchetto `minted` {.smaller}
 
 Il pacchetto `minted` contenuto nella collezione `collection-mathscience` ci permette di importare codice da file esterni e, grazie a `python` e a `pygmentize`, di evidenziarne la sintassi.
@@ -1375,7 +1377,41 @@ Il main di Java passa come paramentro \mintinline{java}{String[] args}.
 
 Per ulteriori personalizzazioni, consultare la [documentazione](https://ctan.mirror.garr.it/mirrors/ctan/macros/latex/contrib/minted/minted.pdf).
 
-# La bibliografia
+# La bibliografia {.smaller #bibliography}
+
+Creazione, gestione e personalizzazione della bibliografia.
+
+## Come creare un bibliografia {#crezione-bibliografia .smaller}
+
+::::{.columns}
+:::{.column width="35%"}
+```{.txt code-line-numbers="false"}
+.
+├── assets/
+│   ├── resources/
+│   │   └── ✏️bibliography.bib
+│   ├── ...
+│   └── settings/
+│       └── ✏️set-bibliography.sty
+├── ...
+├── ✏️thesis.preamble.sty
+└── ✏️thesis.tex
+```
+:::
+:::{.column width="65%"}
+1. crea un file `bibliography.bib`:
+   a. aggiungi le voci bibliografiche nel formato [formato richiesto da BibTeX](#bibtex-entries);
+2. all'interno di: `set-bibliography.sty`:
+   a. importa il package `biblatex`;
+   b. collega il database `.bib` da utilizzare tramite il comando `\addbibresource{<nome>.<ext>}`.
+3. includi `set-bibliography.sty` in `thesis.preamble.sty`;
+4. stampa la bibliografia con `\printbibliography`;
+5. aggiungi il passaggio di compilazione ad `arara`:
+   a. `% arara: biber`
+6. personalizza lo stile della bibliografia con `\bibliographystyle{<style>}`;
+7. personalizza la bibliografia con `\DeclareFieldFormat{<field>}{<format>}`.
+:::
+::::
 
 # Definizione di nuovi comandi {.smaller}
 
