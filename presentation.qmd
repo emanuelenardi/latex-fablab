@@ -113,9 +113,9 @@ Se ci si dimentica di aggiungere `python.exe` al `PATH`, `pip` non sarà visibil
 #### Installare solo `pip` {.smaller}
 
 ::: {layout-ncol=2}
-![3a. Solo `pip` (*before* deselezione)](assets/images/install-python/03a-optional-justpip.png)
+![3a. Solo `pip` (*prima* della deselezione)](assets/images/install-python/03a-optional-justpip.png)
 
-![3b. Solo `pip` (*after* deselezione)](assets/images/install-python/03b-optional-justpip.png)
+![3b. Solo `pip` (*dopo* la deselezione)](assets/images/install-python/03b-optional-justpip.png)
 :::
 
 :::{.callout-warning}
@@ -153,14 +153,14 @@ C:\Users\user\AppData\Local\Programs\Python\Python311\
 C:\Users\user\AppData\Local\Programs\Python\Python311\Scripts\
 ```
 
-### Environment Variables
+### Variabili d'ambiente
 
 ::: {layout-ncol=3}
-![1. Environment Variables](assets/images/install-python/06-system-properties.png)
+![1. Proprietà di sistema](assets/images/install-python/06-system-properties.png)
 
-![2. Environment Variables](assets/images/install-python/07-environment-variables.png)
+![2. Variabili d'ambiente](assets/images/install-python/07-environment-variables.png)
 
-![3. Environment Variables](assets/images/install-python/08-edit.png)
+![3. Modifica le variabili](assets/images/install-python/08-edit.png)
 :::
 
 ### Procedura installazione git {#installazione-git-windows .smaller}
@@ -208,9 +208,9 @@ C:\Users\user\AppData\Local\Programs\Python\Python311\Scripts\
 ### Procedura installazione TeX-Live {{< fa brands windows >}} {#installazione-texlive-windows .smaller}
 
 ::: {layout-ncol=2}
-![1. Microsoft Defender SmartScreen](assets/images/install-texlive/windows/00-smartscreen-more-info.png){width=400px}
+![1. "Esegui comunque" nascosto](assets/images/install-texlive/windows/00-smartscreen-more-info.png){width=400px}
 
-![2. Microsoft Defender SmartScreen](assets/images/install-texlive/windows/00-smartscreen.png){width=400px}
+![2. "Esegui comunque" visibile](assets/images/install-texlive/windows/00-smartscreen.png){width=400px}
 :::
 ::: {.nonincremental}
 1. premere "**Maggiori Informazioni**"/"**More info**";
