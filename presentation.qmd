@@ -1222,10 +1222,20 @@ $out_dir = 'build';
 
 # Struttura del progetto {.smaller #project-structure data-background-image="assets/images/hero/project-structure.jpg" data-background-size="cover"}
 
----
+## Struttura generale di una tesi {.smallest}
+
+Le voci in corsivo sono obbligatorie, quelle in tondo sono facoltative, quelle asteriscate non devono
+comparire nell'indice generale.
+
+| Supersezionamento | Sezione |
+|---------|:-----|
+| Materiale iniziale | _Frontespizio_<br>Colophon\*<br>Dedica\*<br>Sommario*<br>_Indice generale_*<br>Elenco delle figure\*<br>Elenco delle tabelle\*<br>Altri elenchi\*<br>Prefazione<br>Ringraziamenti\*<br>Introduzione non numerata |
+| Materiale principale | Introduzione numerata<br>_Capitoli_<br>Una o più appendici numerate |
+| Materiale finale | Una o più appendici non numerate<br>Glossario<br>_Bibliografia_<br>Indice analitico |
+: {tbl-colwidths="[10,45]"}
 
 :::{.code .larger}
-```{.txt code-line-numbers="|53-54|51-52|48-50|54|53|24|23|22|2|3-4|5-13|6-9|10-12|13|14|15|16-18|19-20|21|54|"}
+```{.txt code-line-numbers="|52-53|50-51|47-49|53|52|24|23|22|2|3-4|5-13|6-9|10-12|13|14|15|16-18|19-20|21|54|"}
 .
 ├── assets/
 │   ├── appendixes/
@@ -1253,7 +1263,7 @@ $out_dir = 'build';
 │   ├── pdf-props.sty
 │   ├── set-algorithm2e.sty
 │   ├── set-bibliography.sty
-│   ├── set-color.sty
+│   ├── set-code.sty
 │   ├── set-color.sty
 │   ├── set-debug.sty
 │   ├── set-geometry.sty
@@ -1265,7 +1275,6 @@ $out_dir = 'build';
 │   ├── set-lists.sty
 │   ├── set-macros.sty
 │   ├── set-math.sty
-│   ├── set-minted.sty
 │   ├── set-pagestyle.sty
 │   ├── set-pdf-props.sty
 │   ├── set-redefinitions.sty
@@ -1283,12 +1292,12 @@ $out_dir = 'build';
 ```
 :::
 
-# Scrivere codice {.white .smaller #writing-code data-background-image="assets/images/hero/writing-code.jpg" data-background-size="cover"}
+# Scrivere codice {.smaller #writing-code}
 
 ## Importare il pacchetto `minted` {.smaller}
 
 Il pacchetto `minted` contenuto nella collezione `collection-mathscience` ci permette di importare codice da file esterni e, grazie a `python` e a `pygmentize`, di evidenziarne la sintassi.
-Importiamo il pacchetto in `libraries/set-code.sty`:
+Importiamo il pacchetto in `settings/set-code.sty`:
 ```latex
 \usepackage[outputdir=build]{minted}
 ```
@@ -1382,18 +1391,6 @@ Letture consigliate:
 
 - [Lengths in LaTeX](https://www.overleaf.com/learn/latex/Lengths_in_LaTeX)
 - [Font sizes, families, and styles](https://www.overleaf.com/learn/latex/Font_sizes%2C_families%2C_and_styles#Font_families) -->
-
-## Struttura generale di una tesi {.smallest}
-
-Le voci in corsivo sono obbligatorie, quelle in tondo sono facoltative, quelle asteriscate non devono
-comparire nell’indice generale.
-
-| Supersezionamento | Sezione |
-|---------|:-----|
-| Materiale iniziale | _Frontespizio_<br>Colophon\*<br>Dedica\*<br>Sommario*<br>_Indice generale_*<br>Elenco delle figure\*<br>Elenco delle tabelle\*<br>Altri elenchi\*<br>Prefazione<br>Ringraziamenti\*<br>Introduzione non numerata |
-| Materiale principale | Introduzione numerata<br>_Capitoli_<br>Una o più appendici numerate |
-| Materiale finale | Una o più appendici non numerate<br>Glossario<br>_Bibliografia_<br>Indice analitico |
-: {tbl-colwidths="[10,45]"}
 
 ## Special LaTeX characters {.smallest}
 

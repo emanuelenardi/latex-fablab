@@ -1864,10 +1864,37 @@ Package thmtools Info: Key `qed' (with value `\qedsymbol ')
 <h1>Struttura del progetto</h1>
 
 </section>
-<section class="slide level3">
-
+<section id="struttura-generale-di-una-tesi" class="title-slide slide level2 smallest center">
+<h2>Struttura generale di una tesi</h2>
+<p>Le voci in corsivo sono obbligatorie, quelle in tondo sono facoltative, quelle asteriscate non devono comparire nell’indice generale.</p>
+<table class="caption-top" style="width:55%;">
+<colgroup>
+<col style="width: 10%">
+<col style="width: 45%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Supersezionamento</th>
+<th style="text-align: left;">Sezione</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Materiale iniziale</td>
+<td style="text-align: left;"><em>Frontespizio</em><br>Colophon*<br>Dedica*<br>Sommario<em><br><em>Indice generale</em></em><br>Elenco delle figure*<br>Elenco delle tabelle*<br>Altri elenchi*<br>Prefazione<br>Ringraziamenti*<br>Introduzione non numerata</td>
+</tr>
+<tr class="even">
+<td>Materiale principale</td>
+<td style="text-align: left;">Introduzione numerata<br><em>Capitoli</em><br>Una o più appendici numerate</td>
+</tr>
+<tr class="odd">
+<td>Materiale finale</td>
+<td style="text-align: left;">Una o più appendici non numerate<br>Glossario<br><em>Bibliografia</em><br>Indice analitico</td>
+</tr>
+</tbody>
+</table>
 <div class="code larger">
-<div class="sourceCode" id="cb33" data-code-line-numbers="|53-54|51-52|48-50|54|53|24|23|22|2|3-4|5-13|6-9|10-12|13|14|15|16-18|19-20|21|54|"><pre class="sourceCode numberSource txt number-lines code-with-copy"><code class="sourceCode default"><span id="cb33-1"><a href=""></a>.</span>
+<div class="sourceCode" id="cb33" data-code-line-numbers="|52-53|50-51|47-49|53|52|24|23|22|2|3-4|5-13|6-9|10-12|13|14|15|16-18|19-20|21|54|"><pre class="sourceCode numberSource txt number-lines code-with-copy"><code class="sourceCode default"><span id="cb33-1"><a href=""></a>.</span>
 <span id="cb33-2"><a href=""></a>├── assets/</span>
 <span id="cb33-3"><a href=""></a>│   ├── appendixes/</span>
 <span id="cb33-4"><a href=""></a>│   │   └── A*-appendix-name.tex</span>
@@ -1894,7 +1921,7 @@ Package thmtools Info: Key `qed' (with value `\qedsymbol ')
 <span id="cb33-25"><a href=""></a>│   ├── pdf-props.sty</span>
 <span id="cb33-26"><a href=""></a>│   ├── set-algorithm2e.sty</span>
 <span id="cb33-27"><a href=""></a>│   ├── set-bibliography.sty</span>
-<span id="cb33-28"><a href=""></a>│   ├── set-color.sty</span>
+<span id="cb33-28"><a href=""></a>│   ├── set-code.sty</span>
 <span id="cb33-29"><a href=""></a>│   ├── set-color.sty</span>
 <span id="cb33-30"><a href=""></a>│   ├── set-debug.sty</span>
 <span id="cb33-31"><a href=""></a>│   ├── set-geometry.sty</span>
@@ -1906,31 +1933,31 @@ Package thmtools Info: Key `qed' (with value `\qedsymbol ')
 <span id="cb33-37"><a href=""></a>│   ├── set-lists.sty</span>
 <span id="cb33-38"><a href=""></a>│   ├── set-macros.sty</span>
 <span id="cb33-39"><a href=""></a>│   ├── set-math.sty</span>
-<span id="cb33-40"><a href=""></a>│   ├── set-minted.sty</span>
-<span id="cb33-41"><a href=""></a>│   ├── set-pagestyle.sty</span>
-<span id="cb33-42"><a href=""></a>│   ├── set-pdf-props.sty</span>
-<span id="cb33-43"><a href=""></a>│   ├── set-redefinitions.sty</span>
-<span id="cb33-44"><a href=""></a>│   ├── set-spacing.sty</span>
-<span id="cb33-45"><a href=""></a>│   ├── set-tables.sty</span>
-<span id="cb33-46"><a href=""></a>│   ├── set-typography.sty</span>
-<span id="cb33-47"><a href=""></a>│   └── set-warnings.sty</span>
-<span id="cb33-48"><a href=""></a>├── .araraconfig.yaml</span>
-<span id="cb33-49"><a href=""></a>├── .chktexrc</span>
-<span id="cb33-50"><a href=""></a>├── .latexmkrc</span>
-<span id="cb33-51"><a href=""></a>├── presentation.preamble.sty</span>
-<span id="cb33-52"><a href=""></a>├── presentation.tex</span>
-<span id="cb33-53"><a href=""></a>├── thesis.preamble.sty</span>
-<span id="cb33-54"><a href=""></a>└── thesis.tex</span></code><button title="Copia negli appunti" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb33-40"><a href=""></a>│   ├── set-pagestyle.sty</span>
+<span id="cb33-41"><a href=""></a>│   ├── set-pdf-props.sty</span>
+<span id="cb33-42"><a href=""></a>│   ├── set-redefinitions.sty</span>
+<span id="cb33-43"><a href=""></a>│   ├── set-spacing.sty</span>
+<span id="cb33-44"><a href=""></a>│   ├── set-tables.sty</span>
+<span id="cb33-45"><a href=""></a>│   ├── set-typography.sty</span>
+<span id="cb33-46"><a href=""></a>│   └── set-warnings.sty</span>
+<span id="cb33-47"><a href=""></a>├── .araraconfig.yaml</span>
+<span id="cb33-48"><a href=""></a>├── .chktexrc</span>
+<span id="cb33-49"><a href=""></a>├── .latexmkrc</span>
+<span id="cb33-50"><a href=""></a>├── presentation.preamble.sty</span>
+<span id="cb33-51"><a href=""></a>├── presentation.tex</span>
+<span id="cb33-52"><a href=""></a>├── thesis.preamble.sty</span>
+<span id="cb33-53"><a href=""></a>└── thesis.tex</span></code><button title="Copia negli appunti" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-</section></section>
+</section>
+</section>
 <section>
-<section id="writing-code" class="title-slide slide level1 white smaller center" data-background-image="assets/images/hero/writing-code.jpg" data-background-size="cover">
+<section id="writing-code" class="title-slide slide level1 smaller center">
 <h1>Scrivere codice</h1>
 
 </section>
 <section id="importare-il-pacchetto-minted" class="title-slide slide level2 smaller center">
 <h2>Importare il pacchetto <code>minted</code></h2>
-<p>Il pacchetto <code>minted</code> contenuto nella collezione <code>collection-mathscience</code> ci permette di importare codice da file esterni e, grazie a <code>python</code> e a <code>pygmentize</code>, di evidenziarne la sintassi. Importiamo il pacchetto in <code>libraries/set-code.sty</code>:</p>
+<p>Il pacchetto <code>minted</code> contenuto nella collezione <code>collection-mathscience</code> ci permette di importare codice da file esterni e, grazie a <code>python</code> e a <code>pygmentize</code>, di evidenziarne la sintassi. Importiamo il pacchetto in <code>settings/set-code.sty</code>:</p>
 <div class="sourceCode" id="cb34"><pre class="sourceCode numberSource latex number-lines code-with-copy"><code class="sourceCode latex"><span id="cb34-1"><a href=""></a><span class="bu">\usepackage</span>[outputdir=build]{<span class="ex">minted</span>}</span></code><button title="Copia negli appunti" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>Nel testo possiamo scrivere codice direttamente tramite il nuovo ambiente <code>minted</code>:</p>
 <div class="sourceCode" id="cb35"><pre class="sourceCode numberSource latex number-lines code-with-copy"><code class="sourceCode latex"><span id="cb35-1"><a href=""></a><span class="kw">\begin</span>{<span class="ex">minted</span>}{java}</span>
@@ -2014,37 +2041,6 @@ Package thmtools Info: Key `qed' (with value `\qedsymbol ')
 - [Lengths in LaTeX](https://www.overleaf.com/learn/latex/Lengths_in_LaTeX)
 - [Font sizes, families, and styles](https://www.overleaf.com/learn/latex/Font_sizes%2C_families%2C_and_styles#Font_families) -->
 </section>
-<section id="struttura-generale-di-una-tesi" class="title-slide slide level2 smallest center">
-<h2>Struttura generale di una tesi</h2>
-<p>Le voci in corsivo sono obbligatorie, quelle in tondo sono facoltative, quelle asteriscate non devono comparire nell’indice generale.</p>
-<table class="caption-top" style="width:55%;">
-<colgroup>
-<col style="width: 10%">
-<col style="width: 45%">
-</colgroup>
-<thead>
-<tr class="header">
-<th>Supersezionamento</th>
-<th style="text-align: left;">Sezione</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>Materiale iniziale</td>
-<td style="text-align: left;"><em>Frontespizio</em><br>Colophon*<br>Dedica*<br>Sommario<em><br><em>Indice generale</em></em><br>Elenco delle figure*<br>Elenco delle tabelle*<br>Altri elenchi*<br>Prefazione<br>Ringraziamenti*<br>Introduzione non numerata</td>
-</tr>
-<tr class="even">
-<td>Materiale principale</td>
-<td style="text-align: left;">Introduzione numerata<br><em>Capitoli</em><br>Una o più appendici numerate</td>
-</tr>
-<tr class="odd">
-<td>Materiale finale</td>
-<td style="text-align: left;">Una o più appendici non numerate<br>Glossario<br><em>Bibliografia</em><br>Indice analitico</td>
-</tr>
-</tbody>
-</table>
-</section>
-
 <section id="special-latex-characters" class="title-slide slide level2 smallest center">
 <h2>Special LaTeX characters</h2>
 <p>Alcuni caratteri sono riservati per comandi <span class="math inline">\(\rm\LaTeX\)</span>. Non possono essere usati direttamente nel codice sorgente.</p>
