@@ -1,18 +1,10 @@
 # Introduzione {data-background="https://images.unsplash.com/photo-1573848855919-9abecc93e456?auto=format&fit=crop&w=1470&q=100" data-background-size=cover .smaller}
 
-## {#telegram-group-light data-menu-title="telegram-group-light" data-background="assets/images/telegram/join-telegram-group-light-filled.png" data-background-size=cover}
-
-[](assets/images/telegram/join-telegram-group-light-filled.png)
-
 ## {#telegram-group-dark data-menu-title="telegram-group-dark" data-background="assets/images/telegram/join-telegram-group-dark-filled.png" data-background-size=cover}
-
-[](assets/images/telegram/join-telegram-group-dark-filled.png)
 
 ## Pronuncia
 
 $\rm\LaTeX$ si pronuncia `/ˈlɑːtɛk/` or `/ˈleɪtɛk/`, e non `/ˈleɪtɛks/` o `/ˈleɪˌtɛks/` ([IPA symbols](https://en.wikipedia.org/wiki/Help:IPA/English)).
-
-. . .
 
 ![Sam Smith ai Brit Awards (febbraio 2023)](assets/images/pronunciation/sam-smith-latex.jpg){fig-align="center" width="55%"}
 
@@ -61,6 +53,7 @@ Per seguire questo corso è necessario avere installati sulla propria macchina:
 
 {{< fa arrow-right >}} [Installazione guidata per {{< fa brands linux >}} Linux/ {{< fa brands apple >}} Mac](#installazione-unix)
 :::
+
 
 ## Installazione dei requisiti su Windows {#installazione-windows .smaller}
 
