@@ -948,7 +948,7 @@ Package thmtools Info: Key `qed' (with value `\qedsymbol ')
 
 ---
 
-#### Esempio di routine
+#### Esempio di routine {#arara-routine}
 
 :::{.code .larger}
 ```{.latex filename=".araraconfig.yaml" code-line-numbers="|1-5|7-8|10-11|13-17|19-20"}
@@ -1174,11 +1174,11 @@ $out_dir = 'build';
 
 ## Package da <u class="wavy">non caricare</u>
 
-- `tabu` → [...`tabularray`]
+- `tabu`, `tabularx`, `booktabs`, `array`, `multirow`, `longtable` → [...`tabularray`, `tblr-extras`]
+- [`epsf`, `epsfig`, `psfig`] → `graphicx`
 - `cite` → `biblatex`
 - [`subfigure`, `subfig`] → `subcaption`
 - `glossary` → `glossaries`
-- [`epsf`, `epsfig`, `psfig`] → `graphicx`
 - `enumerate` → `enumitem`
 
 # Scaletta argomenti {.smaller}
