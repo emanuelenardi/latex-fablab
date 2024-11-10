@@ -476,7 +476,7 @@ Se tutto è corretto, non dimenticare di rimuovere la cartella di installazione:
 rm -rf /tmp/texlive
 ```
 
-## Controllo dell'installazione {{< fa brands windows >}} {{< fa brands linux >}} {{< fa brands apple >}}
+## Controllo dell'installazione {{< fa brands windows >}} {{< fa brands linux >}} {{< fa brands apple >}} {#controllo-installazione}
 
 Per accertarti che l'installazione sia andata a buon fine:
 
@@ -503,16 +503,18 @@ arara is released under the New BSD license.
 [...]
 ```
 
-## Controllo dell'installazione {{< fa brands windows >}} {{< fa brands linux >}} {{< fa brands apple >}}
+## Controllo dell'installazione {{< fa brands windows >}} {{< fa brands linux >}} {{< fa brands apple >}} {#hello-world}
 
-Produrre un semplice documento:
-```latex
+1. crea un semplice documento:
+```{.latex filename="main.tex"}
+% arara: pdflatex
 \documentclass{article}
 
 \begin{document}
 Hello \LaTeX!
 \end{document}
 ```
+2. apri un terminale e digita `arara main`
 $$
 \rm Hello\ \LaTeX!
 $$
@@ -1289,6 +1291,29 @@ comparire nell'indice generale.
 
 # Scrivere la matematica
 
+## Materiale rilevante
+
+- [Why is  `\[...\]` preferable to `$$...$$`?](https://tex.stackexchange.com/questions/503/why-is-preferable-to)
+- [witharrows](https://ctan.org/pkg/witharrows)
+- [siunitx](https://ctan.org/pkg/siunitx)
+
+## Ambienti per la matematica {#math-envs}
+
+### witharrows {.smaller #witharrows}
+
+- [witharrows](https://ctan.mirror.garr.it/mirrors/ctan/macros/generic/witharrows/witharrows.pdf)
+
+```latex
+\[\begin{WithArrows}
+    f(n) &= 3 n^2 + 7 n^2 \Arrow{\(\forall n \geqslant 1\), effettuo una maggiorazione} \\
+    &\leqslant 3 n^2 + 7 n^2 \Arrow{raccolgo} \\
+    &\leqslant 10 n^2 \Arrow[tikz={text width=4cm}]{esiste una certa costante \(c\) per la quale \(f(n) \leqslant c_2 n^2\)?}\\
+    &\overset{?}{\leqslant} c_2 n^2 \Arrow{metto a confronto}\\
+    10 n^2 &\leqslant c_2 n^2 \Arrow{semplifico}\\
+    10 &\leqslant c_2
+\end{WithArrows}\]
+```
+
 # Scrivere codice {.smaller #writing-code}
 
 Scrivere codice nel testo, importare file esterni e personalizzarne l'apparenza.
@@ -1483,9 +1508,11 @@ Processing LATEX reference lists or other forms of cross-referencing, such as in
 }
 ```
 
-# Definire nuovi comandi {.smaller}
+# Definire comandi {.smaller}
 
-Come creare ed utilizzare comandi personalizzati per le proprie esigenze
+Come creare ed utilizzare comandi personalizzati per le proprie esigenze.
+
+---
 
 [From `\newcommand` to `\NewDocumentCommand`](https://www.texdev.net/2010/05/23/from-newcommand-to-newdocumentcommand/)
 
