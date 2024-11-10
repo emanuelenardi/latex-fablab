@@ -37,10 +37,6 @@ toc: false
 slide-level: 3
 number-sections: false
 format:
-  # html:
-  #     theme:
-  #         light: flatly
-  #         dark: darkly
   revealjs:
     scrollable: true
     # overral theme
