@@ -1207,11 +1207,11 @@ $out_dir = 'build';
 - scrittura di pseudocodice (`algorithms2e`)
 - creazione di un glossario (`glossaries`), acronimi (`acronym`), indice (`index`)
 
-<!-- # Perché la tipografia è _importante_? {.smaller #tipografia data-background-image="assets/images/hero/typography.jpg" data-background-size="cover"} -->
+# Perché la tipografia è _importante_? {.smaller #tipografia data-background-image="assets/images/hero/typography.jpg" data-background-size="cover"}
 
-<!-- ### Oscars 2017 Best Picture announcement -->
+### Oscars 2017 Best Picture announcement
 
-<!-- {{< video https://www.youtube.com/embed/eZSe4xVXHhI width="100%" height="100%" >}} -->
+{{< video https://www.youtube.com/embed/eZSe4xVXHhI width="100%" height="100%" >}}
 
 # Struttura del progetto {.smaller #project-structure data-background-image="assets/images/hero/project-structure.jpg" data-background-size="cover"}
 
@@ -1286,6 +1286,8 @@ comparire nell'indice generale.
 └── thesis.tex
 ```
 :::
+
+# Scrivere la matematica
 
 # Scrivere codice {.smaller #writing-code}
 
@@ -1481,9 +1483,11 @@ Processing LATEX reference lists or other forms of cross-referencing, such as in
 }
 ```
 
-<!-- # Definizione di nuovi comandi {.smaller} -->
+# Definire nuovi comandi {.smaller}
 
-<!-- [From `\newcommand` to `\NewDocumentCommand`](https://www.texdev.net/2010/05/23/from-newcommand-to-newdocumentcommand/) -->
+Come creare ed utilizzare comandi personalizzati per le proprie esigenze
+
+[From `\newcommand` to `\NewDocumentCommand`](https://www.texdev.net/2010/05/23/from-newcommand-to-newdocumentcommand/)
 
 # Appendice {.smaller}
 
