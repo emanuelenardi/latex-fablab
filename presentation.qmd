@@ -16,7 +16,7 @@ $\rm\LaTeX$ si pronuncia `/ˈlɑːtɛk/` or `/ˈleɪtɛk/`, e non `/ˈleɪtɛks/
 ![Maya Jama](assets/images/pronunciation/Maya-Jama-latex.webp){fig-align="center" height="450px"}
 :::
 ::: {.column width="33%"}
-![Timothee Chalamet](assets/images/pronunciation/Timothee-Chalamet-latex.webp){fig-align="center" height="450px"}
+![Timothée Chalamet](assets/images/pronunciation/Timothee-Chalamet-latex.webp){fig-align="center" height="450px"}
 :::
 ::::
 
