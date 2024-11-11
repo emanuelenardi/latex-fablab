@@ -1244,7 +1244,7 @@ You do not need to remove an installation of a previous release, or any system-p
 <img data-src="assets\images\chrome\ctan.png" class="r-stretch"><div class="sourceCode" id="cb22"><pre class="sourceCode numberSource txt number-lines code-with-copy"><code class="sourceCode default"><span id="cb22-1"><a href=""></a>https://ctan.org/search/?phrase=%s</span></code><button title="Copia negli appunti" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 
-<section id="powertoys" class="title-slide slide level2 smaller center">
+<section id="powertoys" class="title-slide slide level2 smallest center">
 <h2>Powertoys <i class="fa-brands fa-windows" aria-label="windows"></i></h2>
 <ul>
 <li><a href="https://learn.microsoft.com/it-it/windows/powertoys/">Microsoft learn</a></li>
@@ -2215,7 +2215,7 @@ Package thmtools Info: Key `qed' (with value `\qedsymbol ')
 <h1>Formattare le tabelle</h1>
 
 </section>
-<section id="package-tabularray-example" class="title-slide slide level2 smaller center">
+<section id="package-tabularray" class="title-slide slide level2 smaller center">
 <h2>Il pacchetto <code>tabularray</code></h2>
 <p>The <code>LaTeX3</code> package tabularray provides a new way to typeset tables in a keyval way. This allows the separation of content and style</p>
 <ul>
@@ -2263,7 +2263,7 @@ Package thmtools Info: Key `qed' (with value `\qedsymbol ')
 </section>
 </section>
 <section>
-<section id="scrivere-la-matematica" class="title-slide slide level1 center">
+<section id="math" class="title-slide slide level1 center">
 <h1>Scrivere la matematica</h1>
 
 </section>
@@ -2280,7 +2280,7 @@ Package thmtools Info: Key `qed' (with value `\qedsymbol ')
 <h2>Ambienti per la matematica</h2>
 
 </section>
-<section id="witharrows" class="slide level3 smaller">
+<section id="package-witharrows" class="slide level3 smaller">
 <h3>witharrows</h3>
 <ul>
 <li><a href="https://ctan.mirror.garr.it/mirrors/ctan/macros/generic/witharrows/witharrows.pdf">witharrows</a></li>
@@ -2300,7 +2300,7 @@ Package thmtools Info: Key `qed' (with value `\qedsymbol ')
 <h1>Scrivere codice</h1>
 <p>Scrivere codice nel testo, importare file esterni e personalizzarne l’apparenza.</p>
 </section>
-<section id="importare-il-pacchetto-minted" class="title-slide slide level2 smaller center">
+<section id="package-minted" class="title-slide slide level2 smaller center">
 <h2>Importare il pacchetto <code>minted</code></h2>
 <p>Il pacchetto <code>minted</code> contenuto nella collezione <code>collection-mathscience</code> ci permette di importare codice da file esterni e, grazie a <code>python</code> e a <code>pygmentize</code>, di evidenziarne la sintassi. Importiamo il pacchetto in <code>settings/set-code.sty</code>:</p>
 <div class="sourceCode" id="cb50"><pre class="sourceCode numberSource latex number-lines code-with-copy"><code class="sourceCode latex"><span id="cb50-1"><a href=""></a><span class="bu">\usepackage</span>[outputdir=build]{<span class="ex">minted</span>}</span></code><button title="Copia negli appunti" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -2317,7 +2317,7 @@ Package thmtools Info: Key `qed' (with value `\qedsymbol ')
 <p>All’interno del testo possiamo scrivere codice “<em>in linea</em>”:</p>
 <div class="sourceCode" id="cb53"><pre class="sourceCode numberSource latex number-lines code-with-copy"><code class="sourceCode latex"><span id="cb53-1"><a href=""></a>Il main di Java passa come paramentro <span class="fu">\mintinline</span>{java}{String[] args}.</span></code><button title="Copia negli appunti" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
-<section id="opzioni-utili-per-il-pacchetto-minted" class="slide level3 smaller">
+<section id="package-minted-options" class="slide level3 smaller">
 <h3>Opzioni utili per il pacchetto <code>minted</code></h3>
 <div class="code larger">
 <div class="code-with-filename">
@@ -2347,7 +2347,7 @@ Package thmtools Info: Key `qed' (with value `\qedsymbol ')
 </div>
 </div>
 </section>
-<section id="come-aggiungere-una-didascalia" class="slide level3 smaller scrollable">
+<section id="package-minted-caption" class="slide level3 smaller scrollable">
 <h3>Come aggiungere una didascalia</h3>
 <ol type="1">
 <li><p>modifichiamo il preambolo:</p>
@@ -2374,7 +2374,7 @@ Package thmtools Info: Key `qed' (with value `\qedsymbol ')
 <h1>La bibliografia</h1>
 <p>Creazione, gestione e personalizzazione della bibliografia.</p>
 </section>
-<section id="crezione-bibliografia" class="title-slide slide level2 smaller center scrollable">
+<section id="bibliography-creation" class="title-slide slide level2 smaller center scrollable">
 <h2>Come creare un bibliografia</h2>
 <div class="columns">
 <div class="column" style="width:65%;">
@@ -2429,7 +2429,7 @@ Package thmtools Info: Key `qed' (with value `\qedsymbol ')
 </ul>
 </section>
 
-<section id="come-fare-una-citazione" class="title-slide slide level2 smaller center">
+<section id="package-biblatex-citation" class="title-slide slide level2 smaller center">
 <h2>Come fare una citazione</h2>
 <ul>
 <li><p><code>\cite(s)</code></p></li>
@@ -2446,7 +2446,7 @@ Package thmtools Info: Key `qed' (with value `\qedsymbol ')
 </ul>
 </section>
 
-<section id="biblatex-options" class="title-slide slide level2 smaller center">
+<section id="package-biblatex-options" class="title-slide slide level2 smaller center">
 <h2>Opzioni di stile della bibliografia</h2>
 <p><code>\usepackage[&lt;options&gt;]{biblatex}</code>, dove <code>options</code> posso essere:</p>
 <ul>
@@ -2461,12 +2461,12 @@ Package thmtools Info: Key `qed' (with value `\qedsymbol ')
 </ul>
 </section>
 
-<section id="differenze-fra-overleaf-e-vscode" class="title-slide slide level2 smaller center">
+<section id="bibliography-overleaf-vs-vscode" class="title-slide slide level2 smaller center">
 <h2>Differenze fra Overleaf e VSCode</h2>
 <p>Processing LATEX reference lists or other forms of cross-referencing, such as indexes, requires multiple runs of software—including the TEX engine (e.g., pdflatex) and associated programs such as BibTEX, makeindex, etc. As mentioned above, Overleaf handles all of these mulitple runs automatically, so you don’t have to worry about them.</p>
 </section>
 
-<section id="bib-ext" class="title-slide slide level2 smaller center">
+<section id="package-biblatex-exts" class="title-slide slide level2 smaller center">
 <h2>Tipi di file</h2>
 <ul>
 <li><code>bib</code>: used to describe bibliographical references. When used together with LaTeX and BibTeX, it generates a file with the <code>.bbl</code> extension;</li>
@@ -2489,7 +2489,7 @@ Package thmtools Info: Key `qed' (with value `\qedsymbol ')
 </section>
 </section>
 <section>
-<section id="il-glossario" class="title-slide slide level1 center">
+<section id="glossary" class="title-slide slide level1 center">
 <h1>Il glossario</h1>
 <p>Creare glossari ed elenchi di acronimi.</p>
 </section>
