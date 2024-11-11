@@ -585,7 +585,7 @@ Would you like to search online? (y/N)
 https://ctan.org/search/?phrase=%s
 ```
 
-## Powertoys {{< fa brands windows >}} {#powertoys .smaller}
+## Powertoys {{< fa brands windows >}} {#powertoys .smallest}
 
 - [Microsoft learn](https://learn.microsoft.com/it-it/windows/powertoys/)
 
@@ -1488,7 +1488,7 @@ Personalizzazione delle didascalie degli ambienti "mobili"
 
 # Formattare le tabelle
 
-## Il pacchetto `tabularray` {.smaller #package-tabularray}
+## Il pacchetto `tabularray` {#package-tabularray .smaller}
 
 The `LaTeX3` package tabularray provides a new way to typeset tables in a keyval way. This allows the separation of content and style
 
@@ -1501,7 +1501,7 @@ The `LaTeX3` package tabularray provides a new way to typeset tables in a keyval
 \UseTblrLibrary{hook, html}% experimental
 ```
 
-### Esempio {.smaller #package-tabularray-example}
+### Esempio {#package-tabularray-example .smaller}
 
 ```{.latex filename=tabularray-example.tex code-line-numbers="|2-4|6-12|7|8|9|10|11|13-19|"}
 \begin{table}
@@ -1534,7 +1534,7 @@ The `LaTeX3` package tabularray provides a new way to typeset tables in a keyval
 \usepackage{siunitx}
 ``` -->
 
-# Scrivere la matematica
+# Scrivere la matematica {#math}
 
 ## Materiale rilevante
 
@@ -1544,7 +1544,7 @@ The `LaTeX3` package tabularray provides a new way to typeset tables in a keyval
 
 ## Ambienti per la matematica {#math-envs}
 
-### witharrows {.smaller #witharrows}
+### witharrows {#package-witharrows .smaller}
 
 - [witharrows](https://ctan.mirror.garr.it/mirrors/ctan/macros/generic/witharrows/witharrows.pdf)
 
@@ -1559,11 +1559,11 @@ The `LaTeX3` package tabularray provides a new way to typeset tables in a keyval
 \end{WithArrows}\]
 ```
 
-# Scrivere codice {.smaller #writing-code}
+# Scrivere codice {#writing-code .smaller}
 
 Scrivere codice nel testo, importare file esterni e personalizzarne l'apparenza.
 
-## Importare il pacchetto `minted` {.smaller}
+## Importare il pacchetto `minted` {#package-minted .smaller}
 
 Il pacchetto `minted` contenuto nella collezione `collection-mathscience` ci permette di importare codice da file esterni e, grazie a `python` e a `pygmentize`, di evidenziarne la sintassi.
 Importiamo il pacchetto in `settings/set-code.sty`:
@@ -1589,7 +1589,7 @@ All'interno del testo possiamo scrivere codice "_in linea_":
 Il main di Java passa come paramentro \mintinline{java}{String[] args}.
 ```
 
-### Opzioni utili per il pacchetto `minted` {.smaller}
+### Opzioni utili per il pacchetto `minted` {#package-minted-options .smaller}
 
 :::{.code .larger filename="settings/set-code.sty"}
 ```latex
@@ -1616,7 +1616,7 @@ Il main di Java passa come paramentro \mintinline{java}{String[] args}.
 ```
 :::
 
-### Come aggiungere una didascalia {.smaller}
+### Come aggiungere una didascalia {#package-minted-caption .smaller}
 
 1. modifichiamo il preambolo:
 
@@ -1644,11 +1644,11 @@ Il main di Java passa come paramentro \mintinline{java}{String[] args}.
 
 Per ulteriori personalizzazioni, consultare la [documentazione](https://ctan.mirror.garr.it/mirrors/ctan/macros/latex/contrib/minted/minted.pdf).
 
-# La bibliografia {.smaller #bibliography}
+# La bibliografia {#bibliography .smaller}
 
 Creazione, gestione e personalizzazione della bibliografia.
 
-## Come creare un bibliografia {#crezione-bibliografia .smaller}
+## Come creare un bibliografia {#bibliography-creation .smaller}
 
 ::::{.columns}
 :::{.column width="65%"}
@@ -1697,7 +1697,7 @@ Esempi di tipo di documenti:
 - `@misc` used if none of the other entry types quite match the source. Frequently used to cite web pages, but can be anything from lecture slides to personal notes;
 - `@unpublished` a document that has not been officially published such as a paper draft or manuscript in preparation.
 
-## Come fare una citazione {.smaller}
+## Come fare una citazione {#package-biblatex-citation .smaller}
 
 - `\cite(s)`
 - `\parencite(s)`
@@ -1712,7 +1712,7 @@ Esempi di tipo di documenti:
 - [Biblatex Cheat Sheet](https://tug.ctan.org/info/biblatex-cheatsheet/biblatex-cheatsheet.pdf)
 - [Quale comando usare?](https://tex.stackexchange.com/a/162370)
 
-## Opzioni di stile della bibliografia {#biblatex-options .smaller}
+## Opzioni di stile della bibliografia {#package-biblatex-options .smaller}
 
 `\usepackage[<options>]{biblatex}`, dove `options` posso essere:
 
@@ -1725,11 +1725,11 @@ Esempi di tipo di documenti:
 - `uniquename`: disambiguate using initials or full names, as required;
 - `uniquelist`: disambiguate the labelname list.
 
-## Differenze fra Overleaf e VSCode {.smaller}
+## Differenze fra Overleaf e VSCode {#bibliography-overleaf-vs-vscode .smaller}
 
 Processing LATEX reference lists or other forms of cross-referencing, such as indexes, requires multiple runs of software—including the TEX engine (e.g., pdflatex) and associated programs such as BibTEX, makeindex, etc. As mentioned above, Overleaf handles all of these mulitple runs automatically, so you don't have to worry about them.
 
-## Tipi di file {.smaller #bib-ext}
+## Tipi di file {#package-biblatex-exts .smaller}
 
 - `bib`: used to describe bibliographical references. When used together with LaTeX and BibTeX, it generates a file with the `.bbl` extension;
 - `bbl`: a `tex` file with a different extension containing your references **formatted according to the bibliography style chosen in your `.tex` file** through the `\bibligraphystyle{}` command. LaTeX then automatically inserts the contents of the `bbl` file in the exact place you call the `\bibliography{}` command in your document.
@@ -1753,11 +1753,11 @@ Processing LATEX reference lists or other forms of cross-referencing, such as in
 }
 ```
 
-# Il glossario
+# Il glossario {#glossary}
 
 Creare glossari ed elenchi di acronimi.
 
-## Il package glossaries {.smaller #package-glossaries}
+## Il package glossaries {#package-glossaries .smaller}
 
 Il pacchetto [`glossaries`](https://ctan.org/pkg/glossaries) supporta acronimi e glossari multipli e prevede il funzionamento in più lingue (tramite [`babel`](https://ctan.org/pkg/babel)).
 
