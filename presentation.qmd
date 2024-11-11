@@ -8,7 +8,17 @@ Informazioni utili per il corso.
 
 $\rm\LaTeX$ si pronuncia `/ˈlɑːtɛk/` or `/ˈleɪtɛk/`, e non `/ˈleɪtɛks/` o `/ˈleɪˌtɛks/` ([IPA symbols](https://en.wikipedia.org/wiki/Help:IPA/English)).
 
-![Sam Smith ai Brit Awards (febbraio 2023)](assets/images/pronunciation/sam-smith-latex.jpg){fig-align="center" width="55%"}
+:::: {.columns}
+::: {.column width="33%"}
+![Julia Fox](assets/images/pronunciation/Julia-Fox-latex.webp){fig-align="center" height="450px"}
+:::
+::: {.column width="33%"}
+![Maya Jama](assets/images/pronunciation/Maya-Jama-latex.webp){fig-align="center" height="450px"}
+:::
+::: {.column width="33%"}
+![Timothee Chalamet](assets/images/pronunciation/Timothee-Chalamet-latex.webp){fig-align="center" height="450px"}
+:::
+::::
 
 # Installazione {.smaller}
 
