@@ -1488,7 +1488,7 @@ Personalizzazione delle didascalie degli ambienti "mobili"
 
 # Formattare le tabelle
 
-## Il pacchetto `tabularray` {.smaller #package-tabularray-example}
+## Il pacchetto `tabularray` {.smaller #package-tabularray}
 
 The `LaTeX3` package tabularray provides a new way to typeset tables in a keyval way. This allows the separation of content and style
 
