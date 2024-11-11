@@ -575,16 +575,28 @@ Would you like to search online? (y/N)
 https://ctan.org/search/?phrase=%s
 ```
 
-## Powertoys {{< fa brands windows >}}
+## Powertoys {{< fa brands windows >}} {#powertoys .smaller}
 
 - [Microsoft learn](https://learn.microsoft.com/it-it/windows/powertoys/)
+
+Alcune utilità che ci possono essere utili:
+
+| Strumento | Shortcut |
+|---------|:-----|
+| Incollaggio avanzato | {{< fa brands windows >}} `+ shift + V` |
+| Selezione colori | {{< fa brands windows >}} `+ shift + C` |
+| FancyZones | {{< fa brands windows >}} `+ shift + ò` |
+| Componenti aggiuntivi File Explorer | 
+| Quick Accent |  |
+| Righello schermo | {{< fa brands windows >}} `+ shift + M` |
+| Text Extractor | `ctrl + shift + T` |
 
 ## Mathpix
 
 - [Image to LaTeX](https://mathpix.com/image-to-latex)
 - [Mathpix Extension for Chrome](https://mathpix.com/extension-downloads)
 
-# Visual Studio Code {.white .smaller #vscode data-background-image="assets/images/hero/vscode.jpg" data-background-size="cover"}
+# Visual Studio Code {#vscode .white .smaller data-background-image="assets/images/hero/vscode.jpg" data-background-size="cover"}
 
 ## Ottimizzare il flusso di lavoro su Visual Studio Code {.smallest #ottimizzazione-flusso}
 
