@@ -593,12 +593,12 @@ Alcune utilità che ci possono essere utili:
 
 | Strumento | Shortcut |
 |---------|:-----|
-| Incollaggio avanzato | {{< fa brands windows >}} `+ shift + V` |
-| Selezione colori | {{< fa brands windows >}} `+ shift + C` |
+| Advanced Paste | {{< fa brands windows >}} `+ shift + V` |
+| Color Picker | {{< fa brands windows >}} `+ shift + C` |
 | FancyZones | {{< fa brands windows >}} `+ shift + ò` |
-| Componenti aggiuntivi File Explorer | 
+| File Explorer add-ons utility | 
 | Quick Accent |  |
-| Righello schermo | {{< fa brands windows >}} `+ shift + M` |
+| Screen Ruler | {{< fa brands windows >}} `+ shift + M` |
 | Text Extractor | `ctrl + shift + T` |
 
 ## Mathpix
