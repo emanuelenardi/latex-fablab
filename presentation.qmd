@@ -1503,7 +1503,7 @@ The `LaTeX3` package tabularray provides a new way to typeset tables in a keyval
 
 ### Esempio {#package-tabularray-example .smaller}
 
-```{.latex filename=tabularray-example.tex code-line-numbers="|2-4|6-12|7|8|9|10|11|13-19|"}
+```{.latex filename=tabularray-example.tex code-line-numbers="|2-4|6-12|7|8|9|10|12|13-19|"}
 \begin{table}
     \centering
     \caption{Esempio di didascalia.}
