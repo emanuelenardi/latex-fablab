@@ -1,5 +1,7 @@
 # Introduzione {data-background="https://images.unsplash.com/photo-1573848855919-9abecc93e456?auto=format&fit=crop&w=1470&q=100" data-background-size=cover .smaller}
 
+Informazioni utili per il corso.
+
 ## {#telegram-group-dark data-menu-title="telegram-group-dark" data-background="assets/images/telegram/join-telegram-group-dark-filled.png" data-background-size=cover}
 
 ## Pronuncia
@@ -541,7 +543,7 @@ Aggiornare sia `tlmgr` che tutti i pacchetti:
 
 `tlmgr update --self --all`
 
-# Documentazione {.smaller}
+# Documentazione e utilities {.smaller}
 
 ## texdoc {#texdoc}
 
@@ -563,7 +565,24 @@ Would you like to search online? (y/N)
 - possiamo consultare direttamente il sito [texdoc.org](https://texdoc.org/index.html)
 - oppure andare su [ctan.org](https://www.ctan.org/)
 
-- impostazine *shortcut search engine* su Chrome
+## Shortcut search engine su Chrome
+
+- [How to add a custom search engine to Chrome](https://zapier.com/blog/add-search-engine-to-chrome/)
+
+![](assets\images\chrome\ctan.png)
+
+```txt
+https://ctan.org/search/?phrase=%s
+```
+
+## Powertoys {{< fa brands windows >}}
+
+- [Microsoft learn](https://learn.microsoft.com/it-it/windows/powertoys/)
+
+## Mathpix
+
+- [Image to LaTeX](https://mathpix.com/image-to-latex)
+- [Mathpix Extension for Chrome](https://mathpix.com/extension-downloads)
 
 # Visual Studio Code {.white .smaller #vscode data-background-image="assets/images/hero/vscode.jpg" data-background-size="cover"}
 
@@ -1289,6 +1308,210 @@ comparire nell'indice generale.
 ```
 :::
 
+# Preparare il documento
+
+Codifica dei caratteri, impostazione della lingua, margini del documento, migliorare la scrittura
+
+## Codifica dei caratteri {.smaller}
+
+```{.latex code-line-numbers="|1|2|"}
+\usepackage[T1]{fontenc}% font encoding
+%\usepackage[utf8]{inputenc}% default from 2018
+```
+
+- [fontenc vs inputenc](https://tex.stackexchange.com/questions/44694/fontenc-vs-inputenc)
+- [Why should I use `fontenc`?](https://tex.stackexchange.com/questions/664/why-should-i-use-usepackaget1fontenc)
+- [Is there any reason to use `inputenc`?](https://tex.stackexchange.com/questions/370278/is-there-any-reason-to-use-inputenc)
+
+## Specificare la lingua
+
+```latex
+\usepackage[main=italian, english]{babel}
+```
+
+## Margini del documento {.smaller}
+
+::
+```{.latex code-line-numbers="|1,8|2|3|4|5|6|7|"}
+\usepackage[
+    a4paper,
+    % showframe,
+    inner = 1.5cm,
+    top = 2cm,
+    outer = 2.5cm,
+    bottom = 2cm
+]{geometry}
+```
+::
+
+- [Page size and margins](https://www.overleaf.com/learn/latex/Page_size_and_margins)
+
+## Gestire la spaziatura
+```{.latex filename="settings/set-spacing.sty" code-line-numbers="|1-6|8-10|"}
+\usepackage[
+    skip=0.2cm,   % default: .5\baselineskip plus 2pt explicitly specify the vertical space between paragraphs
+    tocskip=0pt,  % default: \parskip
+    indent=0pt,
+    parfill=30pt  % default: 30pt
+]{parskip}
+
+\usepackage{setspace}
+% \singlespacing
+% \onehalfspacing
+```
+
+## Migliorare la scrittura
+
+```{.latex filename="settings/set-typography.sty"}
+\usepackage[
+    % ,activate	= {true, nocompatibility}
+    ,activate	= {true}
+    ,final
+    ,tracking	= true
+    ,kerning	= true
+    ,factor		= 1100
+    ,stretch	= 10
+    ,shrink		= 10
+]{microtype}
+```
+
+# Impaginare le figure
+
+Posizionamento delle figure, figure a metà pagina, figure nel testo.
+
+## Il pacchetto `graphicx` {.smaller #package-graphicx}
+
+```{.latex filename="settings/set-graphics.sty" code-line-numbers="||"}
+\usepackage[draft]{graphicx}
+```
+
+### Comandi utili {.smaller #package-graphicx-commands}
+
+Rotation and scaling of text.
+
+```latex
+\rotatebox[⟨key val list⟩]{⟨angle⟩}{⟨text⟩}
+\scalebox{⟨h-scale⟩}[⟨v-scale⟩]{⟨text⟩}
+\reflectbox{⟨text⟩}
+\resizebox*{⟨h-length⟩}{⟨v-length⟩}{⟨text⟩}
+```
+
+Including Graphics Files.
+
+```latex
+\includegraphics*[⟨key val list⟩]{⟨file⟩}
+```
+
+```latex
+width
+height
+keepaspectratio
+scale
+clip
+alt
+```
+
+### Impostazioni del pacchetto {.smaller #package-graphicx-options}
+
+```latex
+\graphicspath{⟨dir-list⟩}
+```
+This optional declaration may be used to specify a list of directories in which to
+search for graphics files. The format is as for the LATEX2ε primitive `\input@path`, a list of directories, each in a `{}` group (even if there is only one in the list). For example: `\graphicspath{{eps/}{tiff/}}` would cause the system to look in the subdirectories `eps` and `tiff` of the current directory.
+```{.latex filename="settings/set-graphics.sty"}
+% NOTE define absolute path to images
+\graphicspath{
+    % NOTE percorsi dal main
+    {assets/images/}% generic
+    {assets/images/logo/}% university logo
+    {assets/images/01/}% 01-introduction
+    {assets/images/02/}% 02-state-of-the-art
+    {assets/images/03/}% 03-exploration
+    {assets/images/04/}% 04-architecture
+    {assets/images/05/}% 05-implementation
+    {assets/images/06/}% 06-schools
+    {assets/images/07/}% 07-local-community
+    {assets/images/08/}% 08-implementation-online
+    {assets/images/papers/articoloFIE/}% articolo
+    {assets/images/papers/PRIMM}% articolo
+}
+```
+
+## Il pacchetto [`caption`](https://ctan.org/pkg/caption) {.smaller #package-caption}
+
+Personalizzazione delle didascalie degli ambienti "mobili"
+
+```{.latex filename="settings/set-graphics.sty" code-line-numbers="|1|2-8|10-14|16-20|"}
+\usepackage{float, caption, subcaption}
+\captionsetup{
+    figureposition = bottom,
+    tableposition  = top,
+    font           = small,
+    labelfont      = {sf, bf},
+    justification  = centering
+}
+
+\captionsetup[table]{
+    format         = hang,
+    justification  = raggedright,
+    singlelinecheck= off
+}
+
+\captionsetup[figure]{
+    format         = hang,
+    justification  = raggedright,
+    singlelinecheck= off
+}
+```
+
+# Formattare le tabelle
+
+## Il pacchetto `tabularray` {.smaller #package-tabularray-example}
+
+The `LaTeX3` package tabularray provides a new way to typeset tables in a keyval way. This allows the separation of content and style
+
+- [Guides for typesetting tables with the tabularray package](https://tex.stackexchange.com/questions/629480/)
+
+```latex
+\usepackage{tabularray}
+\UseTblrLibrary{amsmath, booktabs, counter, diagbox, functional, siunitx, varwidth}
+\UseTblrLibrary{nameref, zref}% compatibily with longtblr environment
+\UseTblrLibrary{hook, html}% experimental
+```
+
+### Esempio {.smaller #package-tabularray-example}
+
+```{.latex filename=tabularray-example.tex code-line-numbers="|2-4|6-12|7|8|9|10|11|13-19|"}
+\begin{table}
+    \centering
+    \caption{Esempio di didascalia.}
+    \label{tab:tabularray-example}
+    \begin{tblr}{
+        colspec={@{} *{8}{c} @{}},
+        row{odd}={gray!10}, row{1}={gray!20},
+        vline{2-Y} = {1}{0.3pt,gray!50},
+        vline{2-Y} = {2-Z}{0.3pt,gray!30},
+        hline{1,2,Z} = {0.1pt,azure5}
+    }
+        header  & header & header & header & header & header & header & header\\
+        1  & Beta & Gamma & Alpha & Beta & Gamma & Beta & Gamma\\
+        2  & Beta & Gamma & Alpha & Beta & Gamma & Beta & Gamma\\
+        3  & Beta & Gamma & Alpha & Beta & Gamma & Beta & Gamma\\
+        4  & Beta & Gamma & Alpha & Beta & Gamma & Beta & Gamma\\
+        5  & Beta & Gamma & Alpha & Beta & Gamma & Beta & Gamma\\
+        6  & Beta & Gamma & Alpha & Beta & Gamma & Beta & Gamma\\
+    \end{tblr}
+\end{table}
+```
+
+<!-- ## Impostazioni del package
+
+```{.latex filename=settings/set-tables.sty}
+% NOTE aligning decimal points in table
+% NOTE numbers in text mode
+\usepackage{siunitx}
+``` -->
+
 # Scrivere la matematica
 
 ## Materiale rilevante
@@ -1507,6 +1730,14 @@ Processing LATEX reference lists or other forms of cross-referencing, such as in
     pages={p\adddot},%
 }
 ```
+
+# Il glossario
+
+Creare glossari ed elenchi di acronimi.
+
+## Il package glossaries {.smaller #package-glossaries}
+
+Il pacchetto [`glossaries`](https://ctan.org/pkg/glossaries) supporta acronimi e glossari multipli e prevede il funzionamento in più lingue (tramite [`babel`](https://ctan.org/pkg/babel)).
 
 # Definire comandi {.smaller}
 

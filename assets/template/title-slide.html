@@ -1,4 +1,4 @@
-<section id="$idprefix$title-slide" $for(title-slide-attributes/pairs)$ $it.key$="$it.value$" $endfor$
+<section id="$idprefix$title" $for(title-slide-attributes/pairs)$ $it.key$="$it.value$" $endfor$
     class="quarto-title-block">
     <h1 class="title">$title$</h1>
     <img id="profile-photo" src="assets/images/profile/nardi.jpg">
@@ -10,11 +10,11 @@
         $for(by-author)$
         <div class="quarto-title-author">
             <div class="quarto-title-author-name">
-                $if(by-author.url)$<a href="$by-author.url$">$endif$$if(by-author.name.literal)$$by-author.name.literal$$endif$$if(by-author.url)$</a>$endif$
+                <em>$if(by-author.url)$<a href="$by-author.url$">$endif$$if(by-author.name.literal)$$by-author.name.literal$$endif$$if(by-author.url)$</a>$endif$</em>
             </div>
             $if(by-author.email)$
             <div class="quarto-title-author-email">
-                <a href="mailto:$by-author.email$">$by-author.email$</a>
+                <code><a href="mailto:$by-author.email$">$by-author.email$</a></code>
             </div>
             $endif$ <!-- if(by-author.email) -->
             $if(by-author.affiliations)$
