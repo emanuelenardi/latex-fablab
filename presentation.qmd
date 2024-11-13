@@ -8,17 +8,13 @@ Informazioni utili per il corso.
 
 $\rm\LaTeX$ si pronuncia `/ˈlɑːtɛk/` or `/ˈleɪtɛk/`, e non `/ˈleɪtɛks/` o `/ˈleɪˌtɛks/` ([IPA symbols](https://en.wikipedia.org/wiki/Help:IPA/English)).
 
-:::: {.columns}
-::: {.column width="33%"}
+::: {layout-ncol=3}
 ![Julia Fox](assets/images/pronunciation/Julia-Fox-latex.webp){fig-align="center" height="450px"}
-:::
-::: {.column width="33%"}
+
 ![Maya Jama](assets/images/pronunciation/Maya-Jama-latex.webp){fig-align="center" height="450px"}
-:::
-::: {.column width="33%"}
+
 ![Timothée Chalamet](assets/images/pronunciation/Timothee-Chalamet-latex.webp){fig-align="center" height="450px"}
 :::
-::::
 
 # Installazione {.smaller}
 
@@ -650,7 +646,7 @@ Personalizzazione dell'ambiente di lavoro:
     ```
 :::
 
-:::{.column width="50%"}
+:::{.column width="40%"}
 
 :::
 ::::
@@ -1054,6 +1050,39 @@ $bibtex_use = 2;
 $out_dir = 'build';
 ```
 
+# Perché la tipografia è _importante_? {.smaller #tipografia data-background-image="assets/images/hero/typography.jpg" data-background-size="cover"}
+
+### Oscars 2017 Best Picture announcement
+
+{{< video https://www.youtube.com/embed/eZSe4xVXHhI width="100%" height="100%" >}}
+
+# Scaletta argomenti {.smaller}
+
+<!-- https://quarto.org/docs/presentations/revealjs/#content-overflow -->
+## Scaletta argomenti [1/2] {.smaller}
+
+- clean code mentality
+- [codifica dell'input e del font](https://tex.stackexchange.com/questions/44694/fontenc-vs-inputenc) (`inputenc` e `fontenc`)
+- impostazione della lingua del documento ( `babel`)
+- [hyphenation, typesetting, ligatures](https://tex.stackexchange.com/a/110140/127473) (`microtype`)^[[Tips on Writing a Thesis in LaTeX](http://www.khirevich.com/latex/microtype/)]
+- le virgolette (`csquotes`)
+- margini del documento (`geometry`), indentazione (`parskip`)
+- Interruzioni di riga^[[When to use `\par` and when `\\`, `\newline`](https://tex.stackexchange.com/q/82664/127473)],uso di `%`^[[What is the use of percent signs (`%`)](https://tex.stackexchange.com/a/7459/127473)], `comment` package
+- **grassetto**, *corsivo*, `monofont`, combinazini
+- elenchi puntati, numerati, descrittivi, personalizzati (`enumitem`)
+- note a piè di pagina (`footnote`)
+
+## Scaletta argomenti [2/2] {.smaller}
+
+- testatina e piedino ([`fancyhdr`](https://www.overleaf.com/learn/latex/Headers_and_footers))
+- figure (`graphicx`) e tabelle (`booktabs`), opzioni comuni
+- strutturazione del documento (`standalone`)
+- riferimenti ipertestuali (`hyperref`)
+- importazione di codice, evidenziazione della sintassi (`minted`)
+- scrittura di pseudocodice (`algorithms2e`)
+- creazione di un glossario (`glossaries`), acronimi (`acronym`), indice (`index`)
+
+
 # Package utili {.smaller}
 
 ## Package utili {.smallest auto-animate=true}
@@ -1124,7 +1153,7 @@ $out_dir = 'build';
 :::
 ::::
 
-<!-- ## Package utili {.smallest auto-animate=true}
+## Package utili {.smallest auto-animate=true}
 
 :::::{.nomargin}
 ::::{.columns}
@@ -1132,9 +1161,7 @@ $out_dir = 'build';
 
 **_pagina_**:
 
-**_font_**:
-
-- `anyfontsize`
+<!-- **_font_**: -->
 
 **_bibliography_**:
 
@@ -1213,7 +1240,7 @@ $out_dir = 'build';
 
 :::
 ::::
-::::: -->
+:::::
 
 ## Package da <u class="wavy">non caricare</u>
 
@@ -1223,38 +1250,6 @@ $out_dir = 'build';
 - [`subfigure`, `subfig`] → `subcaption`
 - `glossary` → `glossaries`
 - `enumerate` → `enumitem`
-
-# Scaletta argomenti {.smaller}
-
-<!-- https://quarto.org/docs/presentations/revealjs/#content-overflow -->
-## Scaletta argomenti [1/2] {.smaller}
-
-- clean code mentality
-- [codifica dell'input e del font](https://tex.stackexchange.com/questions/44694/fontenc-vs-inputenc) (`inputenc` e `fontenc`)
-- impostazione della lingua del documento ( `babel`)
-- [hyphenation, typesetting, ligatures](https://tex.stackexchange.com/a/110140/127473) (`microtype`)^[[Tips on Writing a Thesis in LaTeX](http://www.khirevich.com/latex/microtype/)]
-- le virgolette (`csquotes`)
-- margini del documento (`geometry`), indentazione (`parskip`)
-- Interruzioni di riga^[[When to use `\par` and when `\\`, `\newline`](https://tex.stackexchange.com/q/82664/127473)],uso di `%`^[[What is the use of percent signs (`%`)](https://tex.stackexchange.com/a/7459/127473)], `comment` package
-- **grassetto**, *corsivo*, `monofont`, combinazini
-- elenchi puntati, numerati, descrittivi, personalizzati (`enumitem`)
-- note a piè di pagina (`footnote`)
-
-## Scaletta argomenti [2/2] {.smaller}
-
-- testatina e piedino ([`fancyhdr`](https://www.overleaf.com/learn/latex/Headers_and_footers))
-- figure (`graphicx`) e tabelle (`booktabs`), opzioni comuni
-- strutturazione del documento (`standalone`)
-- riferimenti ipertestuali (`hyperref`)
-- importazione di codice, evidenziazione della sintassi (`minted`)
-- scrittura di pseudocodice (`algorithms2e`)
-- creazione di un glossario (`glossaries`), acronimi (`acronym`), indice (`index`)
-
-# Perché la tipografia è _importante_? {.smaller #tipografia data-background-image="assets/images/hero/typography.jpg" data-background-size="cover"}
-
-### Oscars 2017 Best Picture announcement
-
-{{< video https://www.youtube.com/embed/eZSe4xVXHhI width="100%" height="100%" >}}
 
 # Struttura del progetto {.smaller #project-structure data-background-image="assets/images/hero/project-structure.jpg" data-background-size="cover"}
 
@@ -1273,7 +1268,7 @@ comparire nell'indice generale.
 ## Struttura del nostro progetto {#struttura-progetto}
 
 :::{.code .larger}
-```{.txt code-line-numbers="|52-53|50-51|47-49|53|52|24|23|22|2|3-4|5-13|6-9|10-12|13|14|15|16-18|19-20|21|54|"}
+```{.txt filename="Albero del progetto" code-line-numbers="|52-53|50-51|47-49|53|52|24|23|22|2|3-4|5-13|6-9|10-12|13|14|15|16-18|19-20|21|54|"}
 .
 ├── assets/
 │   ├── appendixes/
@@ -1332,11 +1327,11 @@ comparire nell'indice generale.
 
 # Preparare il documento
 
-Codifica dei caratteri, impostazione della lingua, margini del documento, migliorare la scrittura
+Codifica dei caratteri, impostazione della lingua, margini del documento, migliorare la scrittura, come fare i commenti.
 
-## Codifica dei caratteri {.smaller}
+## Codifica dei caratteri {.smaller #package-fontenc}
 
-```{.latex code-line-numbers="|1|2|"}
+```{.latex filename="preamble.main.sty" code-line-numbers="|1|2|"}
 \usepackage[T1]{fontenc}% font encoding
 %\usepackage[utf8]{inputenc}% default from 2018
 ```
@@ -1351,10 +1346,10 @@ Codifica dei caratteri, impostazione della lingua, margini del documento, miglio
 \usepackage[main=italian, english]{babel}
 ```
 
-## Margini del documento {.smaller}
+## Margini del documento {.smaller #package-geometry}
 
-::
-```{.latex code-line-numbers="|1,8|2|3|4|5|6|7|"}
+::: {layout-ncol=2}
+```{.latex filename="settings/set-geometry.sty" code-line-numbers="|1,8|2|3|4|5|6|7|"}
 \usepackage[
     a4paper,
     % showframe,
@@ -1364,11 +1359,13 @@ Codifica dei caratteri, impostazione della lingua, margini del documento, miglio
     bottom = 2cm
 ]{geometry}
 ```
-::
+
+![Layout package](assets/images/geometry/layout-dimensions.png){height="600"}
+:::
 
 - [Page size and margins](https://www.overleaf.com/learn/latex/Page_size_and_margins)
 
-## Gestire la spaziatura
+## Gestire la spaziatura {#package-parskip}
 ```{.latex filename="settings/set-spacing.sty" code-line-numbers="|1-6|8-10|"}
 \usepackage[
     skip=0.2cm,   % default: .5\baselineskip plus 2pt explicitly specify the vertical space between paragraphs
@@ -1382,7 +1379,7 @@ Codifica dei caratteri, impostazione della lingua, margini del documento, miglio
 % \onehalfspacing
 ```
 
-## Migliorare la scrittura
+## Migliorare la scrittura {#package-microtype}
 
 ```{.latex filename="settings/set-typography.sty"}
 \usepackage[
@@ -1395,6 +1392,32 @@ Codifica dei caratteri, impostazione della lingua, margini del documento, miglio
     ,stretch	= 10
     ,shrink		= 10
 ]{microtype}
+```
+
+## Come fare i commenti {#package-comment .smaller}
+
+- [Commenting out large sections](https://tex.stackexchange.com/questions/17816/commenting-out-large-sections)
+- Commanta con `Ctrl + ù`/`Ctrl + Shift + ù` su Visual Studio Code
+
+```latex
+\documentclass{standalone}
+\usepackage{comment}
+
+% uncomment to include stuff in standard comment-environment
+\includecomment{comment}
+
+% define a mysection env which content is excluded
+\excludecomment{mysection}
+
+\begin{document}
+    This text will be displayed
+\begin{comment}
+    This text will only be displayed, if \includecomment{comment} was given
+\end{comment}
+\begin{mysection}
+This text will only be displayed, if \includecomment{mysection} was given
+\end{mysection}
+\end{document}
 ```
 
 # Impaginare le figure
@@ -1559,7 +1582,7 @@ The `LaTeX3` package tabularray provides a new way to typeset tables in a keyval
 \end{WithArrows}\]
 ```
 
-# Scrivere codice {#writing-code .smaller}
+# Scrivere codice {#code .smaller}
 
 Scrivere codice nel testo, importare file esterni e personalizzarne l'apparenza.
 
@@ -1643,6 +1666,33 @@ Il main di Java passa come paramentro \mintinline{java}{String[] args}.
 - possiamo aggiungere `\listoflistings` nel punto in cui vogliamo che venga generato l'elenco dei codici, generalmente dopo `\listoffigures` e `\listoftables`.
 
 Per ulteriori personalizzazioni, consultare la [documentazione](https://ctan.mirror.garr.it/mirrors/ctan/macros/latex/contrib/minted/minted.pdf).
+
+# Formattare gli algorirmi {#algorithms}
+
+[be confused with me](https://tex.stackexchange.com/questions/229355/)
+
+## Pacchetti ed ambienti per gli algoritmi {#choosing-package-algorithms .smallest}
+
+| pacchetto | ultimo aggiornamento |
+|---------|:-----|
+| algorithms | August 24, 2009 |
+| algorithmicx | April 27, 2005 |
+| algpseudocodex | April 17, 2023 |
+| algorithm2e | July 18, 2017 |
+algcompatible
+
+| pacchetto | ambiente che definisce |
+|---------|:-----|
+| algorithms | algorithmic, algorithm |
+| algorithmicx | algpseudocode, algpascal, algc |
+
+## {#package-algorithm2e .smaller}
+
+Il pacchetto [algorithm2e](https://ctan.org/pkg/algorithm2e) è quello più versatile.
+
+## Bonus tip: Il pacchetto `forest`
+
+[forest](https://ctan.org/pkg/forest)
 
 # La bibliografia {#bibliography .smaller}
 
