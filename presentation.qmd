@@ -1153,23 +1153,12 @@ $out_dir = 'build';
 :::
 ::::
 
-## Package utili {.smallest auto-animate=true}
-
-:::::{.nomargin}
-::::{.columns}
-:::{.column width="20%"}
-
-**_pagina_**:
-
-<!-- **_font_**: -->
-
-**_bibliography_**:
+<!-- **_bibliography_**:
 
 - `biblatex`
 
 **_tabelle_**:
 
-- `array`
 - `booktabs`
 - `diagbox`
 - `siunitx`
@@ -1199,9 +1188,6 @@ $out_dir = 'build';
 - `nicefrac`
 - `thmtools`
 
-:::
-:::{.column width="20%"}
-
 **_errori_**:
 
 **_riferimenti_**:
@@ -1223,24 +1209,7 @@ $out_dir = 'build';
 
 - `cleverref`
 
-**_lingua_**:
-
-**_commands_**:
-
-- `xparse`
-
-:::
-:::{.column width="20%"}
-
-:::
-:::{.column width="20%"}
-
-:::
-:::{.column width="20%"}
-
-:::
-::::
-:::::
+**_lingua_**: -->
 
 ## Package da <u class="wavy">non caricare</u>
 
@@ -1282,7 +1251,7 @@ comparire nell'indice generale.
 │   │   │   ├── bibliography.tex
 │   │   │   └── index.tex
 │   │   └── **-chapter-name.tex
-│   ├── code/
+│   ├── codes/
 │   ├── diagrams/
 │   ├── images/
 │   │   ├── **/
@@ -1299,7 +1268,6 @@ comparire nell'indice generale.
 │   ├── set-code.sty
 │   ├── set-color.sty
 │   ├── set-debug.sty
-│   ├── set-geometry.sty
 │   ├── set-geometry.sty
 │   ├── set-glossary.sty
 │   ├── set-graphics.sty
@@ -1666,6 +1634,54 @@ Il main di Java passa come paramentro \mintinline{java}{String[] args}.
 - possiamo aggiungere `\listoflistings` nel punto in cui vogliamo che venga generato l'elenco dei codici, generalmente dopo `\listoffigures` e `\listoftables`.
 
 Per ulteriori personalizzazioni, consultare la [documentazione](https://ctan.mirror.garr.it/mirrors/ctan/macros/latex/contrib/minted/minted.pdf).
+
+### Personalizzazione avanzata
+
+- Basandoci su [questa domanda](https://tex.stackexchange.com/questions/452150/) utilizziamo il pacchetto [`tcolorbox`](https://ctan.org/pkg/tcolorbox).
+
+```
+% arara: pdflatex: {shell: 1}
+\documentclass{article}
+
+\usepackage[T1]{fontenc}
+
+\usepackage{listings}
+\usepackage{minted}
+
+\usepackage{xcolor}
+\definecolor{inline}{RGB}{187,57,82}
+\definecolor{bg}{RGB}{22,43,58}
+\setminted[java]{bgcolor=bg, fontfamily=fdm, fontsize=\footnotesize}
+
+\usepackage{tcolorbox}
+\tcbuselibrary{listings, minted, skins}
+\tcbset{listing engine=minted}
+\newtcblisting{javalst}{
+    listing only,
+    minted language=java,
+    minted style=paraiso-dark,
+    colback=bg,
+    enhanced, frame hidden,
+    minted options={
+        fontfamily=fdm,%
+        fontsize=\footnotesize,
+        tabsize=2,
+        breaklines,
+        autogobble% removes spaces
+    }
+}
+
+\begin{document}
+
+\begin{javalst}
+public class ClassName {
+        public static void main(String[] args) {
+            System.out.println(args);
+        }
+}
+\end{javalst}
+\end{document}
+```
 
 # Formattare gli algorirmi {#algorithms}
 
