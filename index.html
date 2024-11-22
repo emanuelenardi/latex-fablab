@@ -425,10 +425,10 @@
          <!-- for(by-author) -->
     </div>
 
-        <p class="date"><u>Aggiornate giovedì 21 novembre 2024</u></p>
+        <p class="date"><u>Aggiornate venerdì 22 novembre 2024</u></p>
     </section>
 <section>
-<section id="introduzione" class="title-slide slide level1 smaller center" data-background="https://images.unsplash.com/photo-1573848855919-9abecc93e456?auto=format&amp;fit=crop&amp;w=1470&amp;q=100" data-background-size="cover">
+<section id="introduzione" class="title-slide slide level1 smaller center">
 <h1>Introduzione</h1>
 <p>Informazioni utili per il corso.</p>
 </section>
@@ -476,7 +476,7 @@
 <section>
 <section id="installazione" class="title-slide slide level1 smaller center">
 <h1>Installazione</h1>
-
+<p>Installiamo un sistema offline per Windows, Linux e Mac.</p>
 </section>
 <section id="tex-distro" class="title-slide slide level2 smaller center">
 <h2>Distribuzione di TeX</h2>
@@ -1037,11 +1037,21 @@ You do not need to remove an installation of a previous release, or any system-p
 </div>
 <div class="quarto-layout-panel" data-layout-ncol="2">
 <div class="quarto-layout-row">
-<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
 <p><img data-src="assets/images/install-texlive/linux/00-texlive-user.png"></p>
+<figcaption>1. Non hai i permessi di scrittura sulla cartella</figcaption>
+</figure>
 </div>
-<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
 <p><img data-src="assets/images/install-texlive/linux/01-texlive-sudo.png"></p>
+<figcaption>2. Hai i permessi di scrittura sulla cartella</figcaption>
+</figure>
+</div>
 </div>
 </div>
 </div>
@@ -1216,177 +1226,156 @@ You do not need to remove an installation of a previous release, or any system-p
 <p><code>tlmgr update --all</code></p>
 <p>Aggiornare sia <code>tlmgr</code> che tutti i pacchetti:</p>
 <p><code>tlmgr update --self --all</code></p>
-</section>
-</section>
-<section>
-<section id="documentazione-e-utilities" class="title-slide slide level1 smaller center">
-<h1>Documentazione e utilities</h1>
+<!-- # Documentazione e utilities {.smaller}
 
-</section>
-<section id="texdoc" class="title-slide slide level2 center">
-<h2>texdoc</h2>
-<div class="sourceCode" id="cb20"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb20-1"><a href=""></a><span class="ex">texdoc</span> minted</span></code><button title="Copia negli appunti" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="fragment">
-<div class="sourceCode" id="cb21"><pre class="sourceCode numberSource txt number-lines code-with-copy"><code class="sourceCode default"><span id="cb21-1"><a href=""></a>You don't appear to have any local documentation installed.</span>
-<span id="cb21-2"><a href=""></a></span>
-<span id="cb21-3"><a href=""></a>There may be online documentation available for "minted" at</span>
-<span id="cb21-4"><a href=""></a>    https://texdoc.org/serve/minted/0</span>
-<span id="cb21-5"><a href=""></a>This documentation may be for a different version than you have installed.</span>
-<span id="cb21-6"><a href=""></a></span>
-<span id="cb21-7"><a href=""></a>Would you like to search online? (y/N)</span></code><button title="Copia negli appunti" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<div class="fragment">
-<ul>
-<li>possiamo consultare direttamente il sito <a href="https://texdoc.org/index.html">texdoc.org</a></li>
-<li>oppure andare su <a href="https://www.ctan.org/">ctan.org</a></li>
-</ul>
-</div>
-</section>
+## texdoc {#texdoc}
 
-<section id="shortcut-search-engine-su-chrome" class="title-slide slide level2 center">
-<h2>Shortcut search engine su Chrome</h2>
-<ul>
-<li><a href="https://zapier.com/blog/add-search-engine-to-chrome/">How to add a custom search engine to Chrome</a></li>
-</ul>
+```bash
+texdoc minted
+```
+. . .
+```txt
+You don't appear to have any local documentation installed.
 
-<img data-src="assets\images\chrome\ctan.png" class="r-stretch"><div class="sourceCode" id="cb22"><pre class="sourceCode numberSource txt number-lines code-with-copy"><code class="sourceCode default"><span id="cb22-1"><a href=""></a>https://ctan.org/search/?phrase=%s</span></code><button title="Copia negli appunti" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</section>
+There may be online documentation available for "minted" at
+    https://texdoc.org/serve/minted/0
+This documentation may be for a different version than you have installed.
 
-<section id="powertoys" class="title-slide slide level2 smallest center">
-<h2>Powertoys <i class="fa-brands fa-windows" aria-label="windows"></i></h2>
-<ul>
-<li><a href="https://learn.microsoft.com/it-it/windows/powertoys/">Microsoft learn</a></li>
-</ul>
-<p>Alcune utilità che ci possono essere utili:</p>
-<table class="caption-top">
-<colgroup>
-<col style="width: 60%">
-<col style="width: 40%">
-</colgroup>
-<thead>
-<tr class="header">
-<th>Strumento</th>
-<th style="text-align: left;">Shortcut</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>Advanced Paste</td>
-<td style="text-align: left;"><i class="fa-brands fa-windows" aria-label="windows"></i> <code>+ shift + V</code></td>
-</tr>
-<tr class="even">
-<td>Color Picker</td>
-<td style="text-align: left;"><i class="fa-brands fa-windows" aria-label="windows"></i> <code>+ shift + C</code></td>
-</tr>
-<tr class="odd">
-<td>FancyZones</td>
-<td style="text-align: left;"><i class="fa-brands fa-windows" aria-label="windows"></i> <code>+ shift + ò</code></td>
-</tr>
-<tr class="even">
-<td>File Explorer add-ons utility</td>
-<td style="text-align: left;"></td>
-</tr>
-<tr class="odd">
-<td>Quick Accent</td>
-<td style="text-align: left;"></td>
-</tr>
-<tr class="even">
-<td>Screen Ruler</td>
-<td style="text-align: left;"><i class="fa-brands fa-windows" aria-label="windows"></i> <code>+ shift + M</code></td>
-</tr>
-<tr class="odd">
-<td>Text Extractor</td>
-<td style="text-align: left;"><code>ctrl + shift + T</code></td>
-</tr>
-</tbody>
-</table>
-</section>
+Would you like to search online? (y/N)
+```
+. . .
 
-<section id="mathpix" class="title-slide slide level2 center">
-<h2>Mathpix</h2>
-<ul>
-<li><a href="https://mathpix.com/image-to-latex">Image to LaTeX</a></li>
-<li><a href="https://mathpix.com/extension-downloads">Mathpix Extension for Chrome</a></li>
-</ul>
-</section>
-</section>
-<section>
-<section id="vscode" class="title-slide slide level1 white smaller center" data-background-image="assets/images/hero/vscode.jpg" data-background-size="cover">
-<h1>Visual Studio Code</h1>
+- possiamo consultare direttamente il sito [texdoc.org](https://texdoc.org/index.html)
+- oppure andare su [ctan.org](https://www.ctan.org/)
 
-</section>
-<section id="ottimizzazione-flusso" class="title-slide slide level2 smallest center">
-<h2>Ottimizzare il flusso di lavoro su Visual Studio Code</h2>
-<p>Personalizzazione dell’ambiente di lavoro:</p>
-<div class="columns">
-<div class="column" style="width:60%;">
-<ul>
-<li><p><code>View &gt; Open View... &gt; Timeline</code></p>
-<div class="sourceCode" id="cb23"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb23-1"><a href="" aria-hidden="true" tabindex="-1"></a><span class="ex">Explorer:</span> Focus on Timeline View</span></code><button title="Copia negli appunti" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
-<li><p><code>View &gt; Appereance &gt; Minimap</code></p>
-<div class="sourceCode" id="cb24"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb24-1"><a href="" aria-hidden="true" tabindex="-1"></a><span class="ex">View:</span> Toggle Minimap</span></code><button title="Copia negli appunti" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
-<li><p><code>View &gt; Sticky Scroll</code></p>
-<div class="sourceCode" id="cb25"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb25-1"><a href="" aria-hidden="true" tabindex="-1"></a><span class="ex">View:</span> Toggle Sticky Scroll</span></code><button title="Copia negli appunti" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
-<li><p><code>Snippets: Configure User Snippets</code></p></li>
-<li><p><code>Preferences: Open Keyboard Shortcuts</code> (<a href="#/my-keyboard-shortcuts">see my shortcuts</a>)</p>
-<div class="sourceCode" id="cb26"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb26-1"><a href="" aria-hidden="true" tabindex="-1"></a><span class="ex">Preferences:</span> Open Keyboard Shortcuts</span></code><button title="Copia negli appunti" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
-<li><p><code>latex-workshop.latex.recipes</code> (<a href="#/my-workshop-recipes">see my recipes</a>)</p></li>
-<li><p><code>latex-workshop.latex.autoBuild.run</code></p>
-<div class="sourceCode" id="cb27"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb27-1"><a href="" aria-hidden="true" tabindex="-1"></a><span class="ex">ctrl+alt+B</span></span></code><button title="Copia negli appunti" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
-</ul>
-</div><div class="column" style="width:40%;">
+## Shortcut search engine su Chrome
 
-</div></div>
+- [How to add a custom search engine to Chrome](https://zapier.com/blog/add-search-engine-to-chrome/)
+
+![](assets\images\chrome\ctan.png)
+
+```txt
+https://ctan.org/search/?phrase=%s
+```
+
+## Powertoys  {#powertoys .smallest}
+
+- [Microsoft learn](https://learn.microsoft.com/it-it/windows/powertoys/)
+
+Alcune utilità che ci possono essere utili:
+
+| Strumento | Shortcut |
+|---------|:-----|
+| Advanced Paste |  `+ shift + V` |
+| Color Picker |  `+ shift + C` |
+| FancyZones |  `+ shift + ò` |
+| File Explorer add-ons utility | 
+| Quick Accent |  |
+| Screen Ruler |  `+ shift + M` |
+| Text Extractor | `ctrl + shift + T` |
+
+## Mathpix
+
+- [Image to LaTeX](https://mathpix.com/image-to-latex)
+- [Mathpix Extension for Chrome](https://mathpix.com/extension-downloads) -->
+<!-- # Visual Studio Code {#vscode .white .smaller data-background-image="assets/images/hero/vscode.jpg" data-background-size="cover"}
+
+Impostazione di un editor di testo.
+
+## Ottimizzare il flusso di lavoro su Visual Studio Code {.smallest #ottimizzazione-flusso}
+
+Personalizzazione dell'ambiente di lavoro:
+
+::::{.columns}
+
+:::{.column width="60%"}
+- `View > Open View... > Timeline`
+
+    ```{.bash code-line-numbers="false"}
+    Explorer: Focus on Timeline View
+    ```
+
+- `View > Appereance > Minimap`
+
+    ```{.bash code-line-numbers="false"}
+    View: Toggle Minimap
+    ```
+
+- `View > Sticky Scroll`
+
+    ```{.bash code-line-numbers="false"}
+    View: Toggle Sticky Scroll
+    ```
+
+- `Snippets: Configure User Snippets`
+- `Preferences: Open Keyboard Shortcuts` ([see my shortcuts](#my-keyboard-shortcuts))
+
+    ```{.bash code-line-numbers="false"}
+    Preferences: Open Keyboard Shortcuts
+    ```
+
+- `latex-workshop.latex.recipes`
+    ([see my recipes](#my-workshop-recipes))
+
+- `latex-workshop.latex.autoBuild.run`
+
+    ```{.bash code-line-numbers="false"}
+    ctrl+alt+B
+    ```
+:::
+
+:::{.column width="40%"}
+
+:::
+:::: -->
 <!-- https://code.visualstudio.com/docs/getstarted/keybindings#:~:text=All\%20keyboard\%20shortcuts\%20in\%20VS,This\%20will\%20open\%20your\%20keybindings. -->
-</section>
-<section class="slide level3">
+<!-- ---
 
+![[`keybindings - advanced customization`](https://code.visualstudio.com/docs/getstarted/keybindings#_advanced-customization)](assets\images\vscode\keybindings.png){width=200}
 
-<img data-src="assets\images\vscode\keybindings.png" width="200" class="r-stretch quarto-figure-center"><p class="caption"><a href="https://code.visualstudio.com/docs/getstarted/keybindings#_advanced-customization"><code>keybindings - advanced customization</code></a></p></section>
-<section id="my-keyboard-shortcuts" class="slide level3">
-<h3>My keyboard shortcuts</h3>
-<div class="larger">
-<div class="code-with-filename">
-<div class="code-with-filename-file">
-<pre><strong>keybindings.json</strong></pre>
-</div>
-<div class="sourceCode" id="cb28" data-filename="keybindings.json" data-code-line-numbers="|4-9|12-17|20-25|28-33"><pre class="sourceCode numberSource json number-lines code-with-copy"><code class="sourceCode json"><span id="cb28-1"><a href=""></a><span class="er">//</span> <span class="er">Place</span> <span class="er">your</span> <span class="er">key</span> <span class="er">bindings</span> <span class="er">in</span> <span class="er">this</span> <span class="er">file</span> <span class="er">to</span> <span class="er">override</span> <span class="er">the</span> <span class="er">defaults</span></span>
-<span id="cb28-2"><a href=""></a><span class="ot">[</span></span>
-<span id="cb28-3"><a href=""></a>    <span class="fu">{</span></span>
-<span id="cb28-4"><a href=""></a>        <span class="dt">"key"</span><span class="fu">:</span> <span class="st">"ctrl+shift+B"</span><span class="fu">,</span></span>
-<span id="cb28-5"><a href=""></a>        <span class="dt">"command"</span><span class="fu">:</span> <span class="st">"editor.action.insertSnippet"</span><span class="fu">,</span></span>
-<span id="cb28-6"><a href=""></a>        <span class="dt">"when"</span><span class="fu">:</span> <span class="st">"editorLangId == latex &amp;&amp; editorTextFocus"</span><span class="fu">,</span></span>
-<span id="cb28-7"><a href=""></a>        <span class="dt">"args"</span><span class="fu">:</span> <span class="fu">{</span></span>
-<span id="cb28-8"><a href=""></a>            <span class="dt">"snippet"</span><span class="fu">:</span> <span class="st">"</span><span class="ch">\\</span><span class="st">textbf{${TM_SELECTED_TEXT}$0}"</span></span>
-<span id="cb28-9"><a href=""></a>        <span class="fu">}</span></span>
-<span id="cb28-10"><a href=""></a>    <span class="fu">}</span><span class="ot">,</span></span>
-<span id="cb28-11"><a href=""></a>    <span class="fu">{</span></span>
-<span id="cb28-12"><a href=""></a>        <span class="dt">"key"</span><span class="fu">:</span> <span class="st">"ctrl+shift+I"</span><span class="fu">,</span></span>
-<span id="cb28-13"><a href=""></a>        <span class="dt">"command"</span><span class="fu">:</span> <span class="st">"editor.action.insertSnippet"</span><span class="fu">,</span></span>
-<span id="cb28-14"><a href=""></a>        <span class="dt">"when"</span><span class="fu">:</span> <span class="st">"editorLangId == latex &amp;&amp; editorTextFocus"</span><span class="fu">,</span></span>
-<span id="cb28-15"><a href=""></a>        <span class="dt">"args"</span><span class="fu">:</span> <span class="fu">{</span></span>
-<span id="cb28-16"><a href=""></a>            <span class="dt">"snippet"</span><span class="fu">:</span> <span class="st">"</span><span class="ch">\\</span><span class="st">emph{${TM_SELECTED_TEXT}$0}"</span></span>
-<span id="cb28-17"><a href=""></a>        <span class="fu">}</span></span>
-<span id="cb28-18"><a href=""></a>    <span class="fu">}</span><span class="ot">,</span></span>
-<span id="cb28-19"><a href=""></a>    <span class="fu">{</span></span>
-<span id="cb28-20"><a href=""></a>        <span class="dt">"key"</span><span class="fu">:</span> <span class="st">"ctrl+shift+T"</span><span class="fu">,</span></span>
-<span id="cb28-21"><a href=""></a>        <span class="dt">"command"</span><span class="fu">:</span> <span class="st">"editor.action.insertSnippet"</span><span class="fu">,</span></span>
-<span id="cb28-22"><a href=""></a>        <span class="dt">"when"</span><span class="fu">:</span> <span class="st">"editorLangId == latex &amp;&amp; editorTextFocus"</span><span class="fu">,</span></span>
-<span id="cb28-23"><a href=""></a>        <span class="dt">"args"</span><span class="fu">:</span> <span class="fu">{</span></span>
-<span id="cb28-24"><a href=""></a>            <span class="dt">"snippet"</span><span class="fu">:</span> <span class="st">"</span><span class="ch">\\</span><span class="st">texttt{${TM_SELECTED_TEXT}}$0"</span></span>
-<span id="cb28-25"><a href=""></a>        <span class="fu">}</span></span>
-<span id="cb28-26"><a href=""></a>    <span class="fu">}</span><span class="ot">,</span></span>
-<span id="cb28-27"><a href=""></a>    <span class="fu">{</span></span>
-<span id="cb28-28"><a href=""></a>        <span class="dt">"key"</span><span class="fu">:</span> <span class="st">"ctrl+shift+Q"</span><span class="fu">,</span></span>
-<span id="cb28-29"><a href=""></a>        <span class="dt">"command"</span><span class="fu">:</span> <span class="st">"editor.action.insertSnippet"</span><span class="fu">,</span></span>
-<span id="cb28-30"><a href=""></a>        <span class="dt">"when"</span><span class="fu">:</span> <span class="st">"editorLangId == latex &amp;&amp; editorTextFocus"</span><span class="fu">,</span></span>
-<span id="cb28-31"><a href=""></a>        <span class="dt">"args"</span><span class="fu">:</span> <span class="fu">{</span></span>
-<span id="cb28-32"><a href=""></a>            <span class="dt">"snippet"</span><span class="fu">:</span> <span class="st">"</span><span class="ch">\\</span><span class="st">enquote{${TM_SELECTED_TEXT/[+</span><span class="ch">\"</span><span class="st">“”]+//g}}$0"</span></span>
-<span id="cb28-33"><a href=""></a>        <span class="fu">}</span></span>
-<span id="cb28-34"><a href=""></a>    <span class="fu">}</span></span>
-<span id="cb28-35"><a href=""></a><span class="ot">]</span></span></code><button title="Copia negli appunti" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-</div>
+---
+
+### My keyboard shortcuts
+
+:::{.larger}
+```{.json filename="keybindings.json" code-line-numbers="|4-9|12-17|20-25|28-33"}
+// Place your key bindings in this file to override the defaults
+[
+    {
+        "key": "ctrl+shift+B",
+        "command": "editor.action.insertSnippet",
+        "when": "editorLangId == latex && editorTextFocus",
+        "args": {
+            "snippet": "\\textbf{${TM_SELECTED_TEXT}$0}"
+        }
+    },
+    {
+        "key": "ctrl+shift+I",
+        "command": "editor.action.insertSnippet",
+        "when": "editorLangId == latex && editorTextFocus",
+        "args": {
+            "snippet": "\\emph{${TM_SELECTED_TEXT}$0}"
+        }
+    },
+    {
+        "key": "ctrl+shift+T",
+        "command": "editor.action.insertSnippet",
+        "when": "editorLangId == latex && editorTextFocus",
+        "args": {
+            "snippet": "\\texttt{${TM_SELECTED_TEXT}}$0"
+        }
+    },
+    {
+        "key": "ctrl+shift+Q",
+        "command": "editor.action.insertSnippet",
+        "when": "editorLangId == latex && editorTextFocus",
+        "args": {
+            "snippet": "\\enquote{${TM_SELECTED_TEXT/[+\"“”]+//g}}$0"
+        }
+    }
+]
+```
+::: -->
 <!-- ### My Workshop Recipes
 
 :::{.larger}
@@ -1436,221 +1425,218 @@ You do not need to remove an installation of a previous release, or any system-p
     },
 ```
 ::: -->
-</section>
+<!-- ## {#arara-tex-automation-tool .smaller}
 
-<section id="arara-tex-automation-tool" class="title-slide slide level2 smaller center">
-<h2></h2>
+![](assets/branding/arara-logo-with-text-bottom.svg){fig-align="center" width=350}
 
-<img data-src="assets/branding/arara-logo-with-text-bottom.svg" class="quarto-figure quarto-figure-center r-stretch" width="350"></section>
-<section id="file-prodotti-da-latex" class="slide level3">
-<h3>File prodotti da LaTeX</h3>
-<p>Prima di tutto, è importante capire quali sono i file prodotti da <span class="math inline">\(\rm\LaTeX\)</span> quando compiliamo un documento<a href="#/footnotes" class="footnote-ref" id="fnref1" role="doc-noteref" data-footnote-href="#/fn1" onclick=""><sup>1</sup></a><a href="#/footnotes" class="footnote-ref" id="fnref2" role="doc-noteref" data-footnote-href="#/fn2" onclick=""><sup>2</sup></a>.</p>
-<aside></aside></section>
-<section id="section-9" class="slide level3 smallest" data-auto-animate="true">
-<h3 data-id="quarto-animate-title"></h3>
-<div class="columns">
-<div class="column" style="width:25%;">
-<ul>
-<li><code>acn</code></li>
-<li><code>acr</code></li>
-<li><code>aux</code></li>
-<li><code>bat</code></li>
-<li><code>bbl</code></li>
-<li><code>bbx</code></li>
-<li><code>bcf</code></li>
-<li><code>bib</code></li>
-<li><code>blg</code></li>
-<li><code>brf</code></li>
-<li><code>bst</code></li>
-<li><code>cfg</code></li>
-<li><code>cls</code></li>
-<li><code>chktexrc</code></li>
-<li><code>dtx</code></li>
-<li><code>dvi</code></li>
-</ul>
-</div><div class="column" style="width:25%;">
-<ul>
-<li><code>enc</code></li>
-<li><code>eps</code></li>
-<li><code>fd</code></li>
-<li><code>fdb_latexmk</code></li>
-<li><code>fls</code></li>
-<li><code>fmt</code></li>
-<li><code>gitattributes</code></li>
-<li><code>gitignore</code></li>
-<li><code>glg</code></li>
-<li><code>glo</code></li>
-<li><code>gls</code></li>
-<li><code>idx</code></li>
-<li><code>ilg</code></li>
-<li><code>ind</code></li>
-<li><code>ins</code></li>
-<li><code>jpg</code></li>
-</ul>
-</div><div class="column" style="width:25%;">
-<ul>
-<li><code>latexmkrc</code></li>
-<li><code>loc</code></li>
-<li><code>loe</code></li>
-<li><code>lof</code></li>
-<li><code>log</code></li>
-<li><code>lol</code></li>
-<li><code>lot</code></li>
-<li><code>ltx</code></li>
-<li><code>mf</code></li>
-<li><code>md</code></li>
-<li><code>otf</code></li>
-<li><code>nav</code></li>
-<li><code>nlg</code></li>
-<li><code>nlo</code></li>
-<li><code>nls</code></li>
-<li><code>out</code></li>
-</ul>
-</div><div class="column" style="width:25%;">
-<ul>
-<li><code>pdf</code></li>
-<li><code>png</code></li>
-<li><code>ps</code></li>
-<li><code>pyg</code></li>
-<li><code>pygtex</code></li>
-<li><code>run.xml</code></li>
-<li><code>sh</code></li>
-<li><code>snm</code></li>
-<li><code>sty</code></li>
-<li><code>synctex</code></li>
-<li><code>tex</code></li>
-<li><code>toc</code></li>
-<li><code>ttf</code></li>
-<li><code>vrb</code></li>
-<li><code>yml</code></li>
-</ul>
-</div></div>
-</section>
-<section id="extensions-classes" class="slide level3 smallest" data-auto-animate="true">
-<h3 data-id="quarto-animate-title"></h3>
-<div class="nomargin">
-<div class="columns">
-<div class="column" style="width:25%;">
-<p><strong><em>file sorgente</em></strong>:</p>
-<ul>
-<li><code>tex</code></li>
-<li><code>dtx</code></li>
-<li><code>cls</code></li>
-<li><code>ltx</code></li>
-<li><code>cfg</code></li>
-<li><code>ins</code></li>
-<li><code>sty</code></li>
-</ul>
-<p><strong><em>immagini</em></strong>:</p>
-<ul>
-<li><code>eps</code></li>
-<li><code>jpg</code></li>
-<li><code>png</code></li>
-</ul>
-<p><strong><em>font</em></strong>:</p>
-<ul>
-<li><code>enc</code></li>
-<li><code>fd</code></li>
-<li><code>mf</code></li>
-<li><code>otf</code></li>
-<li><code>ttf</code></li>
-</ul>
-<p><strong><em>beamer</em></strong>:</p>
-<ul>
-<li><code>nav</code></li>
-<li><code>snm</code></li>
-<li><code>vrb</code></li>
-</ul>
-</div><div class="column" style="width:25%;">
-<p><strong><em>bibliografia</em></strong>:</p>
-<ul>
-<li><code>bbl</code></li>
-<li><code>bbx</code></li>
-<li><code>bcf</code></li>
-<li><code>bib</code></li>
-<li><code>blg</code></li>
-<li><code>brf</code></li>
-<li><code>bst</code></li>
-</ul>
-<p><strong><em>glossario</em></strong>:</p>
-<ul>
-<li><code>gls</code></li>
-<li><code>glo</code></li>
-<li><code>glg</code></li>
-</ul>
-<p><strong><em>indice</em></strong>:</p>
-<ul>
-<li><code>ind</code></li>
-<li><code>idx</code></li>
-</ul>
-<p><strong><em>acronimi</em></strong>:</p>
-<ul>
-<li><code>acn</code></li>
-<li><code>acr</code></li>
-<li><code>ilg</code></li>
-</ul>
-<p><strong><em>nomenclatura</em></strong>:</p>
-<ul>
-<li><code>nlg</code></li>
-<li><code>nlo</code></li>
-<li><code>nls</code></li>
-</ul>
-</div><div class="column" style="width:25%;">
-<p><strong><em>contenuti</em></strong>:</p>
-<ul>
-<li><code>loc</code></li>
-<li><code>loe</code></li>
-<li><code>lof</code></li>
-<li><code>lol</code></li>
-<li><code>lot</code></li>
-<li><code>toc</code></li>
-</ul>
-<p><strong><em>configurazione</em></strong>:</p>
-<ul>
-<li><code>chktexrc</code></li>
-<li><code>latexmkrc</code></li>
-<li><code>gitattributes</code></li>
-<li><code>gitignore</code></li>
-<li><code>yml</code></li>
-</ul>
-<p><strong><em>documentazione</em></strong>:</p>
-<ul>
-<li><code>md</code></li>
-</ul>
-<p><strong><em>scripting</em></strong>:</p>
-<ul>
-<li><code>bat</code></li>
-<li><code>sh</code></li>
-</ul>
-</div><div class="column" style="width:25%;">
-<p><strong><em>precompilazione</em></strong>:</p>
-<ul>
-<li><code>fmt</code></li>
-</ul>
-<p><strong><em>caching</em></strong>:</p>
-<ul>
-<li><code>_minted*/</code></li>
-<li><code>fdb_latexmk</code></li>
-<li><code>pyg</code></li>
-<li><code>pygtex</code></li>
-<li><code>run.xml</code></li>
-</ul>
-<p><strong><em>sincronizzazione</em></strong>:</p>
-<ul>
-<li><code>synctex</code></li>
-<li><code>fls</code></li>
-</ul>
-<p><strong><em>prodotti</em></strong>:</p>
-<ul>
-<li><code>aux</code></li>
-<li><code>out</code></li>
-<li><code>log</code></li>
-<li><code>dvi</code></li>
-<li><code>ps</code></li>
-<li><code>pdf</code></li>
-</ul>
-</div></div>
-</div>
+### File prodotti da LaTeX
+
+Prima di tutto, è importante capire quali sono i file prodotti da $\rm\LaTeX$ quando compiliamo un documento[^1][^2].
+
+[^1]: [File extensions related to LaTeX, etc](https://tex.stackexchange.com/questions/7770/file-extensions-related-to-latex-etc)
+[^2]: [“Comprehensive” list of LaTeX auxiliary files](https://github.com/wspr/latex-auxfiles)
+
+### {.smallest auto-animate=true}
+
+::::{.columns}
+:::{.column width="25%"}
+- `acn`
+- `acr`
+- `aux`
+- `bat`
+- `bbl`
+- `bbx`
+- `bcf`
+- `bib`
+- `blg`
+- `brf`
+- `bst`
+- `cfg`
+- `cls`
+- `chktexrc`
+- `dtx`
+- `dvi`
+:::
+:::{.column width="25%"}
+- `enc`
+- `eps`
+- `fd`
+- `fdb_latexmk`
+- `fls`
+- `fmt`
+- `gitattributes`
+- `gitignore`
+- `glg`
+- `glo`
+- `gls`
+- `idx`
+- `ilg`
+- `ind`
+- `ins`
+- `jpg`
+:::
+:::{.column width="25%"}
+- `latexmkrc`
+- `loc`
+- `loe`
+- `lof`
+- `log`
+- `lol`
+- `lot`
+- `ltx`
+- `mf`
+- `md`
+- `otf`
+- `nav`
+- `nlg`
+- `nlo`
+- `nls`
+- `out`
+:::
+:::{.column width="25%"}
+- `pdf`
+- `png`
+- `ps`
+- `pyg`
+- `pygtex`
+- `run.xml`
+- `sh`
+- `snm`
+- `sty`
+- `synctex`
+- `tex`
+- `toc`
+- `ttf`
+- `vrb`
+- `yml`
+:::
+::::
+
+### {#extensions-classes .smallest auto-animate=true}
+
+:::::{.nomargin}
+::::{.columns}
+:::{.column width="25%"}
+**_file sorgente_**:
+
+- `tex`
+- `dtx`
+- `cls`
+- `ltx`
+- `cfg`
+- `ins`
+- `sty`
+
+**_immagini_**:
+
+- `eps`
+- `jpg`
+- `png`
+
+**_font_**:
+
+- `enc`
+- `fd`
+- `mf`
+- `otf`
+- `ttf`
+
+**_beamer_**:
+
+- `nav`
+- `snm`
+- `vrb`
+:::
+:::{.column width="25%"}
+**_bibliografia_**:
+
+- `bbl`
+- `bbx`
+- `bcf`
+- `bib`
+- `blg`
+- `brf`
+- `bst`
+
+**_glossario_**:
+
+- `gls`
+- `glo`
+- `glg`
+
+**_indice_**:
+
+- `ind`
+- `idx`
+
+**_acronimi_**:
+
+- `acn`
+- `acr`
+- `ilg`
+
+**_nomenclatura_**:
+
+- `nlg`
+- `nlo`
+- `nls`
+:::
+:::{.column width="25%"}
+**_contenuti_**:
+
+- `loc`
+- `loe`
+- `lof`
+- `lol`
+- `lot`
+- `toc`
+
+**_configurazione_**:
+
+- `chktexrc`
+- `latexmkrc`
+- `gitattributes`
+- `gitignore`
+- `yml`
+
+**_documentazione_**:
+
+- `md`
+
+**_scripting_**:
+
+- `bat`
+- `sh`
+:::
+:::{.column width="25%"}
+**_precompilazione_**:
+
+- `fmt`
+
+**_caching_**:
+
+- `_minted*/`
+- `fdb_latexmk`
+- `pyg`
+- `pygtex`
+- `run.xml`
+
+**_sincronizzazione_**:
+
+- `synctex`
+- `fls`
+
+**_prodotti_**:
+
+- `aux`
+- `out`
+- `log`
+- `dvi`
+- `ps`
+- `pdf`
+:::
+::::
+::::: -->
 <!-- Informazioni interessanti scritte nel file `log`:
 ```bash
 Package siunitx Info: Option "group-digits = true" has been deprecated in this
@@ -1663,199 +1649,148 @@ Package thmtools Info: Key `qed' (with value `\qedsymbol ')
 (thmtools)             Will pass this to every \declaretheorem
 (thmtools)             that uses `style=myProofStyle' on input line 84.
 ``` -->
-</section>
-<section id="arara-config" class="slide level3 smaller scrollable">
-<h3>Configurazione di arara</h3>
-<ul>
-<li><strong>duplice obiettivo</strong>:
-<ol type="1">
-<li>evitare esecuzioni successive inutili;</li>
-<li>semplificarci il lavoro di compilazione.</li>
-</ol></li>
-<li>due possibili nomi per i file di configurazione: <code>.araraconfig.yaml</code>, <code>.arararc.yaml</code> <!-- - abbiamo a disposizione tre funzioni fondamentali: `missing`, `changed` e `found`. --> <!-- - tramite le quali possiamo controllare la presenza di un file, la sua modifica, o la presenza di una parola chiave all'interno del file. --></li>
-</ul>
-</section>
-<section class="slide level3">
+<!-- ### Configurazione di arara {#arara-config .smaller}
 
-<h4 id="arara-routine">Esempio di routine</h4>
-<div class="code larger">
-<div class="code-with-filename">
-<div class="code-with-filename-file">
-<pre><strong>.araraconfig.yaml</strong></pre>
-</div>
-<div class="sourceCode" id="cb29" data-filename=".araraconfig.yaml" data-code-line-numbers="|1-5|7-8|10-11|13-17|19-20"><pre class="sourceCode numberSource latex number-lines code-with-copy"><code class="sourceCode latex"><span id="cb29-1"><a href=""></a><span class="co">% arara: pdflatex: {</span></span>
-<span id="cb29-2"><a href=""></a><span class="co">% arara: --&gt; draft: yes,</span></span>
-<span id="cb29-3"><a href=""></a><span class="co">% arara: --&gt; shell: yes,</span></span>
-<span id="cb29-4"><a href=""></a><span class="co">% arara: --&gt; options: [--output-directory=build]</span></span>
-<span id="cb29-5"><a href=""></a><span class="co">% arara: --&gt; }</span></span>
-<span id="cb29-6"><a href=""></a></span>
-<span id="cb29-7"><a href=""></a><span class="co">% arara: biber: { options: [ '--output-directory=build' ] }</span></span>
-<span id="cb29-8"><a href=""></a><span class="co">% arara: --&gt; if missing(toFile('build/thesis.bbl')) || changed(toFile('build/thesis.bbl')) || found(toFile('build/thesis.log'), 'Citation')</span></span>
-<span id="cb29-9"><a href=""></a></span>
-<span id="cb29-10"><a href=""></a><span class="co">% arara: makeglossaries: { options: [ '-d', 'build' ] }</span></span>
-<span id="cb29-11"><a href=""></a><span class="co">% arara: --&gt; if changed (toFile('build/thesis.glo')) || missing (toFile('build/thesis.gls'))</span></span>
-<span id="cb29-12"><a href=""></a></span>
-<span id="cb29-13"><a href=""></a><span class="co">% arara: pdflatex: {</span></span>
-<span id="cb29-14"><a href=""></a><span class="co">% arara: --&gt; shell: yes,</span></span>
-<span id="cb29-15"><a href=""></a><span class="co">% arara: --&gt; synctex: yes,</span></span>
-<span id="cb29-16"><a href=""></a><span class="co">% arara: --&gt; options: [--output-directory=build]</span></span>
-<span id="cb29-17"><a href=""></a><span class="co">% arara: --&gt; }</span></span>
-<span id="cb29-18"><a href=""></a></span>
-<span id="cb29-19"><a href=""></a><span class="co">% arara: move: { files: [ 'build/thesis.pdf' ],</span></span>
-<span id="cb29-20"><a href=""></a><span class="co">% arara: --&gt; target: 'backup/thesis.pdf' }</span></span></code><button title="Copia negli appunti" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-</div>
-</section>
-<section id="colleghiamo-vs-code-ad-arara" class="slide level3">
-<h3>Colleghiamo VS Code ad <code>arara</code></h3>
-</section>
+- **duplice obiettivo**:
+    1. evitare esecuzioni successive inutili;
+    2. semplificarci il lavoro di compilazione.
+- due possibili nomi per i file di configurazione: `.araraconfig.yaml`, `.arararc.yaml` -->
+<!-- - abbiamo a disposizione tre funzioni fondamentali: `missing`, `changed` e `found`. -->
+<!-- - tramite le quali possiamo controllare la presenza di un file, la sua modifica, o la presenza di una parola chiave all'interno del file. -->
+<!-- #### Esempio di routine {#arara-routine}
 
-<section id="pulizia-file-temporanei" class="title-slide slide level2 smaller center">
-<h2>Pulizia file temporanei</h2>
-<p>Pulire i file temporanei:</p>
-<div class="sourceCode" id="cb30"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb30-1"><a href="" aria-hidden="true" tabindex="-1"></a><span class="ex">latexmk</span> <span class="at">-c</span></span></code><button title="Copia negli appunti" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>Se <code>latexmk -c</code> si rifiuta di rimuovere determinati file, è possibile specificare le loro estensioni nel file di configurazione <code>.latexmkrc</code> come segue:</p>
-<div class="sourceCode" id="cb31"><pre class="sourceCode perl code-with-copy"><code class="sourceCode perl"><span id="cb31-1"><a href="" aria-hidden="true" tabindex="-1"></a><span class="dt">$clean_ext</span> = <span class="ot">"</span><span class="st">acn acr alg glg glo gls ist log nav out run.xml slg snm syg syi synctex.gz</span><span class="ot">"</span>;</span></code><button title="Copia negli appunti" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>Questo non elimina il documento finale <code>.pdf</code>. Se vuoi eliminare anche il <code>.pdf</code>:</p>
-<div class="sourceCode" id="cb32"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb32-1"><a href="" aria-hidden="true" tabindex="-1"></a><span class="ex">latexmk</span> <span class="at">-C</span></span></code><button title="Copia negli appunti" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>Questo è il contenuto del mio file di configurazione <code>.latexmkrc</code>:</p>
-<div class="sourceCode" id="cb33"><pre class="sourceCode numberSource perl number-lines code-with-copy"><code class="sourceCode perl"><span id="cb33-1"><a href=""></a><span class="co"># latexmk -pdf -pvc main.tex</span></span>
-<span id="cb33-2"><a href=""></a><span class="dt">$pdflatex</span> = <span class="ot">"</span><span class="st">pdflatex --shell-escape -synctex=1 -halt-on-error </span><span class="dt">%O</span><span class="st"> </span><span class="dt">%S</span><span class="ot">"</span>;</span>
-<span id="cb33-3"><a href=""></a><span class="dt">$sleep_time</span> = <span class="dv">1</span>; <span class="co"># 1 second</span></span>
-<span id="cb33-4"><a href=""></a><span class="dt">$pdf_mode</span> = <span class="dv">1</span>;   <span class="co"># tex -&gt; pdf</span></span>
-<span id="cb33-5"><a href=""></a></span>
-<span id="cb33-6"><a href=""></a><span class="co"># If you have your work split up into several parts, you have to specify the main file like this:</span></span>
-<span id="cb33-7"><a href=""></a><span class="dt">@default_files</span> = (<span class="ot">'</span><span class="ss">thesis.tex</span><span class="ot">'</span>);</span>
-<span id="cb33-8"><a href=""></a></span>
-<span id="cb33-9"><a href=""></a><span class="co"># And finally, if latexmk -c refuses to remove certain files, you can specify their extensions and next time they’ll be gone:</span></span>
-<span id="cb33-10"><a href=""></a><span class="dt">$clean_ext</span> = <span class="ot">"</span><span class="st">acn acr alg glg glo gls ist log nav out run.xml slg snm syg syi synctex.gz</span><span class="ot">"</span>;</span>
-<span id="cb33-11"><a href=""></a></span>
-<span id="cb33-12"><a href=""></a><span class="co"># https://tex.stackexchange.com/questions/83341/clean-bbl-files-with-latexmk-c</span></span>
-<span id="cb33-13"><a href=""></a><span class="dt">$bibtex_use</span> = <span class="dv">2</span>;</span>
-<span id="cb33-14"><a href=""></a></span>
-<span id="cb33-15"><a href=""></a><span class="dt">$out_dir</span> = <span class="ot">'</span><span class="ss">build</span><span class="ot">'</span>;</span></code><button title="Copia negli appunti" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</section>
-</section>
-<section>
-<section id="tipografia" class="title-slide slide level1 smaller center" data-background-image="assets/images/hero/typography.jpg" data-background-size="cover">
-<h1>Perché la tipografia è <em>importante</em>?</h1>
+### Colleghiamo VS Code ad `arara` -->
+<!-- ## Pulizia file temporanei {.smaller}
 
-</section>
-<section id="oscars-2017-best-picture-announcement" class="slide level3">
-<h3>Oscars 2017 Best Picture announcement</h3>
-<iframe data-external="1" src="https://www.youtube.com/embed/eZSe4xVXHhI" width="100%" height="100%" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe>
-</section></section>
-<section>
-<section id="scaletta-argomenti" class="title-slide slide level1 smaller center">
-<h1>Scaletta argomenti</h1>
+Pulire i file temporanei:
+```{.bash code-line-numbers="false"}
+latexmk -c
+```
+Se `latexmk -c` si rifiuta di rimuovere determinati file, è possibile specificare le loro estensioni nel file di configurazione `.latexmkrc` come segue:
+```{.perl code-line-numbers="false"}
+$clean_ext = "acn acr alg glg glo gls ist log nav out run.xml slg snm syg syi synctex.gz";
+```
+Questo non elimina il documento finale `.pdf`. Se vuoi eliminare anche il `.pdf`:
+```{.bash code-line-numbers="false"}
+latexmk -C
+```
+
+Questo è il contenuto del mio file di configurazione `.latexmkrc`:
+```perl
+# latexmk -pdf -pvc main.tex
+$pdflatex = "pdflatex --shell-escape -synctex=1 -halt-on-error %O %S";
+$sleep_time = 1; # 1 second
+$pdf_mode = 1;   # tex -> pdf
+
+# If you have your work split up into several parts, you have to specify the main file like this:
+@default_files = ('thesis.tex');
+
+# And finally, if latexmk -c refuses to remove certain files, you can specify their extensions and next time they’ll be gone:
+$clean_ext = "acn acr alg glg glo gls ist log nav out run.xml slg snm syg syi synctex.gz";
+
+# https://tex.stackexchange.com/questions/83341/clean-bbl-files-with-latexmk-c
+$bibtex_use = 2;
+
+$out_dir = 'build';
+``` -->
+<!-- # Perché la tipografia è _importante_? {.smaller #tipografia data-background-image="assets/images/hero/typography.jpg" data-background-size="cover"}
+
+### Oscars 2017 Best Picture announcement
+
+ -->
+<!-- # Scaletta argomenti {.smaller} -->
 <!-- https://quarto.org/docs/presentations/revealjs/#content-overflow -->
-</section>
-<section id="scaletta-argomenti-12" class="title-slide slide level2 smaller center">
-<h2>Scaletta argomenti [1/2]</h2>
-<ul>
-<li>clean code mentality</li>
-<li><a href="https://tex.stackexchange.com/questions/44694/fontenc-vs-inputenc">codifica dell’input e del font</a> (<code>inputenc</code> e <code>fontenc</code>)</li>
-<li>impostazione della lingua del documento ( <code>babel</code>)</li>
-<li><a href="https://tex.stackexchange.com/a/110140/127473">hyphenation, typesetting, ligatures</a> (<code>microtype</code>)<a href="#/footnotes" class="footnote-ref" id="fnref3" role="doc-noteref" data-footnote-href="#/fn3" onclick=""><sup>3</sup></a></li>
-<li>le virgolette (<code>csquotes</code>)</li>
-<li>margini del documento (<code>geometry</code>), indentazione (<code>parskip</code>)</li>
-<li>Interruzioni di riga<a href="#/footnotes" class="footnote-ref" id="fnref4" role="doc-noteref" data-footnote-href="#/fn4" onclick=""><sup>4</sup></a>,uso di <code>%</code><a href="#/footnotes" class="footnote-ref" id="fnref5" role="doc-noteref" data-footnote-href="#/fn5" onclick=""><sup>5</sup></a>, <code>comment</code> package</li>
-<li><strong>grassetto</strong>, <em>corsivo</em>, <code>monofont</code>, combinazini</li>
-<li>elenchi puntati, numerati, descrittivi, personalizzati (<code>enumitem</code>)</li>
-<li>note a piè di pagina (<code>footnote</code>)</li>
-</ul>
-<aside></aside></section>
+<!-- ## Scaletta argomenti [1/2] {.smaller}
 
-<section id="scaletta-argomenti-22" class="title-slide slide level2 smaller center">
-<h2>Scaletta argomenti [2/2]</h2>
-<ul>
-<li>testatina e piedino (<a href="https://www.overleaf.com/learn/latex/Headers_and_footers"><code>fancyhdr</code></a>)</li>
-<li>figure (<code>graphicx</code>) e tabelle (<code>booktabs</code>), opzioni comuni</li>
-<li>strutturazione del documento (<code>standalone</code>)</li>
-<li>riferimenti ipertestuali (<code>hyperref</code>)</li>
-<li>importazione di codice, evidenziazione della sintassi (<code>minted</code>)</li>
-<li>scrittura di pseudocodice (<code>algorithms2e</code>)</li>
-<li>creazione di un glossario (<code>glossaries</code>), acronimi (<code>acronym</code>), indice (<code>index</code>)</li>
-</ul>
-</section>
-</section>
-<section>
-<section id="package-utili" class="title-slide slide level1 smaller center">
-<h1>Package utili</h1>
+- clean code mentality
+- [codifica dell'input e del font](https://tex.stackexchange.com/questions/44694/fontenc-vs-inputenc) (`inputenc` e `fontenc`)
+- impostazione della lingua del documento ( `babel`)
+- [hyphenation, typesetting, ligatures](https://tex.stackexchange.com/a/110140/127473) (`microtype`)^[[Tips on Writing a Thesis in LaTeX](http://www.khirevich.com/latex/microtype/)]
+- le virgolette (`csquotes`)
+- margini del documento (`geometry`), indentazione (`parskip`)
+- Interruzioni di riga^[[When to use `\par` and when `\\`, `\newline`](https://tex.stackexchange.com/q/82664/127473)],uso di `%`^[[What is the use of percent signs (`%`)](https://tex.stackexchange.com/a/7459/127473)], `comment` package
+- **grassetto**, *corsivo*, `monofont`, combinazini
+- elenchi puntati, numerati, descrittivi, personalizzati (`enumitem`)
+- note a piè di pagina (`footnote`)
 
-</section>
-<section id="package-utili-1" class="title-slide slide level2 smallest center" data-auto-animate="true">
-<h2 data-id="quarto-animate-title">Package utili</h2>
-<div class="columns">
-<div class="column" style="width:20%;">
-<ul>
-<li><code>adjustbox</code></li>
-<li><code>algorithms2e</code></li>
-<li><code>amsfonts</code></li>
-<li><code>amsmath</code></li>
-<li><code>amssymb</code></li>
-<li><code>annotate-equations</code></li>
-<li><code>appendix</code></li>
-<li><code>babel</code></li>
-<li><code>biblatex</code></li>
-<li><code>bookmark</code></li>
-</ul>
-</div><div class="column" style="width:20%;">
-<ul>
-<li><code>booktabs</code></li>
-<li><code>caption</code></li>
-<li><code>cleveref</code></li>
-<li><code>csquotes</code></li>
-<li><code>datetime2</code></li>
-<li><code>diagbox</code></li>
-<li><code>doclicense</code></li>
-<li><code>draftwatermark</code></li>
-<li><code>empheq</code></li>
-<li><code>emptypage</code></li>
-<li><code>enumitem</code></li>
-</ul>
-</div><div class="column" style="width:20%;">
-<ul>
-<li><code>epigraph</code></li>
-<li><code>fancyhdr</code></li>
-<li><code>float</code></li>
-<li><code>fontspec</code></li>
-<li><code>forest</code></li>
-<li><code>geometry</code></li>
-<li><code>graphicx</code></li>
-<li><code>hyperref</code></li>
-<li><code>index</code></li>
-<li><code>listings</code></li>
-</ul>
-</div><div class="column" style="width:20%;">
-<ul>
-<li><code>mathtools</code></li>
-<li><code>microtype</code></li>
-<li><code>minted</code></li>
-<li><code>multirow</code></li>
-<li><code>nameref</code></li>
-<li><code>nicefrac</code></li>
-<li><code>pageslts</code></li>
-<li><code>parskip</code></li>
-<li><code>polyglossia</code></li>
-<li><code>ragged2e</code></li>
-<li><code>setspace</code></li>
-</ul>
-</div><div class="column" style="width:20%;">
-<ul>
-<li><code>silence</code></li>
-<li><code>siunitx</code></li>
-<li><code>standalone</code></li>
-<li><code>subcaption</code></li>
-<li><code>tabularray</code></li>
-<li><code>tcolorbox</code></li>
-<li><code>thmtools</code></li>
-<li><code>tikz</code></li>
-<li><code>titlesec</code></li>
-<li><code>titletoc</code></li>
-<li><code>xcolor</code></li>
-</ul>
-</div></div>
+## Scaletta argomenti [2/2] {.smaller}
+
+- testatina e piedino ([`fancyhdr`](https://www.overleaf.com/learn/latex/Headers_and_footers))
+- figure (`graphicx`) e tabelle (`booktabs`), opzioni comuni
+- strutturazione del documento (`standalone`)
+- riferimenti ipertestuali (`hyperref`)
+- importazione di codice, evidenziazione della sintassi (`minted`)
+- scrittura di pseudocodice (`algorithms2e`)
+- creazione di un glossario (`glossaries`), acronimi (`acronym`), indice (`index`) -->
+<!-- # Package utili {.smaller}
+
+## Package utili {.smallest auto-animate=true}
+
+::::{.columns}
+:::{.column width="20%"}
+- `adjustbox`
+- `algorithms2e`
+- `amsfonts`
+- `amsmath`
+- `amssymb`
+- `annotate-equations`
+- `appendix`
+- `babel`
+- `biblatex`
+- `bookmark`
+:::
+:::{.column width="20%"}
+- `booktabs`
+- `caption`
+- `cleveref`
+- `csquotes`
+- `datetime2`
+- `diagbox`
+- `doclicense`
+- `draftwatermark`
+- `empheq`
+- `emptypage`
+- `enumitem`
+:::
+:::{.column width="20%"}
+- `epigraph`
+- `fancyhdr`
+- `float`
+- `fontspec`
+- `forest`
+- `geometry`
+- `graphicx`
+- `hyperref`
+- `index`
+- `listings`
+:::
+:::{.column width="20%"}
+- `mathtools`
+- `microtype`
+- `minted`
+- `multirow`
+- `nameref`
+- `nicefrac`
+- `pageslts`
+- `parskip`
+- `polyglossia`
+- `ragged2e`
+- `setspace`
+:::
+:::{.column width="20%"}
+- `silence`
+- `siunitx`
+- `standalone`
+- `subcaption`
+- `tabularray`
+- `tcolorbox`
+- `thmtools`
+- `tikz`
+- `titlesec`
+- `titletoc`
+- `xcolor`
+:::
+:::: -->
 <!-- **_bibliography_**:
 
 - `biblatex`
@@ -1913,24 +1848,20 @@ Package thmtools Info: Key `qed' (with value `\qedsymbol ')
 - `cleverref`
 
 **_lingua_**: -->
-</section>
+<!-- ## Package da <u class="wavy">non caricare</u>
 
-<section id="package-da-non-caricare" class="title-slide slide level2 center">
-<h2>Package da <u class="wavy">non caricare</u></h2>
-<ul>
-<li><code>tabu</code>, <code>tabularx</code>, <code>booktabs</code>, <code>array</code>, <code>multirow</code>, <code>longtable</code> → […<code>tabularray</code>, <code>tblr-extras</code>]</li>
-<li>[<code>epsf</code>, <code>epsfig</code>, <code>psfig</code>] → <code>graphicx</code></li>
-<li><code>cite</code> → <code>biblatex</code></li>
-<li>[<code>subfigure</code>, <code>subfig</code>] → <code>subcaption</code></li>
-<li><code>glossary</code> → <code>glossaries</code></li>
-<li><code>enumerate</code> → <code>enumitem</code></li>
-</ul>
+- `tabu`, `tabularx`, `booktabs`, `array`, `multirow`, `longtable` → [...`tabularray`, `tblr-extras`]
+- [`epsf`, `epsfig`, `psfig`] → `graphicx`
+- `cite` → `biblatex`
+- [`subfigure`, `subfig`] → `subcaption`
+- `glossary` → `glossaries`
+- `enumerate` → `enumitem` -->
 </section>
 </section>
 <section>
-<section id="project-structure" class="title-slide slide level1 smaller center" data-background-image="assets/images/hero/project-structure.jpg" data-background-size="cover">
+<section id="project-structure" class="title-slide slide level1 smaller center">
 <h1>Struttura del progetto</h1>
-
+<p>Da quali parti è composta una tesi?</p>
 </section>
 <section id="struttura-tesi" class="title-slide slide level2 smallest center">
 <h2>Struttura generale di una tesi</h2>
@@ -1961,328 +1892,277 @@ Package thmtools Info: Key `qed' (with value `\qedsymbol ')
 </tr>
 </tbody>
 </table>
-</section>
+<!-- ## Struttura del nostro progetto {#struttura-progetto}
 
-<section id="struttura-progetto" class="title-slide slide level2 center">
-<h2>Struttura del nostro progetto</h2>
-<div class="code larger">
-<div class="code-with-filename">
-<div class="code-with-filename-file">
-<pre><strong>Albero del progetto</strong></pre>
-</div>
-<div class="sourceCode" id="cb34" data-filename="Albero del progetto" data-code-line-numbers="|52-53|50-51|47-49|53|52|24|23|22|2|3-4|5-13|6-9|10-12|13|14|15|16-18|19-20|21|54|"><pre class="sourceCode numberSource txt number-lines code-with-copy"><code class="sourceCode default"><span id="cb34-1"><a href=""></a>.</span>
-<span id="cb34-2"><a href=""></a>├── assets/</span>
-<span id="cb34-3"><a href=""></a>│   ├── appendixes/</span>
-<span id="cb34-4"><a href=""></a>│   │   └── A*-appendix-name.tex</span>
-<span id="cb34-5"><a href=""></a>│   ├── chapters/</span>
-<span id="cb34-6"><a href=""></a>│   │   ├── intro/</span>
-<span id="cb34-7"><a href=""></a>│   │   │   ├── dedication.tex</span>
-<span id="cb34-8"><a href=""></a>│   │   │   ├── frontispiece.tex</span>
-<span id="cb34-9"><a href=""></a>│   │   │   └── lists.tex</span>
-<span id="cb34-10"><a href=""></a>│   │   ├── outro/</span>
-<span id="cb34-11"><a href=""></a>│   │   │   ├── bibliography.tex</span>
-<span id="cb34-12"><a href=""></a>│   │   │   └── index.tex</span>
-<span id="cb34-13"><a href=""></a>│   │   └── **-chapter-name.tex</span>
-<span id="cb34-14"><a href=""></a>│   ├── codes/</span>
-<span id="cb34-15"><a href=""></a>│   ├── diagrams/</span>
-<span id="cb34-16"><a href=""></a>│   ├── images/</span>
-<span id="cb34-17"><a href=""></a>│   │   ├── **/</span>
-<span id="cb34-18"><a href=""></a>│   |   └── logo/</span>
-<span id="cb34-19"><a href=""></a>│   ├── resources/</span>
-<span id="cb34-20"><a href=""></a>│   |   └── references.bib</span>
-<span id="cb34-21"><a href=""></a>│   └── tables/</span>
-<span id="cb34-22"><a href=""></a>├── backup/</span>
-<span id="cb34-23"><a href=""></a>├── build/</span>
-<span id="cb34-24"><a href=""></a>├── settings/</span>
-<span id="cb34-25"><a href=""></a>│   ├── pdf-props.sty</span>
-<span id="cb34-26"><a href=""></a>│   ├── set-algorithm2e.sty</span>
-<span id="cb34-27"><a href=""></a>│   ├── set-bibliography.sty</span>
-<span id="cb34-28"><a href=""></a>│   ├── set-code.sty</span>
-<span id="cb34-29"><a href=""></a>│   ├── set-color.sty</span>
-<span id="cb34-30"><a href=""></a>│   ├── set-debug.sty</span>
-<span id="cb34-31"><a href=""></a>│   ├── set-geometry.sty</span>
-<span id="cb34-32"><a href=""></a>│   ├── set-glossary.sty</span>
-<span id="cb34-33"><a href=""></a>│   ├── set-graphics.sty</span>
-<span id="cb34-34"><a href=""></a>│   ├── set-hyperref.sty</span>
-<span id="cb34-35"><a href=""></a>│   ├── set-index.sty</span>
-<span id="cb34-36"><a href=""></a>│   ├── set-lists.sty</span>
-<span id="cb34-37"><a href=""></a>│   ├── set-macros.sty</span>
-<span id="cb34-38"><a href=""></a>│   ├── set-math.sty</span>
-<span id="cb34-39"><a href=""></a>│   ├── set-pagestyle.sty</span>
-<span id="cb34-40"><a href=""></a>│   ├── set-pdf-props.sty</span>
-<span id="cb34-41"><a href=""></a>│   ├── set-redefinitions.sty</span>
-<span id="cb34-42"><a href=""></a>│   ├── set-spacing.sty</span>
-<span id="cb34-43"><a href=""></a>│   ├── set-tables.sty</span>
-<span id="cb34-44"><a href=""></a>│   ├── set-typography.sty</span>
-<span id="cb34-45"><a href=""></a>│   └── set-warnings.sty</span>
-<span id="cb34-46"><a href=""></a>├── .araraconfig.yaml</span>
-<span id="cb34-47"><a href=""></a>├── .chktexrc</span>
-<span id="cb34-48"><a href=""></a>├── .latexmkrc</span>
-<span id="cb34-49"><a href=""></a>├── presentation.preamble.sty</span>
-<span id="cb34-50"><a href=""></a>├── presentation.tex</span>
-<span id="cb34-51"><a href=""></a>├── thesis.preamble.sty</span>
-<span id="cb34-52"><a href=""></a>└── thesis.tex</span></code><button title="Copia negli appunti" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-</div>
-</section>
-</section>
-<section>
-<section id="preparare-il-documento" class="title-slide slide level1 center">
-<h1>Preparare il documento</h1>
-<p>Codifica dei caratteri, impostazione della lingua, margini del documento, migliorare la scrittura, come fare i commenti.</p>
-</section>
-<section id="package-fontenc" class="title-slide slide level2 smaller center">
-<h2>Codifica dei caratteri</h2>
-<div class="code-with-filename">
-<div class="code-with-filename-file">
-<pre><strong>preamble.main.sty</strong></pre>
-</div>
-<div class="sourceCode" id="cb35" data-filename="preamble.main.sty" data-code-line-numbers="|1|2|"><pre class="sourceCode numberSource latex number-lines code-with-copy"><code class="sourceCode latex"><span id="cb35-1"><a href=""></a><span class="bu">\usepackage</span>[T1]{<span class="ex">fontenc</span>}<span class="co">% font encoding</span></span>
-<span id="cb35-2"><a href=""></a><span class="co">%\usepackage[utf8]{inputenc}% default from 2018</span></span></code><button title="Copia negli appunti" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<ul>
-<li><a href="https://tex.stackexchange.com/questions/44694/fontenc-vs-inputenc">fontenc vs inputenc</a></li>
-<li><a href="https://tex.stackexchange.com/questions/664/why-should-i-use-usepackaget1fontenc">Why should I use <code>fontenc</code>?</a></li>
-<li><a href="https://tex.stackexchange.com/questions/370278/is-there-any-reason-to-use-inputenc">Is there any reason to use <code>inputenc</code>?</a></li>
-</ul>
-</section>
+:::{.code .larger}
+```{.txt filename="Albero del progetto" code-line-numbers="|52-53|50-51|47-49|53|52|24|23|22|2|3-4|5-13|6-9|10-12|13|14|15|16-18|19-20|21|54|"}
+.
+├── assets/
+│   ├── appendixes/
+│   │   └── A*-appendix-name.tex
+│   ├── chapters/
+│   │   ├── intro/
+│   │   │   ├── dedication.tex
+│   │   │   ├── frontispiece.tex
+│   │   │   └── lists.tex
+│   │   ├── outro/
+│   │   │   ├── bibliography.tex
+│   │   │   └── index.tex
+│   │   └── **-chapter-name.tex
+│   ├── codes/
+│   ├── diagrams/
+│   ├── images/
+│   │   ├── **/
+│   |   └── logo/
+│   ├── resources/
+│   |   └── references.bib
+│   └── tables/
+├── backup/
+├── build/
+├── settings/
+│   ├── pdf-props.sty
+│   ├── set-algorithm2e.sty
+│   ├── set-bibliography.sty
+│   ├── set-code.sty
+│   ├── set-color.sty
+│   ├── set-debug.sty
+│   ├── set-geometry.sty
+│   ├── set-glossary.sty
+│   ├── set-graphics.sty
+│   ├── set-hyperref.sty
+│   ├── set-index.sty
+│   ├── set-lists.sty
+│   ├── set-macros.sty
+│   ├── set-math.sty
+│   ├── set-pagestyle.sty
+│   ├── set-pdf-props.sty
+│   ├── set-redefinitions.sty
+│   ├── set-spacing.sty
+│   ├── set-tables.sty
+│   ├── set-typography.sty
+│   └── set-warnings.sty
+├── .araraconfig.yaml
+├── .chktexrc
+├── .latexmkrc
+├── presentation.preamble.sty
+├── presentation.tex
+├── thesis.preamble.sty
+└── thesis.tex
+```
+::: -->
+<!-- # Preparare il documento
 
-<section id="specificare-la-lingua" class="title-slide slide level2 center">
-<h2>Specificare la lingua</h2>
-<div class="sourceCode" id="cb36"><pre class="sourceCode numberSource latex number-lines code-with-copy"><code class="sourceCode latex"><span id="cb36-1"><a href=""></a><span class="bu">\usepackage</span>[main=italian, english]{<span class="ex">babel</span>}</span></code><button title="Copia negli appunti" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</section>
+Codifica dei caratteri, impostazione della lingua, margini del documento, migliorare la scrittura, come fare i commenti. -->
+<!-- ## Codifica dei caratteri {.smaller #package-fontenc}
 
-<section id="package-geometry" class="title-slide slide level2 smaller center">
-<h2>Margini del documento</h2>
-<div>
+```{.latex filename="preamble.main.sty" code-line-numbers="|1|2|"}
+\usepackage[T1]{fontenc}% font encoding
+%\usepackage[utf8]{inputenc}% default from 2018
+```
 
-</div>
-<div class="quarto-layout-panel" data-layout-ncol="2">
-<div class="quarto-layout-row">
-<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
-<div class="code-with-filename">
-<div class="code-with-filename-file">
-<pre><strong>settings/set-geometry.sty</strong></pre>
-</div>
-<div class="sourceCode" id="cb37" data-filename="settings/set-geometry.sty" data-code-line-numbers="|1,8|2|3|4|5|6|7|"><pre class="sourceCode numberSource latex number-lines code-with-copy"><code class="sourceCode latex"><span id="cb37-1"><a href=""></a><span class="bu">\usepackage</span>[</span>
-<span id="cb37-2"><a href=""></a>    a4paper,</span>
-<span id="cb37-3"><a href=""></a>    <span class="co">% showframe,</span></span>
-<span id="cb37-4"><a href=""></a>    inner = 1.5cm,</span>
-<span id="cb37-5"><a href=""></a>    top = 2cm,</span>
-<span id="cb37-6"><a href=""></a>    outer = 2.5cm,</span>
-<span id="cb37-7"><a href=""></a>    bottom = 2cm</span>
-<span id="cb37-8"><a href=""></a>]{<span class="ex">geometry</span>}</span></code><button title="Copia negli appunti" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-</div>
-<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
-<div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="assets/images/geometry/layout-dimensions.png" height="600"></p>
-<figcaption>Layout package</figcaption>
-</figure>
-</div>
-</div>
-</div>
-</div>
-<ul>
-<li><a href="https://www.overleaf.com/learn/latex/Page_size_and_margins">Page size and margins</a></li>
-</ul>
-</section>
+- [fontenc vs inputenc](https://tex.stackexchange.com/questions/44694/fontenc-vs-inputenc)
+- [Why should I use `fontenc`?](https://tex.stackexchange.com/questions/664/why-should-i-use-usepackaget1fontenc)
+- [Is there any reason to use `inputenc`?](https://tex.stackexchange.com/questions/370278/is-there-any-reason-to-use-inputenc) -->
+<!-- ## Specificare la lingua
 
-<section id="package-parskip" class="title-slide slide level2 center">
-<h2>Gestire la spaziatura</h2>
-<div class="code-with-filename">
-<div class="code-with-filename-file">
-<pre><strong>settings/set-spacing.sty</strong></pre>
-</div>
-<div class="sourceCode" id="cb38" data-filename="settings/set-spacing.sty" data-code-line-numbers="|1-6|8-10|"><pre class="sourceCode numberSource latex number-lines code-with-copy"><code class="sourceCode latex"><span id="cb38-1"><a href=""></a><span class="bu">\usepackage</span>[</span>
-<span id="cb38-2"><a href=""></a>    skip=0.2cm,   <span class="co">% default: .5\baselineskip plus 2pt explicitly specify the vertical space between paragraphs</span></span>
-<span id="cb38-3"><a href=""></a>    tocskip=0pt,  <span class="co">% default: \parskip</span></span>
-<span id="cb38-4"><a href=""></a>    indent=0pt,</span>
-<span id="cb38-5"><a href=""></a>    parfill=30pt  <span class="co">% default: 30pt</span></span>
-<span id="cb38-6"><a href=""></a>]{<span class="ex">parskip</span>}</span>
-<span id="cb38-7"><a href=""></a></span>
-<span id="cb38-8"><a href=""></a><span class="bu">\usepackage</span>{<span class="ex">setspace</span>}</span>
-<span id="cb38-9"><a href=""></a><span class="co">% \singlespacing</span></span>
-<span id="cb38-10"><a href=""></a><span class="co">% \onehalfspacing</span></span></code><button title="Copia negli appunti" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-</section>
+```latex
+\usepackage[main=italian, english]{babel}
+``` -->
+<!-- ## Margini del documento {.smaller #package-geometry}
 
-<section id="package-microtype" class="title-slide slide level2 center">
-<h2>Migliorare la scrittura</h2>
-<div class="code-with-filename">
-<div class="code-with-filename-file">
-<pre><strong>settings/set-typography.sty</strong></pre>
-</div>
-<div class="sourceCode" id="cb39" data-filename="settings/set-typography.sty"><pre class="sourceCode numberSource latex number-lines code-with-copy"><code class="sourceCode latex"><span id="cb39-1"><a href=""></a><span class="bu">\usepackage</span>[</span>
-<span id="cb39-2"><a href=""></a>    <span class="co">% ,activate = {true, nocompatibility}</span></span>
-<span id="cb39-3"><a href=""></a>    ,activate   = {true}</span>
-<span id="cb39-4"><a href=""></a>    ,final</span>
-<span id="cb39-5"><a href=""></a>    ,tracking   = true</span>
-<span id="cb39-6"><a href=""></a>    ,kerning    = true</span>
-<span id="cb39-7"><a href=""></a>    ,factor     = 1100</span>
-<span id="cb39-8"><a href=""></a>    ,stretch    = 10</span>
-<span id="cb39-9"><a href=""></a>    ,shrink     = 10</span>
-<span id="cb39-10"><a href=""></a>]{<span class="ex">microtype</span>}</span></code><button title="Copia negli appunti" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-</section>
+::: {layout-ncol=2}
+```{.latex filename="settings/set-geometry.sty" code-line-numbers="|1,8|2|3|4|5|6|7|"}
+\usepackage[
+    a4paper,
+    % showframe,
+    inner = 1.5cm,
+    top = 2cm,
+    outer = 2.5cm,
+    bottom = 2cm
+]{geometry}
+```
 
-<section id="package-comment" class="title-slide slide level2 smaller center">
-<h2>Come fare i commenti</h2>
-<ul>
-<li><a href="https://tex.stackexchange.com/questions/17816/commenting-out-large-sections">Commenting out large sections</a></li>
-<li>Commanta con <code>Ctrl + ù</code>/<code>Ctrl + Shift + ù</code> su Visual Studio Code</li>
-</ul>
-<div class="sourceCode" id="cb40"><pre class="sourceCode numberSource latex number-lines code-with-copy"><code class="sourceCode latex"><span id="cb40-1"><a href=""></a><span class="bu">\documentclass</span>{<span class="ex">standalone</span>}</span>
-<span id="cb40-2"><a href=""></a><span class="bu">\usepackage</span>{<span class="ex">comment</span>}</span>
-<span id="cb40-3"><a href=""></a></span>
-<span id="cb40-4"><a href=""></a><span class="co">% uncomment to include stuff in standard comment-environment</span></span>
-<span id="cb40-5"><a href=""></a><span class="fu">\includecomment</span>{comment}</span>
-<span id="cb40-6"><a href=""></a></span>
-<span id="cb40-7"><a href=""></a><span class="co">% define a mysection env which content is excluded</span></span>
-<span id="cb40-8"><a href=""></a><span class="fu">\excludecomment</span>{mysection}</span>
-<span id="cb40-9"><a href=""></a></span>
-<span id="cb40-10"><a href=""></a><span class="kw">\begin</span>{<span class="ex">document</span>}</span>
-<span id="cb40-11"><a href=""></a>    This text will be displayed</span>
-<span id="cb40-12"><a href=""></a><span class="kw">\begin</span>{<span class="ex">comment</span>}</span>
-<span id="cb40-13"><a href=""></a><span class="co">    This text will only be displayed, if \includecomment{comment} was given</span></span>
-<span id="cb40-14"><a href=""></a><span class="kw">\end</span>{<span class="ex">comment</span>}</span>
-<span id="cb40-15"><a href=""></a><span class="kw">\begin</span>{<span class="ex">mysection</span>}</span>
-<span id="cb40-16"><a href=""></a>This text will only be displayed, if <span class="fu">\includecomment</span>{mysection} was given</span>
-<span id="cb40-17"><a href=""></a><span class="kw">\end</span>{<span class="ex">mysection</span>}</span>
-<span id="cb40-18"><a href=""></a><span class="kw">\end</span>{<span class="ex">document</span>}</span></code><button title="Copia negli appunti" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</section>
-</section>
-<section>
-<section id="impaginare-le-figure" class="title-slide slide level1 center">
-<h1>Impaginare le figure</h1>
-<p>Posizionamento delle figure, figure a metà pagina, figure nel testo.</p>
-</section>
-<section id="package-graphicx" class="title-slide slide level2 smaller center">
-<h2>Il pacchetto <code>graphicx</code></h2>
-<div class="code-with-filename">
-<div class="code-with-filename-file">
-<pre><strong>settings/set-graphics.sty</strong></pre>
-</div>
-<div class="sourceCode" id="cb41" data-filename="settings/set-graphics.sty" data-code-line-numbers="||"><pre class="sourceCode numberSource latex number-lines code-with-copy"><code class="sourceCode latex"><span id="cb41-1"><a href=""></a><span class="bu">\usepackage</span>[draft]{<span class="ex">graphicx</span>}</span></code><button title="Copia negli appunti" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-</section>
-<section id="package-graphicx-commands" class="slide level3 smaller">
-<h3>Comandi utili</h3>
-<p>Rotation and scaling of text.</p>
-<div class="sourceCode" id="cb42"><pre class="sourceCode numberSource latex number-lines code-with-copy"><code class="sourceCode latex"><span id="cb42-1"><a href=""></a><span class="fu">\rotatebox</span>[⟨key val list⟩]{⟨angle⟩}{⟨text⟩}</span>
-<span id="cb42-2"><a href=""></a><span class="fu">\scalebox</span>{⟨h-scale⟩}[⟨v-scale⟩]{⟨text⟩}</span>
-<span id="cb42-3"><a href=""></a><span class="fu">\reflectbox</span>{⟨text⟩}</span>
-<span id="cb42-4"><a href=""></a><span class="fu">\resizebox*</span>{⟨h-length⟩}{⟨v-length⟩}{⟨text⟩}</span></code><button title="Copia negli appunti" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>Including Graphics Files.</p>
-<div class="sourceCode" id="cb43"><pre class="sourceCode numberSource latex number-lines code-with-copy"><code class="sourceCode latex"><span id="cb43-1"><a href=""></a><span class="fu">\includegraphics*</span>[⟨key val list⟩]{⟨file⟩}</span></code><button title="Copia negli appunti" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="sourceCode" id="cb44"><pre class="sourceCode numberSource latex number-lines code-with-copy"><code class="sourceCode latex"><span id="cb44-1"><a href=""></a>width</span>
-<span id="cb44-2"><a href=""></a>height</span>
-<span id="cb44-3"><a href=""></a>keepaspectratio</span>
-<span id="cb44-4"><a href=""></a>scale</span>
-<span id="cb44-5"><a href=""></a>clip</span>
-<span id="cb44-6"><a href=""></a>alt</span></code><button title="Copia negli appunti" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</section>
-<section id="package-graphicx-options" class="slide level3 smaller">
-<h3>Impostazioni del pacchetto</h3>
-<div class="sourceCode" id="cb45"><pre class="sourceCode numberSource latex number-lines code-with-copy"><code class="sourceCode latex"><span id="cb45-1"><a href=""></a><span class="fu">\graphicspath</span>{⟨dir-list⟩}</span></code><button title="Copia negli appunti" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>This optional declaration may be used to specify a list of directories in which to search for graphics files. The format is as for the LATEX2ε primitive <code>\input@path</code>, a list of directories, each in a <code>{}</code> group (even if there is only one in the list). For example: <code>\graphicspath{{eps/}{tiff/}}</code> would cause the system to look in the subdirectories <code>eps</code> and <code>tiff</code> of the current directory.</p>
-<div class="code-with-filename">
-<div class="code-with-filename-file">
-<pre><strong>settings/set-graphics.sty</strong></pre>
-</div>
-<div class="sourceCode" id="cb46" data-filename="settings/set-graphics.sty"><pre class="sourceCode numberSource latex number-lines code-with-copy"><code class="sourceCode latex"><span id="cb46-1"><a href=""></a><span class="co">% </span><span class="al">NOTE</span><span class="co"> define absolute path to images</span></span>
-<span id="cb46-2"><a href=""></a><span class="fu">\graphicspath</span>{</span>
-<span id="cb46-3"><a href=""></a>    <span class="co">% </span><span class="al">NOTE</span><span class="co"> percorsi dal main</span></span>
-<span id="cb46-4"><a href=""></a>    {assets/images/}<span class="co">% generic</span></span>
-<span id="cb46-5"><a href=""></a>    {assets/images/logo/}<span class="co">% university logo</span></span>
-<span id="cb46-6"><a href=""></a>    {assets/images/01/}<span class="co">% 01-introduction</span></span>
-<span id="cb46-7"><a href=""></a>    {assets/images/02/}<span class="co">% 02-state-of-the-art</span></span>
-<span id="cb46-8"><a href=""></a>    {assets/images/03/}<span class="co">% 03-exploration</span></span>
-<span id="cb46-9"><a href=""></a>    {assets/images/04/}<span class="co">% 04-architecture</span></span>
-<span id="cb46-10"><a href=""></a>    {assets/images/05/}<span class="co">% 05-implementation</span></span>
-<span id="cb46-11"><a href=""></a>    {assets/images/06/}<span class="co">% 06-schools</span></span>
-<span id="cb46-12"><a href=""></a>    {assets/images/07/}<span class="co">% 07-local-community</span></span>
-<span id="cb46-13"><a href=""></a>    {assets/images/08/}<span class="co">% 08-implementation-online</span></span>
-<span id="cb46-14"><a href=""></a>    {assets/images/papers/articoloFIE/}<span class="co">% articolo</span></span>
-<span id="cb46-15"><a href=""></a>    {assets/images/papers/PRIMM}<span class="co">% articolo</span></span>
-<span id="cb46-16"><a href=""></a>}</span></code><button title="Copia negli appunti" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-</section>
+![Layout package](assets/images/geometry/layout-dimensions.png){height="600"}
+:::
 
-<section id="package-caption" class="title-slide slide level2 smaller center">
-<h2>Il pacchetto <a href="https://ctan.org/pkg/caption"><code>caption</code></a></h2>
-<p>Personalizzazione delle didascalie degli ambienti “mobili”</p>
-<div class="code-with-filename">
-<div class="code-with-filename-file">
-<pre><strong>settings/set-graphics.sty</strong></pre>
-</div>
-<div class="sourceCode" id="cb47" data-filename="settings/set-graphics.sty" data-code-line-numbers="|1|2-8|10-14|16-20|"><pre class="sourceCode numberSource latex number-lines code-with-copy"><code class="sourceCode latex"><span id="cb47-1"><a href=""></a><span class="bu">\usepackage</span>{<span class="ex">float, caption, subcaption</span>}</span>
-<span id="cb47-2"><a href=""></a><span class="fu">\captionsetup</span>{</span>
-<span id="cb47-3"><a href=""></a>    figureposition = bottom,</span>
-<span id="cb47-4"><a href=""></a>    tableposition  = top,</span>
-<span id="cb47-5"><a href=""></a>    font           = small,</span>
-<span id="cb47-6"><a href=""></a>    labelfont      = {sf, bf},</span>
-<span id="cb47-7"><a href=""></a>    justification  = centering</span>
-<span id="cb47-8"><a href=""></a>}</span>
-<span id="cb47-9"><a href=""></a></span>
-<span id="cb47-10"><a href=""></a><span class="fu">\captionsetup</span>[table]{</span>
-<span id="cb47-11"><a href=""></a>    format         = hang,</span>
-<span id="cb47-12"><a href=""></a>    justification  = raggedright,</span>
-<span id="cb47-13"><a href=""></a>    singlelinecheck= off</span>
-<span id="cb47-14"><a href=""></a>}</span>
-<span id="cb47-15"><a href=""></a></span>
-<span id="cb47-16"><a href=""></a><span class="fu">\captionsetup</span>[figure]{</span>
-<span id="cb47-17"><a href=""></a>    format         = hang,</span>
-<span id="cb47-18"><a href=""></a>    justification  = raggedright,</span>
-<span id="cb47-19"><a href=""></a>    singlelinecheck= off</span>
-<span id="cb47-20"><a href=""></a>}</span></code><button title="Copia negli appunti" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-</section>
-</section>
-<section>
-<section id="formattare-le-tabelle" class="title-slide slide level1 center">
-<h1>Formattare le tabelle</h1>
+- [Page size and margins](https://www.overleaf.com/learn/latex/Page_size_and_margins) -->
+<!-- ## Gestire la spaziatura {#package-parskip}
+```{.latex filename="settings/set-spacing.sty" code-line-numbers="|1-6|8-10|"}
+\usepackage[
+    skip=0.2cm,   % default: .5\baselineskip plus 2pt explicitly specify the vertical space between paragraphs
+    tocskip=0pt,  % default: \parskip
+    indent=0pt,
+    parfill=30pt  % default: 30pt
+]{parskip}
 
-</section>
-<section id="package-tabularray" class="title-slide slide level2 smaller center">
-<h2>Il pacchetto <code>tabularray</code></h2>
-<p>The <code>LaTeX3</code> package tabularray provides a new way to typeset tables in a keyval way. This allows the separation of content and style</p>
-<ul>
-<li><a href="https://tex.stackexchange.com/questions/629480/">Guides for typesetting tables with the tabularray package</a></li>
-</ul>
-<div class="sourceCode" id="cb48"><pre class="sourceCode numberSource latex number-lines code-with-copy"><code class="sourceCode latex"><span id="cb48-1"><a href=""></a><span class="bu">\usepackage</span>{<span class="ex">tabularray</span>}</span>
-<span id="cb48-2"><a href=""></a><span class="fu">\UseTblrLibrary</span>{amsmath, booktabs, counter, diagbox, functional, siunitx, varwidth}</span>
-<span id="cb48-3"><a href=""></a><span class="fu">\UseTblrLibrary</span>{nameref, zref}<span class="co">% compatibily with longtblr environment</span></span>
-<span id="cb48-4"><a href=""></a><span class="fu">\UseTblrLibrary</span>{hook, html}<span class="co">% experimental</span></span></code><button title="Copia negli appunti" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</section>
-<section id="package-tabularray-example" class="slide level3 smaller">
-<h3>Esempio</h3>
-<div class="code-with-filename">
-<div class="code-with-filename-file">
-<pre><strong>tabularray-example.tex</strong></pre>
-</div>
-<div class="sourceCode" id="cb49" data-filename="tabularray-example.tex" data-code-line-numbers="|2-4|6-12|7|8|9|10|12|13-19|"><pre class="sourceCode numberSource latex number-lines code-with-copy"><code class="sourceCode latex"><span id="cb49-1"><a href=""></a><span class="kw">\begin</span>{<span class="ex">table</span>}</span>
-<span id="cb49-2"><a href=""></a>    <span class="fu">\centering</span></span>
-<span id="cb49-3"><a href=""></a>    <span class="fu">\caption</span>{Esempio di didascalia.}</span>
-<span id="cb49-4"><a href=""></a>    <span class="kw">\label</span>{<span class="ex">tab:tabularray-example</span>}</span>
-<span id="cb49-5"><a href=""></a>    <span class="kw">\begin</span>{<span class="ex">tblr</span>}{</span>
-<span id="cb49-6"><a href=""></a>        colspec={@{} *{8}{c} @{}},</span>
-<span id="cb49-7"><a href=""></a>        row{odd}={gray!10}, row{1}={gray!20},</span>
-<span id="cb49-8"><a href=""></a>        vline{2-Y} = {1}{0.3pt,gray!50},</span>
-<span id="cb49-9"><a href=""></a>        vline{2-Y} = {2-Z}{0.3pt,gray!30},</span>
-<span id="cb49-10"><a href=""></a>        hline{1,2,Z} = {0.1pt,azure5}</span>
-<span id="cb49-11"><a href=""></a>    }</span>
-<span id="cb49-12"><a href=""></a>        header  &amp; header &amp; header &amp; header &amp; header &amp; header &amp; header &amp; header<span class="fu">\\</span></span>
-<span id="cb49-13"><a href=""></a>        1  &amp; Beta &amp; Gamma &amp; Alpha &amp; Beta &amp; Gamma &amp; Beta &amp; Gamma<span class="fu">\\</span></span>
-<span id="cb49-14"><a href=""></a>        2  &amp; Beta &amp; Gamma &amp; Alpha &amp; Beta &amp; Gamma &amp; Beta &amp; Gamma<span class="fu">\\</span></span>
-<span id="cb49-15"><a href=""></a>        3  &amp; Beta &amp; Gamma &amp; Alpha &amp; Beta &amp; Gamma &amp; Beta &amp; Gamma<span class="fu">\\</span></span>
-<span id="cb49-16"><a href=""></a>        4  &amp; Beta &amp; Gamma &amp; Alpha &amp; Beta &amp; Gamma &amp; Beta &amp; Gamma<span class="fu">\\</span></span>
-<span id="cb49-17"><a href=""></a>        5  &amp; Beta &amp; Gamma &amp; Alpha &amp; Beta &amp; Gamma &amp; Beta &amp; Gamma<span class="fu">\\</span></span>
-<span id="cb49-18"><a href=""></a>        6  &amp; Beta &amp; Gamma &amp; Alpha &amp; Beta &amp; Gamma &amp; Beta &amp; Gamma<span class="fu">\\</span></span>
-<span id="cb49-19"><a href=""></a>    <span class="kw">\end</span>{<span class="ex">tblr</span>}</span>
-<span id="cb49-20"><a href=""></a><span class="kw">\end</span>{<span class="ex">table</span>}</span></code><button title="Copia negli appunti" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
+\usepackage{setspace}
+% \singlespacing
+% \onehalfspacing
+```
+
+## Migliorare la scrittura {#package-microtype}
+
+```{.latex filename="settings/set-typography.sty"}
+\usepackage[
+    % ,activate = {true, nocompatibility}
+    ,activate   = {true}
+    ,final
+    ,tracking   = true
+    ,kerning    = true
+    ,factor     = 1100
+    ,stretch    = 10
+    ,shrink     = 10
+]{microtype}
+``` -->
+<!-- ## Come fare i commenti {#package-comment .smaller}
+
+- [Commenting out large sections](https://tex.stackexchange.com/questions/17816/commenting-out-large-sections)
+- Commanta con `Ctrl + ù`/`Ctrl + Shift + ù` su Visual Studio Code
+
+```latex
+\documentclass{standalone}
+\usepackage{comment}
+
+% uncomment to include stuff in standard comment-environment
+\includecomment{comment}
+
+% define a mysection env which content is excluded
+\excludecomment{mysection}
+
+\begin{document}
+    This text will be displayed
+\begin{comment}
+    This text will only be displayed, if \includecomment{comment} was given
+\end{comment}
+\begin{mysection}
+This text will only be displayed, if \includecomment{mysection} was given
+\end{mysection}
+\end{document}
+``` -->
+<!-- # Impaginare le figure
+
+Posizionamento delle figure, figure a metà pagina, figure nel testo.
+
+## Il pacchetto `graphicx` {.smaller #package-graphicx}
+
+```{.latex filename="settings/set-graphics.sty" code-line-numbers="||"}
+\usepackage[draft]{graphicx}
+```
+
+### Comandi utili {.smaller #package-graphicx-commands}
+
+Rotation and scaling of text.
+
+```latex
+\rotatebox[⟨key val list⟩]{⟨angle⟩}{⟨text⟩}
+\scalebox{⟨h-scale⟩}[⟨v-scale⟩]{⟨text⟩}
+\reflectbox{⟨text⟩}
+\resizebox*{⟨h-length⟩}{⟨v-length⟩}{⟨text⟩}
+```
+
+Including Graphics Files.
+
+```latex
+\includegraphics*[⟨key val list⟩]{⟨file⟩}
+```
+
+```latex
+width
+height
+keepaspectratio
+scale
+clip
+alt
+``` -->
+<!-- ### Impostazioni del pacchetto {.smaller #package-graphicx-options}
+
+```latex
+\graphicspath{⟨dir-list⟩}
+```
+This optional declaration may be used to specify a list of directories in which to
+search for graphics files. The format is as for the LATEX2ε primitive `\input@path`, a list of directories, each in a `{}` group (even if there is only one in the list). For example: `\graphicspath{{eps/}{tiff/}}` would cause the system to look in the subdirectories `eps` and `tiff` of the current directory.
+```{.latex filename="settings/set-graphics.sty"}
+% NOTE define absolute path to images
+\graphicspath{
+    % NOTE percorsi dal main
+    {assets/images/}% generic
+    {assets/images/logo/}% university logo
+    {assets/images/01/}% 01-introduction
+    {assets/images/02/}% 02-state-of-the-art
+    {assets/images/03/}% 03-exploration
+    {assets/images/04/}% 04-architecture
+    {assets/images/05/}% 05-implementation
+    {assets/images/06/}% 06-schools
+    {assets/images/07/}% 07-local-community
+    {assets/images/08/}% 08-implementation-online
+    {assets/images/papers/articoloFIE/}% articolo
+    {assets/images/papers/PRIMM}% articolo
+}
+``` -->
+<!-- ## Il pacchetto [`caption`](https://ctan.org/pkg/caption) {.smaller #package-caption}
+
+Personalizzazione delle didascalie degli ambienti "mobili"
+
+```{.latex filename="settings/set-graphics.sty" code-line-numbers="|1|2-8|10-14|16-20|"}
+\usepackage{float, caption, subcaption}
+\captionsetup{
+    figureposition = bottom,
+    tableposition  = top,
+    font           = small,
+    labelfont      = {sf, bf},
+    justification  = centering
+}
+
+\captionsetup[table]{
+    format         = hang,
+    justification  = raggedright,
+    singlelinecheck= off
+}
+
+\captionsetup[figure]{
+    format         = hang,
+    justification  = raggedright,
+    singlelinecheck= off
+}
+``` -->
+<!-- # Formattare le tabelle
+
+## Il pacchetto `tabularray` {#package-tabularray .smaller}
+
+The `LaTeX3` package tabularray provides a new way to typeset tables in a keyval way. This allows the separation of content and style
+
+- [Guides for typesetting tables with the tabularray package](https://tex.stackexchange.com/questions/629480/)
+
+```latex
+\usepackage{tabularray}
+\UseTblrLibrary{amsmath, booktabs, counter, diagbox, functional, siunitx, varwidth}
+\UseTblrLibrary{nameref, zref}% compatibily with longtblr environment
+\UseTblrLibrary{hook, html}% experimental
+``` -->
+<!-- ### Esempio {#package-tabularray-example .smaller}
+
+```{.latex filename=tabularray-example.tex code-line-numbers="|2-4|6-12|7|8|9|10|12|13-19|"}
+\begin{table}
+    \centering
+    \caption{Esempio di didascalia.}
+    \label{tab:tabularray-example}
+    \begin{tblr}{
+        colspec={@{} *{8}{c} @{}},
+        row{odd}={gray!10}, row{1}={gray!20},
+        vline{2-Y} = {1}{0.3pt,gray!50},
+        vline{2-Y} = {2-Z}{0.3pt,gray!30},
+        hline{1,2,Z} = {0.1pt,azure5}
+    }
+        header  & header & header & header & header & header & header & header\\
+        1  & Beta & Gamma & Alpha & Beta & Gamma & Beta & Gamma\\
+        2  & Beta & Gamma & Alpha & Beta & Gamma & Beta & Gamma\\
+        3  & Beta & Gamma & Alpha & Beta & Gamma & Beta & Gamma\\
+        4  & Beta & Gamma & Alpha & Beta & Gamma & Beta & Gamma\\
+        5  & Beta & Gamma & Alpha & Beta & Gamma & Beta & Gamma\\
+        6  & Beta & Gamma & Alpha & Beta & Gamma & Beta & Gamma\\
+    \end{tblr}
+\end{table}
+``` -->
 <!-- ## Impostazioni del package
 
 ```{.latex filename=settings/set-tables.sty}
@@ -2290,120 +2170,117 @@ Package thmtools Info: Key `qed' (with value `\qedsymbol ')
 % NOTE numbers in text mode
 \usepackage{siunitx}
 ``` -->
-</section>
-</section>
-<section>
-<section id="math" class="title-slide slide level1 center">
-<h1>Scrivere la matematica</h1>
+<!-- # Scrivere la matematica {#math}
 
-</section>
-<section id="materiale-rilevante" class="title-slide slide level2 center">
-<h2>Materiale rilevante</h2>
-<ul>
-<li><a href="https://tex.stackexchange.com/questions/503/why-is-preferable-to">Why is <code>\[...\]</code> preferable to <code>$$...$$</code>?</a></li>
-<li><a href="https://ctan.org/pkg/witharrows">witharrows</a></li>
-<li><a href="https://ctan.org/pkg/siunitx">siunitx</a></li>
-</ul>
-</section>
+## Materiale rilevante
 
-<section id="math-envs" class="title-slide slide level2 center">
-<h2>Ambienti per la matematica</h2>
+- [Why is  `\[...\]` preferable to `$$...$$`?](https://tex.stackexchange.com/questions/503/why-is-preferable-to)
+- [witharrows](https://ctan.org/pkg/witharrows)
+- [siunitx](https://ctan.org/pkg/siunitx) -->
+<!-- ## Ambienti per la matematica {#math-envs}
 
-</section>
-<section id="package-witharrows" class="slide level3 smaller">
-<h3>witharrows</h3>
-<ul>
-<li><a href="https://ctan.mirror.garr.it/mirrors/ctan/macros/generic/witharrows/witharrows.pdf">witharrows</a></li>
-</ul>
-<div class="sourceCode" id="cb50"><pre class="sourceCode numberSource latex number-lines code-with-copy"><code class="sourceCode latex"><span id="cb50-1"><a href=""></a><span class="ss">\[</span><span class="kw">\begin</span>{<span class="ex">WithArrows</span>}</span>
-<span id="cb50-2"><a href=""></a><span class="ss">    f(n) &amp;= 3 n^2 + 7 n^2 </span><span class="sc">\Arrow</span><span class="ss">{</span><span class="sc">\(\forall</span><span class="ss"> n </span><span class="sc">\geqslant</span><span class="ss"> 1</span><span class="sc">\)</span><span class="ss">, effettuo una maggiorazione} </span><span class="sc">\\</span></span>
-<span id="cb50-3"><a href=""></a><span class="ss">    &amp;</span><span class="sc">\leqslant</span><span class="ss"> 3 n^2 + 7 n^2 </span><span class="sc">\Arrow</span><span class="ss">{raccolgo} </span><span class="sc">\\</span></span>
-<span id="cb50-4"><a href=""></a><span class="ss">    &amp;</span><span class="sc">\leqslant</span><span class="ss"> 10 n^2 </span><span class="sc">\Arrow</span><span class="ss">[tikz={text width=4cm}]{esiste una certa costante </span><span class="sc">\(</span><span class="ss">c</span><span class="sc">\)</span><span class="ss"> per la quale </span><span class="sc">\(</span><span class="ss">f(n) </span><span class="sc">\leqslant</span><span class="ss"> c_2 n^2</span><span class="sc">\)</span><span class="ss">?}</span><span class="sc">\\</span></span>
-<span id="cb50-5"><a href=""></a><span class="ss">    &amp;</span><span class="sc">\overset</span><span class="ss">{?}{</span><span class="sc">\leqslant</span><span class="ss">} c_2 n^2 </span><span class="sc">\Arrow</span><span class="ss">{metto a confronto}</span><span class="sc">\\</span></span>
-<span id="cb50-6"><a href=""></a><span class="ss">    10 n^2 &amp;</span><span class="sc">\leqslant</span><span class="ss"> c_2 n^2 </span><span class="sc">\Arrow</span><span class="ss">{semplifico}</span><span class="sc">\\</span></span>
-<span id="cb50-7"><a href=""></a><span class="ss">    10 &amp;</span><span class="sc">\leqslant</span><span class="ss"> c_2</span></span>
-<span id="cb50-8"><a href=""></a><span class="kw">\end</span>{<span class="ex">WithArrows</span>}<span class="ss">\]</span></span></code><button title="Copia negli appunti" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</section>
-</section>
-<section>
-<section id="code" class="title-slide slide level1 smaller center">
-<h1>Scrivere codice</h1>
-<p>Scrivere codice nel testo, importare file esterni e personalizzarne l’apparenza.</p>
-</section>
-<section id="package-minted" class="title-slide slide level2 smaller center">
-<h2>Importare il pacchetto <code>minted</code></h2>
-<p>Il pacchetto <code>minted</code> contenuto nella collezione <code>collection-mathscience</code> ci permette di importare codice da file esterni e, grazie a <code>python</code> e a <code>pygmentize</code>, di evidenziarne la sintassi. Importiamo il pacchetto in <code>settings/set-code.sty</code>:</p>
-<div class="sourceCode" id="cb51"><pre class="sourceCode numberSource latex number-lines code-with-copy"><code class="sourceCode latex"><span id="cb51-1"><a href=""></a><span class="bu">\usepackage</span>[outputdir=build]{<span class="ex">minted</span>}</span></code><button title="Copia negli appunti" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>Nel testo possiamo scrivere codice direttamente tramite il nuovo ambiente <code>minted</code>:</p>
-<div class="sourceCode" id="cb52"><pre class="sourceCode numberSource latex number-lines code-with-copy"><code class="sourceCode latex"><span id="cb52-1"><a href=""></a><span class="kw">\begin</span>{<span class="ex">minted</span>}{java}</span>
-<span id="cb52-2"><a href=""></a><span class="kw">public</span> <span class="kw">class</span> HelloWorld <span class="op">{</span></span>
-<span id="cb52-3"><a href=""></a>    <span class="kw">public</span> <span class="dt">static</span> <span class="dt">void</span> <span class="fu">main</span><span class="op">(</span><span class="bu">String</span><span class="op">[]</span> args<span class="op">)</span> <span class="op">{</span></span>
-<span id="cb52-4"><a href=""></a>        <span class="bu">System</span><span class="op">.</span><span class="fu">out</span><span class="op">.</span><span class="fu">println</span><span class="op">(</span><span class="st">"Hello, World!"</span><span class="op">);</span></span>
-<span id="cb52-5"><a href=""></a>    <span class="op">}</span></span>
-<span id="cb52-6"><a href=""></a><span class="op">}</span></span>
-<span id="cb52-7"><a href=""></a><span class="kw">\end</span>{<span class="ex">minted</span>}</span></code><button title="Copia negli appunti" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>Ipotizziamo di aver estrapolato il contenuto in un file esterno <code>assets/codes/main.java</code>, ora è sufficiente importare il file:</p>
-<div class="sourceCode" id="cb53"><pre class="sourceCode numberSource latex number-lines code-with-copy"><code class="sourceCode latex"><span id="cb53-1"><a href=""></a><span class="fu">\inputminted</span>{java}{assets/codes/main.java}</span></code><button title="Copia negli appunti" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>All’interno del testo possiamo scrivere codice “<em>in linea</em>”:</p>
-<div class="sourceCode" id="cb54"><pre class="sourceCode numberSource latex number-lines code-with-copy"><code class="sourceCode latex"><span id="cb54-1"><a href=""></a>Il main di Java passa come paramentro <span class="fu">\mintinline</span>{java}{String[] args}.</span></code><button title="Copia negli appunti" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</section>
-<section id="package-minted-options" class="slide level3 smaller">
-<h3>Opzioni utili per il pacchetto <code>minted</code></h3>
-<div class="code larger">
-<div class="code-with-filename">
-<div class="code-with-filename-file">
-<pre><strong>settings/set-code.sty</strong></pre>
-</div>
-<div class="sourceCode" id="cb55"><pre class="sourceCode numberSource latex number-lines code-with-copy"><code class="sourceCode latex"><span id="cb55-1"><a href=""></a><span class="fu">\usemintedstyle</span>{manni}</span>
-<span id="cb55-2"><a href=""></a><span class="fu">\setminted</span>{</span>
-<span id="cb55-3"><a href=""></a>    breaklines = true, breakanywhere,</span>
-<span id="cb55-4"><a href=""></a>    breakaftersymbolpre = <span class="fu">\raisebox</span>{0ex}[0ex][0ex]{<span class="ss">\ensuremath{</span><span class="sc">\rhookswarrow</span><span class="ss">}</span>},</span>
-<span id="cb55-5"><a href=""></a>    breakaftersymbolpost = <span class="fu">\raisebox</span>{0ex}[0ex][0ex]{<span class="ss">\ensuremath{</span><span class="sc">\rcurvearrowse</span><span class="ss">}</span><span class="fu">\space</span>},</span>
-<span id="cb55-6"><a href=""></a>    frame = lines,</span>
-<span id="cb55-7"><a href=""></a>    fontsize = <span class="fu">\small</span>, fontseries = bold,</span>
-<span id="cb55-8"><a href=""></a>    linenos = true, numberblanklines = false,</span>
-<span id="cb55-9"><a href=""></a>    texcomments, mathescape,</span>
-<span id="cb55-10"><a href=""></a>    obeytabs, tabsize = 4,</span>
-<span id="cb55-11"><a href=""></a>    autogobble <span class="co">% remove all common leading whitespace from code</span></span>
-<span id="cb55-12"><a href=""></a>}</span>
-<span id="cb55-13"><a href=""></a></span>
-<span id="cb55-14"><a href=""></a><span class="fu">\newmintinline</span>[cppinline]{cpp}{}</span>
-<span id="cb55-15"><a href=""></a><span class="fu">\newmint</span>[cppcode]{cpp}{}</span>
-<span id="cb55-16"><a href=""></a><span class="fu">\newmintedfile</span>[cppfile]{cpp}{}</span>
-<span id="cb55-17"><a href=""></a></span>
-<span id="cb55-18"><a href=""></a><span class="fu">\newmintinline</span>[javainline]{cpp}{}</span>
-<span id="cb55-19"><a href=""></a><span class="fu">\newmint</span>[javacode]{cpp}{}</span>
-<span id="cb55-20"><a href=""></a><span class="fu">\newmintedfile</span>[javafile]{cpp}{}</span></code><button title="Copia negli appunti" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-</div>
-</section>
-<section id="package-minted-caption" class="slide level3 smaller scrollable">
-<h3>Come aggiungere una didascalia</h3>
-<ol type="1">
-<li><p>modifichiamo il preambolo:</p>
-<div class="sourceCode" id="cb56"><pre class="sourceCode latex code-with-copy"><code class="sourceCode latex"><span id="cb56-1"><a href="" aria-hidden="true" tabindex="-1"></a><span class="bu">\usepackage</span>[newfloat, outputdir=build]{<span class="ex">minted</span>}</span></code><button title="Copia negli appunti" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
-<li><p>aggiungiamo delle opzioni:</p>
-<div class="sourceCode" id="cb57"><pre class="sourceCode latex code-with-copy"><code class="sourceCode latex"><span id="cb57-1"><a href="" aria-hidden="true" tabindex="-1"></a><span class="co">% </span><span class="al">NOTE</span><span class="co"> permette di trattare il codice come se fosse un float</span></span>
-<span id="cb57-2"><a href="" aria-hidden="true" tabindex="-1"></a><span class="co">% https://tex.stackexchange.com/questions/254044/</span></span>
-<span id="cb57-3"><a href="" aria-hidden="true" tabindex="-1"></a><span class="fu">\newenvironment</span>{code}{<span class="fu">\captionsetup</span>{type=listing}}{}</span>
-<span id="cb57-4"><a href="" aria-hidden="true" tabindex="-1"></a><span class="fu">\SetupFloatingEnvironment</span>{listing}{name=Codice, placement=htp, listname={Elenco dei codici}}</span></code><button title="Copia negli appunti" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
-<li><p>ora nel testo possiamo creare un ambiente fluttuante:</p>
-<div class="sourceCode" id="cb58"><pre class="sourceCode latex code-with-copy"><code class="sourceCode latex"><span id="cb58-1"><a href="" aria-hidden="true" tabindex="-1"></a><span class="kw">\begin</span>{<span class="ex">code</span>}</span>
-<span id="cb58-2"><a href="" aria-hidden="true" tabindex="-1"></a>    <span class="fu">\captionof</span>{listing}{My Java main}<span class="kw">\label</span>{<span class="ex">code:java-main</span>}</span>
-<span id="cb58-3"><a href="" aria-hidden="true" tabindex="-1"></a>    <span class="fu">\inputminted</span>{java}{assets/codes/main.java}</span>
-<span id="cb58-4"><a href="" aria-hidden="true" tabindex="-1"></a><span class="kw">\end</span>{<span class="ex">code</span>}</span></code><button title="Copia negli appunti" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
-</ol>
-<ul>
-<li>possiamo aggiungere <code>\listoflistings</code> nel punto in cui vogliamo che venga generato l’elenco dei codici, generalmente dopo <code>\listoffigures</code> e <code>\listoftables</code>.</li>
-</ul>
-<p>Per ulteriori personalizzazioni, consultare la <a href="https://ctan.mirror.garr.it/mirrors/ctan/macros/latex/contrib/minted/minted.pdf">documentazione</a>.</p>
-</section>
-<section id="personalizzazione-avanzata" class="slide level3">
-<h3>Personalizzazione avanzata</h3>
-<ul>
-<li>Basandoci su <a href="https://tex.stackexchange.com/questions/452150/">questa domanda</a> utilizziamo il pacchetto <a href="https://ctan.org/pkg/tcolorbox"><code>tcolorbox</code></a>.</li>
-</ul>
-<pre><code>% arara: pdflatex: {shell: 1}
+### witharrows {#package-witharrows .smaller}
+
+- [witharrows](https://ctan.mirror.garr.it/mirrors/ctan/macros/generic/witharrows/witharrows.pdf)
+
+```latex
+\[\begin{WithArrows}
+    f(n) &= 3 n^2 + 7 n^2 \Arrow{\(\forall n \geqslant 1\), effettuo una maggiorazione} \\
+    &\leqslant 3 n^2 + 7 n^2 \Arrow{raccolgo} \\
+    &\leqslant 10 n^2 \Arrow[tikz={text width=4cm}]{esiste una certa costante \(c\) per la quale \(f(n) \leqslant c_2 n^2\)?}\\
+    &\overset{?}{\leqslant} c_2 n^2 \Arrow{metto a confronto}\\
+    10 n^2 &\leqslant c_2 n^2 \Arrow{semplifico}\\
+    10 &\leqslant c_2
+\end{WithArrows}\]
+``` -->
+<!-- # Scrivere codice {#code .smaller}
+
+Scrivere codice nel testo, importare file esterni e personalizzarne l'apparenza.
+
+## Importare il pacchetto `minted` {#package-minted .smaller}
+
+Il pacchetto `minted` contenuto nella collezione `collection-mathscience` ci permette di importare codice da file esterni e, grazie a `python` e a `pygmentize`, di evidenziarne la sintassi.
+Importiamo il pacchetto in `settings/set-code.sty`:
+```latex
+\usepackage[outputdir=build]{minted}
+```
+Nel testo possiamo scrivere codice direttamente tramite il nuovo ambiente `minted`:
+```latex
+\begin{minted}{java}
+public class HelloWorld {
+    public static void main(String[] args) {
+        System.out.println("Hello, World!");
+    }
+}
+\end{minted}
+```
+Ipotizziamo di aver estrapolato il contenuto in un file esterno `assets/codes/main.java`, ora è sufficiente importare il file:
+```latex
+\inputminted{java}{assets/codes/main.java}
+```
+All'interno del testo possiamo scrivere codice "_in linea_":
+```latex
+Il main di Java passa come paramentro \mintinline{java}{String[] args}.
+``` -->
+<!-- ### Opzioni utili per il pacchetto `minted` {#package-minted-options .smaller}
+
+:::{.code .larger filename="settings/set-code.sty"}
+```latex
+\usemintedstyle{manni}
+\setminted{
+    breaklines = true, breakanywhere,
+    breakaftersymbolpre = \raisebox{0ex}[0ex][0ex]{\ensuremath{\rhookswarrow}},
+    breakaftersymbolpost = \raisebox{0ex}[0ex][0ex]{\ensuremath{\rcurvearrowse}\space},
+    frame = lines,
+    fontsize = \small, fontseries = bold,
+    linenos = true, numberblanklines = false,
+    texcomments, mathescape,
+    obeytabs, tabsize = 4,
+    autogobble % remove all common leading whitespace from code
+}
+
+\newmintinline[cppinline]{cpp}{}
+\newmint[cppcode]{cpp}{}
+\newmintedfile[cppfile]{cpp}{}
+
+\newmintinline[javainline]{cpp}{}
+\newmint[javacode]{cpp}{}
+\newmintedfile[javafile]{cpp}{}
+```
+::: -->
+<!-- ### Come aggiungere una didascalia {#package-minted-caption .smaller}
+
+1. modifichiamo il preambolo:
+
+    ```latex {code-line-numbers="false"}
+    \usepackage[newfloat, outputdir=build]{minted}
+    ```
+2. aggiungiamo delle opzioni:
+
+    ```latex {code-line-numbers="false"}
+    % NOTE permette di trattare il codice come se fosse un float
+    % https://tex.stackexchange.com/questions/254044/
+    \newenvironment{code}{\captionsetup{type=listing}}{}
+    \SetupFloatingEnvironment{listing}{name=Codice, placement=htp, listname={Elenco dei codici}}
+    ```
+3. ora nel testo possiamo creare un ambiente fluttuante:
+
+    ```latex {code-line-numbers="false"}
+    \begin{code}
+        \captionof{listing}{My Java main}\label{code:java-main}
+        \inputminted{java}{assets/codes/main.java}
+    \end{code}
+    ```
+
+- possiamo aggiungere `\listoflistings` nel punto in cui vogliamo che venga generato l'elenco dei codici, generalmente dopo `\listoffigures` e `\listoftables`.
+
+Per ulteriori personalizzazioni, consultare la [documentazione](https://ctan.mirror.garr.it/mirrors/ctan/macros/latex/contrib/minted/minted.pdf). -->
+<!-- ### Personalizzazione avanzata
+
+- Basandoci su [questa domanda](https://tex.stackexchange.com/questions/452150/) utilizziamo il pacchetto [`tcolorbox`](https://ctan.org/pkg/tcolorbox).
+
+```latex
+% arara: pdflatex: {shell: 1}
 \documentclass{article}
 
 \usepackage[T1]{fontenc}
@@ -2443,211 +2320,151 @@ public class ClassName {
         }
 }
 \end{javalst}
-\end{document}</code></pre>
-</section>
-</section>
-<section>
-<section id="algorithms" class="title-slide slide level1 center">
-<h1>Formattare gli algorirmi</h1>
-<p><a href="https://tex.stackexchange.com/questions/229355/">be confused with me</a></p>
-</section>
-<section id="choosing-package-algorithms" class="title-slide slide level2 smallest center">
-<h2>Pacchetti ed ambienti per gli algoritmi</h2>
-<table class="caption-top">
-<thead>
-<tr class="header">
-<th>pacchetto</th>
-<th style="text-align: left;">ultimo aggiornamento</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>algorithms</td>
-<td style="text-align: left;">August 24, 2009</td>
-</tr>
-<tr class="even">
-<td>algorithmicx</td>
-<td style="text-align: left;">April 27, 2005</td>
-</tr>
-<tr class="odd">
-<td>algpseudocodex</td>
-<td style="text-align: left;">April 17, 2023</td>
-</tr>
-<tr class="even">
-<td>algorithm2e</td>
-<td style="text-align: left;">July 18, 2017</td>
-</tr>
-</tbody>
-</table>
-<p>algcompatible</p>
-<table class="caption-top">
-<thead>
-<tr class="header">
-<th>pacchetto</th>
-<th style="text-align: left;">ambiente che definisce</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>algorithms</td>
-<td style="text-align: left;">algorithmic, algorithm</td>
-</tr>
-<tr class="even">
-<td>algorithmicx</td>
-<td style="text-align: left;">algpseudocode, algpascal, algc</td>
-</tr>
-</tbody>
-</table>
-</section>
+\end{document}
+``` -->
+<!-- # Formattare gli algorirmi {#algorithms}
 
-<section id="package-algorithm2e" class="title-slide slide level2 smaller center">
-<h2></h2>
-<p>Il pacchetto <a href="https://ctan.org/pkg/algorithm2e">algorithm2e</a> è quello più versatile.</p>
-</section>
+[be confused with me](https://tex.stackexchange.com/questions/229355/)
 
-<section id="bonus-tip-il-pacchetto-forest" class="title-slide slide level2 center">
-<h2>Bonus tip: Il pacchetto <code>forest</code></h2>
-<p><a href="https://ctan.org/pkg/forest">forest</a></p>
-</section>
-</section>
-<section>
-<section id="bibliography" class="title-slide slide level1 smaller center">
-<h1>La bibliografia</h1>
-<p>Creazione, gestione e personalizzazione della bibliografia.</p>
-</section>
-<section id="bibliography-creation" class="title-slide slide level2 smaller center scrollable">
-<h2>Come creare un bibliografia</h2>
-<div class="columns">
-<div class="column" style="width:65%;">
-<ol type="1">
-<li>crea un file <code>bibliography.bib</code>:
-<ol type="a">
-<li>aggiungi le voci bibliografiche nel formato <a href="#/bibtex-entries">formato richiesto da BibTeX</a>;</li>
-</ol></li>
-<li>all’interno di: <code>set-bibliography.sty</code>:
-<ol type="a">
-<li>importa il package <code>biblatex</code>;</li>
-<li>collega il database <code>.bib</code> da utilizzare: <code>\addbibresource{&lt;nome&gt;.&lt;ext&gt;}</code>.</li>
-</ol></li>
-<li>includi <code>set-bibliography.sty</code> in <code>thesis.preamble.sty</code>;</li>
-<li>stampa la bibliografia con <code>\printbibliography</code>;</li>
-<li>aggiungi il passaggio di compilazione ad <code>arara</code>:
-<ol type="a">
-<li><code>% arara: biber</code></li>
-</ol></li>
-<li>personalizza lo stile della bibliografia con <code>\bibliographystyle{&lt;style&gt;}</code>; <!-- 7. personalizza la bibliografia con `\DeclareFieldFormat{<field>}{<format>}`. --></li>
-</ol>
-</div><div class="column" style="width:35%;">
-<div class="sourceCode" id="cb60"><pre class="sourceCode txt code-with-copy"><code class="sourceCode default"><span id="cb60-1"><a href="" aria-hidden="true" tabindex="-1"></a>.</span>
-<span id="cb60-2"><a href="" aria-hidden="true" tabindex="-1"></a>├── assets/</span>
-<span id="cb60-3"><a href="" aria-hidden="true" tabindex="-1"></a>│   ├── ...</span>
-<span id="cb60-4"><a href="" aria-hidden="true" tabindex="-1"></a>│   └── resources/</span>
-<span id="cb60-5"><a href="" aria-hidden="true" tabindex="-1"></a>│       └── ✏️bibliography.bib</span>
-<span id="cb60-6"><a href="" aria-hidden="true" tabindex="-1"></a>├── settings/</span>
-<span id="cb60-7"><a href="" aria-hidden="true" tabindex="-1"></a>│   ├── ...</span>
-<span id="cb60-8"><a href="" aria-hidden="true" tabindex="-1"></a>│   ├── ✏️set-bibliography.sty</span>
-<span id="cb60-9"><a href="" aria-hidden="true" tabindex="-1"></a>│   └── ...</span>
-<span id="cb60-10"><a href="" aria-hidden="true" tabindex="-1"></a>├── ✏️thesis.preamble.sty</span>
-<span id="cb60-11"><a href="" aria-hidden="true" tabindex="-1"></a>└── ✏️thesis.tex</span></code><button title="Copia negli appunti" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div></div>
-</section>
+## Pacchetti ed ambienti per gli algoritmi {#choosing-package-algorithms .smallest}
 
-<section id="bibtex-entries-1" class="title-slide slide level2 smallest center">
-<h2>BibTEX bibliography entries</h2>
-<p>Esempi di tipo di documenti:</p>
-<ul>
-<li><code>@article</code> an article from a journal, magazine, newspaper, or periodical;</li>
-<li><code>@book</code> a book where the publisher is clearly identifiable.</li>
-<li><code>@booklet</code> a printed work that is bound, but does not have a clearly identifiable publisher or supporting institution;</li>
-<li><code>@conference</code> an article that has been included in conference proceedings;</li>
-<li><code>@inbook</code> a section, such as a chapter, or a page range within a book.: the chapter of interest is identified by a chapter number;</li>
-<li><code>@incollection</code> is for a contributed section in a book, so would have its own <code>author</code> and <code>title</code>. The actual title of the entire book is given in the <code>booktitle</code> field;</li>
-<li><code>@inproceedings</code> a paper that has been published in conference proceedings;</li>
-<li><code>@manual</code> a technical manual for a machine software such as would come with a purchase to explain operation to the new owner;</li>
-<li><code>@phdthesis</code>, <code>@masterthesis</code> for dissertations and theses;</li>
-<li><code>@misc</code> used if none of the other entry types quite match the source. Frequently used to cite web pages, but can be anything from lecture slides to personal notes;</li>
-<li><code>@unpublished</code> a document that has not been officially published such as a paper draft or manuscript in preparation.</li>
-</ul>
-</section>
+| pacchetto | ultimo aggiornamento |
+|---------|:-----|
+| algorithms | August 24, 2009 |
+| algorithmicx | April 27, 2005 |
+| algpseudocodex | April 17, 2023 |
+| algorithm2e | July 18, 2017 |
+algcompatible
 
-<section id="package-biblatex-citation" class="title-slide slide level2 smaller center">
-<h2>Come fare una citazione</h2>
-<ul>
-<li><p><code>\cite(s)</code></p></li>
-<li><p><code>\parencite(s)</code></p></li>
-<li><p><code>\footcite(s)</code></p></li>
-<li><p><code>\textcite(s)</code></p></li>
-<li><p><code>\smartcite(s)</code></p></li>
-<li><p><code>\supercite(s)</code></p></li>
-<li><p><code>\autocite</code></p></li>
-<li><p><code>\citeauthor/title/year/date/url</code></p></li>
-<li><p><a href="https://ctan.mirror.garr.it/mirrors/ctan/macros/latex/contrib/biblatex/doc/biblatex.pdf">Documentazione di biblatex</a> 3.9 Citation Commands</p></li>
-<li><p><a href="https://tug.ctan.org/info/biblatex-cheatsheet/biblatex-cheatsheet.pdf">Biblatex Cheat Sheet</a></p></li>
-<li><p><a href="https://tex.stackexchange.com/a/162370">Quale comando usare?</a></p></li>
-</ul>
-</section>
+| pacchetto | ambiente che definisce |
+|---------|:-----|
+| algorithms | algorithmic, algorithm |
+| algorithmicx | algpseudocode, algpascal, algc | -->
+<!-- ## {#package-algorithm2e .smaller}
 
-<section id="package-biblatex-options" class="title-slide slide level2 smaller center">
-<h2>Opzioni di stile della bibliografia</h2>
-<p><code>\usepackage[&lt;options&gt;]{biblatex}</code>, dove <code>options</code> posso essere:</p>
-<ul>
-<li><code>backend</code>: <code>biber</code></li>
-<li><code>style</code>: <code>numeric</code></li>
-<li><code>sorting</code>: ordinati per <code>name</code>, <code>year</code>, <code>e</code> e/o <code>title</code></li>
-<li><code>citestyle</code>: <a href="https://ctan.mirror.garr.it/mirrors/ctan/macros/latex/contrib/biblatex/doc/biblatex.pdf">Documentazione di biblatex</a> 3.3.1 Citation Styles</li>
-<li><code>maxbibnames</code> / <code>minbibnames</code></li>
-<li><code>sorting</code>:</li>
-<li><code>uniquename</code>: disambiguate using initials or full names, as required;</li>
-<li><code>uniquelist</code>: disambiguate the labelname list.</li>
-</ul>
-</section>
+Il pacchetto [algorithm2e](https://ctan.org/pkg/algorithm2e) è quello più versatile. -->
+<!-- ## Bonus tip: Il pacchetto `forest`
 
-<section id="bibliography-overleaf-vs-vscode" class="title-slide slide level2 smaller center">
-<h2>Differenze fra Overleaf e VSCode</h2>
-<p>Processing LATEX reference lists or other forms of cross-referencing, such as indexes, requires multiple runs of software—including the TEX engine (e.g., pdflatex) and associated programs such as BibTEX, makeindex, etc. As mentioned above, Overleaf handles all of these mulitple runs automatically, so you don’t have to worry about them.</p>
-</section>
+[forest](https://ctan.org/pkg/forest) -->
+<!-- # La bibliografia {#bibliography .smaller}
 
-<section id="package-biblatex-exts" class="title-slide slide level2 smaller center">
-<h2>Tipi di file</h2>
-<ul>
-<li><code>bib</code>: used to describe bibliographical references. When used together with LaTeX and BibTeX, it generates a file with the <code>.bbl</code> extension;</li>
-<li><code>bbl</code>: a <code>tex</code> file with a different extension containing your references <strong>formatted according to the bibliography style chosen in your <code>.tex</code> file</strong> through the <code>\bibligraphystyle{}</code> command. LaTeX then automatically inserts the contents of the <code>bbl</code> file in the exact place you call the <code>\bibliography{}</code> command in your document. <!-- - `bcf`: **biber control file**, contains the information biber needs to process your bibliography --></li>
-<li><code>blg</code>: <strong>BibTeX log file</strong>, contains information about any errors, warnings, or other messages generated during the processing of the bibliography</li>
-<li><code>bst</code>: <strong>BibTeX style file</strong>, specify the formatting and style of the bibliography</li>
-<li><code>cfg</code>: <strong>configuration file</strong>, contains information about the formatting of the bibliography <!-- - `cbx`: **biblatex citation style file**, specify the formatting and style of the citations; --> <!-- - `bbx`: **biblatex bibliography style file**, specify the formatting and style of the bibliography --></li>
-</ul>
-</section>
-<section id="bibliography-examples" class="slide level3 smaller">
-<h3>Esempi di modifiche alla bibliografia</h3>
-<div class="sourceCode" id="cb61"><pre class="sourceCode numberSource latex number-lines code-with-copy"><code class="sourceCode latex"><span id="cb61-1"><a href=""></a><span class="co">% https://tex.stackexchange.com/questions/10682/suppress-in-biblatex</span></span>
-<span id="cb61-2"><a href=""></a><span class="fu">\renewbibmacro</span>{in:}{}</span>
-<span id="cb61-3"><a href=""></a></span>
-<span id="cb61-4"><a href=""></a><span class="co">% https://tex.stackexchange.com/questions/620082/in-biblatex-how-to-change-pp-to-p-when-referring-to-pages-of-references</span></span>
-<span id="cb61-5"><a href=""></a><span class="fu">\DefineBibliographyStrings</span>{english}{<span class="co">%</span></span>
-<span id="cb61-6"><a href=""></a>    page={p<span class="fu">\adddot</span>},<span class="co">%</span></span>
-<span id="cb61-7"><a href=""></a>    pages={p<span class="fu">\adddot</span>},<span class="co">%</span></span>
-<span id="cb61-8"><a href=""></a>}</span></code><button title="Copia negli appunti" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</section>
-</section>
-<section>
-<section id="glossary" class="title-slide slide level1 center">
-<h1>Il glossario</h1>
-<p>Creare glossari ed elenchi di acronimi.</p>
-</section>
-<section id="package-glossaries" class="title-slide slide level2 smaller center">
-<h2>Il package glossaries</h2>
-<p>Il pacchetto <a href="https://ctan.org/pkg/glossaries"><code>glossaries</code></a> supporta acronimi e glossari multipli e prevede il funzionamento in più lingue (tramite <a href="https://ctan.org/pkg/babel"><code>babel</code></a>).</p>
-</section>
-</section>
-<section>
-<section id="definire-comandi" class="title-slide slide level1 smaller center">
-<h1>Definire comandi</h1>
-<p>Come creare ed utilizzare comandi personalizzati per le proprie esigenze.</p>
-</section>
-<section class="slide level3">
+Creazione, gestione e personalizzazione della bibliografia.
 
-<p><a href="https://www.texdev.net/2010/05/23/from-newcommand-to-newdocumentcommand/">From <code>\newcommand</code> to <code>\NewDocumentCommand</code></a></p>
-</section></section>
+## Come creare un bibliografia {#bibliography-creation .smaller}
+
+::::{.columns}
+:::{.column width="65%"}
+1. crea un file `bibliography.bib`:
+   a. aggiungi le voci bibliografiche nel formato [formato richiesto da BibTeX](#bibtex-entries);
+2. all'interno di: `set-bibliography.sty`:
+   a. importa il package `biblatex`;
+   b. collega il database `.bib` da utilizzare: `\addbibresource{<nome>.<ext>}`.
+3. includi `set-bibliography.sty` in `thesis.preamble.sty`;
+4. stampa la bibliografia con `\printbibliography`;
+5. aggiungi il passaggio di compilazione ad `arara`:
+   a. `% arara: biber`
+6. personalizza lo stile della bibliografia con `\bibliographystyle{<style>}`; -->
+<!-- 7. personalizza la bibliografia con `\DeclareFieldFormat{<field>}{<format>}`. -->
+<!-- :::
+:::{.column width="35%"}
+```{.txt code-line-numbers="false"}
+.
+├── assets/
+│   ├── ...
+│   └── resources/
+│       └── ✏️bibliography.bib
+├── settings/
+│   ├── ...
+│   ├── ✏️set-bibliography.sty
+│   └── ...
+├── ✏️thesis.preamble.sty
+└── ✏️thesis.tex
+```
+:::
+:::: -->
+<!-- ## BibTEX bibliography entries {#bibtex-entries-1 .smallest}
+
+Esempi di tipo di documenti:
+
+- `@article` an article from a journal, magazine, newspaper, or periodical;
+- `@book` a book where the publisher is clearly identifiable.
+- `@booklet` a printed work that is bound, but does not have a clearly identifiable publisher or supporting institution;
+- `@conference` an article that has been included in conference proceedings;
+- `@inbook` a section, such as a chapter, or a page range within a book.: the chapter of interest is identified by a chapter number;
+- `@incollection` is for a contributed section in a book, so would have its own `author` and `title`. The actual title of the entire book is given in the `booktitle` field;
+- `@inproceedings` a paper that has been published in conference proceedings;
+- `@manual` a technical manual for a machine software such as would come with a purchase to explain operation to the new owner;
+- `@phdthesis`, `@masterthesis` for dissertations and theses;
+- `@misc` used if none of the other entry types quite match the source. Frequently used to cite web pages, but can be anything from lecture slides to personal notes;
+- `@unpublished` a document that has not been officially published such as a paper draft or manuscript in preparation. -->
+<!-- ## Come fare una citazione {#package-biblatex-citation .smaller}
+
+- `\cite(s)`
+- `\parencite(s)`
+- `\footcite(s)`
+- `\textcite(s)`
+- `\smartcite(s)`
+- `\supercite(s)`
+- `\autocite`
+- `\citeauthor/title/year/date/url`
+
+- [Documentazione di biblatex](https://ctan.mirror.garr.it/mirrors/ctan/macros/latex/contrib/biblatex/doc/biblatex.pdf) 3.9 Citation Commands
+- [Biblatex Cheat Sheet](https://tug.ctan.org/info/biblatex-cheatsheet/biblatex-cheatsheet.pdf)
+- [Quale comando usare?](https://tex.stackexchange.com/a/162370) -->
+<!-- ## Opzioni di stile della bibliografia {#package-biblatex-options .smaller}
+
+`\usepackage[<options>]{biblatex}`, dove `options` posso essere:
+
+- `backend`: `biber`
+- `style`: `numeric`
+- `sorting`: ordinati per `name`, `year`, `e` e/o `title`
+- `citestyle`: [Documentazione di biblatex](https://ctan.mirror.garr.it/mirrors/ctan/macros/latex/contrib/biblatex/doc/biblatex.pdf) 3.3.1 Citation Styles
+- `maxbibnames` / `minbibnames`
+- `sorting`:
+- `uniquename`: disambiguate using initials or full names, as required;
+- `uniquelist`: disambiguate the labelname list. -->
+<!-- ## Differenze fra Overleaf e VSCode {#bibliography-overleaf-vs-vscode .smaller}
+
+Processing LATEX reference lists or other forms of cross-referencing, such as indexes, requires multiple runs of software—including the TEX engine (e.g., pdflatex) and associated programs such as BibTEX, makeindex, etc. As mentioned above, Overleaf handles all of these mulitple runs automatically, so you don't have to worry about them. -->
+<!-- ## Tipi di file {#package-biblatex-exts .smaller}
+
+- `bib`: used to describe bibliographical references. When used together with LaTeX and BibTeX, it generates a file with the `.bbl` extension;
+- `bbl`: a `tex` file with a different extension containing your references **formatted according to the bibliography style chosen in your `.tex` file** through the `\bibligraphystyle{}` command. LaTeX then automatically inserts the contents of the `bbl` file in the exact place you call the `\bibliography{}` command in your document. -->
+<!-- - `bcf`: **biber control file**, contains the information biber needs to process your bibliography -->
+<!-- - `blg`: **BibTeX log file**, contains information about any errors, warnings, or other messages generated during the processing of the bibliography
+- `bst`: **BibTeX style file**, specify the formatting and style of the bibliography
+- `cfg`: **configuration file**, contains information about the formatting of the bibliography -->
+<!-- - `cbx`: **biblatex citation style file**, specify the formatting and style of the citations; -->
+<!-- - `bbx`: **biblatex bibliography style file**, specify the formatting and style of the bibliography -->
+<!-- ### Esempi di modifiche alla bibliografia {#bibliography-examples .smaller}
+
+```latex
+% https://tex.stackexchange.com/questions/10682/suppress-in-biblatex
+\renewbibmacro{in:}{}
+
+% https://tex.stackexchange.com/questions/620082/in-biblatex-how-to-change-pp-to-p-when-referring-to-pages-of-references
+\DefineBibliographyStrings{english}{%
+    page={p\adddot},%
+    pages={p\adddot},%
+}
+``` -->
+<!-- # Il glossario {#glossary}
+
+Creare glossari ed elenchi di acronimi.
+
+## Il package glossaries {#package-glossaries .smaller}
+
+Il pacchetto [`glossaries`](https://ctan.org/pkg/glossaries) supporta acronimi e glossari multipli e prevede il funzionamento in più lingue (tramite [`babel`](https://ctan.org/pkg/babel)).
+
+# Definire comandi {.smaller}
+
+Come creare ed utilizzare comandi personalizzati per le proprie esigenze.
+
+---
+
+[From `\newcommand` to `\NewDocumentCommand`](https://www.texdev.net/2010/05/23/from-newcommand-to-newdocumentcommand/) -->
+</section>
+</section>
 <section>
 <section id="appendice" class="title-slide slide level1 smaller center">
 <h1>Appendice</h1>
@@ -3022,16 +2839,6 @@ Tabella&nbsp;5: most common lengths
 </div>
 </div>
 </section>
-</section>
-<section id="footnotes" class="footnotes footnotes-end-of-document smaller scrollable" role="doc-endnotes"><h3>Note</h3>
-
-<ol>
-<li id="fn1"><p><a href="https://tex.stackexchange.com/questions/7770/file-extensions-related-to-latex-etc">File extensions related to LaTeX, etc</a></p></li>
-<li id="fn2"><p><a href="https://github.com/wspr/latex-auxfiles">“Comprehensive” list of LaTeX auxiliary files</a></p></li>
-<li id="fn3"><p><a href="http://www.khirevich.com/latex/microtype/">Tips on Writing a Thesis in LaTeX</a></p></li>
-<li id="fn4"><p><a href="https://tex.stackexchange.com/q/82664/127473">When to use <code>\par</code> and when <code>\\</code>, <code>\newline</code></a></p></li>
-<li id="fn5"><p><a href="https://tex.stackexchange.com/a/7459/127473">What is the use of percent signs (<code>%</code>)</a></p></li>
-</ol>
 </section>
     </div>
   </div>
