@@ -1,4 +1,4 @@
-# Introduzione {data-background="https://images.unsplash.com/photo-1573848855919-9abecc93e456?auto=format&fit=crop&w=1470&q=100" data-background-size=cover .smaller}
+# Introduzione {.smaller}
 
 Informazioni utili per il corso.
 
@@ -17,6 +17,8 @@ $\rm\LaTeX$ si pronuncia `/ˈlɑːtɛk/` or `/ˈleɪtɛk/`, e non `/ˈleɪtɛks/
 :::
 
 # Installazione {.smaller}
+
+Installiamo un sistema offline per Windows, Linux e Mac.
 
 ## Distribuzione di TeX {.smaller #tex-distro}
 
@@ -364,9 +366,9 @@ Puoi ingrandire le immagini cliccandoci sopra tenendo premuto `alt`.
 ### Avere i permessi di scrittura {#installazione-texlive-unix-installer .smaller}
 
 ::: {layout-ncol=2}
-![](assets/images/install-texlive/linux/00-texlive-user.png)
+![1. Non hai i permessi di scrittura sulla cartella](assets/images/install-texlive/linux/00-texlive-user.png)
 
-![](assets/images/install-texlive/linux/01-texlive-sudo.png)
+![2. Hai i permessi di scrittura sulla cartella](assets/images/install-texlive/linux/01-texlive-sudo.png)
 :::
 
 ### {#installazione-texlive-unix-collections .smallest}
@@ -549,7 +551,7 @@ Aggiornare sia `tlmgr` che tutti i pacchetti:
 
 `tlmgr update --self --all`
 
-# Documentazione e utilities {.smaller}
+<!-- # Documentazione e utilities {.smaller}
 
 ## texdoc {#texdoc}
 
@@ -600,9 +602,11 @@ Alcune utilità che ci possono essere utili:
 ## Mathpix
 
 - [Image to LaTeX](https://mathpix.com/image-to-latex)
-- [Mathpix Extension for Chrome](https://mathpix.com/extension-downloads)
+- [Mathpix Extension for Chrome](https://mathpix.com/extension-downloads) -->
 
-# Visual Studio Code {#vscode .white .smaller data-background-image="assets/images/hero/vscode.jpg" data-background-size="cover"}
+<!-- # Visual Studio Code {#vscode .white .smaller data-background-image="assets/images/hero/vscode.jpg" data-background-size="cover"}
+
+Impostazione di un editor di testo.
 
 ## Ottimizzare il flusso di lavoro su Visual Studio Code {.smallest #ottimizzazione-flusso}
 
@@ -649,10 +653,10 @@ Personalizzazione dell'ambiente di lavoro:
 :::{.column width="40%"}
 
 :::
-::::
+:::: -->
 <!-- https://code.visualstudio.com/docs/getstarted/keybindings#:~:text=All\%20keyboard\%20shortcuts\%20in\%20VS,This\%20will\%20open\%20your\%20keybindings. -->
 
----
+<!-- ---
 
 ![[`keybindings - advanced customization`](https://code.visualstudio.com/docs/getstarted/keybindings#_advanced-customization)](assets\images\vscode\keybindings.png){width=200}
 
@@ -698,7 +702,7 @@ Personalizzazione dell'ambiente di lavoro:
     }
 ]
 ```
-:::
+::: -->
 
 <!-- ### My Workshop Recipes
 
@@ -750,7 +754,7 @@ Personalizzazione dell'ambiente di lavoro:
 ```
 ::: -->
 
-## {#arara-tex-automation-tool .smaller}
+<!-- ## {#arara-tex-automation-tool .smaller}
 
 ![](assets/branding/arara-logo-with-text-bottom.svg){fig-align="center" width=350}
 
@@ -961,7 +965,7 @@ Prima di tutto, è importante capire quali sono i file prodotti da $\rm\LaTeX$ q
 - `pdf`
 :::
 ::::
-:::::
+::::: -->
 
 <!-- Informazioni interessanti scritte nel file `log`:
 ```bash
@@ -976,47 +980,20 @@ Package thmtools Info: Key `qed' (with value `\qedsymbol ')
 (thmtools)             that uses `style=myProofStyle' on input line 84.
 ``` -->
 
-### Configurazione di arara {#arara-config .smaller}
+<!-- ### Configurazione di arara {#arara-config .smaller}
 
 - **duplice obiettivo**:
     1. evitare esecuzioni successive inutili;
     2. semplificarci il lavoro di compilazione.
-- due possibili nomi per i file di configurazione: `.araraconfig.yaml`, `.arararc.yaml`
+- due possibili nomi per i file di configurazione: `.araraconfig.yaml`, `.arararc.yaml` -->
 <!-- - abbiamo a disposizione tre funzioni fondamentali: `missing`, `changed` e `found`. -->
 <!-- - tramite le quali possiamo controllare la presenza di un file, la sua modifica, o la presenza di una parola chiave all'interno del file. -->
 
----
+<!-- #### Esempio di routine {#arara-routine}
 
-#### Esempio di routine {#arara-routine}
+### Colleghiamo VS Code ad `arara` -->
 
-:::{.code .larger}
-```{.latex filename=".araraconfig.yaml" code-line-numbers="|1-5|7-8|10-11|13-17|19-20"}
-% arara: pdflatex: {
-% arara: --> draft: yes,
-% arara: --> shell: yes,
-% arara: --> options: [--output-directory=build]
-% arara: --> }
-
-% arara: biber: { options: [ '--output-directory=build' ] }
-% arara: --> if missing(toFile('build/thesis.bbl')) || changed(toFile('build/thesis.bbl')) || found(toFile('build/thesis.log'), 'Citation')
-
-% arara: makeglossaries: { options: [ '-d', 'build' ] }
-% arara: --> if changed (toFile('build/thesis.glo')) || missing (toFile('build/thesis.gls'))
-
-% arara: pdflatex: {
-% arara: --> shell: yes,
-% arara: --> synctex: yes,
-% arara: --> options: [--output-directory=build]
-% arara: --> }
-
-% arara: move: { files: [ 'build/thesis.pdf' ],
-% arara: --> target: 'backup/thesis.pdf' }
-```
-:::
-
-### Colleghiamo VS Code ad `arara`
-
-## Pulizia file temporanei {.smaller}
+<!-- ## Pulizia file temporanei {.smaller}
 
 Pulire i file temporanei:
 ```{.bash code-line-numbers="false"}
@@ -1048,18 +1025,18 @@ $clean_ext = "acn acr alg glg glo gls ist log nav out run.xml slg snm syg syi sy
 $bibtex_use = 2;
 
 $out_dir = 'build';
-```
+``` -->
 
-# Perché la tipografia è _importante_? {.smaller #tipografia data-background-image="assets/images/hero/typography.jpg" data-background-size="cover"}
+<!-- # Perché la tipografia è _importante_? {.smaller #tipografia data-background-image="assets/images/hero/typography.jpg" data-background-size="cover"}
 
 ### Oscars 2017 Best Picture announcement
 
-{{< video https://www.youtube.com/embed/eZSe4xVXHhI width="100%" height="100%" >}}
+{{< video https://www.youtube.com/embed/eZSe4xVXHhI width="100%" height="100%" >}} -->
 
-# Scaletta argomenti {.smaller}
+<!-- # Scaletta argomenti {.smaller} -->
 
 <!-- https://quarto.org/docs/presentations/revealjs/#content-overflow -->
-## Scaletta argomenti [1/2] {.smaller}
+<!-- ## Scaletta argomenti [1/2] {.smaller}
 
 - clean code mentality
 - [codifica dell'input e del font](https://tex.stackexchange.com/questions/44694/fontenc-vs-inputenc) (`inputenc` e `fontenc`)
@@ -1080,10 +1057,9 @@ $out_dir = 'build';
 - riferimenti ipertestuali (`hyperref`)
 - importazione di codice, evidenziazione della sintassi (`minted`)
 - scrittura di pseudocodice (`algorithms2e`)
-- creazione di un glossario (`glossaries`), acronimi (`acronym`), indice (`index`)
+- creazione di un glossario (`glossaries`), acronimi (`acronym`), indice (`index`) -->
 
-
-# Package utili {.smaller}
+<!-- # Package utili {.smaller}
 
 ## Package utili {.smallest auto-animate=true}
 
@@ -1151,7 +1127,7 @@ $out_dir = 'build';
 - `titletoc`
 - `xcolor`
 :::
-::::
+:::: -->
 
 <!-- **_bibliography_**:
 
@@ -1211,16 +1187,18 @@ $out_dir = 'build';
 
 **_lingua_**: -->
 
-## Package da <u class="wavy">non caricare</u>
+<!-- ## Package da <u class="wavy">non caricare</u>
 
 - `tabu`, `tabularx`, `booktabs`, `array`, `multirow`, `longtable` → [...`tabularray`, `tblr-extras`]
 - [`epsf`, `epsfig`, `psfig`] → `graphicx`
 - `cite` → `biblatex`
 - [`subfigure`, `subfig`] → `subcaption`
 - `glossary` → `glossaries`
-- `enumerate` → `enumitem`
+- `enumerate` → `enumitem` -->
 
-# Struttura del progetto {.smaller #project-structure data-background-image="assets/images/hero/project-structure.jpg" data-background-size="cover"}
+# Struttura del progetto {.smaller #project-structure}
+
+Da quali parti è composta una tesi?
 
 ## Struttura generale di una tesi {.smallest #struttura-tesi}
 
@@ -1234,7 +1212,7 @@ comparire nell'indice generale.
 | Materiale finale | Una o più appendici non numerate<br>Glossario<br>_Bibliografia_<br>Indice analitico |
 : {tbl-colwidths="[10,45]"}
 
-## Struttura del nostro progetto {#struttura-progetto}
+<!-- ## Struttura del nostro progetto {#struttura-progetto}
 
 :::{.code .larger}
 ```{.txt filename="Albero del progetto" code-line-numbers="|52-53|50-51|47-49|53|52|24|23|22|2|3-4|5-13|6-9|10-12|13|14|15|16-18|19-20|21|54|"}
@@ -1291,13 +1269,13 @@ comparire nell'indice generale.
 ├── thesis.preamble.sty
 └── thesis.tex
 ```
-:::
+::: -->
 
-# Preparare il documento
+<!-- # Preparare il documento
 
-Codifica dei caratteri, impostazione della lingua, margini del documento, migliorare la scrittura, come fare i commenti.
+Codifica dei caratteri, impostazione della lingua, margini del documento, migliorare la scrittura, come fare i commenti. -->
 
-## Codifica dei caratteri {.smaller #package-fontenc}
+<!-- ## Codifica dei caratteri {.smaller #package-fontenc}
 
 ```{.latex filename="preamble.main.sty" code-line-numbers="|1|2|"}
 \usepackage[T1]{fontenc}% font encoding
@@ -1306,15 +1284,15 @@ Codifica dei caratteri, impostazione della lingua, margini del documento, miglio
 
 - [fontenc vs inputenc](https://tex.stackexchange.com/questions/44694/fontenc-vs-inputenc)
 - [Why should I use `fontenc`?](https://tex.stackexchange.com/questions/664/why-should-i-use-usepackaget1fontenc)
-- [Is there any reason to use `inputenc`?](https://tex.stackexchange.com/questions/370278/is-there-any-reason-to-use-inputenc)
+- [Is there any reason to use `inputenc`?](https://tex.stackexchange.com/questions/370278/is-there-any-reason-to-use-inputenc) -->
 
-## Specificare la lingua
+<!-- ## Specificare la lingua
 
 ```latex
 \usepackage[main=italian, english]{babel}
-```
+``` -->
 
-## Margini del documento {.smaller #package-geometry}
+<!-- ## Margini del documento {.smaller #package-geometry}
 
 ::: {layout-ncol=2}
 ```{.latex filename="settings/set-geometry.sty" code-line-numbers="|1,8|2|3|4|5|6|7|"}
@@ -1331,9 +1309,9 @@ Codifica dei caratteri, impostazione della lingua, margini del documento, miglio
 ![Layout package](assets/images/geometry/layout-dimensions.png){height="600"}
 :::
 
-- [Page size and margins](https://www.overleaf.com/learn/latex/Page_size_and_margins)
+- [Page size and margins](https://www.overleaf.com/learn/latex/Page_size_and_margins) -->
 
-## Gestire la spaziatura {#package-parskip}
+<!-- ## Gestire la spaziatura {#package-parskip}
 ```{.latex filename="settings/set-spacing.sty" code-line-numbers="|1-6|8-10|"}
 \usepackage[
     skip=0.2cm,   % default: .5\baselineskip plus 2pt explicitly specify the vertical space between paragraphs
@@ -1360,9 +1338,9 @@ Codifica dei caratteri, impostazione della lingua, margini del documento, miglio
     ,stretch	= 10
     ,shrink		= 10
 ]{microtype}
-```
+``` -->
 
-## Come fare i commenti {#package-comment .smaller}
+<!-- ## Come fare i commenti {#package-comment .smaller}
 
 - [Commenting out large sections](https://tex.stackexchange.com/questions/17816/commenting-out-large-sections)
 - Commanta con `Ctrl + ù`/`Ctrl + Shift + ù` su Visual Studio Code
@@ -1386,9 +1364,9 @@ Codifica dei caratteri, impostazione della lingua, margini del documento, miglio
 This text will only be displayed, if \includecomment{mysection} was given
 \end{mysection}
 \end{document}
-```
+``` -->
 
-# Impaginare le figure
+<!-- # Impaginare le figure
 
 Posizionamento delle figure, figure a metà pagina, figure nel testo.
 
@@ -1422,9 +1400,9 @@ keepaspectratio
 scale
 clip
 alt
-```
+``` -->
 
-### Impostazioni del pacchetto {.smaller #package-graphicx-options}
+<!-- ### Impostazioni del pacchetto {.smaller #package-graphicx-options}
 
 ```latex
 \graphicspath{⟨dir-list⟩}
@@ -1448,9 +1426,9 @@ search for graphics files. The format is as for the LATEX2ε primitive `\input@p
     {assets/images/papers/articoloFIE/}% articolo
     {assets/images/papers/PRIMM}% articolo
 }
-```
+``` -->
 
-## Il pacchetto [`caption`](https://ctan.org/pkg/caption) {.smaller #package-caption}
+<!-- ## Il pacchetto [`caption`](https://ctan.org/pkg/caption) {.smaller #package-caption}
 
 Personalizzazione delle didascalie degli ambienti "mobili"
 
@@ -1475,9 +1453,9 @@ Personalizzazione delle didascalie degli ambienti "mobili"
     justification  = raggedright,
     singlelinecheck= off
 }
-```
+``` -->
 
-# Formattare le tabelle
+<!-- # Formattare le tabelle
 
 ## Il pacchetto `tabularray` {#package-tabularray .smaller}
 
@@ -1490,9 +1468,9 @@ The `LaTeX3` package tabularray provides a new way to typeset tables in a keyval
 \UseTblrLibrary{amsmath, booktabs, counter, diagbox, functional, siunitx, varwidth}
 \UseTblrLibrary{nameref, zref}% compatibily with longtblr environment
 \UseTblrLibrary{hook, html}% experimental
-```
+``` -->
 
-### Esempio {#package-tabularray-example .smaller}
+<!-- ### Esempio {#package-tabularray-example .smaller}
 
 ```{.latex filename=tabularray-example.tex code-line-numbers="|2-4|6-12|7|8|9|10|12|13-19|"}
 \begin{table}
@@ -1515,7 +1493,7 @@ The `LaTeX3` package tabularray provides a new way to typeset tables in a keyval
         6  & Beta & Gamma & Alpha & Beta & Gamma & Beta & Gamma\\
     \end{tblr}
 \end{table}
-```
+``` -->
 
 <!-- ## Impostazioni del package
 
@@ -1525,15 +1503,15 @@ The `LaTeX3` package tabularray provides a new way to typeset tables in a keyval
 \usepackage{siunitx}
 ``` -->
 
-# Scrivere la matematica {#math}
+<!-- # Scrivere la matematica {#math}
 
 ## Materiale rilevante
 
 - [Why is  `\[...\]` preferable to `$$...$$`?](https://tex.stackexchange.com/questions/503/why-is-preferable-to)
 - [witharrows](https://ctan.org/pkg/witharrows)
-- [siunitx](https://ctan.org/pkg/siunitx)
+- [siunitx](https://ctan.org/pkg/siunitx) -->
 
-## Ambienti per la matematica {#math-envs}
+<!-- ## Ambienti per la matematica {#math-envs}
 
 ### witharrows {#package-witharrows .smaller}
 
@@ -1548,9 +1526,9 @@ The `LaTeX3` package tabularray provides a new way to typeset tables in a keyval
     10 n^2 &\leqslant c_2 n^2 \Arrow{semplifico}\\
     10 &\leqslant c_2
 \end{WithArrows}\]
-```
+``` -->
 
-# Scrivere codice {#code .smaller}
+<!-- # Scrivere codice {#code .smaller}
 
 Scrivere codice nel testo, importare file esterni e personalizzarne l'apparenza.
 
@@ -1578,9 +1556,9 @@ Ipotizziamo di aver estrapolato il contenuto in un file esterno `assets/codes/ma
 All'interno del testo possiamo scrivere codice "_in linea_":
 ```latex
 Il main di Java passa come paramentro \mintinline{java}{String[] args}.
-```
+``` -->
 
-### Opzioni utili per il pacchetto `minted` {#package-minted-options .smaller}
+<!-- ### Opzioni utili per il pacchetto `minted` {#package-minted-options .smaller}
 
 :::{.code .larger filename="settings/set-code.sty"}
 ```latex
@@ -1605,9 +1583,9 @@ Il main di Java passa come paramentro \mintinline{java}{String[] args}.
 \newmint[javacode]{cpp}{}
 \newmintedfile[javafile]{cpp}{}
 ```
-:::
+::: -->
 
-### Come aggiungere una didascalia {#package-minted-caption .smaller}
+<!-- ### Come aggiungere una didascalia {#package-minted-caption .smaller}
 
 1. modifichiamo il preambolo:
 
@@ -1633,13 +1611,13 @@ Il main di Java passa come paramentro \mintinline{java}{String[] args}.
 
 - possiamo aggiungere `\listoflistings` nel punto in cui vogliamo che venga generato l'elenco dei codici, generalmente dopo `\listoffigures` e `\listoftables`.
 
-Per ulteriori personalizzazioni, consultare la [documentazione](https://ctan.mirror.garr.it/mirrors/ctan/macros/latex/contrib/minted/minted.pdf).
+Per ulteriori personalizzazioni, consultare la [documentazione](https://ctan.mirror.garr.it/mirrors/ctan/macros/latex/contrib/minted/minted.pdf). -->
 
-### Personalizzazione avanzata
+<!-- ### Personalizzazione avanzata
 
 - Basandoci su [questa domanda](https://tex.stackexchange.com/questions/452150/) utilizziamo il pacchetto [`tcolorbox`](https://ctan.org/pkg/tcolorbox).
 
-```
+```latex
 % arara: pdflatex: {shell: 1}
 \documentclass{article}
 
@@ -1681,9 +1659,9 @@ public class ClassName {
 }
 \end{javalst}
 \end{document}
-```
+``` -->
 
-# Formattare gli algorirmi {#algorithms}
+<!-- # Formattare gli algorirmi {#algorithms}
 
 [be confused with me](https://tex.stackexchange.com/questions/229355/)
 
@@ -1700,17 +1678,17 @@ algcompatible
 | pacchetto | ambiente che definisce |
 |---------|:-----|
 | algorithms | algorithmic, algorithm |
-| algorithmicx | algpseudocode, algpascal, algc |
+| algorithmicx | algpseudocode, algpascal, algc | -->
 
-## {#package-algorithm2e .smaller}
+<!-- ## {#package-algorithm2e .smaller}
 
-Il pacchetto [algorithm2e](https://ctan.org/pkg/algorithm2e) è quello più versatile.
+Il pacchetto [algorithm2e](https://ctan.org/pkg/algorithm2e) è quello più versatile. -->
 
-## Bonus tip: Il pacchetto `forest`
+<!-- ## Bonus tip: Il pacchetto `forest`
 
-[forest](https://ctan.org/pkg/forest)
+[forest](https://ctan.org/pkg/forest) -->
 
-# La bibliografia {#bibliography .smaller}
+<!-- # La bibliografia {#bibliography .smaller}
 
 Creazione, gestione e personalizzazione della bibliografia.
 
@@ -1727,9 +1705,9 @@ Creazione, gestione e personalizzazione della bibliografia.
 4. stampa la bibliografia con `\printbibliography`;
 5. aggiungi il passaggio di compilazione ad `arara`:
    a. `% arara: biber`
-6. personalizza lo stile della bibliografia con `\bibliographystyle{<style>}`;
+6. personalizza lo stile della bibliografia con `\bibliographystyle{<style>}`; -->
 <!-- 7. personalizza la bibliografia con `\DeclareFieldFormat{<field>}{<format>}`. -->
-:::
+<!-- :::
 :::{.column width="35%"}
 ```{.txt code-line-numbers="false"}
 .
@@ -1745,9 +1723,9 @@ Creazione, gestione e personalizzazione della bibliografia.
 └── ✏️thesis.tex
 ```
 :::
-::::
+:::: -->
 
-## BibTEX bibliography entries {#bibtex-entries-1 .smallest}
+<!-- ## BibTEX bibliography entries {#bibtex-entries-1 .smallest}
 
 Esempi di tipo di documenti:
 
@@ -1761,9 +1739,9 @@ Esempi di tipo di documenti:
 - `@manual` a technical manual for a machine software such as would come with a purchase to explain operation to the new owner;
 - `@phdthesis`, `@masterthesis` for dissertations and theses;
 - `@misc` used if none of the other entry types quite match the source. Frequently used to cite web pages, but can be anything from lecture slides to personal notes;
-- `@unpublished` a document that has not been officially published such as a paper draft or manuscript in preparation.
+- `@unpublished` a document that has not been officially published such as a paper draft or manuscript in preparation. -->
 
-## Come fare una citazione {#package-biblatex-citation .smaller}
+<!-- ## Come fare una citazione {#package-biblatex-citation .smaller}
 
 - `\cite(s)`
 - `\parencite(s)`
@@ -1776,9 +1754,9 @@ Esempi di tipo di documenti:
 
 - [Documentazione di biblatex](https://ctan.mirror.garr.it/mirrors/ctan/macros/latex/contrib/biblatex/doc/biblatex.pdf) 3.9 Citation Commands
 - [Biblatex Cheat Sheet](https://tug.ctan.org/info/biblatex-cheatsheet/biblatex-cheatsheet.pdf)
-- [Quale comando usare?](https://tex.stackexchange.com/a/162370)
+- [Quale comando usare?](https://tex.stackexchange.com/a/162370) -->
 
-## Opzioni di stile della bibliografia {#package-biblatex-options .smaller}
+<!-- ## Opzioni di stile della bibliografia {#package-biblatex-options .smaller}
 
 `\usepackage[<options>]{biblatex}`, dove `options` posso essere:
 
@@ -1789,24 +1767,24 @@ Esempi di tipo di documenti:
 - `maxbibnames` / `minbibnames`
 - `sorting`:
 - `uniquename`: disambiguate using initials or full names, as required;
-- `uniquelist`: disambiguate the labelname list.
+- `uniquelist`: disambiguate the labelname list. -->
 
-## Differenze fra Overleaf e VSCode {#bibliography-overleaf-vs-vscode .smaller}
+<!-- ## Differenze fra Overleaf e VSCode {#bibliography-overleaf-vs-vscode .smaller}
 
-Processing LATEX reference lists or other forms of cross-referencing, such as indexes, requires multiple runs of software—including the TEX engine (e.g., pdflatex) and associated programs such as BibTEX, makeindex, etc. As mentioned above, Overleaf handles all of these mulitple runs automatically, so you don't have to worry about them.
+Processing LATEX reference lists or other forms of cross-referencing, such as indexes, requires multiple runs of software—including the TEX engine (e.g., pdflatex) and associated programs such as BibTEX, makeindex, etc. As mentioned above, Overleaf handles all of these mulitple runs automatically, so you don't have to worry about them. -->
 
-## Tipi di file {#package-biblatex-exts .smaller}
+<!-- ## Tipi di file {#package-biblatex-exts .smaller}
 
 - `bib`: used to describe bibliographical references. When used together with LaTeX and BibTeX, it generates a file with the `.bbl` extension;
-- `bbl`: a `tex` file with a different extension containing your references **formatted according to the bibliography style chosen in your `.tex` file** through the `\bibligraphystyle{}` command. LaTeX then automatically inserts the contents of the `bbl` file in the exact place you call the `\bibliography{}` command in your document.
+- `bbl`: a `tex` file with a different extension containing your references **formatted according to the bibliography style chosen in your `.tex` file** through the `\bibligraphystyle{}` command. LaTeX then automatically inserts the contents of the `bbl` file in the exact place you call the `\bibliography{}` command in your document. -->
 <!-- - `bcf`: **biber control file**, contains the information biber needs to process your bibliography -->
-- `blg`: **BibTeX log file**, contains information about any errors, warnings, or other messages generated during the processing of the bibliography
+<!-- - `blg`: **BibTeX log file**, contains information about any errors, warnings, or other messages generated during the processing of the bibliography
 - `bst`: **BibTeX style file**, specify the formatting and style of the bibliography
-- `cfg`: **configuration file**, contains information about the formatting of the bibliography
+- `cfg`: **configuration file**, contains information about the formatting of the bibliography -->
 <!-- - `cbx`: **biblatex citation style file**, specify the formatting and style of the citations; -->
 <!-- - `bbx`: **biblatex bibliography style file**, specify the formatting and style of the bibliography -->
 
-### Esempi di modifiche alla bibliografia {#bibliography-examples .smaller}
+<!-- ### Esempi di modifiche alla bibliografia {#bibliography-examples .smaller}
 
 ```latex
 % https://tex.stackexchange.com/questions/10682/suppress-in-biblatex
@@ -1817,9 +1795,9 @@ Processing LATEX reference lists or other forms of cross-referencing, such as in
     page={p\adddot},%
     pages={p\adddot},%
 }
-```
+``` -->
 
-# Il glossario {#glossary}
+<!-- # Il glossario {#glossary}
 
 Creare glossari ed elenchi di acronimi.
 
@@ -1833,7 +1811,7 @@ Come creare ed utilizzare comandi personalizzati per le proprie esigenze.
 
 ---
 
-[From `\newcommand` to `\NewDocumentCommand`](https://www.texdev.net/2010/05/23/from-newcommand-to-newdocumentcommand/)
+[From `\newcommand` to `\NewDocumentCommand`](https://www.texdev.net/2010/05/23/from-newcommand-to-newdocumentcommand/) -->
 
 # Appendice {.smaller}
 
